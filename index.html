@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
 
+    <script>document.documentElement.classList.add("js");</script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -139,11 +140,9 @@
               Rooted in knowledge. Connected by technology.
             </p>
             <h1 class="hero-heading">
-              <span class="line" data-line>From the forests</span>
-              <span class="line" data-line>of Jharkhand to a</span>
-              <span class="line line-serif" data-line
-                >more connected future.</span
-              >
+              <span class="line"><span class="line-inner">From the forests</span></span>
+              <span class="line"><span class="line-inner">of Jharkhand to a</span></span>
+              <span class="line line-serif"><span class="line-inner">more connected future.</span></span>
             </h1>
             <p class="hero-sub" data-reveal>
               Discover traditionally valued medicinal plants, the knowledge
@@ -270,7 +269,7 @@
           <div class="story-stage" data-stage="0">
             <div class="story-visual">
               <img
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop"
+                src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Forest_of_jharkhand.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
                 alt="Sunlight through forest trees"
               />
             </div>
@@ -517,7 +516,7 @@
                   <p class="latin">Withania somnifera</p>
                 </div>
                 <div class="confidence">
-                  <span class="confidence-num" id="confidenceNum">0</span
+                  <span class="confidence-num" id="confidenceNum">92</span
                   ><span>%</span>
                   <p>Confidence</p>
                 </div>
@@ -662,24 +661,25 @@
 
       <!-- ============ JHARKHAND ============ -->
       <section class="jharkhand" id="jharkhand">
-        <div class="jharkhand-media">
-          <img
-            src="https://images.unsplash.com/photo-1516214104703-d870798883c5?q=80&w=1800&auto=format&fit=crop"
-            alt="Forested hills of Jharkhand"
-          />
-          <div class="jharkhand-scrim"></div>
-        </div>
-
-        <div class="jharkhand-content">
-          <div class="jharkhand-copy">
-            <p class="eyebrow eyebrow-light">Where it comes from</p>
-            <h2>Rooted in<br />Jharkhand.</h2>
-            <p>
+        <div class="jk-inner">
+          <div class="jk-copy">
+            <p class="jk-label">Where it comes from</p>
+            <h2>Rooted in Jharkhand.</h2>
+            <p class="jk-text">
               Jharkhand's forests hold extraordinary biodiversity and
               generations of plant knowledge. Tribal Doctor aims to create a
               digital layer connecting plants, people, knowledge and responsible
               commerce.
             </p>
+
+            <ul class="jk-regions" aria-label="Sourcing regions">
+              <li><button type="button" class="jk-region" data-region="palamu"><span class="jk-region-name">Palamu</span><span class="jk-region-where">North-west forests</span></button></li>
+              <li><button type="button" class="jk-region" data-region="ranchi"><span class="jk-region-name">Ranchi</span><span class="jk-region-where">Central plateau</span></button></li>
+              <li><button type="button" class="jk-region" data-region="dumka"><span class="jk-region-name">Dumka</span><span class="jk-region-where">Santhal Pargana</span></button></li>
+              <li><button type="button" class="jk-region" data-region="gumla"><span class="jk-region-name">Gumla</span><span class="jk-region-where">West-central uplands</span></button></li>
+              <li><button type="button" class="jk-region" data-region="simdega"><span class="jk-region-name">Simdega</span><span class="jk-region-where">South-west, near Odisha</span></button></li>
+            </ul>
+
             <a
               href="plants.html?region=jharkhand"
               class="btn btn-ghost-light"
@@ -688,19 +688,20 @@
             >
           </div>
 
-          <div class="jharkhand-index" aria-label="Sourcing regions">
-            <span class="jharkhand-index-label">Sourcing regions</span>
-            <ul class="jharkhand-index-list">
-              <li data-jregion><span class="jregion-line"></span>Palamu</li>
-              <li data-jregion><span class="jregion-line"></span>Ranchi</li>
-              <li data-jregion><span class="jregion-line"></span>Dumka</li>
-              <li data-jregion><span class="jregion-line"></span>Gumla</li>
-              <li data-jregion><span class="jregion-line"></span>Simdega</li>
-            </ul>
-            <p class="jharkhand-note">
-              Regions shown are illustrative for this prototype.
-            </p>
-          </div>
+          <figure class="jk-figure">
+            <svg class="jk-map" viewBox="0 0 720 596" role="img" aria-labelledby="jkMapTitle">
+              <title id="jkMapTitle">Illustrative map of Jharkhand with five sourcing regions: Palamu, Ranchi, Dumka, Gumla and Simdega</title>
+              <g class="jk-grat" aria-hidden="true"><line x1="0" x2="720" y1="532.8" y2="532.8"/><text x="8" y="526.8">22°N</text><line x1="0" x2="720" y1="390.2" y2="390.2"/><text x="8" y="384.2">23°N</text><line x1="0" x2="720" y1="247.8" y2="247.8"/><text x="8" y="241.8">24°N</text><line x1="0" x2="720" y1="105.2" y2="105.2"/><text x="8" y="99.2">25°N</text><line x1="144.5" x2="144.5" y1="0" y2="596"/><text x="150.5" y="586">84°E</text><line x1="275.2" x2="275.2" y1="0" y2="596"/><text x="281.2" y="586">85°E</text><line x1="405.9" x2="405.9" y1="0" y2="596"/><text x="411.9" y="586">86°E</text><line x1="536.6" x2="536.6" y1="0" y2="596"/><text x="542.6" y="586">87°E</text><line x1="667.3" x2="667.3" y1="0" y2="596"/><text x="673.3" y="586">88°E</text></g>
+              <path class="jk-fill" d="M57.0 226.4C78.6 194.3 81.7 182.2 131.5 169.4C181.3 156.5 179.8 188.3 223.0 183.6C266.1 178.9 239.9 171.2 275.2 153.7C310.5 136.2 297.4 129.5 340.6 125.2C383.7 120.9 375.9 139.4 419.0 139.4C462.1 139.4 445.1 141.9 484.3 125.2C523.5 108.5 512.4 104.8 549.7 83.9C586.9 62.9 576.3 53.2 608.5 55.4C640.6 57.5 643.1 64.1 656.8 91.0C670.5 117.9 660.9 113.1 654.2 145.2C647.5 177.2 654.2 165.0 634.6 197.9C615.0 230.8 616.3 229.2 588.9 254.9C561.4 280.5 564.7 262.0 543.1 283.4C521.6 304.8 532.7 294.1 517.0 326.1C501.3 358.2 485.0 353.9 490.8 390.2C496.7 426.6 532.7 417.3 536.6 447.2C540.5 477.2 539.2 468.6 503.9 490.0C468.6 511.4 464.1 504.0 419.0 518.5C373.9 533.0 396.8 535.0 353.6 538.4C310.5 541.9 316.4 535.9 275.2 529.9C234.1 523.9 239.9 536.9 216.4 518.5C192.9 500.1 218.4 492.1 196.8 468.6C175.3 445.1 166.1 463.6 144.5 440.1C123.0 416.6 144.5 424.5 124.9 390.2C105.3 356.0 98.8 360.3 79.2 326.1C59.6 291.9 66.3 306.2 59.6 276.2C52.9 246.3 35.4 258.4 57.0 226.4Z" aria-hidden="true"/>
+              <g aria-hidden="true"><path class="jk-ring" d="M103.2 240.0C120.6 211.7 121.0 199.5 164.4 187.5C207.9 175.4 209.2 202.9 248.0 199.8C286.8 196.7 265.7 194.3 293.7 177.0C321.8 159.7 306.8 149.0 341.6 142.1C376.4 135.3 373.0 151.0 409.7 154.1C446.3 157.3 429.2 163.7 463.7 152.7C498.1 141.8 488.9 136.7 524.4 117.6C559.8 98.6 552.7 88.2 581.9 89.3C611.0 90.4 616.0 95.5 621.5 121.3C627.1 147.0 610.1 147.6 600.4 175.2C590.7 202.9 600.6 188.9 589.2 213.5C577.8 238.0 582.5 236.8 562.5 257.0C542.4 277.2 542.7 263.0 522.4 280.8C502.1 298.5 508.4 288.1 494.8 316.3C481.2 344.5 470.3 340.3 477.2 374.8C484.0 409.2 516.3 404.1 517.6 431.2C518.9 458.2 514.2 448.4 481.5 465.0C448.8 481.6 446.2 472.5 408.7 486.5C371.3 500.5 392.4 506.3 356.6 511.8C320.8 517.3 321.9 515.9 289.5 504.9C257.0 493.8 269.1 494.2 248.5 475.0C227.9 455.8 245.0 457.5 220.9 440.8C196.8 424.0 186.7 439.2 168.1 419.1C149.5 398.9 169.5 403.1 158.9 373.6C148.2 344.2 148.2 348.4 132.6 320.8C116.9 293.2 115.4 305.9 106.6 281.7C97.8 257.5 85.9 268.3 103.2 240.0Z"/><path class="jk-ring" d="M138.4 244.8C157.3 220.8 165.0 213.4 204.2 204.0C243.4 194.6 240.7 218.5 269.1 213.6C297.5 208.7 276.2 202.0 299.0 187.6C321.9 173.1 313.5 166.9 345.3 165.4C377.0 163.9 372.7 178.3 404.8 182.6C436.8 186.9 422.1 190.8 452.1 179.7C482.0 168.5 476.3 162.4 504.7 145.5C533.0 128.6 526.6 121.2 546.6 123.2C566.6 125.3 565.0 133.0 571.2 152.4C577.4 171.8 569.5 167.9 567.3 188.0C565.1 208.2 574.4 197.8 563.9 219.7C553.4 241.6 553.0 242.0 532.3 261.0C511.7 280.0 511.3 266.6 495.1 283.0C479.0 299.4 488.8 290.2 478.5 315.7C468.2 341.2 458.2 340.5 460.8 368.1C463.4 395.7 487.2 388.4 487.1 407.6C487.0 426.9 484.2 416.5 460.3 432.3C436.5 448.1 436.8 447.8 407.5 460.4C378.1 472.9 392.7 474.6 362.4 474.2C332.2 473.7 336.9 466.4 306.7 458.9C276.5 451.3 281.8 461.0 261.9 449.0C241.9 437.0 259.0 433.1 240.2 418.9C221.5 404.7 210.7 418.9 199.4 401.7C188.1 384.4 212.5 385.9 202.7 361.4C192.9 337.0 185.2 343.4 166.7 320.2C148.2 297.0 149.6 306.6 141.1 284.0C132.6 261.4 119.5 268.8 138.4 244.8Z"/><path class="jk-ring" d="M192.8 252.3C206.4 233.0 210.4 227.3 238.2 219.7C266.1 212.2 264.0 231.2 285.6 227.2C307.2 223.2 290.1 216.1 310.3 206.3C330.5 196.6 325.6 193.8 353.1 194.7C380.5 195.6 374.6 208.6 401.7 209.4C428.7 210.1 419.7 208.5 443.2 197.2C466.7 185.9 460.9 183.7 479.9 171.7C498.9 159.7 491.4 155.6 506.4 157.1C521.4 158.7 520.1 163.6 529.8 176.7C539.4 189.9 538.6 184.3 538.6 201.0C538.5 217.8 541.2 212.3 529.7 232.6C518.3 252.9 516.8 252.3 500.4 268.7C483.9 285.2 487.4 273.5 474.8 287.6C462.1 301.6 469.1 295.6 458.3 315.5C447.4 335.4 438.0 334.3 438.6 353.9C439.1 373.4 456.5 364.1 460.1 380.7C463.7 397.3 467.2 395.3 450.6 409.2C433.9 423.1 430.2 420.0 404.6 427.0C379.0 434.0 391.3 433.5 365.2 432.6C339.1 431.6 343.7 426.7 317.5 423.8C291.3 420.9 293.7 430.8 278.0 422.8C262.3 414.9 275.7 410.3 265.2 397.3C254.6 384.2 251.0 393.2 242.8 379.3C234.6 365.4 250.3 370.0 237.9 351.0C225.5 331.9 215.0 335.8 201.5 315.7C188.0 295.6 195.5 303.0 192.9 283.9C190.3 264.9 179.2 271.5 192.8 252.3Z"/><path class="jk-ring" d="M240.3 260.5C249.6 246.8 250.1 242.8 268.2 237.0C286.3 231.3 282.4 242.6 300.7 241.4C319.0 240.1 310.7 237.6 329.1 232.9C347.6 228.2 341.8 226.5 362.3 225.6C382.7 224.6 378.0 232.1 397.3 229.7C416.5 227.3 411.3 225.8 426.3 217.6C441.3 209.4 434.4 210.8 447.3 202.3C460.1 193.8 454.0 190.3 469.1 189.2C484.3 188.0 487.2 189.0 497.7 198.6C508.3 208.2 506.3 205.8 504.4 221.2C502.5 236.7 501.9 233.0 491.5 249.9C481.1 266.9 482.7 265.1 469.8 277.7C456.8 290.2 459.1 281.8 448.3 291.9C437.5 302.0 442.2 298.1 433.8 311.4C425.3 324.7 416.5 321.5 420.2 336.2C423.9 351.0 441.0 347.1 446.2 360.6C451.4 374.1 452.4 373.3 437.5 381.2C422.7 389.0 418.3 383.4 396.6 386.7C374.9 390.0 386.0 389.6 365.1 392.2C344.3 394.8 346.8 394.3 327.0 395.4C307.2 396.5 308.4 402.7 299.2 395.8C290.0 388.8 302.7 383.1 296.5 372.3C290.2 361.5 287.4 369.8 278.4 359.6C269.4 349.4 276.6 354.2 266.5 338.4C256.4 322.6 253.4 323.7 244.6 307.0C235.9 290.3 238.5 296.6 237.2 282.7C235.9 268.8 231.0 274.2 240.3 260.5Z"/><path class="jk-ring" d="M278.9 270.7C283.7 261.9 281.5 257.5 295.4 254.6C309.3 251.7 309.7 260.6 325.2 260.9C340.8 261.2 334.4 259.8 347.2 255.5C360.0 251.2 355.1 249.4 367.7 246.6C380.4 243.8 378.1 248.2 389.3 246.2C400.5 244.2 396.1 245.0 405.1 240.0C414.2 235.0 408.3 236.7 419.6 229.7C430.9 222.6 429.5 217.2 442.8 216.3C456.2 215.4 458.2 217.2 464.1 226.6C469.9 236.1 465.7 235.7 462.3 247.9C458.9 260.1 460.2 256.1 452.8 267.2C445.4 278.3 447.0 277.2 437.7 285.0C428.4 292.7 429.5 287.5 421.8 293.1C414.0 298.6 415.8 295.4 411.8 303.4C407.9 311.5 404.2 310.1 408.7 319.8C413.1 329.6 424.5 327.6 426.6 335.9C428.8 344.2 427.9 342.0 415.9 347.6C403.8 353.3 402.0 349.5 386.5 354.7C371.0 359.8 378.3 360.7 364.3 364.8C350.2 368.9 350.8 368.9 339.5 368.3C328.3 367.7 330.7 369.6 326.8 362.8C322.8 356.1 331.8 353.3 326.4 345.8C321.0 338.3 317.1 345.4 308.8 337.8C300.6 330.3 306.1 332.5 298.8 320.7C291.6 309.0 290.5 309.8 284.7 298.7C279.0 287.7 281.4 292.3 279.7 283.9C277.9 275.4 274.2 279.5 278.9 270.7Z"/><path class="jk-ring" d="M314.6 282.1C318.3 277.8 318.7 275.1 329.7 274.0C340.7 273.0 341.8 278.9 351.3 278.4C360.8 278.0 355.9 276.9 361.4 272.5C366.8 268.1 364.1 266.4 369.4 263.7C374.8 261.0 373.8 264.2 379.2 263.5C384.6 262.8 380.9 264.4 387.5 261.3C394.1 258.3 392.3 257.3 401.2 253.4C410.2 249.6 409.8 246.7 417.2 248.4C424.6 250.2 424.4 252.2 425.9 259.2C427.3 266.1 425.0 265.2 422.1 271.6C419.2 278.0 420.6 275.4 416.1 280.5C411.5 285.6 412.1 285.4 406.9 288.6C401.7 291.7 401.6 289.0 398.8 291.0C396.0 293.1 397.8 291.1 397.5 295.4C397.2 299.8 395.5 299.6 397.7 305.7C400.0 311.7 405.8 310.3 404.9 315.5C404.0 320.7 402.7 318.0 394.6 323.0C386.5 327.9 386.3 327.2 377.8 332.0C369.3 336.8 372.8 337.6 366.4 339.0C359.9 340.4 361.0 338.7 356.3 336.6C351.6 334.6 353.2 336.7 350.7 332.2C348.2 327.8 352.9 326.7 347.9 321.8C343.0 316.9 340.2 320.8 334.2 315.9C328.3 311.0 332.2 311.7 328.0 305.3C323.9 298.9 323.7 299.7 320.4 294.5C317.2 289.4 319.0 291.9 317.3 288.2C315.6 284.4 310.9 286.3 314.6 282.1Z"/></g>
+              <path class="jk-outline" pathLength="1" d="M57.0 226.4C78.6 194.3 81.7 182.2 131.5 169.4C181.3 156.5 179.8 188.3 223.0 183.6C266.1 178.9 239.9 171.2 275.2 153.7C310.5 136.2 297.4 129.5 340.6 125.2C383.7 120.9 375.9 139.4 419.0 139.4C462.1 139.4 445.1 141.9 484.3 125.2C523.5 108.5 512.4 104.8 549.7 83.9C586.9 62.9 576.3 53.2 608.5 55.4C640.6 57.5 643.1 64.1 656.8 91.0C670.5 117.9 660.9 113.1 654.2 145.2C647.5 177.2 654.2 165.0 634.6 197.9C615.0 230.8 616.3 229.2 588.9 254.9C561.4 280.5 564.7 262.0 543.1 283.4C521.6 304.8 532.7 294.1 517.0 326.1C501.3 358.2 485.0 353.9 490.8 390.2C496.7 426.6 532.7 417.3 536.6 447.2C540.5 477.2 539.2 468.6 503.9 490.0C468.6 511.4 464.1 504.0 419.0 518.5C373.9 533.0 396.8 535.0 353.6 538.4C310.5 541.9 316.4 535.9 275.2 529.9C234.1 523.9 239.9 536.9 216.4 518.5C192.9 500.1 218.4 492.1 196.8 468.6C175.3 445.1 166.1 463.6 144.5 440.1C123.0 416.6 144.5 424.5 124.9 390.2C105.3 356.0 98.8 360.3 79.2 326.1C59.6 291.9 66.3 306.2 59.6 276.2C52.9 246.3 35.4 258.4 57.0 226.4Z"/>
+              <g class="jk-pins" aria-hidden="true"><g class="jk-pin" data-region="palamu" transform="translate(153.7 243.5)"><circle class="jk-pin-halo" r="15"/><circle class="jk-pin-dot" r="5"/><text class="jk-pin-label" x="16" y="6">Palamu</text></g><g class="jk-pin" data-region="ranchi" transform="translate(318.4 340.4)"><circle class="jk-pin-halo" r="15"/><circle class="jk-pin-dot" r="5"/><text class="jk-pin-label" x="16" y="6">Ranchi</text></g><g class="jk-pin" data-region="dumka" transform="translate(569.3 209.3)"><circle class="jk-pin-halo" r="15"/><circle class="jk-pin-dot" r="5"/><text class="jk-pin-label" x="16" y="6">Dumka</text></g><g class="jk-pin" data-region="gumla" transform="translate(215.1 384.6)"><circle class="jk-pin-halo" r="15"/><circle class="jk-pin-dot" r="5"/><text class="jk-pin-label" x="16" y="6">Gumla</text></g><g class="jk-pin" data-region="simdega" transform="translate(211.2 444.4)"><circle class="jk-pin-halo" r="15"/><circle class="jk-pin-dot" r="5"/><text class="jk-pin-label" x="16" y="6">Simdega</text></g></g>
+            </svg>
+            <figcaption>
+              Outline and region positions are approximate and illustrative for
+              this prototype.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -746,169 +747,155 @@
 
       <!-- ============ B2B ============ -->
       <section class="business" id="business">
-        <div class="business-inner">
-          <p class="eyebrow eyebrow-light">For business</p>
-          <h2>For businesses looking for responsible botanical sourcing.</h2>
-          <p class="business-sub">
-            Discover regional suppliers, herbal ingredients and traceable
-            sourcing opportunities through one digital platform.
-          </p>
+        <div class="biz-inner">
+          <div class="biz-copy">
+            <h2>For businesses looking for responsible botanical sourcing.</h2>
+            <p class="biz-sub">
+              Discover regional suppliers, herbal ingredients and traceable
+              sourcing opportunities through one digital platform.
+            </p>
 
-          <div class="business-features">
-            <div class="business-feature" data-fade>
-              <span>Bulk sourcing</span>
-            </div>
-            <div class="business-feature" data-fade>
-              <span>Batch information</span>
-            </div>
-            <div class="business-feature" data-fade>
-              <span>Regional sourcing</span>
-            </div>
-            <div class="business-feature" data-fade>
-              <span>Traceability</span>
-            </div>
-            <div class="business-feature" data-fade>
-              <span>Community suppliers</span>
-            </div>
+            <ul class="biz-list">
+              <li><strong>Bulk sourcing</strong><span>Volumes suited to manufacturers and retailers</span></li>
+              <li><strong>Batch information</strong><span>Harvest and processing details for every batch</span></li>
+              <li><strong>Regional sourcing</strong><span>Find suppliers by district and forest region</span></li>
+              <li><strong>Traceability</strong><span>Each batch linked back to where it came from</span></li>
+              <li><strong>Community suppliers</strong><span>Work directly with local collectives</span></li>
+            </ul>
+
+            <a href="businesses.html" class="btn btn-primary-light" data-magnetic
+              ><span>Explore Bulk Sourcing</span></a
+            >
           </div>
 
-          <a href="businesses.html" class="btn btn-primary-light" data-magnetic
-            ><span>Explore Bulk Sourcing</span></a
-          >
+          <div class="biz-stack">
+            <article class="biz-sheet" aria-label="Sample batch record">
+              <header class="biz-sheet-head">
+                <div>
+                  <h3>Ashwagandha root</h3>
+                  <p class="biz-sheet-latin">Withania somnifera</p>
+                </div>
+                <span class="biz-sheet-tag">Sample record</span>
+              </header>
+              <dl class="biz-sheet-rows">
+                <div><dt>Region</dt><dd>Ranchi district</dd></div>
+                <div><dt>Plant part</dt><dd>Root</dd></div>
+                <div><dt>Harvest</dt><dd>Winter season</dd></div>
+                <div><dt>Processing</dt><dd>Cleaned and sun-dried</dd></div>
+                <div><dt>Supplier</dt><dd>Community collective</dd></div>
+                <div><dt>Batch size</dt><dd>250 kg</dd></div>
+              </dl>
+              <footer class="biz-sheet-foot">
+                <svg width="28" height="28" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+                  <rect x="4" y="4" width="20" height="20" stroke="currentColor" stroke-width="4"/>
+                  <rect x="48" y="4" width="20" height="20" stroke="currentColor" stroke-width="4"/>
+                  <rect x="4" y="48" width="20" height="20" stroke="currentColor" stroke-width="4"/>
+                  <rect x="34" y="34" width="10" height="10" fill="currentColor"/>
+                  <rect x="54" y="52" width="14" height="14" fill="currentColor"/>
+                </svg>
+                <span>Traceable from forest to batch</span>
+              </footer>
+            </article>
+          </div>
         </div>
       </section>
 
       <!-- ============ SUSTAINABILITY ============ -->
       <section class="sustainability" id="sustainability">
-        <div class="sustainability-inner">
-          <div class="sustainability-copy">
-            <p class="eyebrow">Sustainability</p>
-            <h2>The forest is<br />part of the product.</h2>
-            <p class="sustainability-lead">
+        <div class="sus-inner">
+          <div class="sus-media">
+            <img
+              src="https://images.unsplash.com/photo-1516214104703-d870798883c5?q=80&w=1400&auto=format&fit=crop"
+              alt="Forested hills of Jharkhand"
+            />
+          </div>
+
+          <div class="sus-copy">
+            <h2>The forest is part of the product.</h2>
+            <p class="sus-lead">
               Responsible sourcing begins with protecting the ecosystems that
               make these plants possible.
             </p>
-            <div class="sustainability-media" data-reveal-clip>
-              <img
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
-                alt="Forest canopy representing biodiversity"
-              />
-            </div>
+            <ul class="sus-grid">
+              <li class="sus-item">
+                <svg class="sus-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 41H42"/><path d="M24 41V21"/><path d="M24 29C16.5 29 12 24 12 16.5C19.5 16.5 24 21.5 24 29Z"/><path d="M24 22C24 15.5 28 11 35.5 10.5C35.5 17.5 31.5 22 24 22Z"/></svg>
+                <h3>Sustainable harvesting</h3>
+                <p>Collection methods designed to let plants and habitats regenerate.</p>
+              </li>
+              <li class="sus-item">
+                <svg class="sus-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="15"/><path d="M24 9V39M9 24H39"/><path d="M24 24V9A15 15 0 0 1 39 24Z" fill="currentColor" fill-opacity=".18"/></svg>
+                <h3>Seasonal harvesting</h3>
+                <p>Timing collection to natural growth cycles rather than constant demand.</p>
+              </li>
+              <li class="sus-item">
+                <svg class="sus-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 38C10 27 16 20 25 20C25 31 19 38 10 38Z"/><path d="M10 38L21 27"/><path d="M29 40C27 31 30 22 38 16C40.5 25 37 35 29 40Z"/><path d="M29 40L36 26"/><circle cx="16" cy="12" r="3.5"/><circle cx="31" cy="9" r="2"/></svg>
+                <h3>Biodiversity</h3>
+                <p>Awareness of the wider ecosystem each plant belongs to, not just the yield.</p>
+              </li>
+              <li class="sus-item">
+                <svg class="sus-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="36" r="3.5"/><circle cx="24" cy="12" r="3.5"/><circle cx="38" cy="36" r="3.5"/><path d="M12 32.5L22 15.5M26 15.5L36 32.5M15 36H33" stroke-dasharray="2 3.5"/></svg>
+                <h3>Traceability</h3>
+                <p>A visible record connecting every product back to where and how it was sourced.</p>
+              </li>
+            </ul>
           </div>
-
-          <ul class="sustainability-list">
-            <li data-fade>
-              <span class="sustainability-line"></span>
-              <div>
-                <h4>Sustainable harvesting</h4>
-                <p>
-                  Collection methods designed to let plants and habitats
-                  regenerate.
-                </p>
-              </div>
-            </li>
-            <li data-fade>
-              <span class="sustainability-line"></span>
-              <div>
-                <h4>Seasonal harvesting</h4>
-                <p>
-                  Timing collection to natural growth cycles rather than
-                  constant demand.
-                </p>
-              </div>
-            </li>
-            <li data-fade>
-              <span class="sustainability-line"></span>
-              <div>
-                <h4>Biodiversity</h4>
-                <p>
-                  Awareness of the wider ecosystem each plant belongs to, not
-                  just the yield.
-                </p>
-              </div>
-            </li>
-            <li data-fade>
-              <span class="sustainability-line"></span>
-              <div>
-                <h4>Traceability</h4>
-                <p>
-                  A visible record connecting every product back to where and
-                  how it was sourced.
-                </p>
-              </div>
-            </li>
-          </ul>
         </div>
       </section>
 
       <!-- ============ FINAL CTA ============ -->
       <section class="final-cta" id="finalCta">
-        <svg
-          class="final-cta-botanical"
-          id="finalCtaBotanical"
-          viewBox="0 0 900 500"
-          fill="none"
-          aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <path
-            d="M450 40C450 40 470 160 450 250C430 340 450 460 450 460"
-            stroke="#F5F1E8"
-            stroke-width="1"
-          />
-          <path
-            d="M450 120C450 120 380 90 340 130C300 170 320 220 320 220"
-            stroke="#F5F1E8"
-            stroke-width="1"
-          />
-          <path
-            d="M450 120C450 120 520 90 560 130C600 170 580 220 580 220"
-            stroke="#F5F1E8"
-            stroke-width="1"
-          />
-          <path
-            d="M450 220C450 220 370 200 320 240C270 280 290 330 290 330"
-            stroke="#F5F1E8"
-            stroke-width="1"
-          />
-          <path
-            d="M450 220C450 220 530 200 580 240C630 280 610 330 610 330"
-            stroke="#F5F1E8"
-            stroke-width="1"
-          />
-          <path
-            d="M450 320C450 320 390 310 360 345C330 380 345 415 345 415"
-            stroke="#F5F1E8"
-            stroke-width="1"
-          />
-          <path
-            d="M450 320C450 320 510 310 540 345C570 380 555 415 555 415"
-            stroke="#F5F1E8"
-            stroke-width="1"
-          />
-        </svg>
+        <div class="cta-inner">
+          <div class="cta-head">
+            <h2>Start with a plant.<br />Discover the story behind it.</h2>
+            <p>
+              Explore traditionally valued herbs, discover their origins and
+              connect with the knowledge behind them.
+            </p>
+          </div>
 
-        <div class="final-cta-content">
-          <p class="eyebrow eyebrow-light">Get started</p>
-          <h2>
-            Start with a plant.<br /><span class="line-serif"
-              >Discover the story behind it.</span
-            >
-          </h2>
-          <p>
-            Explore traditionally valued herbs, discover their origins and
-            connect with the knowledge behind them.
-          </p>
-          <div class="final-cta-actions">
-            <a href="shop.html" class="btn btn-primary-light" data-magnetic
-              ><span>Explore Products</span></a
-            >
-            <a
-              href="plants.html#identify"
-              class="btn btn-ghost-light"
-              data-magnetic
-              ><span>Identify a Plant</span></a
-            >
+          <div class="cta-paths">
+            <article class="cta-path cta-shop">
+              <div class="cta-art"><svg class="cta-decor cta-decor-branch" viewBox="270 30 360 440" fill="none" aria-hidden="true" preserveAspectRatio="xMaxYMid meet">
+              <g stroke="currentColor" stroke-width="1.2">
+                <path class="draw" pathLength="1" d="M450 40C450 40 470 160 450 250C430 340 450 460 450 460"/>
+                <path class="draw" pathLength="1" d="M450 120C450 120 380 90 340 130C300 170 320 220 320 220"/>
+                <path class="draw" pathLength="1" d="M450 120C450 120 520 90 560 130C600 170 580 220 580 220"/>
+                <path class="draw" pathLength="1" d="M450 220C450 220 370 200 320 240C270 280 290 330 290 330"/>
+                <path class="draw" pathLength="1" d="M450 220C450 220 530 200 580 240C630 280 610 330 610 330"/>
+                <path class="draw" pathLength="1" d="M450 320C450 320 390 310 360 345C330 380 345 415 345 415"/>
+                <path class="draw" pathLength="1" d="M450 320C450 320 510 310 540 345C570 380 555 415 555 415"/>
+              </g>
+            </svg></div>
+              <h3>Browse the herbs.</h3>
+              <p>
+                Traditionally valued roots, stems and flowers, each with its
+                origin, plant part and sourcing on record.
+              </p>
+              <a href="shop.html" class="btn btn-primary-light" data-magnetic
+                ><span>Explore Products</span></a
+              >
+            </article>
+
+            <article class="cta-path cta-identify">
+              <div class="cta-art"><svg class="cta-decor cta-decor-scan" viewBox="0 0 320 320" fill="none" aria-hidden="true" preserveAspectRatio="xMaxYMid meet">
+              <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path class="draw" pathLength="1" d="M20 70V20H70M250 20H300V70M300 250V300H250M70 300H20V250"/>
+                <path class="draw" pathLength="1" d="M160 250C160 250 100 205 100 150C100 105 130 75 160 55C190 75 220 105 220 150C220 205 160 250 160 250Z"/>
+                <path class="draw" pathLength="1" d="M160 250V120"/>
+                <path class="draw" pathLength="1" d="M160 195L192 163M160 165L130 137"/>
+              </g>
+              <circle class="scan-dot" cx="192" cy="163" r="4" fill="currentColor"/>
+              <circle class="scan-dot" cx="130" cy="137" r="4" fill="currentColor"/>
+            </svg></div>
+              <h3>Or start with a photo.</h3>
+              <p>
+                Snap a plant to see what it is, how it is traditionally known
+                and where its story begins.
+              </p>
+              <a href="plants.html#identify" class="btn btn-primary" data-magnetic
+                ><span>Identify a Plant</span></a
+              >
+            </article>
           </div>
         </div>
       </section>
