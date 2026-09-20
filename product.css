@@ -1,0 +1,120 @@
+/* ============================================================
+   TRIBAL DOCTOR — PRODUCT PAGE
+   ============================================================ */
+
+.breadcrumb{
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 30px var(--gutter) 0;
+  font-size: 13px; color: var(--muted);
+}
+.breadcrumb a{ color: var(--muted); }
+.breadcrumb a:hover{ color: var(--forest); }
+
+.product-detail{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px var(--gutter) 90px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.product-media-col{
+  border-radius: 16px;
+  overflow:hidden;
+  aspect-ratio: 1/1;
+  background: var(--cream);
+  border: 1px solid var(--border);
+}
+.product-media-col img{ width:100%; height:100%; object-fit:cover; }
+
+.product-info-col{ display:flex; flex-direction:column; }
+.product-info-col h1{
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 42px);
+  color: var(--deep-forest);
+}
+.product-scientific{ font-family: var(--font-serif); font-style: italic; color: var(--moss); font-size: 17px; margin-top: 6px; }
+.product-price-row{ display:flex; align-items:center; gap:14px; margin-top: 20px; }
+.product-price{ font-size: 26px; font-weight: 700; color: var(--charcoal); }
+
+.product-facts{
+  display:flex; flex-wrap:wrap; gap: 10px 28px;
+  margin-top: 22px; padding: 18px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.product-fact{ display:flex; flex-direction:column; gap:4px; }
+.product-fact span:first-child{ font-size: 11.5px; letter-spacing:0.08em; text-transform:uppercase; color: var(--muted); }
+.product-fact span:last-child{ font-size: 14.5px; color: var(--charcoal); font-weight: 600; }
+
+.product-desc{ margin-top: 22px; color: var(--muted); line-height: 1.7; font-size: 15px; }
+
+.product-knowledge{
+  margin-top: 18px;
+  padding: 18px 20px;
+  background: var(--cream);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.product-knowledge h4{ font-size: 12.5px; letter-spacing:0.06em; text-transform:uppercase; color: var(--earth); margin-bottom: 8px; }
+.product-knowledge p{ font-size: 14px; color: var(--charcoal); line-height:1.6; }
+
+.product-actions{ margin-top: 30px; display:flex; flex-wrap:wrap; align-items:center; gap: 16px; }
+
+.qty-selector{
+  display:flex; align-items:center;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  overflow:hidden;
+}
+.qty-selector button{
+  width: 40px; height: 44px;
+  font-size: 18px; color: var(--charcoal);
+  display:flex; align-items:center; justify-content:center;
+}
+.qty-selector button:hover{ background: var(--cream); }
+.qty-selector span{ width: 34px; text-align:center; font-weight:700; font-size: 15px; }
+
+.product-buttons{ display:flex; flex-wrap:wrap; gap: 12px; flex:1; }
+.product-buttons .btn{ flex:1; min-width: 150px; }
+
+.added-toast{
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--forest);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.added-toast.show{ opacity: 1; }
+
+.not-found{
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 100px var(--gutter);
+  text-align:center;
+}
+.not-found h2{ font-family: var(--font-serif); font-size: 32px; font-weight:400; color: var(--deep-forest); }
+.not-found p{ color: var(--muted); margin-top:10px; }
+.not-found .btn{ margin-top: 24px; }
+
+@media (max-width: 860px){
+  .product-detail{ grid-template-columns: 1fr; gap: 30px; }
+}
+
+/* ============ MAKE-IT PLACEHOLDER PAGE ============ */
+.make-page{
+  max-width: 640px; margin: 0 auto;
+  padding: 100px var(--gutter) 120px;
+  text-align:center;
+}
+.make-page h1{
+  font-family: var(--font-serif); font-weight:400;
+  font-size: clamp(32px, 5vw, 46px);
+  color: var(--deep-forest);
+}
+.make-page .product-name{ color: var(--earth); }
+.make-page p{ color: var(--muted); margin-top: 16px; line-height:1.7; font-size: 15px; }
+.make-page .btn{ margin-top: 30px; }
+.make-leaf{ margin: 0 auto 20px; color: var(--sage); }

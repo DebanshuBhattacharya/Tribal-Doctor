@@ -1,0 +1,71 @@
+/* ============================================================
+   TRIBAL DOCTOR — CART PAGE
+   ============================================================ */
+
+.cart-layout{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 36px var(--gutter) 100px;
+  display:grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items:start;
+}
+
+.cart-items{ display:flex; flex-direction:column; gap: 16px; }
+
+.cart-item{
+  display:grid;
+  grid-template-columns: 84px 1fr auto auto;
+  align-items:center;
+  gap: 18px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--paper);
+}
+.cart-item-media{ width: 84px; height: 84px; border-radius: 10px; overflow:hidden; background: var(--cream); }
+.cart-item-media img{ width:100%; height:100%; object-fit:cover; }
+
+.cart-item-info h4{ font-family: var(--font-serif); font-weight:400; font-size: 19px; color: var(--deep-forest); }
+.cart-item-info .cart-item-price{ font-size: 13.5px; color: var(--muted); margin-top: 4px; }
+.cart-item-remove{ font-size: 12px; color: var(--clay); margin-top: 6px; font-weight:600; }
+.cart-item-remove:hover{ text-decoration: underline; }
+
+.cart-item-qty{
+  display:flex; align-items:center;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  overflow:hidden;
+}
+.cart-item-qty button{ width: 32px; height: 36px; font-size: 16px; display:flex; align-items:center; justify-content:center; }
+.cart-item-qty button:hover{ background: var(--cream); }
+.cart-item-qty span{ width: 28px; text-align:center; font-weight:700; font-size: 14px; }
+
+.cart-item-total{ font-weight:700; font-size: 15px; min-width: 76px; text-align:right; }
+
+.cart-summary{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 22px;
+  background: var(--cream);
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+.cart-summary h3{ font-family: var(--font-serif); font-weight:400; font-size: 22px; color: var(--deep-forest); margin-bottom: 18px; }
+.cart-summary-row{ display:flex; justify-content:space-between; font-size: 14px; color: var(--muted); padding: 8px 0; }
+.cart-summary-row.total{ border-top: 1px solid var(--border); margin-top: 8px; padding-top: 14px; font-weight:700; color: var(--charcoal); font-size: 16px; }
+.free-delivery-note{ font-size: 12.5px; color: var(--forest); margin-top: 10px; }
+.cart-summary .btn{ margin-top: 20px; }
+
+@media (max-width: 860px){
+  .cart-layout{ grid-template-columns: 1fr; }
+  .cart-summary{ position: static; }
+}
+@media (max-width: 520px){
+  .cart-item{ grid-template-columns: 60px 1fr; grid-template-areas: "media info" "media qty" "media total"; row-gap: 8px; }
+  .cart-item-media{ width:60px; height:60px; grid-area: media; }
+  .cart-item-info{ grid-area: info; }
+  .cart-item-qty{ grid-area: qty; justify-self:start; }
+  .cart-item-total{ grid-area: total; justify-self:start; text-align:left; }
+}

@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribal Doctor — Rooted in knowledge. Connected by technology.</title>
+    <meta
+      name="description"
+      content="Tribal Doctor connects Jharkhand's traditional medicinal plant knowledge, verified herbal products, and the communities that preserve them."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ LOADER ============ -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-mark">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 2C14 2 6 8 6 16C6 20.4183 9.58172 24 14 24C18.4183 24 22 20.4183 22 16C22 8 14 2 14 2Z"
+            stroke="#F5F1E8"
+            stroke-width="1.2"
+          />
+          <path d="M14 24V14" stroke="#F5F1E8" stroke-width="1.2" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="navbar" id="navbar" data-component="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="logo" aria-label="Tribal Doctor home">
+          <span class="logo-mark">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 2C14 2 6 8 6 16C6 20.4183 9.58172 24 14 24C18.4183 24 22 20.4183 22 16C22 8 14 2 14 2Z"
+                stroke="currentColor"
+                stroke-width="1.3"
+              />
+              <path d="M14 24V14" stroke="currentColor" stroke-width="1.3" />
+            </svg>
+          </span>
+          <span class="logo-text">TRIBAL DOCTOR</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="shop.html" class="nav-link" data-nav-link
+            ><span>Shop</span></a
+          >
+          <a href="plants.html" class="nav-link" data-nav-link
+            ><span>Explore Plants</span></a
+          >
+          <a href="knowledge.html" class="nav-link" data-nav-link
+            ><span>Knowledge</span></a
+          >
+          <a href="communities.html" class="nav-link" data-nav-link
+            ><span>Communities</span></a
+          >
+        </nav>
+
+        <div class="nav-actions">
+          <a href="plants.html#identify" class="nav-identify"
+            ><span>Identify a Plant</span></a
+          >
+          <a href="cart.html" class="nav-cart" aria-label="Cart">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 4H5L5.4 6M5.4 6H20L18 13H7M5.4 6L7 13M7 13L5 17H18"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="9" cy="20" r="1" fill="currentColor" />
+              <circle cx="17" cy="20" r="1" fill="currentColor" />
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu" data-component="mobile-menu">
+      <nav class="mobile-menu-links" aria-label="Mobile">
+        <a href="shop.html">Shop</a>
+        <a href="plants.html">Explore Plants</a>
+        <a href="knowledge.html">Knowledge</a>
+        <a href="communities.html">Communities</a>
+        <a href="plants.html#identify" class="mobile-menu-cta"
+          >Identify a Plant</a
+        >
+      </nav>
+      <div class="mobile-menu-footer">
+        <span>Rooted in knowledge.</span>
+        <span>Connected by technology.</span>
+      </div>
+    </div>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="hero">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow hero-eyebrow" data-reveal>
+              Rooted in knowledge. Connected by technology.
+            </p>
+            <h1 class="hero-heading">
+              <span class="line" data-line>From the forests</span>
+              <span class="line" data-line>of Jharkhand to a</span>
+              <span class="line line-serif" data-line
+                >more connected future.</span
+              >
+            </h1>
+            <p class="hero-sub" data-reveal>
+              Discover traditionally valued medicinal plants, the knowledge
+              behind them, and responsibly sourced herbal products connected to
+              the communities that preserve them.
+            </p>
+            <div class="hero-ctas" data-reveal>
+              <a href="shop.html" class="btn btn-primary" data-magnetic>
+                <span>Explore Herbal Products</span>
+              </a>
+              <a
+                href="plants.html#identify"
+                class="btn btn-ghost"
+                data-magnetic
+              >
+                <span>Identify a Plant</span>
+              </a>
+            </div>
+
+            <div class="hero-stats" data-reveal>
+              <div class="hero-stat">
+                <span class="hero-stat-num">01</span>
+                <span>Community connected</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-num">02</span>
+                <span>Responsibly sourced</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-num">03</span>
+                <span>Traceable origins</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-visual-main" id="heroVisualMain">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ-PnACxw2ZvtNL1bEjZnSZYLuY7ySDmHcSedBRhOnWQ&s=10"
+                alt="Botanical detail of a medicinal leaf"
+              />
+            </div>
+            <div class="hero-visual-secondary" id="heroVisualSecondary">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ10H6RSt_x1SPnemsIAmAkJMCgSSVjsqcPNHd0L_CS0w&s=10"
+                alt="Hands holding dried medicinal roots"
+              />
+            </div>
+            <span class="hero-visual-tag" id="heroVisualTag"
+              >Jharkhand sourced</span
+            >
+          </div>
+        </div>
+
+        <div class="hero-scroll-cue" aria-hidden="true">
+          <span></span>
+        </div>
+      </section>
+
+      <!-- ============ TRUST STRIP ============ -->
+      <section class="trust-strip" aria-label="What Tribal Doctor stands for">
+        <div class="trust-track">
+          <span>Community connected</span>
+          <span>Responsibly sourced</span>
+          <span>Traceable origins</span>
+          <span>Traditional knowledge</span>
+        </div>
+      </section>
+
+      <!-- ============ WHY TRIBAL DOCTOR ============ -->
+      <section class="why" id="why">
+        <div class="why-inner">
+          <div class="why-media" data-reveal-clip>
+            <img
+              src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=1400&auto=format&fit=crop"
+              alt="Hands gathering dried medicinal herbs"
+            />
+          </div>
+          <div class="why-copy">
+            <p class="eyebrow">Why we exist</p>
+            <h2 class="why-statement" data-split>
+              Traditional knowledge shouldn't disappear simply because it was
+              never written down.
+            </h2>
+            <svg
+              class="why-line"
+              width="120"
+              height="24"
+              viewBox="0 0 120 24"
+              fill="none"
+            >
+              <path
+                d="M2 18C20 4 40 22 60 12C80 2 100 20 118 8"
+                stroke="#8A6A4A"
+                stroke-width="1.4"
+                fill="none"
+              />
+            </svg>
+            <p class="why-text" data-fade>
+              Across generations, communities have carried knowledge about
+              plants, forests and traditional wellness practices. Much of that
+              knowledge remains fragmented, difficult to discover and
+              disconnected from modern markets.
+            </p>
+            <p class="why-text" data-fade>
+              Tribal Doctor creates a digital bridge between this knowledge,
+              responsible commerce and the people who preserve it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PINNED STORYTELLING ============ -->
+      <section class="story" id="story" data-component="pinned-story">
+        <div class="story-heading">
+          <h2>A plant is more than a product.</h2>
+        </div>
+
+        <div class="story-pin">
+          <div class="story-progress" aria-hidden="true">
+            <span id="storyProgressBar"></span>
+          </div>
+
+          <div class="story-stage" data-stage="0">
+            <div class="story-visual">
+              <img
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop"
+                alt="Sunlight through forest trees"
+              />
+            </div>
+            <div class="story-text">
+              <span class="story-index">01</span>
+              <h3>It begins in the forest.</h3>
+              <p>Every plant has a place, a season and an ecosystem.</p>
+            </div>
+          </div>
+
+          <div class="story-stage" data-stage="1">
+            <div class="story-visual">
+              <img
+                src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=1600&auto=format&fit=crop"
+                alt="Hands preparing traditional herbal remedies"
+              />
+            </div>
+            <div class="story-text">
+              <span class="story-index">02</span>
+              <h3>Then comes knowledge.</h3>
+              <p>
+                Generations of communities have carried knowledge about plants
+                through lived experience and oral traditions.
+              </p>
+            </div>
+          </div>
+
+          <div class="story-stage" data-stage="2">
+            <div class="story-visual">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
+                alt="Digital interface showing plant documentation"
+              />
+            </div>
+            <div class="story-text">
+              <span class="story-index">03</span>
+              <h3>Then comes connection.</h3>
+              <p>
+                Technology can help document, organize and make responsibly
+                shared knowledge easier to discover.
+              </p>
+            </div>
+          </div>
+
+          <div class="story-stage" data-stage="3">
+            <div class="story-visual">
+              <img
+                src="https://images.unsplash.com/photo-1607083681678-a68f4d5df924?q=80&w=1600&auto=format&fit=crop"
+                alt="Herbal products ready for community marketplace"
+              />
+            </div>
+            <div class="story-text">
+              <span class="story-index">04</span>
+              <h3>And finally, value returns to the community.</h3>
+              <p>
+                Responsible commerce can create new opportunities while keeping
+                provenance and sustainability visible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FEATURED PRODUCTS ============ -->
+      <section class="products" id="products">
+        <div class="section-head">
+          <h2>Explore what the forest has to offer.</h2>
+          <p>
+            Discover traditionally valued herbs and forest products with
+            information about their origin, plant part and sourcing.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-card>
+            <div class="product-media">
+              <img
+                src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?q=80&w=900&auto=format&fit=crop"
+                alt="Ashwagandha root"
+              />
+              <span class="product-origin">Root · Jharkhand</span>
+            </div>
+            <div class="product-info">
+              <div class="product-titles">
+                <h3>Ashwagandha Root</h3>
+                <p class="product-latin">Withania somnifera</p>
+              </div>
+              <div class="product-meta">
+                <span class="product-price">₹399</span>
+                <span class="product-tag">Traditionally valued root</span>
+              </div>
+              <a
+                href="product.html?id=ashwagandha"
+                class="product-link"
+                data-magnetic
+              >
+                <span>View product</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M1 7H13M13 7L8 2M13 7L8 12"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card" data-card>
+            <div class="product-media">
+              <img
+                src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=900&auto=format&fit=crop"
+                alt="Giloy stem cuttings"
+              />
+              <span class="product-origin">Stem · Jharkhand</span>
+            </div>
+            <div class="product-info">
+              <div class="product-titles">
+                <h3>Giloy</h3>
+                <p class="product-latin">Tinospora cordifolia</p>
+              </div>
+              <div class="product-meta">
+                <span class="product-price">₹299</span>
+                <span class="product-tag">Traditionally used herb</span>
+              </div>
+              <a
+                href="product.html?id=giloy"
+                class="product-link"
+                data-magnetic
+              >
+                <span>View product</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M1 7H13M13 7L8 2M13 7L8 12"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card" data-card>
+            <div class="product-media">
+              <img
+                src="https://images.unsplash.com/photo-1609501676725-7186f017a4b7?q=80&w=900&auto=format&fit=crop"
+                alt="Shatavari root bundle"
+              />
+              <span class="product-origin">Root · Jharkhand</span>
+            </div>
+            <div class="product-info">
+              <div class="product-titles">
+                <h3>Shatavari Root</h3>
+                <p class="product-latin">Asparagus racemosus</p>
+              </div>
+              <div class="product-meta">
+                <span class="product-price">₹449</span>
+                <span class="product-tag"
+                  >Traditional botanical ingredient</span
+                >
+              </div>
+              <a
+                href="product.html?id=shatavari"
+                class="product-link"
+                data-magnetic
+              >
+                <span>View product</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M1 7H13M13 7L8 2M13 7L8 12"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card" data-card>
+            <div class="product-media">
+              <img
+                src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=900&auto=format&fit=crop"
+                alt="Dried mahua flowers"
+              />
+              <span class="product-origin">Flower · Jharkhand</span>
+            </div>
+            <div class="product-info">
+              <div class="product-titles">
+                <h3>Mahua Flower</h3>
+                <p class="product-latin">Madhuca longifolia</p>
+              </div>
+              <div class="product-meta">
+                <span class="product-price">₹249</span>
+                <span class="product-tag">Forest-sourced botanical</span>
+              </div>
+              <a
+                href="product.html?id=mahua"
+                class="product-link"
+                data-magnetic
+              >
+                <span>View product</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M1 7H13M13 7L8 2M13 7L8 12"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ AI PLANT IDENTIFICATION ============ -->
+      <section class="identify" id="identify">
+        <div class="identify-inner">
+          <div class="identify-media">
+            <img
+              src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1200&auto=format&fit=crop"
+              alt="Close-up botanical detail of a leaf"
+            />
+            <div class="scan-line" id="scanLine" aria-hidden="true"></div>
+            <span class="marker marker-1" data-marker></span>
+            <span class="marker marker-2" data-marker></span>
+          </div>
+
+          <div class="identify-copy">
+            <p class="eyebrow">AI plant identification</p>
+            <h2>Know the plant before you buy it.</h2>
+            <p class="identify-desc">
+              Snap a photo. Discover the plant. Explore its traditional
+              knowledge, origin and responsible-use information.
+            </p>
+
+            <div class="identify-card" id="identifyCard">
+              <div class="identify-card-head">
+                <span class="status-dot"></span>
+                <span>Identification complete</span>
+              </div>
+              <div class="identify-card-body">
+                <div>
+                  <h4>Ashwagandha</h4>
+                  <p class="latin">Withania somnifera</p>
+                </div>
+                <div class="confidence">
+                  <span class="confidence-num" id="confidenceNum">0</span
+                  ><span>%</span>
+                  <p>Confidence</p>
+                </div>
+              </div>
+              <div class="identify-card-foot">
+                <span>Traditionally documented</span>
+                <span>Root · Herb</span>
+              </div>
+              <a href="plant.html?id=ashwagandha" class="identify-card-link"
+                >Explore plant <span>→</span></a
+              >
+            </div>
+
+            <a href="plants.html#identify" class="btn btn-primary" data-magnetic
+              ><span>Identify a Plant</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ KNOWLEDGE PASSPORT ============ -->
+      <section class="passport" id="passport">
+        <div class="section-head">
+          <p class="eyebrow">The knowledge passport</p>
+          <h2>
+            Know where it came from.<br class="br-desktop" />
+            Know the story behind it.
+          </h2>
+        </div>
+
+        <div class="passport-inner">
+          <div class="passport-timeline" id="passportTimeline">
+            <div class="passport-line" aria-hidden="true">
+              <span id="passportLineFill"></span>
+            </div>
+
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Plant</span>
+                <p>Ashwagandha, identified and catalogued.</p>
+              </div>
+            </div>
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Traditional name</span>
+                <p>Local names recorded alongside the botanical name.</p>
+              </div>
+            </div>
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Region</span>
+                <p>Sourcing region documented for traceability.</p>
+              </div>
+            </div>
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Community knowledge</span>
+                <p>Traditional use documented with community permission.</p>
+              </div>
+            </div>
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Plant part</span>
+                <p>
+                  The specific part used is recorded — root, leaf or flower.
+                </p>
+              </div>
+            </div>
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Harvest information</span>
+                <p>Season and method of harvest, kept on record.</p>
+              </div>
+            </div>
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Processing</span>
+                <p>Drying, cleaning and preparation steps documented.</p>
+              </div>
+            </div>
+            <div class="passport-step" data-step>
+              <span class="passport-dot"></span>
+              <div class="passport-content">
+                <span class="passport-label">Product</span>
+                <p>Ready for discovery, with its story attached.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="passport-visual">
+            <div class="qr-card">
+              <div class="qr-mark" aria-hidden="true">
+                <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                  <rect
+                    x="4"
+                    y="4"
+                    width="20"
+                    height="20"
+                    stroke="#1D211D"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="48"
+                    y="4"
+                    width="20"
+                    height="20"
+                    stroke="#1D211D"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="4"
+                    y="48"
+                    width="20"
+                    height="20"
+                    stroke="#1D211D"
+                    stroke-width="2"
+                  />
+                  <rect x="10" y="10" width="8" height="8" fill="#1D211D" />
+                  <rect x="54" y="10" width="8" height="8" fill="#1D211D" />
+                  <rect x="10" y="54" width="8" height="8" fill="#1D211D" />
+                  <rect x="32" y="4" width="6" height="6" fill="#1D211D" />
+                  <rect x="32" y="32" width="8" height="8" fill="#1D211D" />
+                  <rect x="48" y="32" width="6" height="6" fill="#1D211D" />
+                  <rect x="60" y="48" width="8" height="8" fill="#1D211D" />
+                  <rect x="32" y="60" width="6" height="6" fill="#1D211D" />
+                </svg>
+              </div>
+              <p>
+                Every passport is a traceable record — from forest to product.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ JHARKHAND ============ -->
+      <section class="jharkhand" id="jharkhand">
+        <div class="jharkhand-media">
+          <img
+            src="https://images.unsplash.com/photo-1516214104703-d870798883c5?q=80&w=1800&auto=format&fit=crop"
+            alt="Forested hills of Jharkhand"
+          />
+          <div class="jharkhand-scrim"></div>
+        </div>
+
+        <div class="jharkhand-content">
+          <div class="jharkhand-copy">
+            <p class="eyebrow eyebrow-light">Where it comes from</p>
+            <h2>Rooted in<br />Jharkhand.</h2>
+            <p>
+              Jharkhand's forests hold extraordinary biodiversity and
+              generations of plant knowledge. Tribal Doctor aims to create a
+              digital layer connecting plants, people, knowledge and responsible
+              commerce.
+            </p>
+            <a
+              href="plants.html?region=jharkhand"
+              class="btn btn-ghost-light"
+              data-magnetic
+              ><span>Explore Jharkhand</span></a
+            >
+          </div>
+
+          <div class="jharkhand-index" aria-label="Sourcing regions">
+            <span class="jharkhand-index-label">Sourcing regions</span>
+            <ul class="jharkhand-index-list">
+              <li data-jregion><span class="jregion-line"></span>Palamu</li>
+              <li data-jregion><span class="jregion-line"></span>Ranchi</li>
+              <li data-jregion><span class="jregion-line"></span>Dumka</li>
+              <li data-jregion><span class="jregion-line"></span>Gumla</li>
+              <li data-jregion><span class="jregion-line"></span>Simdega</li>
+            </ul>
+            <p class="jharkhand-note">
+              Regions shown are illustrative for this prototype.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ COMMUNITY ============ -->
+      <section class="community" id="community">
+        <div class="section-head">
+          <h2>Knowledge lives in communities.</h2>
+        </div>
+        <div class="community-grid">
+          <div class="community-panel large" data-reveal-clip>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNSYTn4cgCdp_S2VXK_99QPepezVVQ5RylvynAr-p91w&s=10"
+              alt="Community gathering forest herbs"
+            />
+            <span class="panel-caption">Documenting stories</span>
+          </div>
+          <div class="community-panel" data-reveal-clip>
+            <img
+              src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?q=80&w=900&auto=format&fit=crop"
+              alt="Traditional craft and preparation of herbs"
+            />
+            <span class="panel-caption">Responsible sourcing</span>
+          </div>
+          <div class="community-panel" data-reveal-clip>
+            <img
+              src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?q=80&w=900&auto=format&fit=crop"
+              alt="Hands holding forest produce"
+            />
+            <span class="panel-caption">Community participation</span>
+          </div>
+        </div>
+        <div class="community-note">
+          <p>
+            <span>Community contribution.</span> Knowledge shared with
+            permission should remain connected to the people and communities who
+            preserve it.
+          </p>
+          <a href="communities.html" class="btn btn-outline" data-magnetic
+            ><span>Meet the Communities</span></a
+          >
+        </div>
+      </section>
+
+      <!-- ============ B2B ============ -->
+      <section class="business" id="business">
+        <div class="business-inner">
+          <p class="eyebrow eyebrow-light">For business</p>
+          <h2>For businesses looking for responsible botanical sourcing.</h2>
+          <p class="business-sub">
+            Discover regional suppliers, herbal ingredients and traceable
+            sourcing opportunities through one digital platform.
+          </p>
+
+          <div class="business-features">
+            <div class="business-feature" data-fade>
+              <span>Bulk sourcing</span>
+            </div>
+            <div class="business-feature" data-fade>
+              <span>Batch information</span>
+            </div>
+            <div class="business-feature" data-fade>
+              <span>Regional sourcing</span>
+            </div>
+            <div class="business-feature" data-fade>
+              <span>Traceability</span>
+            </div>
+            <div class="business-feature" data-fade>
+              <span>Community suppliers</span>
+            </div>
+          </div>
+
+          <a href="businesses.html" class="btn btn-primary-light" data-magnetic
+            ><span>Explore Bulk Sourcing</span></a
+          >
+        </div>
+      </section>
+
+      <!-- ============ SUSTAINABILITY ============ -->
+      <section class="sustainability" id="sustainability">
+        <div class="sustainability-inner">
+          <div class="sustainability-copy">
+            <p class="eyebrow">Sustainability</p>
+            <h2>The forest is<br />part of the product.</h2>
+            <p class="sustainability-lead">
+              Responsible sourcing begins with protecting the ecosystems that
+              make these plants possible.
+            </p>
+            <div class="sustainability-media" data-reveal-clip>
+              <img
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
+                alt="Forest canopy representing biodiversity"
+              />
+            </div>
+          </div>
+
+          <ul class="sustainability-list">
+            <li data-fade>
+              <span class="sustainability-line"></span>
+              <div>
+                <h4>Sustainable harvesting</h4>
+                <p>
+                  Collection methods designed to let plants and habitats
+                  regenerate.
+                </p>
+              </div>
+            </li>
+            <li data-fade>
+              <span class="sustainability-line"></span>
+              <div>
+                <h4>Seasonal harvesting</h4>
+                <p>
+                  Timing collection to natural growth cycles rather than
+                  constant demand.
+                </p>
+              </div>
+            </li>
+            <li data-fade>
+              <span class="sustainability-line"></span>
+              <div>
+                <h4>Biodiversity</h4>
+                <p>
+                  Awareness of the wider ecosystem each plant belongs to, not
+                  just the yield.
+                </p>
+              </div>
+            </li>
+            <li data-fade>
+              <span class="sustainability-line"></span>
+              <div>
+                <h4>Traceability</h4>
+                <p>
+                  A visible record connecting every product back to where and
+                  how it was sourced.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ FINAL CTA ============ -->
+      <section class="final-cta" id="finalCta">
+        <svg
+          class="final-cta-botanical"
+          id="finalCtaBotanical"
+          viewBox="0 0 900 500"
+          fill="none"
+          aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <path
+            d="M450 40C450 40 470 160 450 250C430 340 450 460 450 460"
+            stroke="#F5F1E8"
+            stroke-width="1"
+          />
+          <path
+            d="M450 120C450 120 380 90 340 130C300 170 320 220 320 220"
+            stroke="#F5F1E8"
+            stroke-width="1"
+          />
+          <path
+            d="M450 120C450 120 520 90 560 130C600 170 580 220 580 220"
+            stroke="#F5F1E8"
+            stroke-width="1"
+          />
+          <path
+            d="M450 220C450 220 370 200 320 240C270 280 290 330 290 330"
+            stroke="#F5F1E8"
+            stroke-width="1"
+          />
+          <path
+            d="M450 220C450 220 530 200 580 240C630 280 610 330 610 330"
+            stroke="#F5F1E8"
+            stroke-width="1"
+          />
+          <path
+            d="M450 320C450 320 390 310 360 345C330 380 345 415 345 415"
+            stroke="#F5F1E8"
+            stroke-width="1"
+          />
+          <path
+            d="M450 320C450 320 510 310 540 345C570 380 555 415 555 415"
+            stroke="#F5F1E8"
+            stroke-width="1"
+          />
+        </svg>
+
+        <div class="final-cta-content">
+          <p class="eyebrow eyebrow-light">Get started</p>
+          <h2>
+            Start with a plant.<br /><span class="line-serif"
+              >Discover the story behind it.</span
+            >
+          </h2>
+          <p>
+            Explore traditionally valued herbs, discover their origins and
+            connect with the knowledge behind them.
+          </p>
+          <div class="final-cta-actions">
+            <a href="shop.html" class="btn btn-primary-light" data-magnetic
+              ><span>Explore Products</span></a
+            >
+            <a
+              href="plants.html#identify"
+              class="btn btn-ghost-light"
+              data-magnetic
+              ><span>Identify a Plant</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" data-component="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">
+              <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+                <path
+                  d="M14 2C14 2 6 8 6 16C6 20.4183 9.58172 24 14 24C18.4183 24 22 20.4183 22 16C22 8 14 2 14 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+                <path d="M14 24V14" stroke="currentColor" stroke-width="1.3" />
+              </svg>
+            </span>
+            <span class="logo-text">TRIBAL DOCTOR</span>
+          </a>
+          <p>Rooted in knowledge. Connected by technology.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="shop.html">Shop</a>
+          <a href="plants.html">Plants</a>
+          <a href="knowledge.html">Knowledge</a>
+          <a href="communities.html">Communities</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>For business</h5>
+          <a href="businesses.html#bulk">Bulk sourcing</a>
+          <a href="businesses.html#supplier">Become a supplier</a>
+          <a href="businesses.html#traceability">Traceability</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>About</h5>
+          <a href="about.html">Our story</a>
+          <a href="about.html#sustainability">Sustainability</a>
+          <a href="about.html#safety">Safety</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Tribal Doctor</span>
+        <span
+          >Made with respect for knowledge, communities and biodiversity.</span
+        >
+      </div>
+    </footer>
+
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

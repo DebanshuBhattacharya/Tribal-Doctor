@@ -1,0 +1,102 @@
+/* ============================================================
+   TRIBAL DOCTOR — CHECKOUT + ORDER SUCCESS
+   ============================================================ */
+
+.checkout-layout{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 36px var(--gutter) 100px;
+  display:grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items:start;
+}
+
+.checkout-section{ margin-bottom: 30px; }
+.checkout-section h3{
+  font-family: var(--font-serif); font-weight:400; font-size: 21px;
+  color: var(--deep-forest); margin-bottom: 16px;
+}
+
+.form-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-field{ display:flex; flex-direction:column; gap: 6px; }
+.form-field.full{ grid-column: 1 / -1; }
+.form-field label{ font-size: 12.5px; font-weight:600; color: var(--muted); }
+.form-field input{
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14.5px;
+  color: var(--charcoal);
+  background: var(--paper);
+  outline: none;
+  transition: border-color .25s ease;
+}
+.form-field input:focus{ border-color: var(--forest); }
+.form-field input.error{ border-color: #B54B3A; }
+.field-error{ font-size: 12px; color: #B54B3A; min-height: 14px; }
+
+.payment-options{ display:flex; flex-direction:column; gap: 12px; }
+.payment-option{
+  display:flex; align-items:center; gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor:pointer;
+  transition: border-color .25s ease, background .25s ease;
+}
+.payment-option:hover{ border-color: var(--moss); }
+.payment-option.selected{ border-color: var(--forest); background: var(--cream); }
+.payment-option input{ accent-color: var(--forest); width:16px; height:16px; }
+.payment-option span{ font-size: 14.5px; font-weight:600; color: var(--charcoal); }
+
+.checkout-summary{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 22px;
+  background: var(--cream);
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+.checkout-summary h3{ font-family: var(--font-serif); font-weight:400; font-size: 22px; color: var(--deep-forest); margin-bottom: 18px; }
+.checkout-mini-item{ display:flex; justify-content:space-between; font-size: 13.5px; color: var(--muted); padding: 6px 0; }
+.checkout-summary-row{ display:flex; justify-content:space-between; font-size: 14px; color: var(--muted); padding: 8px 0; }
+.checkout-summary-row.total{ border-top: 1px solid var(--border); margin-top: 8px; padding-top: 14px; font-weight:700; color: var(--charcoal); font-size: 16px; }
+.checkout-summary .btn{ margin-top: 20px; }
+.checkout-divider{ border-top: 1px solid var(--border); margin: 14px 0; }
+
+@media (max-width: 860px){
+  .checkout-layout{ grid-template-columns: 1fr; }
+  .checkout-summary{ position: static; order: -1; }
+  .form-grid{ grid-template-columns: 1fr; }
+}
+
+/* ============ ORDER SUCCESS ============ */
+.success-wrap{
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 90px var(--gutter) 110px;
+  text-align: center;
+}
+.success-icon{ margin: 0 auto 20px; color: var(--forest); }
+.success-wrap h1{
+  font-family: var(--font-serif); font-weight:400;
+  font-size: clamp(30px, 5vw, 42px);
+  color: var(--deep-forest);
+}
+.success-wrap > p{ color: var(--muted); margin-top: 10px; }
+
+.success-card{
+  margin-top: 30px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  background: var(--cream);
+  text-align: left;
+}
+.success-row{ display:flex; justify-content:space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; }
+.success-row:last-child{ border-bottom:none; }
+.success-row span:first-child{ color: var(--muted); }
+.success-row span:last-child{ font-weight:700; color: var(--charcoal); text-align:right; }
+
+.success-wrap .btn{ margin-top: 32px; }
