@@ -655,7 +655,7 @@ body.menu-open .hamburger span:last-child {
 .why-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .why-statement {
   font-size: clamp(1.7rem, min(2.8vw, 5.4vh), 3.1rem);

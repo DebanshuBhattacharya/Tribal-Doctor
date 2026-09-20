@@ -12,7 +12,7 @@ const PRODUCTS = [
     category: "Roots",
     plantPart: "Root",
     origin: "Palamu, Jharkhand",
-    image: "images/Amla.jpeg",
+    image: "images/Ashwagandha.jpeg",
     description:
       "Sun-dried Ashwagandha root, hand-sorted and sourced directly from forest-adjacent communities in Jharkhand. Valued in traditional practice for centuries as a grounding, restorative root.",
     traditionalUse:
