@@ -17,7 +17,8 @@
   // Animate only when GSAP loaded and the visitor hasn't asked for reduced motion.
   // Otherwise drop the "js" flag so every pre-animation hidden state in the CSS switches off
   // and the page simply shows its content.
-  const canAnimate = !!(window.gsap && window.ScrollTrigger) && !prefersReducedMotion;
+  const canAnimate =
+    !!(window.gsap && window.ScrollTrigger) && !prefersReducedMotion;
   if (!canAnimate) root.classList.remove("js");
   if (canAnimate) gsap.registerPlugin(ScrollTrigger);
 
@@ -56,55 +57,55 @@
 
   /* ---------------- NAVBAR ---------------- */
   function initNavbar() {
-  const navbar = $("#navbar");
-  if (!navbar) return;
+    const navbar = $("#navbar");
+    if (!navbar) return;
 
-  let lastScrollY = window.scrollY;
-  let ticking = false;
+    let lastScrollY = window.scrollY;
+    let ticking = false;
 
-  const updateNavbar = () => {
-    const currentScrollY = window.scrollY;
+    const updateNavbar = () => {
+      const currentScrollY = window.scrollY;
 
-    // At the very top — always show navbar
-    if (currentScrollY <= 40) {
-      navbar.classList.remove("nav-hidden");
-      navbar.classList.remove("scrolled");
+      // At the very top — always show navbar
+      if (currentScrollY <= 40) {
+        navbar.classList.remove("nav-hidden");
+        navbar.classList.remove("scrolled");
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+        return;
+      }
+
+      // Add scrolled state
+      navbar.classList.add("scrolled");
+
+      // Scrolling down
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        navbar.classList.add("nav-hidden");
+      }
+
+      // Scrolling up
+      else if (currentScrollY < lastScrollY) {
+        navbar.classList.remove("nav-hidden");
+      }
 
       lastScrollY = currentScrollY;
       ticking = false;
-      return;
-    }
+    };
 
-    // Add scrolled state
-    navbar.classList.add("scrolled");
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
+    };
 
-    // Scrolling down
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      navbar.classList.add("nav-hidden");
-    }
+    window.addEventListener("scroll", onScroll, {
+      passive: true,
+    });
 
-    // Scrolling up
-    else if (currentScrollY < lastScrollY) {
-      navbar.classList.remove("nav-hidden");
-    }
-
-    lastScrollY = currentScrollY;
-    ticking = false;
-  };
-
-  const onScroll = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateNavbar);
-      ticking = true;
-    }
-  };
-
-  window.addEventListener("scroll", onScroll, {
-    passive: true,
-  });
-
-  updateNavbar();
-}
+    updateNavbar();
+  }
 
   /* ---------------- MOBILE MENU ---------------- */
   function initMobileMenu() {
@@ -123,7 +124,9 @@
     };
 
     btn.addEventListener("click", () => set(!open));
-    $$("a", menu).forEach((a) => a.addEventListener("click", () => open && set(false)));
+    $$("a", menu).forEach((a) =>
+      a.addEventListener("click", () => open && set(false)),
+    );
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && open) set(false);
     });
@@ -156,14 +159,21 @@
     gsap.set(secondaryVisual, { opacity: 0, scale: 0.85 });
     gsap.set(tag, { opacity: 0, y: 10 });
 
-    const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+    const tl = gsap.timeline({
+      paused: true,
+      defaults: { ease: "power3.out" },
+    });
     tl.to(
       mainVisual,
       { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "power3.inOut" },
       0,
     )
       .to(eyebrow, { opacity: 1, y: 0, duration: 0.7 }, 0.1)
-      .to(inners, { yPercent: 0, duration: 1.05, ease: "power4.out", stagger: 0.12 }, 0.22)
+      .to(
+        inners,
+        { yPercent: 0, duration: 1.05, ease: "power4.out", stagger: 0.12 },
+        0.22,
+      )
       .to(sub, { opacity: 1, y: 0, duration: 0.8 }, 0.75)
       .to(ctas, { opacity: 1, y: 0, duration: 0.7 }, 0.9)
       .to(
@@ -266,64 +276,32 @@
 
   /* ---------------- JHARKHAND MAP ----------------
      Region list and map pins highlight each other (hover, focus, or tap). */
-  function initJharkhandMap() {
-    const rows = $$(".jk-region");
-    const pins = $$(".jk-pin");
-    if (!rows.length || !pins.length) return;
-
-    const setActive = (name) => {
-      rows.forEach((r) => r.classList.toggle("is-active", r.dataset.region === name));
-      pins.forEach((p) => p.classList.toggle("is-active", p.dataset.region === name));
-    };
-    const clear = () => setActive(null);
-
-    rows.forEach((row) => {
-      const name = row.dataset.region;
-      row.addEventListener("mouseenter", () => setActive(name));
-      row.addEventListener("mouseleave", clear);
-      row.addEventListener("focus", () => setActive(name));
-      row.addEventListener("blur", clear);
-      row.addEventListener("click", () => setActive(name)); // touch: tap to highlight
-    });
-    pins.forEach((pin) => {
-      const name = pin.dataset.region;
-      pin.addEventListener("mouseenter", () => setActive(name));
-      pin.addEventListener("mouseleave", clear);
-    });
-  }
-
-  /* One orchestrated moment: the outline draws itself, terrain rings settle in, pins drop, list follows. */
-  function initJharkhandAnimation() {
+  function initForestIllustration() {
     if (!canAnimate) return;
-    const outline = $(".jk-outline");
-    if (!outline) return;
+    const layers = $$(".jk-layer");
+    const roots = $$(".jk-root");
+    const labels = $$(".jk-flabel");
+    if (!layers.length) return;
 
-    const grat = $(".jk-grat");
-    const fill = $(".jk-fill");
-    const rings = $$(".jk-ring");
-    const pins = $$(".jk-pin");
-    const dots = $$(".jk-pin-dot");
-    const labels = $$(".jk-pin-label");
-    const rows = $$(".jk-region");
-
-    gsap.set([grat, fill, ...rings], { opacity: 0 });
-    gsap.set(pins, { opacity: 0 });
-    gsap.set(dots, { scale: 0 });
-    gsap.set(labels, { x: -6 });
-    gsap.set(rows, { opacity: 0, x: -10 });
+    gsap.set(labels, { opacity: 0, x: 12 });
 
     const tl = gsap.timeline({
       defaults: { ease: "power2.out" },
-      scrollTrigger: { trigger: ".jharkhand", start: "top 55%", once: true },
+      scrollTrigger: { trigger: ".jharkhand", start: "top 60%", once: true },
     });
-    tl.to(grat, { opacity: 1, duration: 1 }, 0)
-      .to(outline, { strokeDashoffset: 0, duration: 1.8, ease: "power2.inOut" }, 0.1)
-      .to(fill, { opacity: 1, duration: 1.2 }, 1)
-      .to(rings, { opacity: 1, duration: 1, stagger: 0.14 }, 1)
-      .to(rows, { opacity: 1, x: 0, duration: 0.6, stagger: 0.09 }, 0.5)
-      .to(pins, { opacity: 1, duration: 0.4, stagger: 0.16 }, 1.7)
-      .to(dots, { scale: 1, duration: 0.55, stagger: 0.16, ease: "back.out(2.6)" }, 1.7)
-      .to(labels, { x: 0, duration: 0.5, stagger: 0.16 }, 1.8);
+
+    tl.to(layers, { opacity: 1, duration: 0.9, stagger: 0.25 }, 0)
+      .to(
+        roots,
+        {
+          strokeDashoffset: 0,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "power2.inOut",
+        },
+        0.5,
+      )
+      .to(labels, { opacity: 1, x: 0, duration: 0.6, stagger: 0.15 }, 0.8);
   }
 
   /* ---------------- BUSINESS ---------------- */
@@ -347,24 +325,37 @@
       defaults: { ease: "power2.out" },
       scrollTrigger: { trigger: ".biz-stack", start: "top 78%", once: true },
     });
-    tl.fromTo(".biz-sheet", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.9 }, 0)
-      .fromTo(
-        ".biz-sheet-rows > div",
-        { opacity: 0, x: 8 },
-        { opacity: 1, x: 0, duration: 0.5, stagger: 0.09 },
-        0.35,
-      );
+    tl.fromTo(
+      ".biz-sheet",
+      { opacity: 0, y: 34 },
+      { opacity: 1, y: 0, duration: 0.9 },
+      0,
+    ).fromTo(
+      ".biz-sheet-rows > div",
+      { opacity: 0, x: 8 },
+      { opacity: 1, x: 0, duration: 0.5, stagger: 0.09 },
+      0.35,
+    );
   }
 
   /* ---------------- SUSTAINABILITY ---------------- */
   function initSustainabilityAnimation() {
     if (!canAnimate || !$(".sustainability")) return;
 
-    const trigger = { trigger: ".sustainability", start: "top 60%", once: true };
+    const trigger = {
+      trigger: ".sustainability",
+      start: "top 60%",
+      once: true,
+    };
     gsap.fromTo(
       ".sus-media",
       { clipPath: "inset(100% 0% 0% 0%)" },
-      { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "power3.inOut", scrollTrigger: trigger },
+      {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 1.3,
+        ease: "power3.inOut",
+        scrollTrigger: trigger,
+      },
     );
     gsap.fromTo(
       ".sus-media img",
@@ -530,10 +521,20 @@
         .to(scanLine, { opacity: 0, duration: 0.2 }, "-=0.1")
         .to(
           markers,
-          { opacity: 1, scale: 1, duration: 0.4, stagger: 0.15, ease: "back.out(2)" },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            stagger: 0.15,
+            ease: "back.out(2)",
+          },
           "-=0.5",
         )
-        .to(card, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.2")
+        .to(
+          card,
+          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+          "-=0.2",
+        )
         .to(
           {},
           {
@@ -568,7 +569,12 @@
         if (!bounds) bounds = el.getBoundingClientRect();
         const relX = e.clientX - (bounds.left + bounds.width / 2);
         const relY = e.clientY - (bounds.top + bounds.height / 2);
-        gsap.to(el, { x: relX * strength, y: relY * strength, duration: 0.4, ease: "power2.out" });
+        gsap.to(el, {
+          x: relX * strength,
+          y: relY * strength,
+          duration: 0.4,
+          ease: "power2.out",
+        });
       };
       const onLeave = () => {
         gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.4)" });
@@ -587,12 +593,22 @@
     if (!dot) return;
 
     window.addEventListener("mousemove", (e) => {
-      gsap.to(dot, { x: e.clientX, y: e.clientY, opacity: 1, duration: 0.35, ease: "power2.out" });
+      gsap.to(dot, {
+        x: e.clientX,
+        y: e.clientY,
+        opacity: 1,
+        duration: 0.35,
+        ease: "power2.out",
+      });
     });
 
     $$("a, button, [data-magnetic]").forEach((el) => {
-      el.addEventListener("mouseenter", () => gsap.to(dot, { scale: 2.4, duration: 0.25 }));
-      el.addEventListener("mouseleave", () => gsap.to(dot, { scale: 1, duration: 0.25 }));
+      el.addEventListener("mouseenter", () =>
+        gsap.to(dot, { scale: 2.4, duration: 0.25 }),
+      );
+      el.addEventListener("mouseleave", () =>
+        gsap.to(dot, { scale: 1, duration: 0.25 }),
+      );
     });
   }
 
@@ -600,14 +616,14 @@
   function bootstrap() {
     initNavbar();
     initMobileMenu();
-    initJharkhandMap();
+
     const playHero = initHeroAnimations();
     initScrollAnimations();
     initPinnedStory();
     initPassportTimeline();
     initProductInteractions();
     initPlantIdentification();
-    initJharkhandAnimation();
+    initForestIllustration();
     initBusinessAnimation();
     initSustainabilityAnimation();
     initFinalCtaAnimation();
@@ -625,7 +641,10 @@
     // set in a fallback font, then re-flows mid-animation when the real font arrives.
     const fontsReady =
       document.fonts && document.fonts.ready
-        ? Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 1500))])
+        ? Promise.race([
+            document.fonts.ready,
+            new Promise((r) => setTimeout(r, 1500)),
+          ])
         : Promise.resolve();
 
     fontsReady.then(() => {
@@ -638,4 +657,150 @@
       if (canAnimate) ScrollTrigger.refresh();
     });
   });
+})();
+/* ============================================================
+   AI PLANT IDENTIFICATION
+   Connects Tribal Doctor frontend to Van Vaidya AI backend
+   ============================================================ */
+
+(function initPlantIdentification() {
+
+  const identifyButton = document.getElementById("identifyButton");
+  const fileInput = document.getElementById("plantImageInput");
+
+  const plantName = document.getElementById("plantName");
+  const plantScientific = document.getElementById("plantScientific");
+  const plantHindi = document.getElementById("plantHindi");
+  const confidenceNum = document.getElementById("confidenceNum");
+
+  const identifyStatus = document.getElementById("identifyStatus");
+  const plantExplore = document.getElementById("plantExplore");
+
+  if (!identifyButton || !fileInput) return;
+
+  // Backend endpoint
+  const API_URL = "http://localhost:8000/identify";
+
+  // Open file picker
+  identifyButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    fileInput.click();
+  });
+
+  // When user selects an image
+  fileInput.addEventListener("change", async function () {
+
+    const file = fileInput.files[0];
+
+    if (!file) return;
+
+    // Basic validation
+    if (!file.type.startsWith("image/")) {
+      alert("Please select an image file.");
+      return;
+    }
+
+    // Update UI
+    identifyStatus.textContent = "Identifying plant...";
+    plantName.textContent = "Reading the plant";
+    plantScientific.textContent = "Please wait...";
+    plantHindi.textContent = "Processing image";
+    confidenceNum.textContent = "—";
+
+    identifyButton.style.pointerEvents = "none";
+    identifyButton.style.opacity = "0.6";
+
+    try {
+
+      // Create form data
+      const formData = new FormData();
+
+      formData.append("file", file);
+
+      // Send image to backend
+      const response = await fetch(API_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.detail || "Plant identification failed."
+        );
+      }
+
+      // Check backend response
+      if (
+        !data.success ||
+        !data.matches ||
+        data.matches.length === 0
+      ) {
+        throw new Error("No plant could be identified.");
+      }
+
+      // Get best match
+      const plant = data.matches[0];
+
+      // Update UI
+      plantName.textContent =
+        plant.english_name || "Unknown plant";
+
+      plantScientific.textContent =
+        plant.scientific_name || "Scientific name unavailable";
+
+      plantHindi.textContent =
+        plant.hindi_name || "Hindi name unavailable";
+
+      confidenceNum.textContent =
+        Math.round(plant.confidence || 0);
+
+      identifyStatus.textContent =
+        "Identification complete";
+
+      // Enable Explore link
+      if (plant.scientific_name) {
+
+        const query = encodeURIComponent(
+          plant.scientific_name
+        );
+
+        plantExplore.href =
+          `plants.html?plant=${query}`;
+
+        plantExplore.style.pointerEvents = "auto";
+        plantExplore.style.opacity = "1";
+      }
+
+    } catch (error) {
+
+      console.error("Plant identification error:", error);
+
+      identifyStatus.textContent =
+        "Identification failed";
+
+      plantName.textContent =
+        "Unable to identify";
+
+      plantScientific.textContent =
+        error.message || "Please try another image.";
+
+      plantHindi.textContent =
+        "Try a clearer plant photo";
+
+      confidenceNum.textContent = "—";
+
+    } finally {
+
+      identifyButton.style.pointerEvents = "auto";
+      identifyButton.style.opacity = "1";
+
+      // Allow selecting the same image again
+      fileInput.value = "";
+    }
+
+  });
+
 })();

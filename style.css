@@ -1191,97 +1191,138 @@ html:not(.js) .story-visual img {
 .jk-region.is-active .jk-region-name {
   color: var(--clay-light);
 }
-
 .jk-figure {
   position: relative;
 }
-.jk-map {
+
+.jk-forest {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(76vh, 760px);
-  overflow: visible;
+  max-height: min(76vh, 700px);
+  border-radius: 10px;
+  overflow: hidden;
 }
-.jk-grat line {
-  stroke: rgba(245, 241, 232, 0.08);
-  stroke-dasharray: 2 7;
+
+.jk-sun {
+  animation: sunPulse 6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
 }
-.jk-grat text {
-  fill: rgba(245, 241, 232, 0.34);
-  font-family: var(--font-sans);
-  font-size: 11px;
+@keyframes sunPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
-.jk-fill {
-  fill: rgba(169, 181, 156, 0.06);
+
+.jk-canopy-layer path {
+  fill: #24583e;
 }
-.jk-ring {
+.jk-understory-layer path {
+  fill: #2f6b47;
+}
+.jk-fern {
   fill: none;
-  stroke: rgba(169, 181, 156, 0.2);
-  stroke-width: 1;
+  stroke: #6e8f5f;
+  stroke-width: 2.5;
+  stroke-linecap: round;
 }
-.jk-outline {
+
+.jk-layer {
+  opacity: 0;
+}
+
+.jk-root {
   fill: none;
-  stroke: var(--sage);
-  stroke-width: 1.5;
-  stroke-linejoin: round;
+  stroke: var(--clay);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.85;
 }
-.js .jk-outline {
+.js .jk-root {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
 }
 
-.jk-pin {
-  cursor: default;
-}
-.jk-pin-dot {
-  fill: var(--clay);
-  stroke: var(--deep-forest);
-  stroke-width: 2.5;
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: fill 0.3s ease;
-}
-.jk-pin-halo {
-  fill: none;
-  stroke: var(--clay-light);
-  stroke-width: 1.2;
+.jk-spore {
+  fill: var(--sage);
   opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
+  animation: sporeDrift 9s ease-in-out infinite;
 }
-.jk-pin-label {
-  fill: rgba(245, 241, 232, 0.86);
-  font-family: var(--font-serif);
-  font-size: 24px;
-  transition: fill 0.3s ease;
+.jk-spore.s1 {
+  animation-delay: 0s;
 }
-.jk-pin.is-active .jk-pin-dot {
-  fill: var(--clay-light);
+.jk-spore.s2 {
+  animation-delay: 1.4s;
 }
-.jk-pin.is-active .jk-pin-label {
-  fill: var(--clay-light);
+.jk-spore.s3 {
+  animation-delay: 2.8s;
 }
-.jk-pin.is-active .jk-pin-halo {
-  animation: pinPulse 1.5s ease-out infinite;
+.jk-spore.s4 {
+  animation-delay: 4.2s;
 }
-@keyframes pinPulse {
+.jk-spore.s5 {
+  animation-delay: 5.6s;
+}
+.jk-spore.s6 {
+  animation-delay: 7s;
+}
+@keyframes sporeDrift {
   0% {
-    transform: scale(0.4);
-    opacity: 0.95;
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.4;
   }
   100% {
-    transform: scale(1.6);
+    transform: translate(6px, -240px);
     opacity: 0;
   }
 }
+
+.jk-forest-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.jk-flabel {
+  position: absolute;
+  right: clamp(14px, 2vw, 26px);
+  transform: translateY(-50%);
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(245, 241, 232, 0.8);
+  background: rgba(14, 36, 26, 0.5);
+  padding: 5px 12px;
+  border-radius: 100px;
+  opacity: 0;
+}
+
 .jk-figure figcaption {
   margin-top: 12px;
-  font-size: 0.8em;
+  font-size: 0.85em;
   font-style: italic;
-  color: rgba(245, 241, 232, 0.45);
+  color: rgba(245, 241, 232, 0.5);
   text-align: center;
 }
 
+@media (max-width: 640px) {
+  .jk-flabel {
+    display: none;
+  }
+}
 /* ============ COMMUNITY ============ */
 .community {
   background: var(--paper);

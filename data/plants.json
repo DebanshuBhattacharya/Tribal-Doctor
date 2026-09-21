@@ -1,0 +1,2656 @@
+[
+  {
+    "scientific_name": "Abelmoschus moschatus",
+    "english_name": "Musk mallow",
+    "hindi_name": "कस्तूरी भिंडी"
+  },
+  {
+    "scientific_name": "Abrus precatorius",
+    "english_name": "Rosary pea",
+    "hindi_name": "गुंजा"
+  },
+  {
+    "scientific_name": "Abutilon indicum",
+    "english_name": "Indian mallow",
+    "hindi_name": "कंघी"
+  },
+  {
+    "scientific_name": "Acacia catechu",
+    "english_name": "Black catechu",
+    "hindi_name": "खैर"
+  },
+  {
+    "scientific_name": "Acacia nilotica",
+    "english_name": "Babul",
+    "hindi_name": "बबूल"
+  },
+  {
+    "scientific_name": "Achyranthes aspera",
+    "english_name": "Prickly chaff flower",
+    "hindi_name": "अपामार्ग"
+  },
+  {
+    "scientific_name": "Acorus calamus",
+    "english_name": "Sweet flag",
+    "hindi_name": "वच"
+  },
+  {
+    "scientific_name": "Adhatoda zeylanica",
+    "english_name": "Malabar nut",
+    "hindi_name": "अडूसा"
+  },
+  {
+    "scientific_name": "Aegle marmelos",
+    "english_name": "Bael",
+    "hindi_name": "बेल"
+  },
+  {
+    "scientific_name": "Aerva lanata",
+    "english_name": "Mountain knotgrass",
+    "hindi_name": "पाषाणभेद"
+  },
+  {
+    "scientific_name": "Albizia lebbeck",
+    "english_name": "Siris tree",
+    "hindi_name": "सिरस"
+  },
+  {
+    "scientific_name": "Alpinia galanga",
+    "english_name": "Greater galangal",
+    "hindi_name": "कुलंजन"
+  },
+  {
+    "scientific_name": "Aloe vera",
+    "english_name": "Aloe vera",
+    "hindi_name": "घृतकुमारी",
+    "aliases": [
+      "Aloe officinalis",
+      "Aloe barbadensis"
+    ]
+  },
+  {
+    "scientific_name": "Alstonia scholaris",
+    "english_name": "Devil's tree",
+    "hindi_name": "सप्तपर्ण"
+  },
+  {
+    "scientific_name": "Althaea officinalis",
+    "english_name": "Marshmallow",
+    "hindi_name": "खतमी"
+  },
+  {
+    "scientific_name": "Amorphophallus paeoniifolius",
+    "english_name": "Elephant foot yam",
+    "hindi_name": "सूरन"
+  },
+  {
+    "scientific_name": "Anacyclus pyrethrum",
+    "english_name": "Akarkara",
+    "hindi_name": "अकरकरा"
+  },
+  {
+    "scientific_name": "Andrographis paniculata",
+    "english_name": "Green chiretta",
+    "hindi_name": "कालमेघ"
+  },
+  {
+    "scientific_name": "Annona squamosa",
+    "english_name": "Custard apple",
+    "hindi_name": "सीताफल"
+  },
+  {
+    "scientific_name": "Argemone mexicana",
+    "english_name": "Mexican poppy",
+    "hindi_name": "सत्यानाशी"
+  },
+  {
+    "scientific_name": "Aristolochia indica",
+    "english_name": "Indian birthwort",
+    "hindi_name": "ईश्वरमूल"
+  },
+  {
+    "scientific_name": "Artemisia absinthium",
+    "english_name": "Wormwood",
+    "hindi_name": "नागदौना"
+  },
+  {
+    "scientific_name": "Asparagus racemosus",
+    "english_name": "Shatavari",
+    "hindi_name": "शतावरी"
+  },
+  {
+    "scientific_name": "Azadirachta indica",
+    "english_name": "Neem",
+    "hindi_name": "नीम"
+  },
+  {
+    "scientific_name": "Bacopa monnieri",
+    "english_name": "Brahmi",
+    "hindi_name": "ब्राह्मी"
+  },
+  {
+    "scientific_name": "Barleria prionitis",
+    "english_name": "Porcupine flower",
+    "hindi_name": "वज्रदंती"
+  },
+  {
+    "scientific_name": "Berberis aristata",
+    "english_name": "Indian barberry",
+    "hindi_name": "दारुहल्दी"
+  },
+  {
+    "scientific_name": "Bergenia ciliata",
+    "english_name": "Hairy bergenia",
+    "hindi_name": "पाषाणभेद"
+  },
+  {
+    "scientific_name": "Boerhavia diffusa",
+    "english_name": "Spreading hogweed",
+    "hindi_name": "पुनर्नवा"
+  },
+  {
+    "scientific_name": "Boswellia serrata",
+    "english_name": "Indian frankincense",
+    "hindi_name": "सलई"
+  },
+  {
+    "scientific_name": "Butea monosperma",
+    "english_name": "Flame of the forest",
+    "hindi_name": "पलाश"
+  },
+  {
+    "scientific_name": "Buchanania lanzan",
+    "english_name": "Chironji tree",
+    "hindi_name": "चिरौंजी"
+  },
+  {
+    "scientific_name": "Calotropis gigantea",
+    "english_name": "Crown flower",
+    "hindi_name": "आक"
+  },
+  {
+    "scientific_name": "Calotropis procera",
+    "english_name": "Apple of Sodom",
+    "hindi_name": "मदार"
+  },
+  {
+    "scientific_name": "Cassia fistula",
+    "english_name": "Golden shower tree",
+    "hindi_name": "अमलतास"
+  },
+  {
+    "scientific_name": "Cassia tora",
+    "english_name": "Sicklepod",
+    "hindi_name": "चक्रमर्द"
+  },
+  {
+    "scientific_name": "Catharanthus roseus",
+    "english_name": "Madagascar periwinkle",
+    "hindi_name": "सदाबहार"
+  },
+  {
+    "scientific_name": "Celastrus paniculatus",
+    "english_name": "Intellect tree",
+    "hindi_name": "मालकांगनी"
+  },
+  {
+    "scientific_name": "Centella asiatica",
+    "english_name": "Gotu kola",
+    "hindi_name": "मंडूकपर्णी"
+  },
+  {
+    "scientific_name": "Chlorophytum borivilianum",
+    "english_name": "Safed musli",
+    "hindi_name": "सफेद मुसली"
+  },
+  {
+    "scientific_name": "Cinnamomum tamala",
+    "english_name": "Indian bay leaf",
+    "hindi_name": "तेजपत्ता"
+  },
+  {
+    "scientific_name": "Cinnamomum verum",
+    "english_name": "Cinnamon",
+    "hindi_name": "दालचीनी"
+  },
+  {
+    "scientific_name": "Cissampelos pareira",
+    "english_name": "Velvetleaf",
+    "hindi_name": "पाठा"
+  },
+  {
+    "scientific_name": "Cissus quadrangularis",
+    "english_name": "Devil's backbone",
+    "hindi_name": "हड़जोड़"
+  },
+  {
+    "scientific_name": "Clerodendrum phlomoides",
+    "english_name": "Arni",
+    "hindi_name": "अरणी"
+  },
+  {
+    "scientific_name": "Commiphora wightii",
+    "english_name": "Indian bdellium",
+    "hindi_name": "गुग्गुल"
+  },
+  {
+    "scientific_name": "Coriandrum sativum",
+    "english_name": "Coriander",
+    "hindi_name": "धनिया"
+  },
+  {
+    "scientific_name": "Crocus sativus",
+    "english_name": "Saffron",
+    "hindi_name": "केसर"
+  },
+  {
+    "scientific_name": "Cuminum cyminum",
+    "english_name": "Cumin",
+    "hindi_name": "जीरा"
+  },
+  {
+    "scientific_name": "Curcuma longa",
+    "english_name": "Turmeric",
+    "hindi_name": "हल्दी"
+  },
+  {
+    "scientific_name": "Datura metel",
+    "english_name": "Downy thorn apple",
+    "hindi_name": "धतूरा"
+  },
+  {
+    "scientific_name": "Desmodium gangeticum",
+    "english_name": "Salparni",
+    "hindi_name": "शालपर्णी"
+  },
+  {
+    "scientific_name": "Eclipta prostrata",
+    "english_name": "False daisy",
+    "hindi_name": "भृंगराज"
+  },
+  {
+    "scientific_name": "Elettaria cardamomum",
+    "english_name": "Cardamom",
+    "hindi_name": "इलायची"
+  },
+  {
+    "scientific_name": "Embelia ribes",
+    "english_name": "False black pepper",
+    "hindi_name": "विडंग"
+  },
+  {
+    "scientific_name": "Euphorbia hirta",
+    "english_name": "Asthma plant",
+    "hindi_name": "दूधी"
+  },
+  {
+    "scientific_name": "Evolvulus alsinoides",
+    "english_name": "Dwarf morning glory",
+    "hindi_name": "शंखपुष्पी"
+  },
+  {
+    "scientific_name": "Foeniculum vulgare",
+    "english_name": "Fennel",
+    "hindi_name": "सौंफ"
+  },
+  {
+    "scientific_name": "Ficus benghalensis",
+    "english_name": "Banyan",
+    "hindi_name": "बरगद"
+  },
+  {
+    "scientific_name": "Ficus racemosa",
+    "english_name": "Cluster fig",
+    "hindi_name": "गूलर"
+  },
+  {
+    "scientific_name": "Ficus religiosa",
+    "english_name": "Sacred fig",
+    "hindi_name": "पीपल"
+  },
+  {
+    "scientific_name": "Glycyrrhiza glabra",
+    "english_name": "Licorice",
+    "hindi_name": "मुलेठी"
+  },
+  {
+    "scientific_name": "Gmelina arborea",
+    "english_name": "Gambhari",
+    "hindi_name": "गम्भारी"
+  },
+  {
+    "scientific_name": "Gymnema sylvestre",
+    "english_name": "Gymnema",
+    "hindi_name": "गुड़मार"
+  },
+  {
+    "scientific_name": "Hemidesmus indicus",
+    "english_name": "Indian sarsaparilla",
+    "hindi_name": "अनंतमूल"
+  },
+  {
+    "scientific_name": "Holarrhena pubescens",
+    "english_name": "Kurchi",
+    "hindi_name": "कुटज"
+  },
+  {
+    "scientific_name": "Ipomoea turpethum",
+    "english_name": "Indian jalap",
+    "hindi_name": "त्रिवृत"
+  },
+  {
+    "scientific_name": "Jasminum officinale",
+    "english_name": "Common jasmine",
+    "hindi_name": "चमेली"
+  },
+  {
+    "scientific_name": "Justicia adhatoda",
+    "english_name": "Malabar nut",
+    "hindi_name": "वासा"
+  },
+  {
+    "scientific_name": "Lawsonia inermis",
+    "english_name": "Henna",
+    "hindi_name": "मेहंदी"
+  },
+  {
+    "scientific_name": "Leucas aspera",
+    "english_name": "Thumbai",
+    "hindi_name": "छोटी दूदधी"
+  },
+  {
+    "scientific_name": "Mentha arvensis",
+    "english_name": "Field mint",
+    "hindi_name": "पुदीना"
+  },
+  {
+    "scientific_name": "Moringa oleifera",
+    "english_name": "Drumstick tree",
+    "hindi_name": "सहजन"
+  },
+  {
+    "scientific_name": "Mucuna pruriens",
+    "english_name": "Velvet bean",
+    "hindi_name": "कपिकच्छु"
+  },
+  {
+    "scientific_name": "Nardostachys jatamansi",
+    "english_name": "Spikenard",
+    "hindi_name": "जटामांसी"
+  },
+  {
+    "scientific_name": "Nigella sativa",
+    "english_name": "Black cumin",
+    "hindi_name": "कलौंजी"
+  },
+  {
+    "scientific_name": "Nyctanthes arbor-tristis",
+    "english_name": "Night-flowering jasmine",
+    "hindi_name": "हरसिंगार"
+  },
+  {
+    "scientific_name": "Ocimum tenuiflorum",
+    "english_name": "Holy basil",
+    "hindi_name": "तुलसी"
+  },
+  {
+    "scientific_name": "Phyllanthus emblica",
+    "english_name": "Indian gooseberry",
+    "hindi_name": "आंवला"
+  },
+  {
+    "scientific_name": "Phyllanthus niruri",
+    "english_name": "Stonebreaker",
+    "hindi_name": "भुई आंवला"
+  },
+  {
+    "scientific_name": "Piper longum",
+    "english_name": "Indian long pepper",
+    "hindi_name": "पिप्पली"
+  },
+  {
+    "scientific_name": "Piper nigrum",
+    "english_name": "Black pepper",
+    "hindi_name": "काली मिर्च"
+  },
+  {
+    "scientific_name": "Plumbago zeylanica",
+    "english_name": "Ceylon leadwort",
+    "hindi_name": "चित्रक"
+  },
+  {
+    "scientific_name": "Pongamia pinnata",
+    "english_name": "Indian beech",
+    "hindi_name": "करंज"
+  },
+  {
+    "scientific_name": "Pterocarpus marsupium",
+    "english_name": "Indian kino",
+    "hindi_name": "विजयसार"
+  },
+  {
+    "scientific_name": "Punica granatum",
+    "english_name": "Pomegranate",
+    "hindi_name": "अनार"
+  },
+  {
+    "scientific_name": "Rauvolfia serpentina",
+    "english_name": "Indian snakeroot",
+    "hindi_name": "सर्पगंधा"
+  },
+  {
+    "scientific_name": "Ricinus communis",
+    "english_name": "Castor bean",
+    "hindi_name": "अरंडी"
+  },
+  {
+    "scientific_name": "Saccharum officinarum",
+    "english_name": "Sugarcane",
+    "hindi_name": "गन्ना"
+  },
+  {
+    "scientific_name": "Santalum album",
+    "english_name": "Indian sandalwood",
+    "hindi_name": "चंदन"
+  },
+  {
+    "scientific_name": "Saraca asoca",
+    "english_name": "Ashoka tree",
+    "hindi_name": "अशोक"
+  },
+  {
+    "scientific_name": "Senna alexandrina",
+    "english_name": "Senna",
+    "hindi_name": "सनाय"
+  },
+  {
+    "scientific_name": "Solanum nigrum",
+    "english_name": "Black nightshade",
+    "hindi_name": "मकोय"
+  },
+  {
+    "scientific_name": "Swertia chirata",
+    "english_name": "Chirata",
+    "hindi_name": "चिरायता"
+  },
+  {
+    "scientific_name": "Syzygium cumini",
+    "english_name": "Java plum",
+    "hindi_name": "जामुन"
+  },
+  {
+    "scientific_name": "Terminalia bellirica",
+    "english_name": "Beleric myrobalan",
+    "hindi_name": "बहेड़ा"
+  },
+  {
+    "scientific_name": "Terminalia chebula",
+    "english_name": "Chebulic myrobalan",
+    "hindi_name": "हरड़"
+  },
+  {
+    "scientific_name": "Tinospora cordifolia",
+    "english_name": "Guduchi",
+    "hindi_name": "गिलोय"
+  },
+  {
+    "scientific_name": "Tribulus terrestris",
+    "english_name": "Puncture vine",
+    "hindi_name": "गोखरू"
+  },
+  {
+    "scientific_name": "Vitex negundo",
+    "english_name": "Five-leaved chaste tree",
+    "hindi_name": "निर्गुंडी"
+  },
+  {
+    "scientific_name": "Withania somnifera",
+    "english_name": "Ashwagandha",
+    "hindi_name": "अश्वगंधा"
+  },
+  {
+    "scientific_name": "Withania coagulans",
+    "english_name": "Indian rennet",
+    "hindi_name": "पनीर डोडी"
+  },
+  {
+    "scientific_name": "Zingiber officinale",
+    "english_name": "Ginger",
+    "hindi_name": "अदरक"
+  },
+  {
+    "scientific_name": "Ziziphus jujuba",
+    "english_name": "Jujube",
+    "hindi_name": "बेर"
+  },
+  {
+    "scientific_name": "Ailanthus excelsa",
+    "english_name": "Indian tree of heaven",
+    "hindi_name": "अरड़ू"
+  },
+  {
+    "scientific_name": "Allium cepa",
+    "english_name": "Onion",
+    "hindi_name": "प्याज"
+  },
+  {
+    "scientific_name": "Allium sativum",
+    "english_name": "Garlic",
+    "hindi_name": "लहसुन"
+  },
+  {
+    "scientific_name": "Amaranthus spinosus",
+    "english_name": "Spiny amaranth",
+    "hindi_name": "कांटेदार चौलाई"
+  },
+  {
+    "scientific_name": "Amaranthus viridis",
+    "english_name": "Slender amaranth",
+    "hindi_name": "चौलाई"
+  },
+  {
+    "scientific_name": "Ammi majus",
+    "english_name": "Greater ammi",
+    "hindi_name": "अम्मी"
+  },
+  {
+    "scientific_name": "Andrographis alata",
+    "english_name": "False kalmegh",
+    "hindi_name": "भूनिंब"
+  },
+  {
+    "scientific_name": "Anethum graveolens",
+    "english_name": "Dill",
+    "hindi_name": "सोया"
+  },
+  {
+    "scientific_name": "Anogeissus latifolia",
+    "english_name": "Axlewood tree",
+    "hindi_name": "धौरा"
+  },
+  {
+    "scientific_name": "Argyreia nervosa",
+    "english_name": "Elephant creeper",
+    "hindi_name": "समुद्रशोष"
+  },
+  {
+    "scientific_name": "Artemisia nilagirica",
+    "english_name": "Indian wormwood",
+    "hindi_name": "दवाना"
+  },
+  {
+    "scientific_name": "Artocarpus heterophyllus",
+    "english_name": "Jackfruit",
+    "hindi_name": "कटहल"
+  },
+  {
+    "scientific_name": "Asparagus adscendens",
+    "english_name": "White musli",
+    "hindi_name": "सफेद मुसली"
+  },
+  {
+    "scientific_name": "Balanites aegyptiaca",
+    "english_name": "Desert date",
+    "hindi_name": "हिंगोट"
+  },
+  {
+    "scientific_name": "Bambusa arundinacea",
+    "english_name": "Thorny bamboo",
+    "hindi_name": "बांस"
+  },
+  {
+    "scientific_name": "Bauhinia variegata",
+    "english_name": "Orchid tree",
+    "hindi_name": "कचनार"
+  },
+  {
+    "scientific_name": "Boerhavia erecta",
+    "english_name": "Erect spiderling",
+    "hindi_name": "सांठ"
+  },
+  {
+    "scientific_name": "Bombax ceiba",
+    "english_name": "Red silk-cotton tree",
+    "hindi_name": "सेमल"
+  },
+  {
+    "scientific_name": "Brassica juncea",
+    "english_name": "Indian mustard",
+    "hindi_name": "सरसों"
+  },
+  {
+    "scientific_name": "Brassica nigra",
+    "english_name": "Black mustard",
+    "hindi_name": "राई"
+  },
+  {
+    "scientific_name": "Bryophyllum pinnatum",
+    "english_name": "Life plant",
+    "hindi_name": "पाथरचट्टा"
+  },
+  {
+    "scientific_name": "Caesalpinia bonduc",
+    "english_name": "Gray nicker",
+    "hindi_name": "कंटकी करंज"
+  },
+  {
+    "scientific_name": "Caesalpinia sappan",
+    "english_name": "Sappanwood",
+    "hindi_name": "पातंग"
+  },
+  {
+    "scientific_name": "Cajanus cajan",
+    "english_name": "Pigeon pea",
+    "hindi_name": "अरहर"
+  },
+  {
+    "scientific_name": "Carica papaya",
+    "english_name": "Papaya",
+    "hindi_name": "पपीता"
+  },
+  {
+    "scientific_name": "Carissa carandas",
+    "english_name": "Karonda",
+    "hindi_name": "करौंदा"
+  },
+  {
+    "scientific_name": "Carum carvi",
+    "english_name": "Caraway",
+    "hindi_name": "काला जीरा"
+  },
+  {
+    "scientific_name": "Carthamus tinctorius",
+    "english_name": "Safflower",
+    "hindi_name": "कुसुम"
+  },
+  {
+    "scientific_name": "Cedrus deodara",
+    "english_name": "Himalayan cedar",
+    "hindi_name": "देवदार"
+  },
+  {
+    "scientific_name": "Centaurea benedicta",
+    "english_name": "Blessed thistle",
+    "hindi_name": "कंटकारी"
+  },
+  {
+    "scientific_name": "Chenopodium album",
+    "english_name": "White goosefoot",
+    "hindi_name": "बथुआ"
+  },
+  {
+    "scientific_name": "Cinnamomum camphora",
+    "english_name": "Camphor tree",
+    "hindi_name": "कपूर"
+  },
+  {
+    "scientific_name": "Cissus repens",
+    "english_name": "Cissus",
+    "hindi_name": "अमरबेल"
+  },
+  {
+    "scientific_name": "Citrullus colocynthis",
+    "english_name": "Colocynth",
+    "hindi_name": "इंद्रायण"
+  },
+  {
+    "scientific_name": "Citrus limon",
+    "english_name": "Lemon",
+    "hindi_name": "नींबू"
+  },
+  {
+    "scientific_name": "Clitoria ternatea",
+    "english_name": "Butterfly pea",
+    "hindi_name": "अपराजिता"
+  },
+  {
+    "scientific_name": "Cocos nucifera",
+    "english_name": "Coconut",
+    "hindi_name": "नारियल"
+  },
+  {
+    "scientific_name": "Coleus forskohlii",
+    "english_name": "Indian coleus",
+    "hindi_name": "पाषाणभेद"
+  },
+  {
+    "scientific_name": "Convolvulus pluricaulis",
+    "english_name": "Shankhpushpi",
+    "hindi_name": "शंखपुष्पी"
+  },
+  {
+    "scientific_name": "Crataeva nurvala",
+    "english_name": "Three-leaved caper",
+    "hindi_name": "वरुण"
+  },
+  {
+    "scientific_name": "Cucumis sativus",
+    "english_name": "Cucumber",
+    "hindi_name": "खीरा"
+  },
+  {
+    "scientific_name": "Cucurbita maxima",
+    "english_name": "Winter squash",
+    "hindi_name": "कद्दू"
+  },
+  {
+    "scientific_name": "Curculigo orchioides",
+    "english_name": "Black musli",
+    "hindi_name": "काली मुसली"
+  },
+  {
+    "scientific_name": "Cymbopogon citratus",
+    "english_name": "Lemongrass",
+    "hindi_name": "नींबू घास"
+  },
+  {
+    "scientific_name": "Cynodon dactylon",
+    "english_name": "Bermuda grass",
+    "hindi_name": "दूब"
+  },
+  {
+    "scientific_name": "Cyperus rotundus",
+    "english_name": "Nutgrass",
+    "hindi_name": "नागरमोथा"
+  },
+  {
+    "scientific_name": "Dioscorea bulbifera",
+    "english_name": "Air potato",
+    "hindi_name": "वराहीकंद"
+  },
+  {
+    "scientific_name": "Dioscorea deltoidea",
+    "english_name": "Himalayan yam",
+    "hindi_name": "रतालू"
+  },
+  {
+    "scientific_name": "Diplazium esculentum",
+    "english_name": "Vegetable fern",
+    "hindi_name": "लिंगुड़ा"
+  },
+  {
+    "scientific_name": "Dolichos biflorus",
+    "english_name": "Horse gram",
+    "hindi_name": "कुल्थी"
+  },
+  {
+    "scientific_name": "Enicostema axillare",
+    "english_name": "Indian whitehead",
+    "hindi_name": "मामेजवा"
+  },
+  {
+    "scientific_name": "Eranda communis",
+    "english_name": "Castor bean",
+    "hindi_name": "अरंडी"
+  },
+  {
+    "scientific_name": "Fagonia cretica",
+    "english_name": "Fagonia",
+    "hindi_name": "धमासा"
+  },
+  {
+    "scientific_name": "Ficus hispida",
+    "english_name": "Hairy fig",
+    "hindi_name": "कठगूलर"
+  },
+  {
+    "scientific_name": "Ficus infectoria",
+    "english_name": "White fig",
+    "hindi_name": "पाकर"
+  },
+  {
+    "scientific_name": "Gardenia gummifera",
+    "english_name": "Dikamali",
+    "hindi_name": "डिकामाली"
+  },
+  {
+    "scientific_name": "Garcinia indica",
+    "english_name": "Kokum",
+    "hindi_name": "कोकम"
+  },
+  {
+    "scientific_name": "Garcinia pedunculata",
+    "english_name": "Tewra",
+    "hindi_name": "कुम्भी"
+  },
+  {
+    "scientific_name": "Gmelina asiatica",
+    "english_name": "Asian gmelina",
+    "hindi_name": "कृष्णसारिवा"
+  },
+  {
+    "scientific_name": "Gossypium herbaceum",
+    "english_name": "Levant cotton",
+    "hindi_name": "देशी कपास"
+  },
+  {
+    "scientific_name": "Helicteres isora",
+    "english_name": "Indian screw tree",
+    "hindi_name": "ऐंठी"
+  },
+  {
+    "scientific_name": "Hibiscus rosa-sinensis",
+    "english_name": "Chinese hibiscus",
+    "hindi_name": "गुड़हल"
+  },
+  {
+    "scientific_name": "Holoptelea integrifolia",
+    "english_name": "Indian elm",
+    "hindi_name": "चिरबिल्व"
+  },
+  {
+    "scientific_name": "Hybanthus enneaspermus",
+    "english_name": "Spade flower",
+    "hindi_name": "रत्नपुरुष"
+  },
+  {
+    "scientific_name": "Indigofera tinctoria",
+    "english_name": "True indigo",
+    "hindi_name": "नील"
+  },
+  {
+    "scientific_name": "Jatropha curcas",
+    "english_name": "Physic nut",
+    "hindi_name": "रतनजोत"
+  },
+  {
+    "scientific_name": "Jatropha gossypiifolia",
+    "english_name": "Bellyache bush",
+    "hindi_name": "दंती"
+  },
+  {
+    "scientific_name": "Lagenaria siceraria",
+    "english_name": "Bottle gourd",
+    "hindi_name": "लौकी"
+  },
+  {
+    "scientific_name": "Lagerstroemia speciosa",
+    "english_name": "Queen's crape-myrtle",
+    "hindi_name": "जरुल"
+  },
+  {
+    "scientific_name": "Lantana camara",
+    "english_name": "Lantana",
+    "hindi_name": "लैंटाना"
+  },
+  {
+    "scientific_name": "Leptadenia reticulata",
+    "english_name": "Jivanti",
+    "hindi_name": "जीवंती"
+  },
+  {
+    "scientific_name": "Linum usitatissimum",
+    "english_name": "Flax",
+    "hindi_name": "अलसी"
+  },
+  {
+    "scientific_name": "Litsea glutinosa",
+    "english_name": "Indian laurel",
+    "hindi_name": "मेदसाक"
+  },
+  {
+    "scientific_name": "Mallotus philippensis",
+    "english_name": "Kamala tree",
+    "hindi_name": "कमला"
+  },
+  {
+    "scientific_name": "Mangifera indica",
+    "english_name": "Mango",
+    "hindi_name": "आम"
+  },
+  {
+    "scientific_name": "Manilkara zapota",
+    "english_name": "Sapodilla",
+    "hindi_name": "चीकू"
+  },
+  {
+    "scientific_name": "Marsilea minuta",
+    "english_name": "Dwarf water clover",
+    "hindi_name": "सुसनी"
+  },
+  {
+    "scientific_name": "Melia azedarach",
+    "english_name": "Chinaberry",
+    "hindi_name": "बकायन"
+  },
+  {
+    "scientific_name": "Mesua ferrea",
+    "english_name": "Ceylon ironwood",
+    "hindi_name": "नागकेसर"
+  },
+  {
+    "scientific_name": "Mimusops elengi",
+    "english_name": "Spanish cherry",
+    "hindi_name": "बकुल"
+  },
+  {
+    "scientific_name": "Murraya koenigii",
+    "english_name": "Curry tree",
+    "hindi_name": "करी पत्ता"
+  },
+  {
+    "scientific_name": "Nerium oleander",
+    "english_name": "Oleander",
+    "hindi_name": "कनेर"
+  },
+  {
+    "scientific_name": "Ocimum gratissimum",
+    "english_name": "African basil",
+    "hindi_name": "राम तुलसी"
+  },
+  {
+    "scientific_name": "Operculina turpethum",
+    "english_name": "Indian jalap",
+    "hindi_name": "त्रिवृत"
+  },
+  {
+    "scientific_name": "Oxalis corniculata",
+    "english_name": "Creeping woodsorrel",
+    "hindi_name": "खट्टा चांगा"
+  },
+  {
+    "scientific_name": "Pandanus odorifer",
+    "english_name": "Fragrant screw pine",
+    "hindi_name": "केवड़ा"
+  },
+  {
+    "scientific_name": "Passiflora foetida",
+    "english_name": "Stinking passionflower",
+    "hindi_name": "वन लता"
+  },
+  {
+    "scientific_name": "Pergularia daemia",
+    "english_name": "Trellis-vine",
+    "hindi_name": "उत्तरणी"
+  },
+  {
+    "scientific_name": "Phoenix dactylifera",
+    "english_name": "Date palm",
+    "hindi_name": "खजूर"
+  },
+  {
+    "scientific_name": "Phyllanthus fraternus",
+    "english_name": "Gulf leaf-flower",
+    "hindi_name": "भुई आंवला"
+  },
+  {
+    "scientific_name": "Pistacia integerrima",
+    "english_name": "Karkatashringi tree",
+    "hindi_name": "काकड़ासिंगी"
+  },
+  {
+    "scientific_name": "Prosopis cineraria",
+    "english_name": "Khejri",
+    "hindi_name": "खेजड़ी"
+  },
+  {
+    "scientific_name": "Psidium guajava",
+    "english_name": "Guava",
+    "hindi_name": "अमरूद"
+  },
+  {
+    "scientific_name": "Pueraria tuberosa",
+    "english_name": "Indian kudzu",
+    "hindi_name": "विदारीकंद"
+  },
+  {
+    "scientific_name": "Putranjiva roxburghii",
+    "english_name": "Putranjiva",
+    "hindi_name": "पुत्रजीवक"
+  },
+  {
+    "scientific_name": "Raphanus sativus",
+    "english_name": "Radish",
+    "hindi_name": "मूली"
+  },
+  {
+    "scientific_name": "Sesamum indicum",
+    "english_name": "Sesame",
+    "hindi_name": "तिल"
+  },
+  {
+    "scientific_name": "Solanum indicum",
+    "english_name": "Indian nightshade",
+    "hindi_name": "बृहती"
+  },
+  {
+    "scientific_name": "Solanum virginianum",
+    "english_name": "Yellow-berried nightshade",
+    "hindi_name": "कंटकारी"
+  },
+  {
+    "scientific_name": "Tamarindus indica",
+    "english_name": "Tamarind",
+    "hindi_name": "इमली"
+  },
+  {
+    "scientific_name": "Tectona grandis",
+    "english_name": "Teak",
+    "hindi_name": "सागौन"
+  },
+  {
+    "scientific_name": "Thymus vulgaris",
+    "english_name": "Thyme",
+    "hindi_name": "अजवायन"
+  },
+  {
+    "scientific_name": "Trigonella foenum-graecum",
+    "english_name": "Fenugreek",
+    "hindi_name": "मेथी"
+  },
+  {
+    "scientific_name": "Urginea indica",
+    "english_name": "Indian squill",
+    "hindi_name": "जंगली प्याज"
+  },
+  {
+    "scientific_name": "Vigna radiata",
+    "english_name": "Mung bean",
+    "hindi_name": "मूंग"
+  },
+  {
+    "scientific_name": "Woodfordia fruticosa",
+    "english_name": "Fire-flame bush",
+    "hindi_name": "धायटी"
+  },
+  {
+    "scientific_name": "Zanthoxylum armatum",
+    "english_name": "Timber tree",
+    "hindi_name": "तेजबल"
+  },
+  {
+    "scientific_name": "Acacia ferruginea",
+    "english_name": "White-barked acacia",
+    "hindi_name": "सफेद कीकर"
+  },
+  {
+    "scientific_name": "Acacia leucophloea",
+    "english_name": "White babul",
+    "hindi_name": "सफेद बबूल"
+  },
+  {
+    "scientific_name": "Acalypha indica",
+    "english_name": "Indian copperleaf",
+    "hindi_name": "कुप्पी"
+  },
+  {
+    "scientific_name": "Achillea millefolium",
+    "english_name": "Yarrow",
+    "hindi_name": "गंधनायना"
+  },
+  {
+    "scientific_name": "Aconitum ferox",
+    "english_name": "Indian aconite",
+    "hindi_name": "वत्सनाभ"
+  },
+  {
+    "scientific_name": "Aconitum heterophyllum",
+    "english_name": "Indian atees",
+    "hindi_name": "अतीस"
+  },
+  {
+    "scientific_name": "Adansonia digitata",
+    "english_name": "Baobab",
+    "hindi_name": "गोरख चिंच"
+  },
+  {
+    "scientific_name": "Adhatoda vasica",
+    "english_name": "Malabar nut",
+    "hindi_name": "अडूसा"
+  },
+  {
+    "scientific_name": "Aegiceras corniculatum",
+    "english_name": "River mangrove",
+    "hindi_name": "गोराड"
+  },
+  {
+    "scientific_name": "Aerva javanica",
+    "english_name": "Desert cotton",
+    "hindi_name": "बुई"
+  },
+  {
+    "scientific_name": "Ageratum conyzoides",
+    "english_name": "Billygoat weed",
+    "hindi_name": "गोआलघास"
+  },
+  {
+    "scientific_name": "Albizia procera",
+    "english_name": "White siris",
+    "hindi_name": "काला सिरस"
+  },
+  {
+    "scientific_name": "Alhagi maurorum",
+    "english_name": "Camelthorn",
+    "hindi_name": "जवासा"
+  },
+  {
+    "scientific_name": "Allium tuberosum",
+    "english_name": "Garlic chives",
+    "hindi_name": "चीनी चाइव्स"
+  },
+  {
+    "scientific_name": "Ammania baccifera",
+    "english_name": "Blistering ammannia",
+    "hindi_name": "दादमर्दन"
+  },
+  {
+    "scientific_name": "Amorphophallus bulbifer",
+    "english_name": "Bulb-bearing amorphophallus",
+    "hindi_name": "जिमीकंद"
+  },
+  {
+    "scientific_name": "Anamirta cocculus",
+    "english_name": "Fish berry",
+    "hindi_name": "काकमारी"
+  },
+  {
+    "scientific_name": "Anemone obtusiloba",
+    "english_name": "Blue anemone",
+    "hindi_name": "रतनजोत"
+  },
+  {
+    "scientific_name": "Angelica glauca",
+    "english_name": "Himalayan angelica",
+    "hindi_name": "चोरू"
+  },
+  {
+    "scientific_name": "Annona reticulata",
+    "english_name": "Custard apple",
+    "hindi_name": "रामफल"
+  },
+  {
+    "scientific_name": "Arisaema tortuosum",
+    "english_name": "Whipcord cobra lily",
+    "hindi_name": "सर्पमुखी"
+  },
+  {
+    "scientific_name": "Arisaema jacquemontii",
+    "english_name": "Himalayan cobra lily",
+    "hindi_name": "सर्पछत्र"
+  },
+  {
+    "scientific_name": "Artemisia annua",
+    "english_name": "Sweet wormwood",
+    "hindi_name": "मीठा नागदौना"
+  },
+  {
+    "scientific_name": "Artemisia vulgaris",
+    "english_name": "Mugwort",
+    "hindi_name": "नागदौना"
+  },
+  {
+    "scientific_name": "Asparagus filicinus",
+    "english_name": "Fern-leaved asparagus",
+    "hindi_name": "नारिवल"
+  },
+  {
+    "scientific_name": "Asparagus sarmentosa",
+    "english_name": "Asparagus fern",
+    "hindi_name": "शतावरी"
+  },
+  {
+    "scientific_name": "Bacopa floribunda",
+    "english_name": "Water hyssop",
+    "hindi_name": "जल ब्राह्मी"
+  },
+  {
+    "scientific_name": "Bambusa bambos",
+    "english_name": "Giant thorny bamboo",
+    "hindi_name": "कांटेदार बांस"
+  },
+  {
+    "scientific_name": "Bauhinia purpurea",
+    "english_name": "Purple orchid tree",
+    "hindi_name": "कचनार"
+  },
+  {
+    "scientific_name": "Bauhinia racemosa",
+    "english_name": "Bidi leaf tree",
+    "hindi_name": "आपटा"
+  },
+  {
+    "scientific_name": "Begonia picta",
+    "english_name": "Painted begonia",
+    "hindi_name": "अम्लपत्र"
+  },
+  {
+    "scientific_name": "Benincasa hispida",
+    "english_name": "Ash gourd",
+    "hindi_name": "पेठा"
+  },
+  {
+    "scientific_name": "Biophytum sensitivum",
+    "english_name": "Sensitive plant",
+    "hindi_name": "लाजवंती"
+  },
+  {
+    "scientific_name": "Boerhavia repens",
+    "english_name": "Creeping hogweed",
+    "hindi_name": "पुनर्नवा"
+  },
+  {
+    "scientific_name": "Brahmi",
+    "english_name": "Brahmi",
+    "hindi_name": "ब्राह्मी"
+  },
+  {
+    "scientific_name": "Brassica rapa",
+    "english_name": "Turnip",
+    "hindi_name": "शलजम"
+  },
+  {
+    "scientific_name": "Butea superba",
+    "english_name": "Red kino tree",
+    "hindi_name": "पलाश"
+  },
+  {
+    "scientific_name": "Calophyllum inophyllum",
+    "english_name": "Alexandrian laurel",
+    "hindi_name": "सुल्तान चंपा"
+  },
+  {
+    "scientific_name": "Canavalia ensiformis",
+    "english_name": "Jack bean",
+    "hindi_name": "तलवार सेम"
+  },
+  {
+    "scientific_name": "Capparis decidua",
+    "english_name": "Caper bush",
+    "hindi_name": "करधई"
+  },
+  {
+    "scientific_name": "Carissa spinarum",
+    "english_name": "Conkerberry",
+    "hindi_name": "करोंदा"
+  },
+  {
+    "scientific_name": "Cassia auriculata",
+    "english_name": "Tanner's cassia",
+    "hindi_name": "तरवड़"
+  },
+  {
+    "scientific_name": "Cassia occidentalis",
+    "english_name": "Coffee senna",
+    "hindi_name": "कसौंदी"
+  },
+  {
+    "scientific_name": "Cassia sophera",
+    "english_name": "Sickle senna",
+    "hindi_name": "कसौंदी"
+  },
+  {
+    "scientific_name": "Celosia argentea",
+    "english_name": "Silver cockscomb",
+    "hindi_name": "सफेद मुर्गा"
+  },
+  {
+    "scientific_name": "Ceropegia bulbosa",
+    "english_name": "Indian lantern flower",
+    "hindi_name": "खरकटिका"
+  },
+  {
+    "scientific_name": "Cissampelos mucronata",
+    "english_name": "False pareira",
+    "hindi_name": "पाठा"
+  },
+  {
+    "scientific_name": "Citrus medica",
+    "english_name": "Citron",
+    "hindi_name": "बड़ा नींबू"
+  },
+  {
+    "scientific_name": "Clerodendrum serratum",
+    "english_name": "Blue-flowered glory tree",
+    "hindi_name": "भारंगी"
+  },
+  {
+    "scientific_name": "Coccinia grandis",
+    "english_name": "Ivy gourd",
+    "hindi_name": "कुंदरू"
+  },
+  {
+    "scientific_name": "Coffea arabica",
+    "english_name": "Arabica coffee",
+    "hindi_name": "कॉफी"
+  },
+  {
+    "scientific_name": "Colocasia esculenta",
+    "english_name": "Taro",
+    "hindi_name": "अरबी"
+  },
+  {
+    "scientific_name": "Cordia dichotoma",
+    "english_name": "Indian cherry",
+    "hindi_name": "लसोड़ा"
+  },
+  {
+    "scientific_name": "Cordia myxa",
+    "english_name": "Assyrian plum",
+    "hindi_name": "गोंदी"
+  },
+  {
+    "scientific_name": "Costus speciosus",
+    "english_name": "Crepe ginger",
+    "hindi_name": "केवकंद"
+  },
+  {
+    "scientific_name": "Crinum asiaticum",
+    "english_name": "Poison bulb",
+    "hindi_name": "सुदर्शन"
+  },
+  {
+    "scientific_name": "Cucumis melo",
+    "english_name": "Melon",
+    "hindi_name": "खरबूजा"
+  },
+  {
+    "scientific_name": "Curcuma aromatica",
+    "english_name": "Wild turmeric",
+    "hindi_name": "कच्ची हल्दी"
+  },
+  {
+    "scientific_name": "Curcuma angustifolia",
+    "english_name": "East Indian arrowroot",
+    "hindi_name": "तिखुर"
+  },
+  {
+    "scientific_name": "Curcuma caesia",
+    "english_name": "Black turmeric",
+    "hindi_name": "काली हल्दी"
+  },
+  {
+    "scientific_name": "Curcuma zedoaria",
+    "english_name": "Zedoary",
+    "hindi_name": "कचूर"
+  },
+  {
+    "scientific_name": "Dactylorhiza hatagirea",
+    "english_name": "Salam panja",
+    "hindi_name": "सलाम पंजा"
+  },
+  {
+    "scientific_name": "Datura stramonium",
+    "english_name": "Jimsonweed",
+    "hindi_name": "धतूरा"
+  },
+  {
+    "scientific_name": "Derris indica",
+    "english_name": "Indian beech",
+    "hindi_name": "करंज"
+  },
+  {
+    "scientific_name": "Dillenia indica",
+    "english_name": "Elephant apple",
+    "hindi_name": "करम्बेल"
+  },
+  {
+    "scientific_name": "Dioscorea alata",
+    "english_name": "Greater yam",
+    "hindi_name": "रतालू"
+  },
+  {
+    "scientific_name": "Dioscorea oppositifolia",
+    "english_name": "Chinese yam",
+    "hindi_name": "कंद"
+  },
+  {
+    "scientific_name": "Ensete superbum",
+    "english_name": "Wild banana",
+    "hindi_name": "रान केला"
+  },
+  {
+    "scientific_name": "Erythrina variegata",
+    "english_name": "Indian coral tree",
+    "hindi_name": "पांगरा"
+  },
+  {
+    "scientific_name": "Euphorbia neriifolia",
+    "english_name": "Indian spurge tree",
+    "hindi_name": "स्नूही"
+  },
+  {
+    "scientific_name": "Euphorbia thymifolia",
+    "english_name": "Thyme-leaved spurge",
+    "hindi_name": "छोटी दूधी"
+  },
+  {
+    "scientific_name": "Ficus auriculata",
+    "english_name": "Roxburgh fig",
+    "hindi_name": "तिमला"
+  },
+  {
+    "scientific_name": "Grewia asiatica",
+    "english_name": "Phalsa",
+    "hindi_name": "फालसा"
+  },
+  {
+    "scientific_name": "Habenaria intermedia",
+    "english_name": "Himalayan orchid",
+    "hindi_name": "ऋद्धि"
+  },
+  {
+    "scientific_name": "Hibiscus cannabinus",
+    "english_name": "Kenaf",
+    "hindi_name": "सन"
+  },
+  {
+    "scientific_name": "Hibiscus sabdariffa",
+    "english_name": "Roselle",
+    "hindi_name": "गुड़हल"
+  },
+  {
+    "scientific_name": "Hiptage benghalensis",
+    "english_name": "Helicopter flower",
+    "hindi_name": "माधवी लता"
+  },
+  {
+    "scientific_name": "Hyoscyamus niger",
+    "english_name": "Henbane",
+    "hindi_name": "खुरासानी अजवायन"
+  },
+  {
+    "scientific_name": "Illicium verum",
+    "english_name": "Star anise",
+    "hindi_name": "चक्रफूल"
+  },
+  {
+    "scientific_name": "Jasminum grandiflorum",
+    "english_name": "Spanish jasmine",
+    "hindi_name": "चमेली"
+  },
+  {
+    "scientific_name": "Juglans regia",
+    "english_name": "English walnut",
+    "hindi_name": "अखरोट"
+  },
+  {
+    "scientific_name": "Lepidium sativum",
+    "english_name": "Garden cress",
+    "hindi_name": "हलीम"
+  },
+  {
+    "scientific_name": "Malva parviflora",
+    "english_name": "Little mallow",
+    "hindi_name": "बिजबंद"
+  },
+  {
+    "scientific_name": "Moringa concanensis",
+    "english_name": "Wild drumstick tree",
+    "hindi_name": "सहजन"
+  },
+  {
+    "scientific_name": "Morus alba",
+    "english_name": "White mulberry",
+    "hindi_name": "शहतूत"
+  },
+  {
+    "scientific_name": "Morus indica",
+    "english_name": "Indian mulberry",
+    "hindi_name": "शहतूत"
+  },
+  {
+    "scientific_name": "Murraya paniculata",
+    "english_name": "Orange jasmine",
+    "hindi_name": "कामिनी"
+  },
+  {
+    "scientific_name": "Nelumbo nucifera",
+    "english_name": "Sacred lotus",
+    "hindi_name": "कमल"
+  },
+  {
+    "scientific_name": "Nymphaea nouchali",
+    "english_name": "Blue water lily",
+    "hindi_name": "नीलकमल"
+  },
+  {
+    "scientific_name": "Ocimum canum",
+    "english_name": "Hoary basil",
+    "hindi_name": "वन तुलसी"
+  },
+  {
+    "scientific_name": "Pavonia odorata",
+    "english_name": "Fragrant swampmallow",
+    "hindi_name": "बाला"
+  },
+  {
+    "scientific_name": "Piper cubeba",
+    "english_name": "Cubeb",
+    "hindi_name": "कबाबचीनी"
+  },
+  {
+    "scientific_name": "Piper betle",
+    "english_name": "Betel leaf",
+    "hindi_name": "पान"
+  },
+  {
+    "scientific_name": "Plectranthus amboinicus",
+    "english_name": "Indian borage",
+    "hindi_name": "अजवाइन पत्ता"
+  },
+  {
+    "scientific_name": "Prunus cerasoides",
+    "english_name": "Himalayan wild cherry",
+    "hindi_name": "पदम"
+  },
+  {
+    "scientific_name": "Prunus persica",
+    "english_name": "Peach",
+    "hindi_name": "आड़ू"
+  },
+  {
+    "scientific_name": "Prunus armeniaca",
+    "english_name": "Apricot",
+    "hindi_name": "खुबानी"
+  },
+  {
+    "scientific_name": "Rosa damascena",
+    "english_name": "Damask rose",
+    "hindi_name": "गुलाब"
+  },
+  {
+    "scientific_name": "Rubia cordifolia",
+    "english_name": "Indian madder",
+    "hindi_name": "मजीठ"
+  },
+  {
+    "scientific_name": "Rumex vesicarius",
+    "english_name": "Bladder dock",
+    "hindi_name": "अम्बाड़ी"
+  },
+  {
+    "scientific_name": "Salvadora persica",
+    "english_name": "Toothbrush tree",
+    "hindi_name": "पीलू"
+  },
+  {
+    "scientific_name": "Sapindus mukorossi",
+    "english_name": "Soapnut",
+    "hindi_name": "रीठा"
+  },
+  {
+    "scientific_name": "Semecarpus anacardium",
+    "english_name": "Marking nut tree",
+    "hindi_name": "भिलावा"
+  },
+  {
+    "scientific_name": "Shorea robusta",
+    "english_name": "Sal tree",
+    "hindi_name": "साल"
+  },
+  {
+    "scientific_name": "Sida cordifolia",
+    "english_name": "Country mallow",
+    "hindi_name": "बला"
+  },
+  {
+    "scientific_name": "Smilax ovalifolia",
+    "english_name": "Indian greenbrier",
+    "hindi_name": "कुमारी"
+  },
+  {
+    "scientific_name": "Solanum melongena",
+    "english_name": "Eggplant",
+    "hindi_name": "बैंगन"
+  },
+  {
+    "scientific_name": "Sphaeranthus indicus",
+    "english_name": "East Indian globe thistle",
+    "hindi_name": "मुंडी"
+  },
+  {
+    "scientific_name": "Sterculia urens",
+    "english_name": "Gum karaya tree",
+    "hindi_name": "कुल्लू"
+  },
+  {
+    "scientific_name": "Tamarix dioica",
+    "english_name": "Indian tamarisk",
+    "hindi_name": "फराश"
+  },
+  {
+    "scientific_name": "Tinosporia sinensis",
+    "english_name": "Chinese tinospora",
+    "hindi_name": "गिलोय"
+  },
+  {
+    "scientific_name": "Trapa natans",
+    "english_name": "Water caltrop",
+    "hindi_name": "सिंघाड़ा"
+  },
+  {
+    "scientific_name": "Valeriana jatamansi",
+    "english_name": "Indian valerian",
+    "hindi_name": "जटामांसी"
+  },
+  {
+    "scientific_name": "Vigna mungo",
+    "english_name": "Black gram",
+    "hindi_name": "उड़द"
+  },
+  {
+    "scientific_name": "Vitis vinifera",
+    "english_name": "Grape",
+    "hindi_name": "अंगूर"
+  },
+  {
+    "scientific_name": "Wrightia tinctoria",
+    "english_name": "Sweet indrajao",
+    "hindi_name": "कुटज"
+  },
+  {
+    "scientific_name": "Zingiber zerumbet",
+    "english_name": "Pinecone ginger",
+    "hindi_name": "कर्चूर"
+  },
+  {
+    "scientific_name": "Acalypha fruticosa",
+    "english_name": "Shrubby copperleaf",
+    "hindi_name": "कुप्पी"
+  },
+  {
+    "scientific_name": "Acacia concinna",
+    "english_name": "Shikakai",
+    "hindi_name": "शिकाकाई"
+  },
+  {
+    "scientific_name": "Acacia pennata",
+    "english_name": "Climbing acacia",
+    "hindi_name": "शिकाकाई"
+  },
+  {
+    "scientific_name": "Adenanthera pavonina",
+    "english_name": "Red bead tree",
+    "hindi_name": "रक्तकंचन"
+  },
+  {
+    "scientific_name": "Adenium obesum",
+    "english_name": "Desert rose",
+    "hindi_name": "करबी"
+  },
+  {
+    "scientific_name": "Adiantum capillus-veneris",
+    "english_name": "Maidenhair fern",
+    "hindi_name": "हंसराज"
+  },
+  {
+    "scientific_name": "Aeschynomene aspera",
+    "english_name": "Sola pith plant",
+    "hindi_name": "सोलापत्ता"
+  },
+  {
+    "scientific_name": "Agave americana",
+    "english_name": "Century plant",
+    "hindi_name": "रंभा"
+  },
+  {
+    "scientific_name": "Aglaia elaeagnoidea",
+    "english_name": "Amoora",
+    "hindi_name": "अमूरा"
+  },
+  {
+    "scientific_name": "Ailanthus malabarica",
+    "english_name": "Indian quassia",
+    "hindi_name": "महालिंब"
+  },
+  {
+    "scientific_name": "Albizia amara",
+    "english_name": "Sickle-leaved siris",
+    "hindi_name": "काला सिरस"
+  },
+  {
+    "scientific_name": "Albizia odoratissima",
+    "english_name": "Black siris",
+    "hindi_name": "काला सिरस"
+  },
+  {
+    "scientific_name": "Alysicarpus vaginalis",
+    "english_name": "Alysicarpus",
+    "hindi_name": "पित्तपापड़ा"
+  },
+  {
+    "scientific_name": "Amaranthus tricolor",
+    "english_name": "Red amaranth",
+    "hindi_name": "लाल चौलाई"
+  },
+  {
+    "scientific_name": "Anisomeles malabarica",
+    "english_name": "Malabar catmint",
+    "hindi_name": "मालाबार भांग"
+  },
+  {
+    "scientific_name": "Antidesma acidum",
+    "english_name": "Indian currant",
+    "hindi_name": "करोंदा"
+  },
+  {
+    "scientific_name": "Ardisia solanacea",
+    "english_name": "Shoebutton ardisia",
+    "hindi_name": "आंवला"
+  },
+  {
+    "scientific_name": "Argyreia speciosa",
+    "english_name": "Elephant creeper",
+    "hindi_name": "वृद्धदारक"
+  },
+  {
+    "scientific_name": "Artemisia indica",
+    "english_name": "Indian wormwood",
+    "hindi_name": "नागदौना"
+  },
+  {
+    "scientific_name": "Asclepias curassavica",
+    "english_name": "Bloodflower",
+    "hindi_name": "आक"
+  },
+  {
+    "scientific_name": "Bambusa tulda",
+    "english_name": "Indian timber bamboo",
+    "hindi_name": "तुलदा बांस"
+  },
+  {
+    "scientific_name": "Bauhinia malabarica",
+    "english_name": "Malabar orchid tree",
+    "hindi_name": "कोविदार"
+  },
+  {
+    "scientific_name": "Blumea balsamifera",
+    "english_name": "Sambong",
+    "hindi_name": "कपूर पत्ती"
+  },
+  {
+    "scientific_name": "Bridelia retusa",
+    "english_name": "Spinous kino tree",
+    "hindi_name": "कठबोर"
+  },
+  {
+    "scientific_name": "Brugmansia suaveolens",
+    "english_name": "Angel's trumpet",
+    "hindi_name": "धतूरा"
+  },
+  {
+    "scientific_name": "Bryonia laciniosa",
+    "english_name": "Shivlingi",
+    "hindi_name": "शिवलिंगी"
+  },
+  {
+    "scientific_name": "Cajanus scarabaeoides",
+    "english_name": "Wild pigeon pea",
+    "hindi_name": "वन अरहर"
+  },
+  {
+    "scientific_name": "Canthium parviflorum",
+    "english_name": "Canthium",
+    "hindi_name": "कुंबी"
+  },
+  {
+    "scientific_name": "Capparis zeylanica",
+    "english_name": "Ceylon caper",
+    "hindi_name": "इंद्रजव"
+  },
+  {
+    "scientific_name": "Cardiospermum halicacabum",
+    "english_name": "Balloon vine",
+    "hindi_name": "कनफुटी"
+  },
+  {
+    "scientific_name": "Careya arborea",
+    "english_name": "Ceylon oak",
+    "hindi_name": "कुम्भी"
+  },
+  {
+    "scientific_name": "Caryota urens",
+    "english_name": "Fishtail palm",
+    "hindi_name": "फिशटेल पाम"
+  },
+  {
+    "scientific_name": "Cassia alata",
+    "english_name": "Candle bush",
+    "hindi_name": "दादमर्दन"
+  },
+  {
+    "scientific_name": "Ceropegia tuberosa",
+    "english_name": "Tuberous ceropegia",
+    "hindi_name": "खरकटिका"
+  },
+  {
+    "scientific_name": "Chrozophora rottleri",
+    "english_name": "Croton-leaved chrozophora",
+    "hindi_name": "कपिला"
+  },
+  {
+    "scientific_name": "Cissus adnata",
+    "english_name": "Cissus",
+    "hindi_name": "अमरबेल"
+  },
+  {
+    "scientific_name": "Clematis gouriana",
+    "english_name": "Indian clematis",
+    "hindi_name": "गरुड़पाठा"
+  },
+  {
+    "scientific_name": "Clerodendrum inerme",
+    "english_name": "Seaside clerodendrum",
+    "hindi_name": "विचित्रा"
+  },
+  {
+    "scientific_name": "Clerodendrum viscosum",
+    "english_name": "Hill glory bower",
+    "hindi_name": "भांट"
+  },
+  {
+    "scientific_name": "Cocculus hirsutus",
+    "english_name": "Broom creeper",
+    "hindi_name": "पातालगरुड़ी"
+  },
+  {
+    "scientific_name": "Coscinium fenestratum",
+    "english_name": "Tree turmeric",
+    "hindi_name": "दारुहरिद्रा"
+  },
+  {
+    "scientific_name": "Crotalaria juncea",
+    "english_name": "Sunn hemp",
+    "hindi_name": "सन"
+  },
+  {
+    "scientific_name": "Croton tiglium",
+    "english_name": "Purging croton",
+    "hindi_name": "जमालगोटा"
+  },
+  {
+    "scientific_name": "Cucumis callosus",
+    "english_name": "Wild melon",
+    "hindi_name": "काचरी"
+  },
+  {
+    "scientific_name": "Cucumis trigonus",
+    "english_name": "Wild cucumber",
+    "hindi_name": "काचरी"
+  },
+  {
+    "scientific_name": "Cuscuta reflexa",
+    "english_name": "Dodder",
+    "hindi_name": "अमरबेल"
+  },
+  {
+    "scientific_name": "Cyanotis tuberosa",
+    "english_name": "Tuberous cyanotis",
+    "hindi_name": "नीलकंठी"
+  },
+  {
+    "scientific_name": "Datura innoxia",
+    "english_name": "Moonflower",
+    "hindi_name": "धतूरा"
+  },
+  {
+    "scientific_name": "Diospyros melanoxylon",
+    "english_name": "Coromandel ebony",
+    "hindi_name": "तेंदू"
+  },
+  {
+    "scientific_name": "Dodonaea viscosa",
+    "english_name": "Hopbush",
+    "hindi_name": "मेहंदी"
+  },
+  {
+    "scientific_name": "Eclipta alba",
+    "english_name": "False daisy",
+    "hindi_name": "भृंगराज"
+  },
+  {
+    "scientific_name": "Eichhornia crassipes",
+    "english_name": "Water hyacinth",
+    "hindi_name": "जलकुंभी"
+  },
+  {
+    "scientific_name": "Elaeocarpus ganitrus",
+    "english_name": "Rudraksha tree",
+    "hindi_name": "रुद्राक्ष"
+  },
+  {
+    "scientific_name": "Enicostema littorale",
+    "english_name": "Indian whitehead",
+    "hindi_name": "मामेजवा"
+  },
+  {
+    "scientific_name": "Erythrina indica",
+    "english_name": "Indian coral tree",
+    "hindi_name": "पांगरा"
+  },
+  {
+    "scientific_name": "Euphorbia antiquorum",
+    "english_name": "Triangular spurge",
+    "hindi_name": "सेहुंड"
+  },
+  {
+    "scientific_name": "Euphorbia caducifolia",
+    "english_name": "Leafless euphorbia",
+    "hindi_name": "थोर"
+  },
+  {
+    "scientific_name": "Ferula jaeschkeana",
+    "english_name": "Himalayan asafoetida",
+    "hindi_name": "हींग"
+  },
+  {
+    "scientific_name": "Ficus amplissima",
+    "english_name": "Indian fig",
+    "hindi_name": "पाकर"
+  },
+  {
+    "scientific_name": "Ficus drupacea",
+    "english_name": "Mysore fig",
+    "hindi_name": "लाल गूलर"
+  },
+  {
+    "scientific_name": "Ficus semicordata",
+    "english_name": "Drooping fig",
+    "hindi_name": "खरक"
+  },
+  {
+    "scientific_name": "Garcinia morella",
+    "english_name": "Indian gamboge",
+    "hindi_name": "काली कोकम"
+  },
+  {
+    "scientific_name": "Gardenia jasminoides",
+    "english_name": "Cape jasmine",
+    "hindi_name": "गंधराज"
+  },
+  {
+    "scientific_name": "Grewia tiliaefolia",
+    "english_name": "Dhaman tree",
+    "hindi_name": "धामन"
+  },
+  {
+    "scientific_name": "Hedychium spicatum",
+    "english_name": "Spiked ginger lily",
+    "hindi_name": "कपूर कचरी"
+  },
+  {
+    "scientific_name": "Heliotropium indicum",
+    "english_name": "Indian heliotrope",
+    "hindi_name": "हठीसुंडी"
+  },
+  {
+    "scientific_name": "Hemionitis arifolia",
+    "english_name": "Heart fern",
+    "hindi_name": "हंसपदी"
+  },
+  {
+    "scientific_name": "Hygrophila auriculata",
+    "english_name": "Marsh barbel",
+    "hindi_name": "कोकिलाक्ष"
+  },
+  {
+    "scientific_name": "Ipomoea pes-caprae",
+    "english_name": "Beach morning glory",
+    "hindi_name": "समुद्रशोष"
+  },
+  {
+    "scientific_name": "Jatropha multifida",
+    "english_name": "Coral plant",
+    "hindi_name": "पारस पीपल"
+  },
+  {
+    "scientific_name": "Justicia gendarussa",
+    "english_name": "Malabar nut",
+    "hindi_name": "कृष्णवासा"
+  },
+  {
+    "scientific_name": "Kaempferia galanga",
+    "english_name": "Aromatic ginger",
+    "hindi_name": "चंद्रशूर"
+  },
+  {
+    "scientific_name": "Kalanchoe pinnata",
+    "english_name": "Life plant",
+    "hindi_name": "पाथरचट्टा"
+  },
+  {
+    "scientific_name": "Leea indica",
+    "english_name": "Bandicoot berry",
+    "hindi_name": "हस्तिकर्णी"
+  },
+  {
+    "scientific_name": "Limnophila aromatica",
+    "english_name": "Rice paddy herb",
+    "hindi_name": "जल ब्राह्मी"
+  },
+  {
+    "scientific_name": "Limonia acidissima",
+    "english_name": "Wood apple",
+    "hindi_name": "कैथ"
+  },
+  {
+    "scientific_name": "Luffa acutangula",
+    "english_name": "Ridge gourd",
+    "hindi_name": "तोरई"
+  },
+  {
+    "scientific_name": "Madhuca longifolia",
+    "english_name": "Mahua",
+    "hindi_name": "महुआ"
+  },
+  {
+    "scientific_name": "Maytenus emarginata",
+    "english_name": "Desert maytenus",
+    "hindi_name": "कंकेर"
+  },
+  {
+    "scientific_name": "Melastoma malabathricum",
+    "english_name": "Indian rhododendron",
+    "hindi_name": "फुटकिया"
+  },
+  {
+    "scientific_name": "Mimosa pudica",
+    "english_name": "Sensitive plant",
+    "hindi_name": "लाजवंती"
+  },
+  {
+    "scientific_name": "Momordica charantia",
+    "english_name": "Bitter melon",
+    "hindi_name": "करेला"
+  },
+  {
+    "scientific_name": "Ocimum americanum",
+    "english_name": "Hoary basil",
+    "hindi_name": "वन तुलसी"
+  },
+  {
+    "scientific_name": "Peganum harmala",
+    "english_name": "Syrian rue",
+    "hindi_name": "हरमल"
+  },
+  {
+    "scientific_name": "Phyllanthus maderaspatensis",
+    "english_name": "Madras leaf-flower",
+    "hindi_name": "भुई आंवला"
+  },
+  {
+    "scientific_name": "Portulaca oleracea",
+    "english_name": "Purslane",
+    "hindi_name": "कुलफा"
+  },
+  {
+    "scientific_name": "Premna integrifolia",
+    "english_name": "Headache tree",
+    "hindi_name": "अग्निमंथ"
+  },
+  {
+    "scientific_name": "Rosa indica",
+    "english_name": "Indian rose",
+    "hindi_name": "गुलाब"
+  },
+  {
+    "scientific_name": "Saccharum spontaneum",
+    "english_name": "Wild sugarcane",
+    "hindi_name": "कांश"
+  },
+  {
+    "scientific_name": "Tephrosia purpurea",
+    "english_name": "Wild indigo",
+    "hindi_name": "सरफोंका"
+  },
+  {
+    "scientific_name": "Tinospora sinensis",
+    "english_name": "Chinese tinospora",
+    "hindi_name": "गिलोय"
+  },
+  {
+    "scientific_name": "Tragia involucrata",
+    "english_name": "Indian stinging nettle",
+    "hindi_name": "दाहिका"
+  },
+  {
+    "scientific_name": "Trichosanthes cucumerina",
+    "english_name": "Snake gourd",
+    "hindi_name": "चिचिंडा"
+  },
+  {
+    "scientific_name": "Tridax procumbens",
+    "english_name": "Coatbuttons",
+    "hindi_name": "घमरा"
+  },
+  {
+    "scientific_name": "Typha angustifolia",
+    "english_name": "Narrowleaf cattail",
+    "hindi_name": "नरकट"
+  },
+  {
+    "scientific_name": "Uraria picta",
+    "english_name": "Prishniparni",
+    "hindi_name": "पृष्णिपर्णी"
+  },
+  {
+    "scientific_name": "Vernonia cinerea",
+    "english_name": "Little ironweed",
+    "hindi_name": "सहदेवी"
+  },
+  {
+    "scientific_name": "Xanthium strumarium",
+    "english_name": "Cocklebur",
+    "hindi_name": "चोटा गोखरू"
+  },
+  {
+    "scientific_name": "Ziziphus nummularia",
+    "english_name": "Christ's thorn jujube",
+    "hindi_name": "झड़बेर"
+  },
+  {
+    "scientific_name": "Acacia suma",
+    "english_name": "Suma acacia",
+    "hindi_name": "सफेद खैर"
+  },
+  {
+    "scientific_name": "Acacia tortilis",
+    "english_name": "Umbrella thorn acacia",
+    "hindi_name": "इजराइली बबूल"
+  },
+  {
+    "scientific_name": "Adenia hondala",
+    "english_name": "Hondala",
+    "hindi_name": "होंडाला"
+  },
+  {
+    "scientific_name": "Aerva persica",
+    "english_name": "Desert aerva",
+    "hindi_name": "बुई"
+  },
+  {
+    "scientific_name": "Aerva sanguinolenta",
+    "english_name": "Mountain aerva",
+    "hindi_name": "पाषाणभेद"
+  },
+  {
+    "scientific_name": "Aglaia lawii",
+    "english_name": "Law's aglaia",
+    "hindi_name": "अमूरा"
+  },
+  {
+    "scientific_name": "Albizia chinensis",
+    "english_name": "Chinese albizia",
+    "hindi_name": "चिलबिल"
+  },
+  {
+    "scientific_name": "Allium ascalonicum",
+    "english_name": "Shallot",
+    "hindi_name": "छोटी प्याज"
+  },
+  {
+    "scientific_name": "Ammannia multiflora",
+    "english_name": "Many-flowered ammannia",
+    "hindi_name": "दादमर्दन"
+  },
+  {
+    "scientific_name": "Amorphophallus campanulatus",
+    "english_name": "Elephant foot yam",
+    "hindi_name": "जिमीकंद"
+  },
+  {
+    "scientific_name": "Anogeissus pendula",
+    "english_name": "Axlewood tree",
+    "hindi_name": "धौरा"
+  },
+  {
+    "scientific_name": "Argemone ochroleuca",
+    "english_name": "Pale Mexican poppy",
+    "hindi_name": "सत्यानाशी"
+  },
+  {
+    "scientific_name": "Arisaema utile",
+    "english_name": "Himalayan cobra lily",
+    "hindi_name": "सर्पछत्र"
+  },
+  {
+    "scientific_name": "Artemisia roxburghiana",
+    "english_name": "Roxburgh's wormwood",
+    "hindi_name": "नागदौना"
+  },
+  {
+    "scientific_name": "Artocarpus lacucha",
+    "english_name": "Monkey jack",
+    "hindi_name": "बड़हल"
+  },
+  {
+    "scientific_name": "Bacopa caroliniana",
+    "english_name": "Lemon bacopa",
+    "hindi_name": "ब्राह्मी"
+  },
+  {
+    "scientific_name": "Balanites roxburghii",
+    "english_name": "Indian desert date",
+    "hindi_name": "हिंगोट"
+  },
+  {
+    "scientific_name": "Barleria cristata",
+    "english_name": "Philippine violet",
+    "hindi_name": "प्याबासा"
+  },
+  {
+    "scientific_name": "Bauhinia vahlii",
+    "english_name": "Maloo creeper",
+    "hindi_name": "महुआ बेल"
+  },
+  {
+    "scientific_name": "Boerhavia ciliata",
+    "english_name": "Ciliate hogweed",
+    "hindi_name": "पुनर्नवा"
+  },
+  {
+    "scientific_name": "Borreria hispida",
+    "english_name": "Hairy buttonweed",
+    "hindi_name": "मुस्कदानी"
+  },
+  {
+    "scientific_name": "Brassica campestris",
+    "english_name": "Field mustard",
+    "hindi_name": "सरसों"
+  },
+  {
+    "scientific_name": "Buddleja asiatica",
+    "english_name": "Asian butterfly bush",
+    "hindi_name": "गंधप्रसारिणी"
+  },
+  {
+    "scientific_name": "Caesalpinia digyna",
+    "english_name": "Teri pod",
+    "hindi_name": "तगर"
+  },
+  {
+    "scientific_name": "Callicarpa macrophylla",
+    "english_name": "Large-leaved beautyberry",
+    "hindi_name": "दया"
+  },
+  {
+    "scientific_name": "Canarium strictum",
+    "english_name": "Black dammar tree",
+    "hindi_name": "काला धूप"
+  },
+  {
+    "scientific_name": "Capparis spinosa",
+    "english_name": "Caper bush",
+    "hindi_name": "कबरा"
+  },
+  {
+    "scientific_name": "Cayratia trifolia",
+    "english_name": "Bush grape",
+    "hindi_name": "अमरबेल"
+  },
+  {
+    "scientific_name": "Citrus aurantium",
+    "english_name": "Bitter orange",
+    "hindi_name": "खट्टा नारंगी"
+  },
+  {
+    "scientific_name": "Citrus reticulata",
+    "english_name": "Mandarin orange",
+    "hindi_name": "संतरा"
+  },
+  {
+    "scientific_name": "Coleus vettiveroides",
+    "english_name": "Indian patchouli",
+    "hindi_name": "कपूर कचरी"
+  },
+  {
+    "scientific_name": "Commelina benghalensis",
+    "english_name": "Bengal dayflower",
+    "hindi_name": "कानकौआ"
+  },
+  {
+    "scientific_name": "Convolvulus arvensis",
+    "english_name": "Field bindweed",
+    "hindi_name": "हिरणखुरी"
+  },
+  {
+    "scientific_name": "Cordia macleodii",
+    "english_name": "Macleod's cordia",
+    "hindi_name": "दहिपलाश"
+  },
+  {
+    "scientific_name": "Crotalaria burhia",
+    "english_name": "Desert rattlepod",
+    "hindi_name": "सनिया"
+  },
+  {
+    "scientific_name": "Cryptolepis buchanani",
+    "english_name": "Buchanan's cryptolepis",
+    "hindi_name": "कृष्ण सारिवा"
+  },
+  {
+    "scientific_name": "Cucumis prophetarum",
+    "english_name": "Wild cucumber",
+    "hindi_name": "कचरी"
+  },
+  {
+    "scientific_name": "Curcuma amada",
+    "english_name": "Mango ginger",
+    "hindi_name": "आम हल्दी"
+  },
+  {
+    "scientific_name": "Cymbopogon martinii",
+    "english_name": "Palmarosa",
+    "hindi_name": "रोशा घास"
+  },
+  {
+    "scientific_name": "Dactyloctenium aegyptium",
+    "english_name": "Crowfoot grass",
+    "hindi_name": "मकरा"
+  },
+  {
+    "scientific_name": "Desmodium triflorum",
+    "english_name": "Three-flowered beggarweed",
+    "hindi_name": "लघुपर्णी"
+  },
+  {
+    "scientific_name": "Dioscorea pentaphylla",
+    "english_name": "Five-leaved yam",
+    "hindi_name": "कंद"
+  },
+  {
+    "scientific_name": "Diospyros malabarica",
+    "english_name": "Gaub tree",
+    "hindi_name": "तेंदू"
+  },
+  {
+    "scientific_name": "Dracaena trifasciata",
+    "english_name": "Snake plant",
+    "hindi_name": "सर्प पौधा"
+  },
+  {
+    "scientific_name": "Enhydra fluctuans",
+    "english_name": "Buffalo spinach",
+    "hindi_name": "हिलमोचिका"
+  },
+  {
+    "scientific_name": "Erycibe paniculata",
+    "english_name": "Erycibe",
+    "hindi_name": "कृष्ण सारिवा"
+  },
+  {
+    "scientific_name": "Flacourtia indica",
+    "english_name": "Governor's plum",
+    "hindi_name": "बनबेर"
+  },
+  {
+    "scientific_name": "Hygrophila polysperma",
+    "english_name": "Dwarf hygrophila",
+    "hindi_name": "जल पौधा"
+  },
+  {
+    "scientific_name": "Ipomoea aquatica",
+    "english_name": "Water spinach",
+    "hindi_name": "कलमी साग"
+  },
+  {
+    "scientific_name": "Ipomoea mauritiana",
+    "english_name": "Giant potato tree",
+    "hindi_name": "विदारीकंद"
+  },
+  {
+    "scientific_name": "Jasminum sambac",
+    "english_name": "Arabian jasmine",
+    "hindi_name": "मोगरा"
+  },
+  {
+    "scientific_name": "Kigelia africana",
+    "english_name": "Sausage tree",
+    "hindi_name": "सॉसेज वृक्ष"
+  },
+  {
+    "scientific_name": "Lagerstroemia parviflora",
+    "english_name": "Small-flowered crape myrtle",
+    "hindi_name": "धौरा"
+  },
+  {
+    "scientific_name": "Momordica dioica",
+    "english_name": "Spine gourd",
+    "hindi_name": "ककोरा"
+  },
+  {
+    "scientific_name": "Nymphaea pubescens",
+    "english_name": "White water lily",
+    "hindi_name": "कुमुद"
+  },
+  {
+    "scientific_name": "Opuntia ficus-indica",
+    "english_name": "Prickly pear",
+    "hindi_name": "नागफनी"
+  },
+  {
+    "scientific_name": "Phyla nodiflora",
+    "english_name": "Frogfruit",
+    "hindi_name": "जलपिपली"
+  },
+  {
+    "scientific_name": "Piper attenuatum",
+    "english_name": "Long pepper relative",
+    "hindi_name": "पिप्पली"
+  },
+  {
+    "scientific_name": "Plectranthus barbatus",
+    "english_name": "Indian coleus",
+    "hindi_name": "पत्थरचूर"
+  },
+  {
+    "scientific_name": "Pogostemon cablin",
+    "english_name": "Patchouli",
+    "hindi_name": "पचौली"
+  },
+  {
+    "scientific_name": "Rauvolfia tetraphylla",
+    "english_name": "Devil pepper",
+    "hindi_name": "सर्पगंधा"
+  },
+  {
+    "scientific_name": "Rhododendron arboreum",
+    "english_name": "Tree rhododendron",
+    "hindi_name": "बुरांश"
+  },
+  {
+    "scientific_name": "Salmalia malabarica",
+    "english_name": "Red silk-cotton tree",
+    "hindi_name": "सेमल"
+  },
+  {
+    "scientific_name": "Sapindus trifoliatus",
+    "english_name": "Three-leaved soapnut",
+    "hindi_name": "रीठा"
+  },
+  {
+    "scientific_name": "Saraca indica",
+    "english_name": "Ashoka tree",
+    "hindi_name": "अशोक"
+  },
+  {
+    "scientific_name": "Solanum americanum",
+    "english_name": "American nightshade",
+    "hindi_name": "मकोय"
+  },
+  {
+    "scientific_name": "Solanum torvum",
+    "english_name": "Turkey berry",
+    "hindi_name": "चुंदरी"
+  },
+  {
+    "scientific_name": "Stephania japonica",
+    "english_name": "Snake vine",
+    "hindi_name": "पाठा"
+  },
+  {
+    "scientific_name": "Syzygium nervosum",
+    "english_name": "Wild cinnamon",
+    "hindi_name": "जामुन"
+  },
+  {
+    "scientific_name": "Terminalia arjuna",
+    "english_name": "Arjuna tree",
+    "hindi_name": "अर्जुन"
+  },
+  {
+    "scientific_name": "Terminalia catappa",
+    "english_name": "Indian almond",
+    "hindi_name": "जंगली बादाम"
+  },
+  {
+    "scientific_name": "Trichosanthes dioica",
+    "english_name": "Pointed gourd",
+    "hindi_name": "परवल"
+  },
+  {
+    "scientific_name": "Typhonium trilobatum",
+    "english_name": "Three-lobed typhonium",
+    "hindi_name": "गजपिप्पली"
+  },
+  {
+    "scientific_name": "Vitex trifolia",
+    "english_name": "Three-leaved chaste tree",
+    "hindi_name": "निर्गुंडी"
+  },
+  {
+    "scientific_name": "Wattakaka volubilis",
+    "english_name": "Green milkweed climber",
+    "hindi_name": "काकमारी"
+  },
+  {
+    "scientific_name": "Ziziphus mauritiana",
+    "english_name": "Indian jujube",
+    "hindi_name": "बेर"
+  },
+  {
+    "scientific_name": "Acacia auriculiformis",
+    "english_name": "Ear-pod wattle",
+    "hindi_name": "बबूल"
+  },
+  {
+    "scientific_name": "Adiantum lunulatum",
+    "english_name": "Maidenhair fern",
+    "hindi_name": "हंसराज"
+  },
+  {
+    "scientific_name": "Allium schoenoprasum",
+    "english_name": "Chives",
+    "hindi_name": "जंगली प्याज"
+  },
+  {
+    "scientific_name": "Alpinia calcarata",
+    "english_name": "Snap ginger",
+    "hindi_name": "कुलंजन"
+  },
+  {
+    "scientific_name": "Amaranthus hybridus",
+    "english_name": "Smooth amaranth",
+    "hindi_name": "चौलाई"
+  },
+  {
+    "scientific_name": "Artocarpus lakoocha",
+    "english_name": "Monkey jack",
+    "hindi_name": "बड़हल"
+  },
+  {
+    "scientific_name": "Bambusa vulgaris",
+    "english_name": "Common bamboo",
+    "hindi_name": "बांस"
+  },
+  {
+    "scientific_name": "Blumea lacera",
+    "english_name": "Blumea",
+    "hindi_name": "कुकुंदर"
+  },
+  {
+    "scientific_name": "Dioscorea hispida",
+    "english_name": "Intoxicating yam",
+    "hindi_name": "जंगली सूरन"
+  },
+  {
+    "scientific_name": "Bergera koenigii",
+    "english_name": "Curry leaf",
+    "hindi_name": "करी पत्ता"
+  },
+  {
+    "scientific_name": "Alangium salviifolium",
+    "english_name": "Sage-leaved alangium",
+    "hindi_name": "अंकौल"
+  },
+  {
+    "scientific_name": "Acmella paniculata",
+    "english_name": "Toothache plant",
+    "hindi_name": "अकरकरा"
+  },
+  {
+    "scientific_name": "Abutilon theophrasti",
+    "english_name": "Velvetleaf",
+    "hindi_name": "कंघी"
+  },
+  {
+    "scientific_name": "Acacia jacquemontii",
+    "english_name": "Jacquemont's acacia",
+    "hindi_name": "बबूल"
+  },
+  {
+    "scientific_name": "Acacia nilotica subsp. indica",
+    "english_name": "Indian gum arabic tree",
+    "hindi_name": "बबूल"
+  },
+  {
+    "scientific_name": "Abroma augusta",
+    "english_name": "Devil's cotton",
+    "hindi_name": "उलटकंबल"
+  },
+  {
+    "scientific_name": "Achyranthes bidentata",
+    "english_name": "Ox knee",
+    "hindi_name": "लटजीरा"
+  },
+  {
+    "scientific_name": "Acorus gramineus",
+    "english_name": "Japanese sweet flag",
+    "hindi_name": "वचा"
+  },
+  {
+    "scientific_name": "Actinodaphne angustifolia",
+    "english_name": "Indian actinodaphne",
+    "hindi_name": "काली चिरौंजी"
+  },
+  {
+    "scientific_name": "Adenia venenata",
+    "english_name": "Poisonous adenium vine",
+    "hindi_name": "विषालता"
+  },
+  {
+    "scientific_name": "Adhatoda beddomei",
+    "english_name": "Beddome's malabar nut",
+    "hindi_name": "अडूसा"
+  },
+  {
+    "scientific_name": "Agave cantula",
+    "english_name": "Cantala agave",
+    "hindi_name": "रंभा"
+  },
+  {
+    "scientific_name": "Aglaia spectabilis",
+    "english_name": "Large-leaved aglaia",
+    "hindi_name": "अमूरा"
+  },
+  {
+    "scientific_name": "Ailanthus triphysa",
+    "english_name": "Indian tree of heaven",
+    "hindi_name": "महानीम"
+  },
+  {
+    "scientific_name": "Anogeissus acuminata",
+    "english_name": "Axlewood tree",
+    "hindi_name": "धवड़ा"
+  },
+  {
+    "scientific_name": "Elaeocarpus serratus",
+    "english_name": "Ceylon olive",
+    "hindi_name": "रुद्राक्ष"
+  },
+  {
+    "scientific_name": "Eryngium foetidum",
+    "english_name": "Culantro",
+    "hindi_name": "बिलायती धनिया"
+  }
+]
