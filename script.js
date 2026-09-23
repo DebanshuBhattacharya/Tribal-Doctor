@@ -496,64 +496,11 @@
     // richer interactions (quick-view, wishlist, etc.) on later pages.
   }
 
-  /* ---------------- PLANT IDENTIFICATION DEMO ---------------- */
-  function initPlantIdentification() {
-    if (!canAnimate) return;
-    const section = $("#identify");
-    const scanLine = $("#scanLine");
-    const card = $("#identifyCard");
-    const markers = $$(".marker");
-    const num = $("#confidenceNum");
-    if (!section || !card) return;
-
-    // starting state is set now, not when the animation plays, so the card never flashes on screen first
-    gsap.set(card, { opacity: 0, y: 20 });
-    if (num) num.textContent = "0";
-
-    let played = false;
-    const play = () => {
-      if (played) return;
-      played = true;
-
-      const tl = gsap.timeline();
-      tl.to(scanLine, { opacity: 1, duration: 0.2 })
-        .to(scanLine, { top: "100%", duration: 1.1, ease: "power1.inOut" })
-        .to(scanLine, { opacity: 0, duration: 0.2 }, "-=0.1")
-        .to(
-          markers,
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 0.4,
-            stagger: 0.15,
-            ease: "back.out(2)",
-          },
-          "-=0.5",
-        )
-        .to(
-          card,
-          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.2",
-        )
-        .to(
-          {},
-          {
-            duration: 0.9,
-            onUpdate: function () {
-              if (num) num.textContent = Math.round(this.progress() * 92);
-            },
-          },
-        );
-    };
-
-    ScrollTrigger.create({ trigger: section, start: "top 60%", onEnter: play });
-  }
-
   /* ---------------- COUNTERS (generic, reusable) ---------------- */
   function initCounters() {
-    // confidence counter is handled inside initPlantIdentification.
     // This function stays as the general hook for future numeric counters
-    // (e.g. stats on About / Communities pages).
+    // (e.g. stats on About / Communities pages). The plant-identify section
+    // has its own real (non-demo) logic further down this file.
   }
 
   /* ---------------- MAGNETIC BUTTONS ---------------- */
@@ -622,7 +569,6 @@
     initPinnedStory();
     initPassportTimeline();
     initProductInteractions();
-    initPlantIdentification();
     initForestIllustration();
     initBusinessAnimation();
     initSustainabilityAnimation();
@@ -660,147 +606,220 @@
 })();
 /* ============================================================
    AI PLANT IDENTIFICATION
-   Connects Tribal Doctor frontend to Van Vaidya AI backend
+   Connects Tribal Doctor's landing-page identify section directly to
+   the Van Vaidya AI backend.
+
+   BACKEND CONTRACT — unchanged from before:
+     POST <API_URL>   multipart/form-data, one field named "file"
+     OK    { success: true, matches: [{ english_name, scientific_name,
+                                        hindi_name, confidence }, ...] }
+     Error { detail: "message" }   (non-2xx)
+   matches[0] is the best match and is read exactly as before. Only the
+   surrounding UI (drop zone, states, confidence ring, reset) is new.
    ============================================================ */
 
 (function initPlantIdentification() {
-
-  const identifyButton = document.getElementById("identifyButton");
+  const stage = document.getElementById("identifyStage");
+  const frame = document.getElementById("identifyFrame");
+  const dropZone = document.getElementById("identifyButton");
   const fileInput = document.getElementById("plantImageInput");
+  const preview = document.getElementById("identifyPreview");
+  const resetButton = document.getElementById("identifyReset");
 
+  const identifyStatus = document.getElementById("identifyStatus");
   const plantName = document.getElementById("plantName");
   const plantScientific = document.getElementById("plantScientific");
   const plantHindi = document.getElementById("plantHindi");
   const confidenceNum = document.getElementById("confidenceNum");
-
-  const identifyStatus = document.getElementById("identifyStatus");
+  const confidenceArc = document.getElementById("confidenceArc");
   const plantExplore = document.getElementById("plantExplore");
 
-  if (!identifyButton || !fileInput) return;
+  if (!stage || !dropZone || !fileInput) return;
 
-  // Backend endpoint
+  // Backend endpoint (unchanged)
   const API_URL = "http://localhost:8000/identify";
+  const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
+  const MIN_SCAN_MS = 700; // keep the scan visible even when the backend answers instantly
 
-  // Open file picker
-  identifyButton.addEventListener("click", function (e) {
-    e.preventDefault();
+  const ORIGINAL_PREVIEW_SRC = preview ? preview.getAttribute("src") : "";
+  const RING_R = confidenceArc ? Number(confidenceArc.getAttribute("r")) || 30 : 30;
+  const RING_LEN = 2 * Math.PI * RING_R;
+  if (confidenceArc) {
+    confidenceArc.style.strokeDasharray = String(RING_LEN);
+    confidenceArc.style.strokeDashoffset = String(RING_LEN);
+  }
 
-    fileInput.click();
-  });
+  let busy = false;
+  let previewUrl = null;
 
-  // When user selects an image
-  fileInput.addEventListener("change", async function () {
+  const setState = (state) => {
+    stage.dataset.state = state;
+  };
 
-    const file = fileInput.files[0];
+  const setConfidence = (percent) => {
+    const clamped = Math.max(0, Math.min(100, Math.round(percent || 0)));
+    if (confidenceArc) {
+      confidenceArc.style.strokeDashoffset = String(RING_LEN * (1 - clamped / 100));
+    }
+  };
 
-    if (!file) return;
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    // Basic validation
-    if (!file.type.startsWith("image/")) {
-      alert("Please select an image file.");
+  async function handleFile(file) {
+    if (!file || busy) return;
+
+    if (!ACCEPTED_TYPES.includes(file.type)) {
+      alert("Please choose a JPG, PNG or WebP photo.");
       return;
     }
 
-    // Update UI
-    identifyStatus.textContent = "Identifying plant...";
-    plantName.textContent = "Reading the plant";
-    plantScientific.textContent = "Please wait...";
-    plantHindi.textContent = "Processing image";
-    confidenceNum.textContent = "—";
+    busy = true;
+    setState("loading");
 
-    identifyButton.style.pointerEvents = "none";
-    identifyButton.style.opacity = "0.6";
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    previewUrl = URL.createObjectURL(file);
+    if (preview) preview.src = previewUrl;
+
+    if (identifyStatus) identifyStatus.textContent = "Identifying plant...";
+    if (plantName) plantName.textContent = "Reading the plant";
+    if (plantScientific) plantScientific.textContent = "Please wait...";
+    if (plantHindi) plantHindi.textContent = "Processing image";
+    if (confidenceNum) confidenceNum.textContent = "—";
+    setConfidence(0);
+    if (plantExplore) {
+      plantExplore.style.pointerEvents = "none";
+      plantExplore.style.opacity = "0.5";
+    }
 
     try {
-
-      // Create form data
       const formData = new FormData();
-
       formData.append("file", file);
 
-      // Send image to backend
-      const response = await fetch(API_URL, {
-        method: "POST",
-        body: formData
-      });
+      const [response] = await Promise.all([
+        fetch(API_URL, { method: "POST", body: formData }),
+        wait(MIN_SCAN_MS),
+      ]);
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          data.detail || "Plant identification failed."
-        );
+      let data = null;
+      try {
+        data = await response.json();
+      } catch (e) {
+        data = null; // a non-JSON body shouldn't hide the real HTTP error
       }
 
-      // Check backend response
-      if (
-        !data.success ||
-        !data.matches ||
-        data.matches.length === 0
-      ) {
+      if (!response.ok) {
+        throw new Error((data && data.detail) || "Plant identification failed.");
+      }
+      if (!data || !data.success || !Array.isArray(data.matches) || data.matches.length === 0) {
         throw new Error("No plant could be identified.");
       }
 
       // Get best match
       const plant = data.matches[0];
 
-      // Update UI
-      plantName.textContent =
-        plant.english_name || "Unknown plant";
-
-      plantScientific.textContent =
-        plant.scientific_name || "Scientific name unavailable";
-
-      plantHindi.textContent =
-        plant.hindi_name || "Hindi name unavailable";
-
-      confidenceNum.textContent =
-        Math.round(plant.confidence || 0);
-
-      identifyStatus.textContent =
-        "Identification complete";
+      if (plantName) plantName.textContent = plant.english_name || "Unknown plant";
+      if (plantScientific) {
+        plantScientific.textContent = plant.scientific_name || "Scientific name unavailable";
+      }
+      if (plantHindi) plantHindi.textContent = plant.hindi_name || "Hindi name unavailable";
+      if (confidenceNum) confidenceNum.textContent = String(Math.round(plant.confidence || 0));
+      setConfidence(plant.confidence);
+      if (identifyStatus) identifyStatus.textContent = "Identification complete";
 
       // Enable Explore link
-      if (plant.scientific_name) {
-
-        const query = encodeURIComponent(
-          plant.scientific_name
-        );
-
-        plantExplore.href =
-          `plants.html?plant=${query}`;
-
+      if (plantExplore && plant.scientific_name) {
+        plantExplore.href = `plants.html?plant=${encodeURIComponent(plant.scientific_name)}`;
         plantExplore.style.pointerEvents = "auto";
         plantExplore.style.opacity = "1";
       }
 
+      setState("success");
     } catch (error) {
-
       console.error("Plant identification error:", error);
 
-      identifyStatus.textContent =
-        "Identification failed";
+      if (identifyStatus) identifyStatus.textContent = "Identification failed";
+      if (plantName) plantName.textContent = "Unable to identify";
+      if (plantScientific) plantScientific.textContent = error.message || "Please try another image.";
+      if (plantHindi) plantHindi.textContent = "Try a clearer plant photo";
+      if (confidenceNum) confidenceNum.textContent = "—";
+      setConfidence(0);
 
-      plantName.textContent =
-        "Unable to identify";
-
-      plantScientific.textContent =
-        error.message || "Please try another image.";
-
-      plantHindi.textContent =
-        "Try a clearer plant photo";
-
-      confidenceNum.textContent = "—";
-
+      setState("error");
     } finally {
-
-      identifyButton.style.pointerEvents = "auto";
-      identifyButton.style.opacity = "1";
-
-      // Allow selecting the same image again
-      fileInput.value = "";
+      busy = false;
+      fileInput.value = ""; // allow selecting the same image again
     }
+  }
 
+  // Clicking/choosing via the drop zone's own file input
+  fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
+
+  // Drag and drop, on both the drop zone and the photo frame
+  const dropTargets = [dropZone, frame].filter(Boolean);
+  dropTargets.forEach((target) => {
+    ["dragenter", "dragover"].forEach((type) =>
+      target.addEventListener(type, (event) => {
+        event.preventDefault();
+        target.classList.add("is-dragover");
+      }),
+    );
+    ["dragleave", "drop"].forEach((type) =>
+      target.addEventListener(type, (event) => {
+        event.preventDefault();
+        target.classList.remove("is-dragover");
+      }),
+    );
+    target.addEventListener("drop", (event) => {
+      const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
+      if (file) handleFile(file);
+    });
   });
 
+  // Stop the browser opening a file dropped outside the drop zone/frame
+  ["dragover", "drop"].forEach((type) =>
+    window.addEventListener(type, (event) => event.preventDefault()),
+  );
+
+  // "Try another photo" resets the card back to its idle state
+  if (resetButton) {
+    resetButton.addEventListener("click", () => {
+      if (busy) return;
+
+      setState("idle");
+      if (preview) preview.src = ORIGINAL_PREVIEW_SRC;
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+        previewUrl = null;
+      }
+      if (identifyStatus) identifyStatus.textContent = "Ready to identify";
+      if (plantName) plantName.textContent = "No plant selected";
+      if (plantScientific) plantScientific.textContent = "Upload a photo to begin";
+      if (plantHindi) plantHindi.textContent = "—";
+      if (confidenceNum) confidenceNum.textContent = "—";
+      setConfidence(0);
+      if (plantExplore) {
+        plantExplore.href = "#";
+        plantExplore.style.pointerEvents = "none";
+        plantExplore.style.opacity = "0.5";
+      }
+      fileInput.value = "";
+    });
+  }
+
+  // Every "Identify a Plant" link elsewhere on the page now points at
+  // #identify instead of navigating away. Give the drop zone a brief
+  // highlight once the smooth scroll lands, so it's obvious where to drop
+  // a photo.
+  document.querySelectorAll('a[href="#identify"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      setTimeout(() => {
+        dropZone.classList.add("pulse");
+        dropZone.addEventListener(
+          "animationend",
+          () => dropZone.classList.remove("pulse"),
+          { once: true },
+        );
+      }, 350);
+    });
+  });
 })();

@@ -13,27 +13,31 @@
    magnetic buttons shared with the landing page.
    ========================================================================== */
 
-/* ---------- Tokens ----------
-   The actual palette (--forest, --cream, --paper, --sand, --earth, --clay,
-   --sage, --charcoal, --muted, --border, --gutter, --max-width, --nav-h,
-   --font-sans, --font-serif, --ease-out, etc.) now comes from style.css,
-   which is linked before this file — that's what makes this page match the
-   landing page instead of drifting from it. This block only adds the extra
-   names identify.css's own rules use, aliased onto those shared tokens. */
+/* ---------- Tokens (shared with index.html's palette) ---------- */
 :root {
-  --ink: var(--charcoal);
-  --ink-soft: var(--muted);
-  --rule: var(--border);
-  --forest-mid: #24513a;
-  --forest-deep: var(--deep-forest);
+  --cream: #f5f1e8;
+  --paper: #fbf9f3;
+  --sand: #ece5d4;
+  --ink: #1d211d;
+  --ink-soft: #4b5048;
+  --forest: #1c4632;
+  --forest-mid: #2b5c43;
+  --forest-deep: #0e241a;
+  --earth: #8a6a4a;
+  --clay: #ddae86;
+  --sage: #a9b59c;
   --alert: #a5432f;
+  --rule: rgba(29, 33, 29, 0.14);
 
-  --serif: var(--font-serif);
-  --sans: var(--font-sans);
+  --serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia,
+    serif;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --deva: "Tiro Devanagari Hindi", "Noto Sans Devanagari", "Nirmala UI", serif;
 
-  --maxw: var(--max-width);
-  --ease: var(--ease-out);
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --maxw: 1200px;
+  --nav-h: 76px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 /* ---------- Base ---------- */
@@ -176,6 +180,8 @@ button {
   transform: rotate(var(--r, 0deg));
 }
 
+.navbar,
+.mobile-menu,
 main,
 .footer {
   position: relative;
@@ -183,14 +189,247 @@ main,
 }
 
 /* ==========================================================================
-   NAVBAR, MOBILE MENU & FOOTER — these come entirely from style.css now, so
-   this page always looks and behaves exactly like the landing page. Only a
-   tiny page-specific accent lives here: marking "Identify a Plant" as the
-   current page in the nav.
+   NAVBAR — matches index.html so both pages read as one site
    ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 241, 232, 0.82);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid var(--rule);
+  transition: box-shadow 0.35s var(--ease);
+}
+
+.navbar.is-scrolled {
+  box-shadow: 0 12px 30px -22px rgba(14, 36, 26, 0.4);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: var(--nav-h);
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--forest-deep);
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid currentColor;
+  border-radius: 50% 50% 50% 4px;
+  transition: transform 0.5s var(--ease);
+}
+
+.logo:hover .logo-mark {
+  transform: rotate(-12deg);
+}
+
+.logo-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.1rem, 2.6vw, 2.25rem);
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.3rem 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.25s var(--ease);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: var(--earth);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.nav-link:hover {
+  color: var(--ink);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.nav-identify {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  background: var(--forest);
+  color: var(--cream);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition:
+    background-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.nav-identify:hover {
+  background: var(--forest-deep);
+}
+
 .nav-identify.is-current {
-  background: var(--deep-forest);
+  background: var(--forest-deep);
   box-shadow: inset 0 0 0 1px rgba(245, 241, 232, 0.35);
+}
+
+.nav-cart {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--forest-deep);
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 3px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--clay);
+  color: var(--forest-deep);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.hamburger {
+  display: none;
+  width: 34px;
+  height: 34px;
+  position: relative;
+}
+
+.hamburger span {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  height: 1.5px;
+  background: var(--forest-deep);
+  transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+
+.hamburger span:first-child {
+  top: 13px;
+}
+
+.hamburger span:last-child {
+  bottom: 13px;
+}
+
+.hamburger[aria-expanded="true"] span:first-child {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] span:last-child {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: var(--nav-h) 0 0 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem var(--gutter) 2.5rem;
+  background: var(--cream);
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-menu-links a {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  color: var(--forest-deep);
+}
+
+.mobile-menu-cta {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: var(--forest);
+  color: var(--cream) !important;
+  font-family: var(--sans) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600;
+}
+
+.mobile-menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--earth);
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-identify {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
 /* ---------- Main ---------- */
@@ -208,8 +447,8 @@ main {
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
   gap: clamp(2rem, 5vw, 5rem);
-  min-height: calc(100svh - 3rem);
-  padding-top: calc(var(--nav-h) + clamp(1.5rem, 4vw, 3rem));
+  min-height: calc(100svh - var(--nav-h) - 3rem);
+  padding-top: clamp(1.5rem, 4vw, 3rem);
   transition:
     opacity 0.5s var(--ease),
     transform 0.5s var(--ease);
@@ -436,7 +675,7 @@ h1 {
   grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
   align-items: start;
   gap: clamp(1.5rem, 4vw, 4rem);
-  padding-top: calc(var(--nav-h) + clamp(1.25rem, 3vw, 2.5rem));
+  padding-top: clamp(1.25rem, 3vw, 2.5rem);
   transition:
     opacity 0.45s var(--ease),
     transform 0.45s var(--ease);
@@ -851,6 +1090,36 @@ h1 {
   font-size: 1.08rem;
 }
 
+.wk a.src {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--forest);
+  background: linear-gradient(currentColor, currentColor) left bottom / 100% 1px
+    no-repeat;
+}
+
+/* always-available "read more" link, independent of whether the backend
+   sent wikipedia notes — this is what guarantees the read-more feature */
+.wiki-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--earth);
+  background: linear-gradient(currentColor, currentColor) left bottom / 0% 1px
+    no-repeat;
+  transition: background-size 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.wiki-more:hover {
+  color: var(--forest-deep);
+  background-size: 100% 1px;
+}
+
 .explore {
   display: inline-flex;
   margin-top: 1.4rem;
@@ -928,6 +1197,87 @@ h1 {
 #toast.show {
   opacity: 1;
   transform: translate(-50%, 0);
+}
+
+/* ==========================================================================
+   FOOTER — matches index.html
+   ========================================================================== */
+.footer {
+  background: var(--forest-deep);
+  color: var(--sand);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) 2.5rem;
+}
+
+.footer-brand .logo {
+  color: var(--cream);
+}
+
+.footer-brand p {
+  margin-top: 0.9rem;
+  max-width: 30ch;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--sage);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col h5 {
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--clay);
+}
+
+.footer-col a {
+  font-size: 0.92rem;
+  color: var(--sand);
+  opacity: 0.85;
+  transition: opacity 0.25s var(--ease);
+}
+
+.footer-col a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem var(--gutter) 2rem;
+  border-top: 1px solid rgba(245, 241, 232, 0.14);
+  font-size: 0.82rem;
+  color: var(--sage);
+}
+
+@media (max-width: 760px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Keyframes ---------- */
@@ -1031,11 +1381,7 @@ h1 {
 
   #hero {
     min-height: 0;
-    padding-top: calc(var(--nav-h) + 1rem);
-  }
-
-  #stage {
-    padding-top: calc(var(--nav-h) + 1rem);
+    padding-top: 1rem;
   }
 
   .side {
