@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge Passport — Tribal Doctor</title>
+    <meta
+      name="description"
+      content="A documented record of traditional plant knowledge from Jharkhand."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="passport.css" />
+  </head>
+  <body>
+    <header class="nav" id="nav">
+      <a href="index.html" class="logo" aria-label="Tribal Doctor home">
+        <svg width="20" height="20" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path
+            d="M14 2C14 2 6 8 6 16a8 8 0 0 0 16 0C22 8 14 2 14 2Z"
+            stroke="currentColor"
+            stroke-width="1.3"
+          />
+          <path d="M14 24V14" stroke="currentColor" stroke-width="1.3" />
+        </svg>
+        <span>TRIBAL DOCTOR</span>
+      </a>
+      <nav aria-label="Primary" class="nav-links">
+        <a href="shop.html">Shop</a><a href="plants.html">Explore Plants</a
+        ><a href="knowledge.html">Knowledge</a
+        ><a href="identify.html">Identify a Plant</a>
+      </nav>
+      <span class="nav-id" data-bind="id"></span>
+    </header>
+
+    <main>
+      <!-- One pinned experience: the plant is the first thing on screen -->
+      <section class="exp" id="exp" aria-label="Knowledge Passport record">
+        <figure class="photo" id="photo">
+          <img data-img="hero" alt="Plant photograph" fetchpriority="high" />
+        </figure>
+        <p class="kicker"><span>Knowledge Passport</span></p>
+
+        <div class="counter" aria-hidden="true">
+          <span class="cnt-n" id="cnt">01</span><i></i><span>06</span>
+        </div>
+        <div class="prog" aria-hidden="true"><i></i></div>
+
+        <figure class="pp" id="pp">
+          <div class="pp-top">
+            <span>Tribal Doctor</span><span>Knowledge Passport</span>
+          </div>
+          <div class="pp-img" id="ppImgs"></div>
+          <div class="pp-body">
+            <p class="pp-id" data-bind="id"></p>
+            <h3 data-bind="commonName"></h3>
+            <p class="pp-sci" data-bind="scientificName"></p>
+            <p class="pp-loc">
+              <span data-bind="regionUpper"></span> &middot;
+              <span data-bind="year"></span>
+            </p>
+          </div>
+          <div class="pp-extra">
+            <dl>
+              <div>
+                <dt>Issued</dt>
+                <dd data-bind="issued"></dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd data-bind="status"></dd>
+              </div>
+              <div>
+                <dt>Contributor</dt>
+                <dd data-bind="contribName"></dd>
+              </div>
+            </dl>
+            <p class="mrz" aria-hidden="true" data-bind="mrz"></p>
+          </div>
+          <svg class="qr" id="qr" viewBox="0 0 21 21" role="img" aria-label="QR code placeholder"></svg>
+        </figure>
+
+        <div class="stages">
+          <article class="stage over" data-s="1">
+            <div class="st-in">
+              <p class="label" data-in>01 / Identification</p>
+              <h1 class="display hero" data-in data-bind="commonName"></h1>
+              <p class="sci" data-in data-bind="scientificName"></p>
+              <dl class="facts" data-in>
+                <div>
+                  <dt>Local names</dt>
+                  <dd data-bind="localNames"></dd>
+                </div>
+                <div>
+                  <dt>Family</dt>
+                  <dd data-bind="family"></dd>
+                </div>
+                <div>
+                  <dt>Region</dt>
+                  <dd data-bind="region"></dd>
+                </div>
+              </dl>
+              <p class="cue" data-in><span>Explore record</span><i></i></p>
+            </div>
+          </article>
+
+          <article class="stage" data-s="2">
+            <div class="st-in">
+              <p class="label" data-in>02 / Origin</p>
+              <h2 class="display xl" data-in><span data-bind="originMain"></span><br /><em data-bind="originSub"></em></h2>
+              <p class="coords" data-in>
+                <span class="mark"></span><span data-bind="coords"></span>
+                <small>approx.</small>
+              </p>
+              <dl class="facts" data-in>
+                <div>
+                  <dt>Region</dt>
+                  <dd data-bind="region"></dd>
+                </div>
+                <div>
+                  <dt>Community</dt>
+                  <dd data-bind="community"></dd>
+                </div>
+                <div>
+                  <dt>Recorded</dt>
+                  <dd data-bind="year"></dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="stage" data-s="3">
+            <div class="st-in">
+              <p class="label" data-in>03 / Traditional knowledge</p>
+              <h2 class="display md" data-in data-bind="use"></h2>
+              <dl class="facts" data-in>
+                <div>
+                  <dt>Preparation</dt>
+                  <dd data-bind="method"></dd>
+                </div>
+                <div>
+                  <dt>Plant part</dt>
+                  <dd data-bind="part"></dd>
+                </div>
+                <div>
+                  <dt>Context</dt>
+                  <dd data-bind="context"></dd>
+                </div>
+              </dl>
+              <p class="note" data-in>Documented community practice. Not medical advice.</p>
+            </div>
+          </article>
+
+          <article class="stage" data-s="4">
+            <div class="st-in">
+              <p class="label" data-in>04 / Documentation</p>
+              <h2 class="display lg" data-in>
+                Record created <em data-bind="year"></em>
+              </h2>
+              <dl class="facts" data-in>
+                <div>
+                  <dt>Source</dt>
+                  <dd data-bind="source"></dd>
+                </div>
+                <div>
+                  <dt>Region</dt>
+                  <dd data-bind="region"></dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd data-bind="status"></dd>
+                </div>
+              </dl>
+              <ol class="flow" data-in>
+                <i class="flow-line"></i>
+                <li>Knowledge shared</li>
+                <li>Information recorded</li>
+                <li>Record created</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="stage" data-s="5">
+            <div class="st-in">
+              <p class="label" data-in>05 / Contributor</p>
+              <div class="person" data-in>
+                <div class="ph" role="img" aria-label="Portrait placeholder"></div>
+                <h2 class="display md" data-bind="contribName"></h2>
+              </div>
+              <dl class="facts" data-in>
+                <div>
+                  <dt>Community</dt>
+                  <dd data-bind="community"></dd>
+                </div>
+                <div>
+                  <dt>Region</dt>
+                  <dd data-bind="region"></dd>
+                </div>
+                <div>
+                  <dt>Contribution</dt>
+                  <dd>Traditional plant knowledge</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="stage" data-s="6">
+            <div class="st-in">
+              <p class="label" data-in>06 / Record</p>
+              <h2 class="display lg" data-in>Knowledge<br /><em>Passport</em></h2>
+              <dl class="facts" data-in>
+                <div>
+                  <dt>Record ID</dt>
+                  <dd data-bind="id"></dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd data-bind="status"></dd>
+                </div>
+                <div>
+                  <dt>Issued</dt>
+                  <dd data-bind="issued"></dd>
+                </div>
+              </dl>
+              <p class="note" data-in>
+                Traditional knowledge describes documented community practices.
+                It does not establish medical effectiveness or safety. Consult a
+                qualified healthcare professional for medical decisions.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="related" aria-labelledby="t-rel">
+        <div class="wrap">
+          <p class="label">Related knowledge</p>
+          <h2 id="t-rel" class="display lg">Other documented<br />plant records</h2>
+        </div>
+        <div class="rel-track" tabindex="0" aria-label="Related records">
+          <a href="#" class="rel"><span>01</span><h3>Neem</h3><em>Azadirachta indica</em></a>
+          <a href="#" class="rel"><span>02</span><h3>Tulsi</h3><em>Ocimum tenuiflorum</em></a>
+          <a href="#" class="rel"><span>03</span><h3>Giloy</h3><em>Tinospora cordifolia</em></a>
+          <a href="#" class="rel"><span>04</span><h3>Mahua</h3><em>Madhuca longifolia</em></a>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="t-cta">
+        <div class="wrap">
+          <h2 id="t-cta" class="display xxl">
+            <span class="clip"><span>Explore more</span></span
+            ><span class="clip"><span><em>knowledge.</em></span></span>
+          </h2>
+          <p class="cta-sub">
+            Discover plants, communities, and documented<br />traditions from Jharkhand.
+          </p>
+          <div class="btns">
+            <a href="plants.html" class="btn light">Explore Plants</a
+            ><a href="contribute.html" class="btn ghost">Contribute Knowledge</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="passport-data.js"></script>
+    <script src="passport.js"></script>
+  </body>
+</html>

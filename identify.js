@@ -599,6 +599,9 @@ function cardHtml(match, index) {
   const lang = notes && notes.english ? "english" : "hindi";
   const query = wikiQueryFor(match);
   const exploreUrl = exploreUrlFor(match, lang);
+  /* Knowledge Passport: only offered when a passport exists for this plant */
+  const passportId = typeof TKP_findPassportId === "function" ? TKP_findPassportId(scientific, match.english_name) : null;
+  const passportHref = typeof TKP_passportUrl === "function" ? TKP_passportUrl(match) : "";
 
   return `<article class="card ${index === 0 ? "best" : ""}" data-i="${index}" style="--i:${index}">
     ${index === 0 ? '<span class="badge">Best match</span>' : ""}
@@ -636,6 +639,11 @@ function cardHtml(match, index) {
         : ""
     }
     <div class="card-actions">
+      ${
+        passportHref
+          ? `<a class="passport-link" href="${esc(passportHref)}" data-pid="${esc(passportId || "")}">Show Passport <span aria-hidden="true">→</span></a>`
+          : ""
+      }
       ${
         query
           ? `<a class="explore" href="${esc(exploreUrl)}" target="_blank" rel="noopener">Explore this plant ↗</a>`
@@ -725,6 +733,30 @@ resultsEl.addEventListener("click", (event) => {
 
   const explore = $(".explore", card);
   if (explore && match) explore.href = exploreUrlFor(match, lang);
+});
+
+/* keep a small copy of the uploaded photo so a passport built from this
+   identification can show it */
+function savePhotoThumb() {
+  try {
+    if (!preview.naturalWidth) return;
+    const k = Math.min(1, 1000 / Math.max(preview.naturalWidth, preview.naturalHeight));
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.round(preview.naturalWidth * k);
+    canvas.height = Math.round(preview.naturalHeight * k);
+    canvas.getContext("2d").drawImage(preview, 0, 0, canvas.width, canvas.height);
+    sessionStorage.setItem("td_photo", canvas.toDataURL("image/jpeg", 0.82));
+  } catch (e) {
+    /* storage or canvas unavailable: the passport falls back to a placeholder */
+  }
+}
+
+resultsEl.addEventListener("click", (event) => {
+  const link = event.target.closest(".passport-link");
+  if (!link) return;
+  const match = matches[Number(link.closest(".card").dataset.i)];
+  savePhotoThumb();
+  if (match && link.dataset.pid && typeof TKP_rememberMatch === "function") TKP_rememberMatch(link.dataset.pid, match);
 });
 
 /* ==========================================================================

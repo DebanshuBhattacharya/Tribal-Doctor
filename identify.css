@@ -1139,6 +1139,29 @@ h1 {
   color: var(--cream);
 }
 
+/* Knowledge Passport button (sits beside "Explore this plant") */
+.passport-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  padding: 0.7rem 1.35rem;
+  border: 1px solid var(--forest);
+  border-radius: 999px;
+  background: var(--forest);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cream);
+  transition:
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.passport-link:hover {
+  background: var(--forest-deep);
+  border-color: var(--forest-deep);
+}
+
 .card-actions {
   display: flex;
   flex-wrap: wrap;
