@@ -5622,8 +5622,9 @@ section.identify {
   opacity: 1;
   transform: none;
 }
-.scx:not(.is-live) .scx-float {
-  display: none;
+.scx:not(.is-live) .scx-screen:not(.scx-s3) {
+  visibility: hidden;
+  opacity: 0;
 }
 .scx-f1 {
   left: 0;
