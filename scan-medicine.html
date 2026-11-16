@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scan Medicine — Tribal Doctor</title>
+    <meta name="description" content="Check your medicines against herbs using a curated, referenced interaction database. Educational only." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scan-medicine.css" />
+  </head>
+  <body>
+    <a class="sm-skip" href="#main">Skip to content</a>
+    <header class="navbar" id="navbar" data-component="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="logo" aria-label="Tribal Doctor home">
+          <span class="logo-mark">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 2C14 2 6 8 6 16C6 20.4183 9.58172 24 14 24C18.4183 24 22 20.4183 22 16C22 8 14 2 14 2Z"
+                stroke="currentColor"
+                stroke-width="1.3"
+              />
+              <path d="M14 24V14" stroke="currentColor" stroke-width="1.3" />
+            </svg>
+          </span>
+          <span class="logo-text">TRIBAL DOCTOR</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="shop.html" class="nav-link" data-nav-link
+            ><span>Shop</span></a
+          >
+          <a href="plants.html" class="nav-link" data-nav-link
+            ><span>Explore Plants</span></a
+          >
+          <a href="knowledge.html" class="nav-link" data-nav-link
+            ><span>Knowledge</span></a
+          >
+          <a href="scan-medicine.html" class="nav-link" data-nav-link aria-current="page"
+            ><span>Scan Medicine</span></a
+          >
+          <a href="communities.html" class="nav-link" data-nav-link
+            ><span>Communities</span></a
+          >
+        </nav>
+
+        <div class="nav-actions">
+          <a href="identify.html" class="btn"><span>Identify a Plant</span></a>
+          <a href="cart.html" class="nav-cart" aria-label="Cart">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 4H5L5.4 6M5.4 6H20L18 13H7M5.4 6L7 13M7 13L5 17H18"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="9" cy="20" r="1" fill="currentColor" />
+              <circle cx="17" cy="20" r="1" fill="currentColor" />
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" data-component="mobile-menu">
+      <nav class="mobile-menu-links" aria-label="Mobile">
+        <a href="shop.html">Shop</a>
+        <a href="plants.html">Explore Plants</a>
+        <a href="knowledge.html">Knowledge</a>
+        <a href="scan-medicine.html">Scan Medicine</a>
+        <a href="communities.html">Communities</a>
+        <a href="identify.html" class="mobile-menu-cta">Identify a Plant</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <span>Rooted in knowledge.</span>
+        <span>Connected by technology.</span>
+      </div>
+    </div>
+
+    <main class="sm" id="main">
+      <header class="sm-head">
+        <h1>Check your medicines against herbs.</h1>
+        <p class="sm-lead">
+          Add the medicines you take, confirm each one, and we will look for
+          known interactions in our curated database. Every result shows its
+          source.
+        </p>
+        <p class="sm-privacy">
+          Photos are read on our server with Tesseract. They are not saved and
+          not sent to any other service. Your medicine list stays in this page
+          unless you choose to save it.
+        </p>
+      </header>
+
+      <!-- STEP 1 -->
+      <section class="sm-step" aria-labelledby="addTitle">
+        <h2 id="addTitle"><span class="sm-num">1</span>Add a medicine</h2>
+
+        <div class="sm-add">
+          <div class="sm-photo">
+            <div class="sm-drop" id="dropZone">
+              <img id="preview" class="sm-preview" alt="" hidden />
+              <div class="sm-drop-idle" id="dropIdle">
+                <p>Photograph a medicine strip, box or prescription.</p>
+                <div class="sm-btns">
+                  <button type="button" class="btn btn-primary" id="cameraBtn"><span>Take a photo</span></button>
+                  <button type="button" class="btn btn-outline" id="galleryBtn"><span>Upload from gallery</span></button>
+                </div>
+                <small>JPG, PNG or WEBP, up to 10 MB. You can also drop an image here.</small>
+              </div>
+              <div class="sm-busy" id="busy" hidden>
+                <span class="sm-spinner" aria-hidden="true"></span>
+                <span>Reading the text on your photo…</span>
+              </div>
+            </div>
+            <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden />
+            <input type="file" id="galleryInput" accept="image/jpeg,image/png,image/webp" hidden />
+            <div class="sm-notice" id="photoNotice" role="status" aria-live="polite" hidden></div>
+          </div>
+
+          <div class="sm-search">
+            <label for="searchInput">Or search by brand or generic name</label>
+            <div class="sm-combo">
+              <input id="searchInput" type="text" autocomplete="off" role="combobox"
+                aria-expanded="false" aria-controls="suggestions" aria-autocomplete="list"
+                placeholder="For example: Glycomet or metformin" maxlength="60" />
+              <ul id="suggestions" role="listbox" hidden></ul>
+            </div>
+            <div class="sm-notice" id="searchNotice" role="status" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="sm-step" aria-labelledby="listTitle">
+        <h2 id="listTitle"><span class="sm-num">2</span>Confirm your medicines</h2>
+        <p class="sm-hint">Text read from a photo can be wrong. Check each name and strength, fix anything that is off, then confirm.</p>
+        <ul class="sm-list" id="medList"></ul>
+        <p class="sm-empty" id="emptyList">No medicines yet. Add one above.</p>
+        <div class="sm-check-row">
+          <button type="button" class="btn btn-primary" id="checkBtn" disabled><span>Check herb interactions</span></button>
+          <span class="sm-check-note" id="checkNote">Confirm at least one medicine to continue.</span>
+        </div>
+        <div class="sm-notice" id="checkNotice" role="status" aria-live="polite" hidden></div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="sm-step sm-results" id="results" aria-labelledby="resultsTitle" hidden tabindex="-1">
+        <h2 id="resultsTitle"><span class="sm-num">3</span>Interaction results</h2>
+        <p class="sm-disclaimer" role="note"><strong>Educational only. Not medical advice. Consult your doctor or pharmacist.</strong></p>
+        <div id="resultsBody"></div>
+        <p class="sm-dataset" id="datasetNote"></p>
+        <div class="sm-btns sm-actions">
+          <button type="button" class="btn btn-primary" id="saveBtn"><span>Save summary</span></button>
+          <button type="button" class="btn btn-outline" id="shareBtn"><span>Share summary</span></button>
+        </div>
+        <div class="sm-notice" id="actionNotice" role="status" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+
+    <footer class="footer" data-component="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">
+              <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+                <path
+                  d="M14 2C14 2 6 8 6 16C6 20.4183 9.58172 24 14 24C18.4183 24 22 20.4183 22 16C22 8 14 2 14 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+                <path d="M14 24V14" stroke="currentColor" stroke-width="1.3" />
+              </svg>
+            </span>
+            <span class="logo-text">TRIBAL DOCTOR</span>
+          </a>
+          <p>Rooted in knowledge. Connected by technology.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="shop.html">Shop</a>
+          <a href="plants.html">Plants</a>
+          <a href="knowledge.html">Knowledge</a>
+          <a href="scan-medicine.html">Scan Medicine</a>
+          <a href="communities.html">Communities</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>For business</h5>
+          <a href="businesses.html#bulk">Bulk sourcing</a>
+          <a href="businesses.html#supplier">Become a supplier</a>
+          <a href="businesses.html#traceability">Traceability</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>About</h5>
+          <a href="about.html">Our story</a>
+          <a href="about.html#sustainability">Sustainability</a>
+          <a href="about.html#safety">Safety</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Tribal Doctor</span>
+        <span
+          >Made with respect for knowledge, communities and biodiversity.</span
+        >
+      </div>
+    </footer>
+
+    <script src="scan-medicine.js"></script>
+  </body>
+</html>

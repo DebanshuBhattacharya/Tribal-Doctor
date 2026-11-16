@@ -1,0 +1,707 @@
+
+{
+  "schema_version": 1,
+  "note": "Medicine catalog for search, autocomplete and OCR matching. Contains 100 representative medicine entries. Brand names, strengths and dosage forms are illustrative and must be verified against authoritative pharmaceutical references and reviewed by a licensed pharmacist before production use. Never infer medicine equivalence from brand name alone. Combination medicines must be matched by all active ingredients.",
+  "drugs": [
+    {
+      "id": "metformin",
+      "generic": "Metformin",
+      "brands": ["Glycomet", "Glucophage"],
+      "strengths": ["500 mg", "850 mg", "1000 mg"],
+      "forms": ["Tablet", "Extended-release tablet"]
+    },
+    {
+      "id": "glimepiride",
+      "generic": "Glimepiride",
+      "brands": ["Amaryl", "Glimy"],
+      "strengths": ["1 mg", "2 mg", "3 mg", "4 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "gliclazide",
+      "generic": "Gliclazide",
+      "brands": ["Diamicron", "Reclide"],
+      "strengths": ["40 mg", "60 mg", "80 mg"],
+      "forms": ["Tablet", "Modified-release tablet"]
+    },
+    {
+      "id": "sitagliptin",
+      "generic": "Sitagliptin",
+      "brands": ["Januvia", "Istavel"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "vildagliptin",
+      "generic": "Vildagliptin",
+      "brands": ["Galvus", "Zomelis"],
+      "strengths": ["50 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "linagliptin",
+      "generic": "Linagliptin",
+      "brands": ["Trajenta"],
+      "strengths": ["5 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "empagliflozin",
+      "generic": "Empagliflozin",
+      "brands": ["Jardiance"],
+      "strengths": ["10 mg", "25 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "dapagliflozin",
+      "generic": "Dapagliflozin",
+      "brands": ["Forxiga", "Daparyl"],
+      "strengths": ["5 mg", "10 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "pioglitazone",
+      "generic": "Pioglitazone",
+      "brands": ["Pioz", "Actos"],
+      "strengths": ["15 mg", "30 mg", "45 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "insulin-glargine",
+      "generic": "Insulin Glargine",
+      "brands": ["Lantus", "Basaglar", "Toujeo"],
+      "strengths": ["100 units/ml", "300 units/ml"],
+      "forms": ["Injection"]
+    },
+    {
+      "id": "amlodipine",
+      "generic": "Amlodipine",
+      "brands": ["Amlong", "Norvasc"],
+      "strengths": ["2.5 mg", "5 mg", "10 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "telmisartan",
+      "generic": "Telmisartan",
+      "brands": ["Telma", "Telsar"],
+      "strengths": ["20 mg", "40 mg", "80 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "losartan",
+      "generic": "Losartan",
+      "brands": ["Losar", "Cozaar"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "olmesartan",
+      "generic": "Olmesartan",
+      "brands": ["Olmezest", "Benicar"],
+      "strengths": ["10 mg", "20 mg", "40 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "ramipril",
+      "generic": "Ramipril",
+      "brands": ["Cardace", "Altace"],
+      "strengths": ["1.25 mg", "2.5 mg", "5 mg", "10 mg"],
+      "forms": ["Capsule", "Tablet"]
+    },
+    {
+      "id": "enalapril",
+      "generic": "Enalapril",
+      "brands": ["Envas", "Renitec"],
+      "strengths": ["2.5 mg", "5 mg", "10 mg", "20 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "atenolol",
+      "generic": "Atenolol",
+      "brands": ["Aten", "Tenormin"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "metoprolol",
+      "generic": "Metoprolol",
+      "brands": ["Betaloc", "Metolar"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Tablet", "Extended-release tablet"]
+    },
+    {
+      "id": "bisoprolol",
+      "generic": "Bisoprolol",
+      "brands": ["Concor", "Biselect"],
+      "strengths": ["2.5 mg", "5 mg", "10 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "carvedilol",
+      "generic": "Carvedilol",
+      "brands": ["Cardivas", "Dilatrend"],
+      "strengths": ["3.125 mg", "6.25 mg", "12.5 mg", "25 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "hydrochlorothiazide",
+      "generic": "Hydrochlorothiazide",
+      "brands": ["Aquazide", "Hydrazide"],
+      "strengths": ["12.5 mg", "25 mg", "50 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "furosemide",
+      "generic": "Furosemide",
+      "brands": ["Lasix", "Frusenex"],
+      "strengths": ["20 mg", "40 mg", "80 mg"],
+      "forms": ["Tablet", "Injection"]
+    },
+    {
+      "id": "spironolactone",
+      "generic": "Spironolactone",
+      "brands": ["Aldactone", "Spiromide"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "atorvastatin",
+      "generic": "Atorvastatin",
+      "brands": ["Lipitor", "Atorva"],
+      "strengths": ["10 mg", "20 mg", "40 mg", "80 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "rosuvastatin",
+      "generic": "Rosuvastatin",
+      "brands": ["Crestor", "Rozavel"],
+      "strengths": ["5 mg", "10 mg", "20 mg", "40 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "ezetimibe",
+      "generic": "Ezetimibe",
+      "brands": ["Ezetrol", "Zetia"],
+      "strengths": ["10 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "clopidogrel",
+      "generic": "Clopidogrel",
+      "brands": ["Clopilet", "Plavix"],
+      "strengths": ["75 mg", "150 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "aspirin",
+      "generic": "Aspirin",
+      "brands": ["Ecosprin", "Disprin"],
+      "strengths": ["75 mg", "150 mg", "325 mg"],
+      "forms": ["Tablet", "Enteric-coated tablet"]
+    },
+    {
+      "id": "warfarin",
+      "generic": "Warfarin",
+      "brands": ["Coumadin", "Jantoven"],
+      "strengths": ["1 mg", "2 mg", "5 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "apixaban",
+      "generic": "Apixaban",
+      "brands": ["Eliquis"],
+      "strengths": ["2.5 mg", "5 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "levothyroxine",
+      "generic": "Levothyroxine",
+      "brands": ["Thyronorm", "Eltroxin", "Euthyrox"],
+      "strengths": ["25 mcg", "50 mcg", "75 mcg", "100 mcg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "carbimazole",
+      "generic": "Carbimazole",
+      "brands": ["Neo-Mercazole"],
+      "strengths": ["5 mg", "10 mg", "20 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "pantoprazole",
+      "generic": "Pantoprazole",
+      "brands": ["Pantocid", "Protonix"],
+      "strengths": ["20 mg", "40 mg"],
+      "forms": ["Tablet", "Injection"]
+    },
+    {
+      "id": "omeprazole",
+      "generic": "Omeprazole",
+      "brands": ["Omez", "Prilosec"],
+      "strengths": ["10 mg", "20 mg", "40 mg"],
+      "forms": ["Capsule", "Tablet"]
+    },
+    {
+      "id": "rabeprazole",
+      "generic": "Rabeprazole",
+      "brands": ["Rablet", "Aciphex"],
+      "strengths": ["10 mg", "20 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "famotidine",
+      "generic": "Famotidine",
+      "brands": ["Famocid", "Pepcid"],
+      "strengths": ["20 mg", "40 mg"],
+      "forms": ["Tablet", "Injection"]
+    },
+    {
+      "id": "ondansetron",
+      "generic": "Ondansetron",
+      "brands": ["Emeset", "Zofran"],
+      "strengths": ["4 mg", "8 mg"],
+      "forms": ["Tablet", "Orally disintegrating tablet", "Injection"]
+    },
+    {
+      "id": "domperidone",
+      "generic": "Domperidone",
+      "brands": ["Domstal", "Motilium"],
+      "strengths": ["10 mg"],
+      "forms": ["Tablet", "Orally disintegrating tablet"]
+    },
+    {
+      "id": "lactulose",
+      "generic": "Lactulose",
+      "brands": ["Duphalac", "Livoluk"],
+      "strengths": ["10 g/15 ml"],
+      "forms": ["Oral solution", "Syrup"]
+    },
+    {
+      "id": "rifaximin",
+      "generic": "Rifaximin",
+      "brands": ["Rifagut", "Xifaxan"],
+      "strengths": ["200 mg", "400 mg", "550 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "paracetamol",
+      "generic": "Paracetamol",
+      "brands": ["Crocin", "Dolo", "Calpol"],
+      "strengths": ["500 mg", "650 mg", "1000 mg"],
+      "forms": ["Tablet", "Syrup", "Suspension"]
+    },
+    {
+      "id": "ibuprofen",
+      "generic": "Ibuprofen",
+      "brands": ["Brufen", "Ibugesic"],
+      "strengths": ["200 mg", "400 mg", "600 mg"],
+      "forms": ["Tablet", "Syrup", "Suspension"]
+    },
+    {
+      "id": "diclofenac",
+      "generic": "Diclofenac",
+      "brands": ["Voveran", "Dicloran"],
+      "strengths": ["25 mg", "50 mg", "75 mg"],
+      "forms": ["Tablet", "Injection", "Topical gel"]
+    },
+    {
+      "id": "naproxen",
+      "generic": "Naproxen",
+      "brands": ["Naprosyn", "Naxdom"],
+      "strengths": ["250 mg", "500 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "aceclofenac",
+      "generic": "Aceclofenac",
+      "brands": ["Zerodol", "Hifenac"],
+      "strengths": ["100 mg", "200 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "etoricoxib",
+      "generic": "Etoricoxib",
+      "brands": ["Nucoxia", "Etoshine"],
+      "strengths": ["60 mg", "90 mg", "120 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "cetirizine",
+      "generic": "Cetirizine",
+      "brands": ["Cetzine", "Zyrtec"],
+      "strengths": ["5 mg", "10 mg"],
+      "forms": ["Tablet", "Syrup"]
+    },
+    {
+      "id": "levocetirizine",
+      "generic": "Levocetirizine",
+      "brands": ["Levocet", "Xyzal"],
+      "strengths": ["2.5 mg", "5 mg"],
+      "forms": ["Tablet", "Syrup"]
+    },
+    {
+      "id": "fexofenadine",
+      "generic": "Fexofenadine",
+      "brands": ["Allegra", "Fexova"],
+      "strengths": ["60 mg", "120 mg", "180 mg"],
+      "forms": ["Tablet", "Suspension"]
+    },
+    {
+      "id": "montelukast",
+      "generic": "Montelukast",
+      "brands": ["Montair", "Singulair"],
+      "strengths": ["4 mg", "5 mg", "10 mg"],
+      "forms": ["Tablet", "Chewable tablet", "Granules"]
+    },
+    {
+      "id": "salbutamol",
+      "generic": "Salbutamol",
+      "brands": ["Asthalin", "Ventolin"],
+      "strengths": ["2 mg", "4 mg", "100 mcg per actuation"],
+      "forms": ["Tablet", "Syrup", "Inhaler", "Nebulizer solution"]
+    },
+    {
+      "id": "budesonide",
+      "generic": "Budesonide",
+      "brands": ["Budecort", "Pulmicort"],
+      "strengths": ["100 mcg", "200 mcg", "400 mcg"],
+      "forms": ["Inhaler", "Nebulizer suspension"]
+    },
+    {
+      "id": "formoterol",
+      "generic": "Formoterol",
+      "brands": ["Foracort", "Oxis"],
+      "strengths": ["6 mcg", "12 mcg"],
+      "forms": ["Inhalation capsule", "Inhaler"]
+    },
+    {
+      "id": "tiotropium",
+      "generic": "Tiotropium",
+      "brands": ["Spiriva", "Tiova"],
+      "strengths": ["18 mcg", "2.5 mcg per actuation"],
+      "forms": ["Inhalation capsule", "Inhaler"]
+    },
+    {
+      "id": "ambroxol",
+      "generic": "Ambroxol",
+      "brands": ["Mucosolvan", "Ambrodil"],
+      "strengths": ["30 mg", "75 mg"],
+      "forms": ["Tablet", "Syrup", "Oral solution"]
+    },
+    {
+      "id": "amoxicillin",
+      "generic": "Amoxicillin",
+      "brands": ["Mox", "Novamox", "Amoxil"],
+      "strengths": ["250 mg", "500 mg", "875 mg"],
+      "forms": ["Capsule", "Tablet", "Suspension"]
+    },
+    {
+      "id": "amoxicillin-clavulanate",
+      "generic": "Amoxicillin + Clavulanic Acid",
+      "brands": ["Augmentin", "Moxikind-CV", "Clavam"],
+      "strengths": ["375 mg", "625 mg", "1 g"],
+      "forms": ["Tablet", "Suspension", "Injection"]
+    },
+    {
+      "id": "azithromycin",
+      "generic": "Azithromycin",
+      "brands": ["Azee", "Azithral", "Zithromax"],
+      "strengths": ["250 mg", "500 mg"],
+      "forms": ["Tablet", "Suspension"]
+    },
+    {
+      "id": "doxycycline",
+      "generic": "Doxycycline",
+      "brands": ["Doxicip", "Doxy-1"],
+      "strengths": ["100 mg"],
+      "forms": ["Capsule", "Tablet"]
+    },
+    {
+      "id": "cefixime",
+      "generic": "Cefixime",
+      "brands": ["Taxim-O", "Zifi"],
+      "strengths": ["50 mg", "100 mg", "200 mg", "400 mg"],
+      "forms": ["Tablet", "Dispersible tablet", "Suspension"]
+    },
+    {
+      "id": "cefuroxime",
+      "generic": "Cefuroxime",
+      "brands": ["Ceftum", "Zinnat"],
+      "strengths": ["125 mg", "250 mg", "500 mg"],
+      "forms": ["Tablet", "Suspension", "Injection"]
+    },
+    {
+      "id": "cephalexin",
+      "generic": "Cephalexin",
+      "brands": ["Sporidex", "Keflex"],
+      "strengths": ["250 mg", "500 mg"],
+      "forms": ["Capsule", "Tablet", "Suspension"]
+    },
+    {
+      "id": "ciprofloxacin",
+      "generic": "Ciprofloxacin",
+      "brands": ["Ciplox", "Cifran"],
+      "strengths": ["250 mg", "500 mg", "750 mg"],
+      "forms": ["Tablet", "Oral suspension", "Eye drops"]
+    },
+    {
+      "id": "metronidazole",
+      "generic": "Metronidazole",
+      "brands": ["Flagyl", "Metrogyl"],
+      "strengths": ["200 mg", "400 mg", "500 mg"],
+      "forms": ["Tablet", "Suspension", "Injection"]
+    },
+    {
+      "id": "nitrofurantoin",
+      "generic": "Nitrofurantoin",
+      "brands": ["Niftran", "Macrodantin"],
+      "strengths": ["50 mg", "100 mg"],
+      "forms": ["Capsule", "Tablet"]
+    },
+    {
+      "id": "fluconazole",
+      "generic": "Fluconazole",
+      "brands": ["Forcan", "Diflucan"],
+      "strengths": ["50 mg", "150 mg", "200 mg"],
+      "forms": ["Tablet", "Capsule", "Suspension"]
+    },
+    {
+      "id": "terbinafine",
+      "generic": "Terbinafine",
+      "brands": ["Sebifin", "Lamisil"],
+      "strengths": ["250 mg"],
+      "forms": ["Tablet", "Topical cream"]
+    },
+    {
+      "id": "acyclovir",
+      "generic": "Acyclovir",
+      "brands": ["Zovirax", "Acivir"],
+      "strengths": ["200 mg", "400 mg", "800 mg"],
+      "forms": ["Tablet", "Cream", "Ointment"]
+    },
+    {
+      "id": "albendazole",
+      "generic": "Albendazole",
+      "brands": ["Zentel", "Bandy"],
+      "strengths": ["200 mg", "400 mg"],
+      "forms": ["Tablet", "Suspension"]
+    },
+    {
+      "id": "ivermectin",
+      "generic": "Ivermectin",
+      "brands": ["Iverheal", "Stromectol"],
+      "strengths": ["3 mg", "6 mg", "12 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "sertraline",
+      "generic": "Sertraline",
+      "brands": ["Serta", "Zoloft"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "escitalopram",
+      "generic": "Escitalopram",
+      "brands": ["Nexito", "Cipralex"],
+      "strengths": ["5 mg", "10 mg", "20 mg"],
+      "forms": ["Tablet", "Oral solution"]
+    },
+    {
+      "id": "fluoxetine",
+      "generic": "Fluoxetine",
+      "brands": ["Fludac", "Prozac"],
+      "strengths": ["10 mg", "20 mg"],
+      "forms": ["Capsule", "Tablet"]
+    },
+    {
+      "id": "amitriptyline",
+      "generic": "Amitriptyline",
+      "brands": ["Tryptomer", "Elavil"],
+      "strengths": ["10 mg", "25 mg", "50 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "clonazepam",
+      "generic": "Clonazepam",
+      "brands": ["Clonotril", "Rivotril"],
+      "strengths": ["0.25 mg", "0.5 mg", "1 mg", "2 mg"],
+      "forms": ["Tablet", "Orally disintegrating tablet"]
+    },
+    {
+      "id": "pregabalin",
+      "generic": "Pregabalin",
+      "brands": ["Pregalin", "Lyrica"],
+      "strengths": ["25 mg", "50 mg", "75 mg", "150 mg"],
+      "forms": ["Capsule", "Tablet"]
+    },
+    {
+      "id": "gabapentin",
+      "generic": "Gabapentin",
+      "brands": ["Gabapin", "Neurontin"],
+      "strengths": ["100 mg", "300 mg", "400 mg"],
+      "forms": ["Capsule", "Tablet"]
+    },
+    {
+      "id": "levetiracetam",
+      "generic": "Levetiracetam",
+      "brands": ["Levera", "Keppra"],
+      "strengths": ["250 mg", "500 mg", "750 mg", "1000 mg"],
+      "forms": ["Tablet", "Oral solution"]
+    },
+    {
+      "id": "sodium-valproate",
+      "generic": "Sodium Valproate",
+      "brands": ["Valparin", "Epilim"],
+      "strengths": ["200 mg", "300 mg", "500 mg"],
+      "forms": ["Tablet", "Syrup"]
+    },
+    {
+      "id": "carbamazepine",
+      "generic": "Carbamazepine",
+      "brands": ["Tegretol", "Mazetol"],
+      "strengths": ["100 mg", "200 mg", "400 mg"],
+      "forms": ["Tablet", "Controlled-release tablet"]
+    },
+    {
+      "id": "allopurinol",
+      "generic": "Allopurinol",
+      "brands": ["Zyloric", "Alloric"],
+      "strengths": ["100 mg", "300 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "colchicine",
+      "generic": "Colchicine",
+      "brands": ["Colchicine Opocalcium", "Colcrys"],
+      "strengths": ["0.5 mg", "0.6 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "tamsulosin",
+      "generic": "Tamsulosin",
+      "brands": ["Urimax", "Flomax"],
+      "strengths": ["0.2 mg", "0.4 mg"],
+      "forms": ["Capsule", "Modified-release tablet"]
+    },
+    {
+      "id": "finasteride",
+      "generic": "Finasteride",
+      "brands": ["Finast", "Proscar"],
+      "strengths": ["1 mg", "5 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "sildenafil",
+      "generic": "Sildenafil",
+      "brands": ["Viagra", "Caverta"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "ferrous-sulfate",
+      "generic": "Ferrous Sulfate",
+      "brands": ["Fefol", "Feronia"],
+      "strengths": ["200 mg", "300 mg", "325 mg"],
+      "forms": ["Tablet", "Capsule"]
+    },
+    {
+      "id": "folic-acid",
+      "generic": "Folic Acid",
+      "brands": ["Folvite", "Folinal"],
+      "strengths": ["1 mg", "5 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "cyanocobalamin",
+      "generic": "Cyanocobalamin (Vitamin B12)",
+      "brands": ["Nurokind", "Neurobion"],
+      "strengths": ["500 mcg", "1000 mcg", "1500 mcg"],
+      "forms": ["Tablet", "Injection"]
+    },
+    {
+      "id": "calcium-carbonate",
+      "generic": "Calcium Carbonate",
+      "brands": ["Shelcal", "Calcimax"],
+      "strengths": ["500 mg", "625 mg", "1250 mg"],
+      "forms": ["Tablet", "Chewable tablet"]
+    },
+    {
+      "id": "cholecalciferol",
+      "generic": "Cholecalciferol (Vitamin D3)",
+      "brands": ["Uprise-D3", "D-Rise"],
+      "strengths": ["1000 IU", "2000 IU", "60000 IU"],
+      "forms": ["Tablet", "Capsule", "Oral solution"]
+    },
+    {
+      "id": "methylprednisolone",
+      "generic": "Methylprednisolone",
+      "brands": ["Medrol", "Wysolone-M"],
+      "strengths": ["4 mg", "8 mg", "16 mg", "32 mg"],
+      "forms": ["Tablet", "Injection"]
+    },
+    {
+      "id": "prednisolone",
+      "generic": "Prednisolone",
+      "brands": ["Wysolone", "Omnacortil"],
+      "strengths": ["5 mg", "10 mg", "20 mg", "40 mg"],
+      "forms": ["Tablet", "Dispersible tablet", "Syrup"]
+    },
+    {
+      "id": "hydroxychloroquine",
+      "generic": "Hydroxychloroquine",
+      "brands": ["HCQS", "Plaquenil"],
+      "strengths": ["200 mg", "400 mg"],
+      "forms": ["Tablet"]
+    },
+    {
+      "id": "methotrexate",
+      "generic": "Methotrexate",
+      "brands": ["Folitrax", "Trexall"],
+      "strengths": ["2.5 mg", "5 mg", "7.5 mg", "10 mg"],
+      "forms": ["Tablet", "Injection"]
+    },
+    {
+      "id": "cyclosporine",
+      "generic": "Cyclosporine",
+      "brands": ["Sandimmune", "Neoral", "Gengraf"],
+      "strengths": ["25 mg", "50 mg", "100 mg"],
+      "forms": ["Capsule", "Oral solution"]
+    },
+    {
+      "id": "tacrolimus",
+      "generic": "Tacrolimus",
+      "brands": ["Prograf", "Tacrograf"],
+      "strengths": ["0.5 mg", "1 mg", "5 mg"],
+      "forms": ["Capsule", "Extended-release capsule"]
+    },
+    {
+      "id": "digoxin",
+      "generic": "Digoxin",
+      "brands": ["Lanoxin"],
+      "strengths": ["0.0625 mg", "0.125 mg", "0.25 mg"],
+      "forms": ["Tablet", "Oral solution", "Injection"]
+    },
+    {
+      "id": "levodopa-carbidopa",
+      "generic": "Levodopa + Carbidopa",
+      "brands": ["Syndopa", "Sinemet"],
+      "strengths": ["100 mg + 10 mg", "250 mg + 25 mg"],
+      "forms": ["Tablet", "Extended-release tablet"]
+    },
+    {
+      "id": "potassium-chloride",
+      "generic": "Potassium Chloride",
+      "brands": ["K-Contin", "Klor-Con"],
+      "strengths": ["600 mg", "750 mg"],
+      "forms": ["Extended-release tablet", "Oral solution"]
+    },
+    {
+      "id": "tranexamic-acid",
+      "generic": "Tranexamic Acid",
+      "brands": ["Pause", "Transamin"],
+      "strengths": ["250 mg", "500 mg"],
+      "forms": ["Tablet", "Injection"]
+    }
+  ]
+}

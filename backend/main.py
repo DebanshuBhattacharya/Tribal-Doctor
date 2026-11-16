@@ -7,6 +7,7 @@ import shutil
 import tempfile
 
 from recognition import recognize_plant
+from medicine_routes import router as medicine_router
 
 
 # Project layout:
@@ -39,6 +40,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+app.include_router(medicine_router)
 
 
 @app.get("/health")

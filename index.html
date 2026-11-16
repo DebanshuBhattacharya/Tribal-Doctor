@@ -19,7 +19,15 @@
     <script>
       document.documentElement.classList.add("js");
     </script>
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.openai.com/static-rsc-4/CGyh6lptEU0hE21GaBCSlsBBdx5t-6vWUN4QZis_bVqwU6tfuBptSFlazR0adXsZG0UQ2PXtBk9wmgpmiLz27SfoTAL88G3Fq3FMRDongK8O-IEB8-T5tCBjMomR6JilPo6QK1waXoRtiQfjiFQTbatksUYnB_xnYzdDnjGNXkBLLtsYI0Zo_mK1JDTvEpcx?purpose=fullsize"
+      media="(min-width: 769px)"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="style.css" />
+    <meta name="theme-color" content="#0b1f15" />
   </head>
   <body>
     <!-- ============ LOADER ============ -->
@@ -75,6 +83,9 @@
           <a href="knowledge.html" class="nav-link" data-nav-link
             ><span>Knowledge</span></a
           >
+          <a href="scan-medicine.html" class="nav-link" data-nav-link
+            ><span>Scan Medicine</span></a
+          >
           <a href="communities.html" class="nav-link" data-nav-link
             ><span>Communities</span></a
           >
@@ -120,6 +131,7 @@
         <a href="shop.html">Shop</a>
         <a href="plants.html">Explore Plants</a>
         <a href="knowledge.html">Knowledge</a>
+        <a href="scan-medicine.html">Scan Medicine</a>
         <a href="communities.html">Communities</a>
         <a href="identify.html" class="mobile-menu-cta">Identify a Plant</a>
       </nav>
@@ -134,65 +146,58 @@
       <section class="hero" id="hero">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow hero-eyebrow" data-reveal>
-              Rooted in knowledge. Connected by technology.
-            </p>
+            <div class="hero-pre">
+              <p class="eyebrow hero-eyebrow" data-reveal>
+                KNOWLEDGE PASSED THROUGH GENERATIONS
+              </p>
+            </div>
             <h1 class="hero-heading">
-              <span class="line"
-                ><span class="line-inner">From the forests</span></span
-              >
-              <span class="line"
-                ><span class="line-inner">of Jharkhand to a</span></span
-              >
               <span class="line line-serif"
-                ><span class="line-inner">more connected future.</span></span
+                ><span class="line-inner"
+                  >Explore Nature Differently.</span
+                ></span
               >
             </h1>
-            <p class="hero-sub" data-reveal>
-              Discover traditionally valued medicinal plants, the knowledge
-              behind them, and responsibly sourced herbal products connected to
-              the communities that preserve them.
-            </p>
-            <div class="hero-ctas" data-reveal>
-              <a href="shop.html" class="btn btn-primary" data-magnetic>
-                <span>Explore Herbal Products</span>
-              </a>
-              <a href="identify.html" class="btn btn-primary" data-magnetic>
-                <span>Identify a Plant</span>
-              </a>
-            </div>
+            <div class="hero-extras">
+              <p class="hero-sub" data-reveal>
+                Identify medicinal plants, learn how they are traditionally
+                used, and shop herbal products with transparent, traceable
+                sourcing.
+              </p>
+              <div class="hero-ctas" data-reveal>
+                <a href="shop.html" class="btn btn-primary">
+                  <span>Explore Herbal Products</span>
+                </a>
+                <a href="identify.html" class="btn btn-primary">
+                  <span>Identify a Plant</span>
+                </a>
+              </div>
 
-            <div class="hero-stats" data-reveal>
-              <div class="hero-stat">
-                <span class="hero-stat-num">01</span>
-                <span>Community connected</span>
-              </div>
-              <div class="hero-stat">
-                <span class="hero-stat-num">02</span>
-                <span>Responsibly sourced</span>
-              </div>
-              <div class="hero-stat">
-                <span class="hero-stat-num">03</span>
-                <span>Traceable origins</span>
+              <div class="hero-stats" data-reveal>
+                <div class="hero-stat">
+                  <span class="hero-stat-num">01</span>
+                  <span>Instant plant ID</span>
+                </div>
+                <div class="hero-stat">
+                  <span class="hero-stat-num">02</span>
+                  <span>Responsibly sourced</span>
+                </div>
+                <div class="hero-stat">
+                  <span class="hero-stat-num">03</span>
+                  <span>Traceable origins</span>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="hero-visual">
-            <div class="hero-visual-main" id="heroVisualMain">
-              <img
-                src="https://images.openai.com/static-rsc-4/ZBrz_OfKM__JqKJBnItTaX8RGTrKGqEIROoWZCs1ZXgXJeBzfg6rxTA4cq_k3a-DStQQ7cKUR35RaEQ07cSSLrB_eTntoV4Dcfc4yrcf99h6NNS5AOxiHDebwA4mXjZLafq-7JpsKsU4XOr2_mgWUacMdAWFD2LvTG8USaAvC-c8jzWsfXXLTgRiU6o_vIq0?purpose=fullsize"
-                alt="Botanical detail of a medicinal leaf"
-              />
-            </div>
-            <div class="hero-visual-secondary" id="heroVisualSecondary">
-              <img
-                src="https://images.openai.com/static-rsc-4/kW2WojNEqHOVVanhSRXkprl4rnVJIA_VQ-8QBnGhuIpeSWA6DTW-7FhQsjwRMhYd9YVFggJLK8bRjZ1zpEWT9Qm1JZg6k0aoCkmfpqoLV41c58Sa8KaA_M3mIM1dYyeiTRPtiFHjdbWYoZruDlyrtYengZBRjrAt6neMsJI0gIrSop-Hmlo7AUrmiN94I1_u?purpose=fullsize"
-                alt="Hands holding dried medicinal roots"
-              />
+            <div class="hero-tunnel" id="heroTunnel" aria-hidden="true">
+              <div class="tunnel-stage">
+                <div class="tunnel-plane" id="tunnelPlane"></div>
+              </div>
             </div>
             <span class="hero-visual-tag" id="heroVisualTag"
-              >Jharkhand sourced</span
+              >Verified sourcing</span
             >
           </div>
         </div>
@@ -217,15 +222,14 @@
         <div class="why-inner">
           <div class="why-media" data-reveal-clip>
             <img
-              src="https://images.openai.com/static-rsc-4/ofXhITo2FLN0IZ0CaR1cpuhlmRMyiRI_EwZKI7lMmRi7gEpqY5dDkspSKL4QixB51eJ514f0mXfZdE9nAHZnqM3Yt_yxsNE7EfG2m0AgUHRO3zcVrno8zCAndBCG1yZRHYBp8NG9yuu0LwoxjbTwKVJZKug9g6MVTH10NFBq_EY-9NGBRZJSvjuG89nN5jX6?purpose=fullsize"
+              src="https://images.openai.com/static-rsc-4/87suhtjEMJZwQga8h3k2ET7X5mtD8hm2ZzWh78xTaMDBKOXf0DpqdvF3PuAmx9dll10sFohIvKH6HuOiK3IVPedFof-Xx7SnpkP0TE538kIYrIipDeIkly0BjcEFfadSSo_aryDxbiBR2bDDF9vQoMacgh1J8_2bIxEsqscImik?purpose=inline"
               alt="Hands gathering dried medicinal herbs"
             />
           </div>
           <div class="why-copy">
-            <p class="eyebrow">Why we exist</p>
+            <p class="eyebrow">OUR PURPOSE</p>
             <h2 class="why-statement" data-split>
-              Traditional knowledge shouldn't disappear simply because it was
-              never written down.
+              Wisdom passed down. A legacy worth preserving.
             </h2>
             <svg
               class="why-line"
@@ -242,309 +246,778 @@
               />
             </svg>
             <p class="why-text" data-fade>
-              Across generations, communities have carried knowledge about
-              plants, forests and traditional wellness practices. Much of that
-              knowledge remains fragmented, difficult to discover and
-              disconnected from modern markets.
+              For generations, indigenous communities have preserved valuable
+              knowledge of medicinal plants, forests and traditional wellness
+              practices. Yet much of this wisdom remains undocumented, difficult
+              to discover and at risk of being lost.
             </p>
             <p class="why-text" data-fade>
-              Tribal Doctor creates a digital bridge between this knowledge,
-              responsible commerce and the people who preserve it.
+              Tribal Doctor connects this knowledge with technology, creating
+              opportunities to discover, preserve and share botanical heritage
+              while recognising the communities behind it.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- ============ PINNED STORYTELLING ============ -->
-      <section class="story" id="story" data-component="pinned-story">
-        <div class="story-heading">
-          <h2>A plant is more than a product.</h2>
-        </div>
-
+      <!-- ============ STORY (sticky photograph + scrolling chapters) ============ -->
+      <section class="story" id="story" data-component="story">
         <div class="story-pin">
-          <div class="story-progress" aria-hidden="true">
-            <span id="storyProgressBar"></span>
-          </div>
-
-          <div class="story-stage" data-stage="0">
-            <div class="story-visual">
-              <img
-                src="https://images.openai.com/static-rsc-4/CGyh6lptEU0hE21GaBCSlsBBdx5t-6vWUN4QZis_bVqwU6tfuBptSFlazR0adXsZG0UQ2PXtBk9wmgpmiLz27SfoTAL88G3Fq3FMRDongK8O-IEB8-T5tCBjMomR6JilPo6QK1waXoRtiQfjiFQTbatksUYnB_xnYzdDnjGNXkBLLtsYI0Zo_mK1JDTvEpcx?purpose=fullsize"
-                alt="Sunlight through forest trees"
-              />
-            </div>
-            <div class="story-text">
-              <span class="story-index">01</span>
-              <h3>It begins in the forest.</h3>
-              <p>Every plant has a place, a season and an ecosystem.</p>
-            </div>
-          </div>
-
-          <div class="story-stage" data-stage="1">
-            <div class="story-visual">
-              <img
-                src="https://images.openai.com/static-rsc-4/Nu5_yQP6DxuKrNi3IuELUwLBLf0lLagOAdhAS1nXZ_vB08hoUK7fDFTdxLXnweUApMrhbXw3NMk7FjY916VlIbJRGURiCV7gAZc1u1oC06l06NGzmZh-ivodbCaykJ8DJ8RD0_mSYtVfVnMtaTVwRtUg4_Z1hYQ52nyHI8HBHpvgzF6cbgepUN_Druw92kOD?purpose=fullsize"
-                alt="Hands preparing traditional herbal remedies"
-              />
-            </div>
-            <div class="story-text">
-              <span class="story-index">02</span>
-              <h3>Then comes knowledge.</h3>
-              <p>
-                Generations of communities have carried knowledge about plants
-                through lived experience and oral traditions.
+          <div class="story-track" id="storyTrack">
+            <div class="story-chapter c0">
+              <p class="eyebrow" data-depth="0.1">
+                BEYOND THE LEAF — THE STORY
+              </p>
+              <h2 data-depth="0.05">
+                <span class="story-word"><span>A plant is more</span></span
+                ><br /><span class="story-word"
+                  ><span>than a <em>product</em>.</span></span
+                >
+              </h2>
+              <p class="story-intro" data-depth="0.12">
+                Every plant carries a story — shaped by nature, preserved
+                through knowledge, and connected to people.
               </p>
             </div>
-          </div>
-
-          <div class="story-stage" data-stage="2">
-            <div class="story-visual">
-              <img
-                src="https://images.openai.com/static-rsc-4/Aowl3RYwA7E6x7xXou8Of51Hl58ILTERrpeUOSIiHr9899Rb7crwDl_9_5pQT8Zyrp-RlIxLXHHXi9aG7xqwEjtADqp_fdLeOg1-ma7HGa72HdTXB_5TcyLjAis4rK_xtsh8_xJA3wT7yPHbNxcYL8hBZzByEMEXu_dVI6cye4H5lghi1vpEOvwmWwqQf2SQ?purpose=fullsize"
-                alt="Digital interface showing plant documentation"
-              />
-            </div>
-            <div class="story-text">
-              <span class="story-index">03</span>
-              <h3>Then comes connection.</h3>
-              <p>
-                Technology can help document, organize and make responsibly
-                shared knowledge easier to discover.
-              </p>
-            </div>
-          </div>
-
-          <div class="story-stage" data-stage="3">
-            <div class="story-visual">
-              <img
-                src="https://images.openai.com/static-rsc-4/ExRnbvd9aNY-b0TgDT5XgJMg7uivmWEEBQKMJO8VlqNHKSFYqZYbGD3Uk_ZTyy4Kwx3QZNy80yflZUIy235yJsqwEYQC0CLLf9Vc-pTVrhzAPoVN976YWU52gUUQjgUa64OMfsTQD6pc0Jwlbt0YS2nNzCgCEfMohLUup4sM9jxwLy6gkEE6RG3YXiWknMo9?purpose=fullsize"
-                alt="Herbal products ready for community marketplace"
-              />
-            </div>
-            <div class="story-text">
-              <span class="story-index">04</span>
-              <h3>And finally, value returns to the community.</h3>
-              <p>
-                Responsible commerce can create new opportunities while keeping
-                provenance and sustainability visible.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ FEATURED PRODUCTS ============ -->
-      <section class="products" id="products">
-        <div class="section-head">
-          <h2>Explore what the forest has to offer.</h2>
-          <p>
-            Discover traditionally valued herbs and forest products with
-            information about their origin, plant part and sourcing.
-          </p>
-        </div>
-
-        <div class="product-grid">
-          <article class="product-card" data-card>
-            <div class="product-media">
-              <img src="images/Ashwagandha.jpeg" alt="Ashwagandha root" />
-              <span class="product-origin">Root · Jharkhand</span>
-            </div>
-            <div class="product-info">
-              <div class="product-titles">
-                <h3>Ashwagandha Root</h3>
-                <p class="product-latin">Withania somnifera</p>
+            <div class="story-chapter c1">
+              <p class="story-tag">01 — THE ORIGIN</p>
+              <div class="story-text tx" data-depth="0.07">
+                <h3 class="story-title">Where every story begins.</h3>
+                <p class="story-desc">
+                  Before it becomes a product, it belongs to the natural world.
+                  Every plant has a habitat, an identity and a place in the
+                  ecosystem.
+                </p>
               </div>
-              <div class="product-meta">
-                <span class="product-price">₹399</span>
-                <span class="product-tag">Traditionally valued root</span>
-              </div>
-              <a
-                href="product.html?id=ashwagandha"
-                class="product-link"
-                data-magnetic
-              >
-                <span>View product</span>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M1 7H13M13 7L8 2M13 7L8 12"
-                    stroke="currentColor"
-                    stroke-width="1.3"
+              <!-- TODO: replace with photos of ONE medicinal plant: habitat > knowledge > documentation > product -->
+              <figure class="story-photo p1" data-depth="-0.04">
+                <div class="story-mask">
+                  <img
+                    src="https://images.openai.com/static-rsc-4/CGyh6lptEU0hE21GaBCSlsBBdx5t-6vWUN4QZis_bVqwU6tfuBptSFlazR0adXsZG0UQ2PXtBk9wmgpmiLz27SfoTAL88G3Fq3FMRDongK8O-IEB8-T5tCBjMomR6JilPo6QK1waXoRtiQfjiFQTbatksUYnB_xnYzdDnjGNXkBLLtsYI0Zo_mK1JDTvEpcx?purpose=fullsize"
+                    alt="The medicinal plant growing naturally in its forest habitat"
+                    width="800"
+                    height="1000"
+                    fetchpriority="high"
+                    decoding="async"
+                    style="object-position: 50% 30%"
                   />
-                </svg>
-              </a>
+                </div>
+              </figure>
+              <p class="story-note n3" data-depth="0.1">
+                <b>SPECIMEN / 001</b>
+              </p>
+              <p class="story-note n1" data-depth="0.16">[BOTANICAL NAME]</p>
+              <p class="story-note n2" data-depth="0.2">[NATURAL HABITAT]</p>
             </div>
-          </article>
-
-          <article class="product-card" data-card>
-            <div class="product-media">
-              <img src="images/Giloy.jpeg" alt="Giloy stem cuttings" />
-              <span class="product-origin">Stem · Jharkhand</span>
-            </div>
-            <div class="product-info">
-              <div class="product-titles">
-                <h3>Giloy</h3>
-                <p class="product-latin">Tinospora cordifolia</p>
+            <div class="story-chapter c2">
+              <p class="story-tag">02 — THE KNOWLEDGE</p>
+              <div class="story-text tx" data-depth="0.07">
+                <h3 class="story-title">Wisdom that lives on.</h3>
+                <p class="story-desc">
+                  Across generations, communities have learned to recognise and
+                  understand the plants around them. Their knowledge is part of
+                  the plant’s story.
+                </p>
               </div>
-              <div class="product-meta">
-                <span class="product-price">₹299</span>
-                <span class="product-tag">Traditionally used herb</span>
-              </div>
-              <a
-                href="product.html?id=giloy"
-                class="product-link"
-                data-magnetic
-              >
-                <span>View product</span>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M1 7H13M13 7L8 2M13 7L8 12"
-                    stroke="currentColor"
-                    stroke-width="1.3"
+              <figure class="story-photo p2" data-depth="-0.05">
+                <div class="story-mask">
+                  <img
+                    src="https://images.openai.com/static-rsc-4/Nu5_yQP6DxuKrNi3IuELUwLBLf0lLagOAdhAS1nXZ_vB08hoUK7fDFTdxLXnweUApMrhbXw3NMk7FjY916VlIbJRGURiCV7gAZc1u1oC06l06NGzmZh-ivodbCaykJ8DJ8RD0_mSYtVfVnMtaTVwRtUg4_Z1hYQ52nyHI8HBHpvgzF6cbgepUN_Druw92kOD?purpose=fullsize"
+                    alt="A knowledge holder documenting the same plant"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 50% 40%"
                   />
-                </svg>
-              </a>
+                </div>
+              </figure>
+              <p class="story-note n1" data-depth="0.1">
+                <b>FIELD OBSERVATION</b>
+              </p>
+              <p class="story-note n2" data-depth="0.16">
+                [TRADITIONAL KNOWLEDGE]
+              </p>
+              <p class="story-note n3" data-depth="0.2">
+                [COMMUNITY CONTRIBUTION]
+              </p>
             </div>
-          </article>
-
-          <article class="product-card" data-card>
-            <div class="product-media">
-              <img src="images/Shatavari.jpeg" alt="Shatavari root bundle" />
-              <span class="product-origin">Root · Jharkhand</span>
-            </div>
-            <div class="product-info">
-              <div class="product-titles">
-                <h3>Shatavari Root</h3>
-                <p class="product-latin">Asparagus racemosus</p>
+            <div class="story-chapter c3">
+              <p class="story-tag">03 — THE CONNECTION</p>
+              <div class="story-text tx" data-depth="0.07">
+                <h3 class="story-title">Tradition meets technology.</h3>
+                <p class="story-desc">
+                  Through identification, documentation and responsible
+                  sourcing, traditional knowledge can connect with new
+                  possibilities.
+                </p>
               </div>
-              <div class="product-meta">
-                <span class="product-price">₹449</span>
-                <span class="product-tag"
-                  >Traditional botanical ingredient</span
+              <figure class="story-photo p3b" data-depth="-0.02">
+                <div class="story-mask">
+                  <img
+                    src="https://images.openai.com/static-rsc-4/Aowl3RYwA7E6x7xXou8Of51Hl58ILTERrpeUOSIiHr9899Rb7crwDl_9_5pQT8Zyrp-RlIxLXHHXi9aG7xqwEjtADqp_fdLeOg1-ma7HGa72HdTXB_5TcyLjAis4rK_xtsh8_xJA3wT7yPHbNxcYL8hBZzByEMEXu_dVI6cye4H5lghi1vpEOvwmWwqQf2SQ?purpose=fullsize"
+                    alt="The plant being documented and processed responsibly"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 50% 50%"
+                  />
+                </div>
+              </figure>
+              <figure class="story-photo p3a" data-depth="-0.06">
+                <div class="story-mask">
+                  <img
+                    src="https://images.openai.com/static-rsc-4/CGyh6lptEU0hE21GaBCSlsBBdx5t-6vWUN4QZis_bVqwU6tfuBptSFlazR0adXsZG0UQ2PXtBk9wmgpmiLz27SfoTAL88G3Fq3FMRDongK8O-IEB8-T5tCBjMomR6JilPo6QK1waXoRtiQfjiFQTbatksUYnB_xnYzdDnjGNXkBLLtsYI0Zo_mK1JDTvEpcx?purpose=fullsize"
+                    alt="Close-up of the plant’s leaves and detail"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 30% 40%"
+                  />
+                </div>
+              </figure>
+              <p class="story-note n1" data-depth="0.14">
+                <b>IDENTIFY / DOCUMENT</b>
+              </p>
+              <p class="story-note n2" data-depth="0.18">
+                <b>CONNECT / DISCOVER</b>
+              </p>
+              <svg
+                class="story-line l1"
+                viewBox="0 0 100 100"
+                aria-hidden="true"
+              >
+                <path d="M5 0 V45 L55 100" pathLength="1" />
+                <circle cx="55" cy="100" r="2.2" />
+              </svg>
+              <svg
+                class="story-line l2"
+                viewBox="0 0 100 100"
+                aria-hidden="true"
+              >
+                <path d="M0 100 L45 30 H100" pathLength="1" />
+                <circle cx="0" cy="100" r="2.2" />
+              </svg>
+            </div>
+            <div class="story-chapter c4">
+              <p class="story-tag">04 — THE IMPACT</p>
+              <div class="story-text tx" data-depth="0.07">
+                <h3 class="story-title">Value moves forward.</h3>
+                <p class="story-desc">
+                  The journey should recognise the people and knowledge behind
+                  every plant, creating opportunities for a more connected
+                  future.
+                </p>
+              </div>
+              <div class="story-cta" data-depth="0.1">
+                <p class="story-closing">
+                  Rooted in knowledge.<br />Connected by technology.
+                </p>
+                <a href="plants.html" class="btn btn-primary"
+                  ><span>Explore the Plant Library &#8599;</span></a
                 >
               </div>
-              <a
-                href="product.html?id=shatavari"
-                class="product-link"
-                data-magnetic
-              >
-                <span>View product</span>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M1 7H13M13 7L8 2M13 7L8 12"
-                    stroke="currentColor"
-                    stroke-width="1.3"
+              <figure class="story-photo p4" data-depth="-0.05">
+                <div class="story-mask">
+                  <img
+                    src="https://images.openai.com/static-rsc-4/ExRnbvd9aNY-b0TgDT5XgJMg7uivmWEEBQKMJO8VlqNHKSFYqZYbGD3Uk_ZTyy4Kwx3QZNy80yflZUIy235yJsqwEYQC0CLLf9Vc-pTVrhzAPoVN976YWU52gUUQjgUa64OMfsTQD6pc0Jwlbt0YS2nNzCgCEfMohLUup4sM9jxwLy6gkEE6RG3YXiWknMo9?purpose=fullsize"
+                    alt="A finished botanical product with plant and source details"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 50% 50%"
                   />
-                </svg>
-              </a>
+                </div>
+              </figure>
             </div>
-          </article>
-
-          <article class="product-card" data-card>
-            <div class="product-media">
-              <img src="images/Mahua flower.jpeg" alt="Dried mahua flowers" />
-              <span class="product-origin">Flower · Jharkhand</span>
-            </div>
-            <div class="product-info">
-              <div class="product-titles">
-                <h3>Mahua Flower</h3>
-                <p class="product-latin">Madhuca longifolia</p>
-              </div>
-              <div class="product-meta">
-                <span class="product-price">₹249</span>
-                <span class="product-tag">Forest-sourced botanical</span>
-              </div>
-              <a
-                href="product.html?id=mahua"
-                class="product-link"
-                data-magnetic
-              >
-                <span>View product</span>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M1 7H13M13 7L8 2M13 7L8 12"
-                    stroke="currentColor"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </article>
+          </div>
+          <div class="story-progress" aria-hidden="true">
+            <span class="story-progress-fill"></span><b class="on">01 Origin</b
+            ><b>02 Knowledge</b><b>03 Connection</b><b>04 Impact</b>
+          </div>
         </div>
       </section>
 
-      <!-- ============ AI PLANT IDENTIFICATION ============ -->
-      <section class="identify" id="identify">
-        <div class="identify-inner">
-          <div class="identify-media">
-            <img
-              src="https://images.openai.com/static-rsc-4/55CikwpKtFC-tLMrqwDHZYkvMsWXOjW6iV9WU6sn-qfKoIz8RNDFC-uu2HcktEru1-b73E-7IOuVHr_Syh1D81KHWDqgZOzAP_vS9r3rqOTT1u-G9UnKyyzHd57g6n2HxGYth4H0qmY93D4cRiNttkd48g_gP1SVISvuM5gGDuWMkFn2vR9CwzOqzFjepQY0?purpose=inline"
-              alt="Close-up botanical detail of a leaf"
+      <!-- ============ MARKETPLACE PREVIEW — "Forest to community" ============ -->
+      <section class="mp" id="products" aria-labelledby="mp-title">
+        <div class="mp-deco" aria-hidden="true">
+          <svg
+            class="mp-branch"
+            viewBox="0 0 240 420"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <defs>
+              <path
+                id="mp-leaf-shape"
+                d="M0 0C-13-12-14-38 0-62C14-38 13-12 0 0ZM0 0V-52"
+              />
+            </defs>
+            <path d="M120 412C116 300 130 180 118 24" />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(119 330) rotate(-58) scale(1.15)"
             />
-            <div class="scan-line" id="scanLine" aria-hidden="true"></div>
-            <!-- <span class="marker marker-1" data-marker></span>
-            <span class="marker marker-2" data-marker></span> -->
-          </div>
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(120 316) rotate(58) scale(1.15)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(119 268) rotate(-54) scale(1.05)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(120 254) rotate(54) scale(1.05)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(119 205) rotate(-50) scale(0.95)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(120 191) rotate(50) scale(0.95)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(119 145) rotate(-46) scale(0.82)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(120 131) rotate(46) scale(0.82)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(119 92) rotate(-42) scale(0.7)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(120 78) rotate(42) scale(0.7)"
+            />
+            <use
+              href="#mp-leaf-shape"
+              transform="translate(118 24) scale(0.9)"
+            />
+          </svg>
+        </div>
 
-          <div class="identify-copy">
-            <p class="eyebrow">AI plant identification</p>
-            <h2>Know the plant before you buy it.</h2>
-            <p class="identify-desc">
-              Snap a photo. Discover the plant. Explore its traditional
-              knowledge, origin and responsible-use information.
-            </p>
-
-            <div class="identify-card" id="identifyCard">
-              <div class="identify-card-head">
-                <span class="status-dot" id="identifyStatusDot"></span>
-                <span id="identifyStatus">Ready to identify</span>
-              </div>
-
-              <div class="identify-card-body">
-                <div>
-                  <h4 id="plantName">No plant selected</h4>
-                  <p class="latin" id="plantScientific">
-                    Upload a photo to begin
-                  </p>
-                </div>
-
-                <div class="confidence">
-                  <span class="confidence-num" id="confidenceNum">—</span>
-                  <span>%</span>
-                  <p>Confidence</p>
-                </div>
-              </div>
-
-              <div class="identify-card-foot">
-                <span id="plantHindi">—</span>
-                <span id="plantPart">Plant identification</span>
-              </div>
-
-              <a
-                href="#"
-                class="identify-card-link"
-                id="plantExplore"
-                style="pointer-events: none; opacity: 0.5"
-              >
-                Explore plant <span>→</span>
+        <div class="mp-inner">
+          <header class="mp-head">
+            <div class="mp-head-main">
+              <p class="eyebrow mp-eyebrow">
+                <svg
+                  class="mp-leaf"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2C14 2 6 8 6 16C6 20.4183 9.58172 24 14 24C18.4183 24 22 20.4183 22 16C22 8 14 2 14 2Z"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M14 24V14"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                </svg>
+                Forest to community
+              </p>
+              <h2 class="mp-title" id="mp-title">
+                <span>More than plants.</span>
+                <span class="mp-title-em">A heritage worth discovering.</span>
+              </h2>
+            </div>
+            <div class="mp-lead">
+              <a class="mp-btn" href="shop.html">
+                <span class="mp-btn-label">Explore the Marketplace</span>
+                <span class="mp-btn-arrow" aria-hidden="true">&#8599;</span>
               </a>
             </div>
+          </header>
 
-            <!-- Hidden file input -->
-            <input
-              type="file"
-              id="plantImageInput"
-              accept="image/jpeg,image/png,image/webp"
-              hidden
-            />
+          <ul class="mp-grid">
+            <li class="mp-card">
+              <a class="mp-link" href="shop.html">
+                <div class="mp-media">
+                  <img
+                    src="images/Mahua flower.jpeg"
+                    alt="Dried mahua flowers"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 50% 50%"
+                  />
+                  <span class="mp-pill">Flower · Jharkhand</span>
+                </div>
+                <div class="mp-body">
+                  <div class="mp-row">
+                    <div class="mp-names">
+                      <h3 class="mp-name">Mahua</h3>
+                      <p class="mp-latin">Madhuca longifolia</p>
+                    </div>
+                    <span class="mp-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p class="mp-text">
+                    A forest flower with deep cultural and traditional
+                    significance.
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="mp-card">
+              <a class="mp-link" href="shop.html">
+                <div class="mp-media">
+                  <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Neem_%28Azadirachta_indica%29_in_Hyderabad_W_IMG_6976.jpg?width=900"
+                    alt="Neem leaves and flowers on the branch"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 50% 45%"
+                  />
+                  <span class="mp-pill">Leaves · Traditional knowledge</span>
+                </div>
+                <div class="mp-body">
+                  <div class="mp-row">
+                    <div class="mp-names">
+                      <h3 class="mp-name">Neem</h3>
+                      <p class="mp-latin">Azadirachta indica</p>
+                    </div>
+                    <span class="mp-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p class="mp-text">
+                    A plant valued across generations in traditional practices.
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="mp-card">
+              <a class="mp-link" href="shop.html">
+                <div class="mp-media">
+                  <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Sal_%28Shorea_robusta%29-_flowering_canopy_W_Picture_117.jpg?width=900"
+                    alt="Flowering canopy of a sal tree in the forest"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 50% 50%"
+                  />
+                  <span class="mp-pill">Seeds · Forest produce</span>
+                </div>
+                <div class="mp-body">
+                  <div class="mp-row">
+                    <div class="mp-names">
+                      <h3 class="mp-name">Sal</h3>
+                      <p class="mp-latin">Shorea robusta</p>
+                    </div>
+                    <span class="mp-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p class="mp-text">
+                    An important forest resource with traditional and economic
+                    value.
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="mp-card">
+              <a class="mp-link" href="shop.html">
+                <div class="mp-media">
+                  <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Tamarind_fruits_%28Tamarindus_indica_%27Si_Thong%27%29.jpg?width=900"
+                    alt="Ripe tamarind pods"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    style="object-position: 50% 50%"
+                  />
+                  <span class="mp-pill">Fruit · Forest harvest</span>
+                </div>
+                <div class="mp-body">
+                  <div class="mp-row">
+                    <div class="mp-names">
+                      <h3 class="mp-name">Tamarind</h3>
+                      <p class="mp-latin">Tamarindus indica</p>
+                    </div>
+                    <span class="mp-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p class="mp-text">
+                    A familiar forest resource used in food and local
+                    traditions.
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
 
-            <a
-              href="identify.html"
-              class="btn btn-primary"
-              id="identifyButton"
-              data-magnetic
-            >
-              <span>Identify a Plant</span>
-            </a>
+        </div>
+      </section>
+
+     
+<!-- ============ AI PLANT IDENTIFICATION ============ -->
+<section class="identify" id="identify" aria-labelledby="idv-title">
+  <div class="idv-inner">
+
+    <!-- TOP: HEADLINE + DESCRIPTION -->
+    <div class="idv-copy">
+
+      <p class="eyebrow idv-eyebrow">
+        AI-powered plant identification
+      </p>
+
+      <h2 class="idv-title" id="idv-title">
+        <span class="idv-line">
+          <span>One photograph.</span>
+        </span>
+        <span class="idv-line idv-em">
+          <span>A world of knowledge.</span>
+        </span>
+      </h2>
+
+      <p class="idv-desc">
+        Identify a plant, then explore its traditional uses and origins.
+      </p>
+
+    </div>
+
+    <!-- BOTTOM LEFT: BOTANICAL PHOTOGRAPH -->
+    <figure class="idv-media" id="idvMedia">
+
+      <div class="idv-frame" id="idvFrame">
+
+        <img
+          class="idv-photo"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Basil_edit2.jpg?width=1100"
+          alt="Holy basil (Ocimum tenuiflorum) in flower"
+          width="1100"
+          height="1605"
+          loading="lazy"
+          decoding="async"
+          style="object-position: 50% 42%"
+        />
+
+        <div class="idv-scan" aria-hidden="true"></div>
+
+        <span class="idv-corner idv-c-tl" aria-hidden="true"></span>
+        <span class="idv-corner idv-c-tr" aria-hidden="true"></span>
+        <span class="idv-corner idv-c-bl" aria-hidden="true"></span>
+        <span class="idv-corner idv-c-br" aria-hidden="true"></span>
+
+      </div>
+
+      <figcaption class="idv-label">
+        <span class="idv-label-dot" aria-hidden="true"></span>
+        Specimen 001 / Botanical archive
+      </figcaption>
+
+    </figure>
+
+    <!-- BOTTOM RIGHT: IDENTIFICATION RESULT + CTA -->
+    <div class="idv-result">
+
+      <article
+        class="idv-card"
+        id="idvCard"
+        aria-label="Sample AI identification result, shown for illustration"
+      >
+
+        <header class="idv-card-head">
+
+          <span class="idv-card-label">
+            <i class="idv-pulse" aria-hidden="true"></i>
+            AI identification preview
+          </span>
+
+          <span class="idv-badge">Sample result</span>
+
+        </header>
+
+        <div class="idv-card-main">
+
+          <img
+            class="idv-thumb"
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Basil_edit2.jpg?width=240"
+            alt=""
+            width="64"
+            height="64"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <div class="idv-names">
+            <h3>Holy Basil</h3>
+            <p class="idv-latin">Ocimum tenuiflorum</p>
+          </div>
+
+          <p class="idv-score" aria-label="Confidence 98 percent">
+            <span class="idv-score-num" id="idvScoreNum">98</span>
+            <span class="idv-score-unit">%</span>
+          </p>
+
+        </div>
+
+        <div class="idv-meter">
+
+          <span class="idv-meter-label">
+            Identification confidence
+          </span>
+
+          <div class="idv-bar" aria-hidden="true">
+            <span class="idv-bar-fill" id="idvBarFill"></span>
+          </div>
+
+        </div>
+
+        <div class="idv-info">
+
+          <div class="idv-info-block">
+            <h4>Traditional Uses</h4>
+            <p>Explore plant knowledge.</p>
+          </div>
+
+          <div class="idv-info-block">
+            <h4>Plant Origin</h4>
+            <p>Explore its origins.</p>
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- CTA -->
+      <div class="idv-actions">
+
+        <a
+          href="identify.html"
+          class="btn btn-primary idv-cta"
+          id="identifyButton"
+        >
+          <span>
+            Explore AI Identification
+            <span aria-hidden="true">&#8599;</span>
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+      <!-- ============ MEDICINE × HERB CHECK (teaser for scan-medicine.html) ============ -->
+      <section class="scx" id="interactions" aria-labelledby="scx-title">
+        <div class="scx-inner">
+          <div class="scx-pin">
+            <div class="scx-glow" aria-hidden="true"></div>
+
+            <header class="scx-head">
+              <p class="eyebrow eyebrow-light scx-eyebrow">Medicine × Herb Check</p>
+              <h2 class="scx-title" id="scx-title">
+                Herbs and medicine.<br /><em>Do they mix?</em>
+              </h2>
+              <p class="scx-sub">
+                Some herbs can change how a medicine works. Photograph yours and
+                see which traditional herbs to be careful with, and the research
+                behind each one.
+              </p>
+              <p class="scx-hint" aria-hidden="true"><span></span>Scroll to try it</p>
+            </header>
+
+            <div class="scx-stage">
+              <div class="scx-side">
+                <ol class="scx-steps">
+                  <span class="scx-rail-fill" aria-hidden="true"></span>
+                  <li class="scx-step is-active">
+                    <div class="scx-step-head">
+                      <span class="scx-step-num">01</span>
+                      <h3 class="scx-step-title">Snap your medicine</h3>
+                    </div>
+                    <div class="scx-step-body">
+                      <p>Photograph the strip, bottle or box. No typing, no guessing at spellings.</p>
+                    </div>
+                  </li>
+                  <li class="scx-step">
+                    <div class="scx-step-head">
+                      <span class="scx-step-num">02</span>
+                      <h3 class="scx-step-title">We read the label</h3>
+                    </div>
+                    <div class="scx-step-body">
+                      <p>AI finds the medicine and its active ingredient, the part that decides how it can interact.</p>
+                    </div>
+                  </li>
+                  <li class="scx-step">
+                    <div class="scx-step-head">
+                      <span class="scx-step-num">03</span>
+                      <h3 class="scx-step-title">See which herbs to watch</h3>
+                    </div>
+                    <div class="scx-step-body">
+                      <p>Get a short list of herbs that may interact, ordered by how much caution the research suggests.</p>
+                    </div>
+                  </li>
+                  <li class="scx-step">
+                    <div class="scx-step-head">
+                      <span class="scx-step-num">04</span>
+                      <h3 class="scx-step-title">Understand why</h3>
+                    </div>
+                    <div class="scx-step-body">
+                      <p>Every flag comes with a plain-language summary and its research, so you can talk to your doctor with confidence.</p>
+                    </div>
+                  </li>
+                </ol>
+                <div class="scx-cta">
+                  <a href="scan-medicine.html" class="btn btn-primary-light"><span>Scan your medicine ↗</span></a>
+                </div>
+              </div>
+
+              <div class="scx-device">
+                <span class="scx-float scx-f1 is-on" data-step="0"><i></i>No typing. Just a photo.</span>
+                <span class="scx-float scx-f2" data-step="1"><i></i>Active ingredient found</span>
+                <span class="scx-float scx-f3" data-step="2"><i></i>Ranked by caution level</span>
+                <span class="scx-float scx-f4" data-step="3"><i></i>Backed by research</span>
+
+                <div class="scx-phone" role="img" aria-label="Preview of the medicine scanner: photograph a medicine, see its active ingredient, then see which herbs may interact with it and why.">
+                  <span class="scx-notch" aria-hidden="true"></span>
+                  <div class="scx-screens" aria-hidden="true">
+
+                    <!-- screen 1 · camera -->
+                    <div class="scx-screen scx-s1">
+                      <div class="scx-camtop"><span>Scan medicine</span><i>Live</i></div>
+                      <div class="scx-viewfinder">
+                        <svg class="scx-strip" viewBox="0 0 360 220">
+                          <rect x="4" y="8" width="344" height="200" rx="12" fill="#dedbd2" stroke="#b8b3a5" stroke-width="1.2" />
+                          <g stroke="#c4bfb1" stroke-width="1" stroke-dasharray="3 4"><path d="M92 8v200M178 8v200M264 8v200" /></g>
+                          <g fill="#e9e6dd" stroke="#b8b3a5" stroke-width="1.2">
+                            <circle cx="48" cy="56" r="27" /><circle cx="135" cy="56" r="27" /><circle cx="221" cy="56" r="27" /><circle cx="307" cy="56" r="27" />
+                            <circle cx="48" cy="160" r="27" /><circle cx="135" cy="160" r="27" /><circle cx="221" cy="160" r="27" /><circle cx="307" cy="160" r="27" />
+                          </g>
+                          <g fill="#f6f3ea" stroke="#cfcabb" stroke-width="1">
+                            <circle cx="48" cy="56" r="19" /><circle cx="135" cy="56" r="19" /><circle cx="221" cy="56" r="19" /><circle cx="307" cy="56" r="19" />
+                            <circle cx="48" cy="160" r="19" /><circle cx="135" cy="160" r="19" /><circle cx="221" cy="160" r="19" /><circle cx="307" cy="160" r="19" />
+                          </g>
+                          <g fill="#4b5148" font-family="Manrope, sans-serif" font-weight="700" font-size="13" letter-spacing="2">
+                            <text x="22" y="108">METFORMIN · 500 mg</text>
+                          </g>
+                          <g fill="#6b7067" font-family="Manrope, sans-serif" font-size="6.5" letter-spacing="1.6" opacity=".75">
+                            <text x="22" y="120">BATCH 000000 · EXP 00/0000</text>
+                          </g>
+                          <rect class="scx-detect" x="14" y="92" width="226" height="34" rx="3" fill="none" stroke="#ddae86" stroke-width="2.2" pathLength="1" />
+                        </svg>
+                        <span class="scx-corner scx-c-tl"></span><span class="scx-corner scx-c-tr"></span>
+                        <span class="scx-corner scx-c-bl"></span><span class="scx-corner scx-c-br"></span>
+                        <span class="scx-sweep"></span>
+                        <span class="scx-tag">Label detected</span>
+                      </div>
+                      <p class="scx-camhint">Point at the label or strip</p>
+                      <span class="scx-shutter"><i></i></span>
+                    </div>
+
+                    <!-- screen 2 · recognition -->
+                    <div class="scx-screen scx-s2">
+                      <div class="scx-appbar"><span>Recognised</span><span class="scx-check">✓</span></div>
+                      <h4 class="scx-med">Metformin</h4>
+                      <p class="scx-medsub">500 mg · Tablet</p>
+                      <dl class="scx-facts">
+                        <div><dt>Active ingredient</dt><dd>Metformin hydrochloride</dd></div>
+                        <div><dt>Commonly used for</dt><dd>Type 2 diabetes</dd></div>
+                      </dl>
+                      <div class="scx-checking">
+                        <span class="scx-checking-label">Checking herbs against research</span>
+                        <span class="scx-bar"><i></i></span>
+                        <p class="scx-found">3 herbs worth knowing about</p>
+                      </div>
+                    </div>
+
+                    <!-- screen 3 · herb list -->
+                    <div class="scx-screen scx-s3">
+                      <div class="scx-appbar"><span>Herbs and Metformin</span></div>
+                      <ul class="scx-herbs">
+                        <li class="scx-herb">
+                          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neem_%28Azadirachta_indica%29_in_Hyderabad_W_IMG_6976.jpg?width=200" alt="" width="200" height="200" loading="lazy" decoding="async" />
+                          <div><strong>Neem</strong><p>May add to blood-sugar lowering.</p><span class="scx-chip warn">Use caution</span></div>
+                        </li>
+                        <li class="scx-herb">
+                          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Basil_edit2.jpg?width=200" alt="" width="200" height="200" loading="lazy" decoding="async" />
+                          <div><strong>Holy basil</strong><p>May add to blood-sugar lowering.</p><span class="scx-chip warn">Use caution</span></div>
+                        </li>
+                        <li class="scx-herb">
+                          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tamarind_fruits_%28Tamarindus_indica_%27Si_Thong%27%29.jpg?width=200" alt="" width="200" height="200" loading="lazy" decoding="async" />
+                          <div><strong>Tamarind</strong><p>Research is limited. Ask your doctor.</p><span class="scx-chip info">Limited research</span></div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- screen 4 · herb detail -->
+                    <div class="scx-screen scx-s4">
+                      <div class="scx-hero"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neem_%28Azadirachta_indica%29_in_Hyderabad_W_IMG_6976.jpg?width=600" alt="" width="600" height="400" loading="lazy" decoding="async" /></div>
+                      <div class="scx-detail">
+                        <div class="scx-dhead"><strong>Neem</strong><span class="scx-chip warn">Use caution</span></div>
+                        <div><h5>What research suggests</h5><p>Neem extracts have been reported to lower blood sugar. Alongside diabetes medicine, the effects may add up.</p></div>
+                        <div><h5>What to do</h5><p>Talk to your doctor or pharmacist before combining the two.</p></div>
+                        <span class="scx-btnlike">View referenced research ↗</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <p class="scx-note">Illustrative example. Research information only, not a substitute for professional medical advice.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -559,109 +1032,19 @@
           </h2>
         </div>
 
-        <div class="passport-inner">
-          <div class="passport-timeline" id="passportTimeline">
-            <div class="passport-line" aria-hidden="true">
-              <span id="passportLineFill"></span>
+        <div class="pp-inner">
+          <aside class="pp-doc" id="ppDoc" aria-label="Sample knowledge passport">
+            <div class="pp-doc-top">
+              <span>Knowledge passport</span>
+              <span>Sample record</span>
             </div>
 
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Plant</span>
-                <p>Ashwagandha — identified and digitally catalogued.</p>
-              </div>
-            </div>
-
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Local knowledge</span>
-                <p>Traditional names and documented uses are recorded.</p>
-              </div>
-            </div>
-
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Region</span>
-                <p>Its sourcing region is recorded for traceability.</p>
-              </div>
-            </div>
-
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Community</span>
-                <p>
-                  Knowledge is documented with appropriate community permission.
-                </p>
-              </div>
-            </div>
-
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Plant part</span>
-                <p>Root, leaf, flower or other plant parts are identified.</p>
-              </div>
-            </div>
-
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Harvest</span>
-                <p>
-                  Season and responsible harvesting information are recorded.
-                </p>
-              </div>
-            </div>
-
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Processing</span>
-                <p>Cleaning, drying and preparation are documented.</p>
-              </div>
-            </div>
-
-            <div class="passport-step" data-step>
-              <span class="passport-dot"></span>
-              <div class="passport-content">
-                <span class="passport-label">Product</span>
-                <p>The finished product keeps its origin and story attached.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="passport-visual">
-            <div class="qr-card">
-              <div class="qr-mark" aria-hidden="true">
+            <div class="pp-doc-main">
+              <div class="pp-qr" aria-hidden="true">
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-                  <rect
-                    x="4"
-                    y="4"
-                    width="20"
-                    height="20"
-                    stroke="#1D211D"
-                    stroke-width="2"
-                  />
-                  <rect
-                    x="48"
-                    y="4"
-                    width="20"
-                    height="20"
-                    stroke="#1D211D"
-                    stroke-width="2"
-                  />
-                  <rect
-                    x="4"
-                    y="48"
-                    width="20"
-                    height="20"
-                    stroke="#1D211D"
-                    stroke-width="2"
-                  />
+                  <rect x="4" y="4" width="20" height="20" stroke="#1D211D" stroke-width="2" />
+                  <rect x="48" y="4" width="20" height="20" stroke="#1D211D" stroke-width="2" />
+                  <rect x="4" y="48" width="20" height="20" stroke="#1D211D" stroke-width="2" />
                   <rect x="10" y="10" width="8" height="8" fill="#1D211D" />
                   <rect x="54" y="10" width="8" height="8" fill="#1D211D" />
                   <rect x="10" y="54" width="8" height="8" fill="#1D211D" />
@@ -671,252 +1054,136 @@
                   <rect x="60" y="48" width="8" height="8" fill="#1D211D" />
                   <rect x="32" y="60" width="6" height="6" fill="#1D211D" />
                 </svg>
+                <i class="pp-qr-scan"></i>
               </div>
-
-              <p>
-                Scan to follow the journey from plant and knowledge to
-                responsibly sourced product.
-              </p>
+              <div class="pp-plant">
+                <strong>Ashwagandha</strong>
+                <em>Withania somnifera</em>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- ============ JHARKHAND ============ -->
-      <section class="jharkhand" id="jharkhand">
-        <div class="jk-inner">
-          <div class="jk-copy">
-            <p class="jk-label">Where it comes from</p>
-            <h2>Rooted in Jharkhand.</h2>
-            <p class="jk-text">
-              Jharkhand's forests hold extraordinary biodiversity and
-              generations of plant knowledge. Tribal Doctor aims to create a
-              digital layer connecting plants, people, knowledge and responsible
-              commerce.
+            <div class="pp-stage" aria-live="polite">
+              <span class="pp-stage-count"><b id="ppCount">01</b> / 08</span>
+              <span class="pp-stage-name" id="ppName">Plant</span>
+            </div>
+            <div class="pp-ticks" aria-hidden="true"><span class="pp-tick is-on"></span><span class="pp-tick"></span><span class="pp-tick"></span><span class="pp-tick"></span><span class="pp-tick"></span><span class="pp-tick"></span><span class="pp-tick"></span><span class="pp-tick"></span></div>
+
+            <p class="pp-doc-note">
+              Scan to follow the journey from plant and knowledge to
+              responsibly sourced product.
             </p>
+          </aside>
 
-            <ul class="jk-regions" aria-label="Sourcing regions">
-              <li>
-                <button type="button" class="jk-region" data-region="palamu">
-                  <span class="jk-region-name">Palamu</span
-                  ><span class="jk-region-where">North-west forests</span>
-                </button>
+          <div class="pp-track">
+            <div class="pp-line" aria-hidden="true"><span id="ppLineFill"></span></div>
+            <ol class="pp-steps" id="ppSteps">
+              <li class="pp-step is-active" data-label="Plant">
+                <span class="pp-num" aria-hidden="true">01</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Plant</h3>
+                  <p>Ashwagandha — identified and digitally catalogued.</p>
+                </div>
               </li>
-              <li>
-                <button type="button" class="jk-region" data-region="ranchi">
-                  <span class="jk-region-name">Ranchi</span
-                  ><span class="jk-region-where">Central plateau</span>
-                </button>
+              <li class="pp-step" data-label="Local knowledge">
+                <span class="pp-num" aria-hidden="true">02</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Local knowledge</h3>
+                  <p>Traditional names and documented uses are recorded.</p>
+                </div>
               </li>
-              <li>
-                <button type="button" class="jk-region" data-region="dumka">
-                  <span class="jk-region-name">Dumka</span
-                  ><span class="jk-region-where">Santhal Pargana</span>
-                </button>
+              <li class="pp-step" data-label="Region">
+                <span class="pp-num" aria-hidden="true">03</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Region</h3>
+                  <p>Its sourcing region is recorded for traceability.</p>
+                </div>
               </li>
-              <li>
-                <button type="button" class="jk-region" data-region="gumla">
-                  <span class="jk-region-name">Gumla</span
-                  ><span class="jk-region-where">West-central uplands</span>
-                </button>
+              <li class="pp-step" data-label="Community">
+                <span class="pp-num" aria-hidden="true">04</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Community</h3>
+                  <p>Knowledge is documented with appropriate community permission.</p>
+                </div>
               </li>
-              <li>
-                <button type="button" class="jk-region" data-region="simdega">
-                  <span class="jk-region-name">Simdega</span
-                  ><span class="jk-region-where">South-west, near Odisha</span>
-                </button>
+              <li class="pp-step" data-label="Plant part">
+                <span class="pp-num" aria-hidden="true">05</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Plant part</h3>
+                  <p>Root, leaf, flower or other plant parts are identified.</p>
+                </div>
               </li>
-            </ul>
-
-            <a
-              href="plants.html?region=jharkhand"
-              class="btn btn-ghost-light"
-              data-magnetic
-              ><span>Explore Jharkhand</span></a
-            >
+              <li class="pp-step" data-label="Harvest">
+                <span class="pp-num" aria-hidden="true">06</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Harvest</h3>
+                  <p>Season and responsible harvesting information are recorded.</p>
+                </div>
+              </li>
+              <li class="pp-step" data-label="Processing">
+                <span class="pp-num" aria-hidden="true">07</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Processing</h3>
+                  <p>Cleaning, drying and preparation are documented.</p>
+                </div>
+              </li>
+              <li class="pp-step" data-label="Product">
+                <span class="pp-num" aria-hidden="true">08</span>
+                <span class="pp-node" aria-hidden="true"></span>
+                <div class="pp-body">
+                  <h3>Product</h3>
+                  <p>The finished product keeps its origin and story attached.</p>
+                </div>
+              </li>
+            </ol>
           </div>
-
-          <figure class="jk-figure">
-            <img
-              src="https://images.openai.com/static-rsc-4/eT8REdTgQfhmOL-FcqJiAFg2zG1Ezv9jwwvYwIaO9qt452OSPSepQhmpMUkm5BsGl4nV8ffnwqkGkR1dg2rN5cuok13Ve_QHOMKzH45xrkTu_anOr2-DR6jyANbr_xfnxyn8dKri0XKIoJkKteoS6nP4UgCw6BwKRihf07ybZEo2Qjvkl2I5sfgjYMqLfcRO?purpose=fullsize"
-              alt="Lush forest landscape of Jharkhand"
-              class="jk-forest-image"
-            />
-
-            <figcaption>
-              A forest holds more below the surface than above it — much like
-              the knowledge it carries.
-            </figcaption>
-          </figure>
         </div>
       </section>
 
-      <!-- ============ COMMUNITY ============ -->
-      <section class="community" id="community">
-        <div class="section-head">
-          <h2>Knowledge lives in communities.</h2>
-        </div>
-        <div class="community-grid">
-          <div class="community-panel large" data-reveal-clip>
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNSYTn4cgCdp_S2VXK_99QPepezVVQ5RylvynAr-p91w&s=10"
-              alt="Community gathering forest herbs"
-            />
-            <span class="panel-caption">Documenting stories</span>
-          </div>
-          <div class="community-panel" data-reveal-clip>
-            <img
-              src="https://images.openai.com/static-rsc-4/qVR57WlxQttSCUuxQhkwbFmDT8aM9VjwdW5RYpF7D01yAdW9jTIsi2JpnPwnaqEEhL8V_a0idnSNUbLdF6Q56l9hwEH5FrnhFNgZ9eFr_tjQiYHnfVgbdxGSWl3dM_UQhvFL4xkTvT292dMXw7AW1a3ekNzkKDGfBwBw0pwbwTrB7l1tZ9V_9I6lRUG-8aRU?purpose=fullsize"
-              alt="Traditional craft and preparation of herbs"
-            />
-            <span class="panel-caption">Responsible sourcing</span>
-          </div>
-          <div class="community-panel" data-reveal-clip>
-            <img
-              src="https://images.openai.com/static-rsc-4/xf02KT5A3SlLsc0GbcoOu8LFKSqk2CToc8cCwZLebMWM-TRA0V5Ut6IInIfKbA84IF30nS-jPmKAiTRlnBIBGfWbbDeFwypyOMtXOsWxY_LozvrHr9uzfH-GospdikR9b1DvFBi7uR4kU_dg9b-n1Ge0TdKf3EjXU5LL3zEf5FYKIKocWeluO2W-Hbbe6jwN?purpose=fullsize"
-              alt="Hands holding forest produce"
-            />
-            <span class="panel-caption">Community participation</span>
-          </div>
-        </div>
-        <div class="community-note">
-          <p>
-            <span>Community contribution.</span> Knowledge shared with
-            permission should remain connected to the people and communities who
-            preserve it.
-          </p>
-          <a href="communities.html" class="btn btn-outline" data-magnetic
-            ><span>Meet the Communities</span></a
-          >
-        </div>
-      </section>
-
-      <!-- ============ B2B ============ -->
-      <section class="business" id="business">
-        <div class="biz-inner">
-          <div class="biz-copy">
-            <h2>For businesses looking for responsible botanical sourcing.</h2>
-            <p class="biz-sub">
-              Discover regional suppliers, herbal ingredients and traceable
-              sourcing opportunities through one digital platform.
+      <!-- ============ COMMUNITY — "Knowledge lives beyond books" ============ -->
+      <section class="community" id="community" aria-labelledby="community-title">
+        <div class="community-inner">
+          <div class="community-copy">
+            <p class="eyebrow community-eyebrow">People · Knowledge · Heritage</p>
+            <h2 id="community-title" class="community-title">
+              <span class="community-line"><span class="community-line-in">Knowledge</span></span>
+              <span class="community-line"><span class="community-line-in">lives <em>beyond</em></span></span>
+              <span class="community-line"><span class="community-line-in">books.</span></span>
+            </h2>
+            <p class="community-text">
+              Generations of botanical knowledge exist within communities, passed
+              down through observation, experience and practice. Tribal Doctor
+              aims to document, preserve and connect this knowledge with the
+              wider world.
             </p>
-
-            <ul class="biz-list">
-              <li>
-                <strong>Bulk sourcing</strong
-                ><span>Volumes suited to manufacturers and retailers</span>
-              </li>
-              <li>
-                <strong>Batch information</strong
-                ><span>Harvest and processing details for every batch</span>
-              </li>
-              <li>
-                <strong>Regional sourcing</strong
-                ><span>Find suppliers by district and forest region</span>
-              </li>
-              <li>
-                <strong>Traceability</strong
-                ><span>Each batch linked back to where it came from</span>
-              </li>
-              <li>
-                <strong>Community suppliers</strong
-                ><span>Work directly with local collectives</span>
-              </li>
-            </ul>
-
-            <a
-              href="businesses.html"
-              class="btn btn-primary-light"
-              data-magnetic
-              ><span>Explore Bulk Sourcing</span></a
-            >
+            <a href="communities.html" class="community-link">
+              <span class="community-link-label">Discover the communities</span>
+              <span class="community-link-arrow" aria-hidden="true">↗</span>
+            </a>
           </div>
 
-          <div class="biz-stack">
-            <article class="biz-sheet" aria-label="Sample batch record">
-              <header class="biz-sheet-head">
-                <div>
-                  <h3>Ashwagandha root</h3>
-                  <p class="biz-sheet-latin">Withania somnifera</p>
-                </div>
-                <span class="biz-sheet-tag">Sample record</span>
-              </header>
-              <dl class="biz-sheet-rows">
-                <div>
-                  <dt>Region</dt>
-                  <dd>Ranchi district</dd>
-                </div>
-                <div>
-                  <dt>Plant part</dt>
-                  <dd>Root</dd>
-                </div>
-                <div>
-                  <dt>Harvest</dt>
-                  <dd>Winter season</dd>
-                </div>
-                <div>
-                  <dt>Processing</dt>
-                  <dd>Cleaned and sun-dried</dd>
-                </div>
-                <div>
-                  <dt>Supplier</dt>
-                  <dd>Community collective</dd>
-                </div>
-                <div>
-                  <dt>Batch size</dt>
-                  <dd>250 kg</dd>
-                </div>
-              </dl>
-              <footer class="biz-sheet-foot">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 72 72"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <rect
-                    x="4"
-                    y="4"
-                    width="20"
-                    height="20"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  />
-                  <rect
-                    x="48"
-                    y="4"
-                    width="20"
-                    height="20"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  />
-                  <rect
-                    x="4"
-                    y="48"
-                    width="20"
-                    height="20"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  />
-                  <rect
-                    x="34"
-                    y="34"
-                    width="10"
-                    height="10"
-                    fill="currentColor"
-                  />
-                  <rect
-                    x="54"
-                    y="52"
-                    width="14"
-                    height="14"
-                    fill="currentColor"
-                  />
-                </svg>
-                <span>Traceable from forest to batch</span>
-              </footer>
-            </article>
+          <!-- TODO before launch: replace these with documentary photographs that are properly
+               credited and shared with the permission of the people shown, then fill in the credit. -->
+          <div class="community-collage">
+            <figure class="cc-item cc-a" data-cc>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNSYTn4cgCdp_S2VXK_99QPepezVVQ5RylvynAr-p91w&s=10" alt="Community gathering forest herbs" width="1200" height="1500" loading="lazy" decoding="async" />
+              <span class="cc-num" aria-hidden="true">01</span>
+            </figure>
+            <figure class="cc-item cc-b" data-cc>
+              <img src="https://images.openai.com/static-rsc-4/qVR57WlxQttSCUuxQhkwbFmDT8aM9VjwdW5RYpF7D01yAdW9jTIsi2JpnPwnaqEEhL8V_a0idnSNUbLdF6Q56l9hwEH5FrnhFNgZ9eFr_tjQiYHnfVgbdxGSWl3dM_UQhvFL4xkTvT292dMXw7AW1a3ekNzkKDGfBwBw0pwbwTrB7l1tZ9V_9I6lRUG-8aRU?purpose=fullsize" alt="Traditional craft and preparation of herbs" width="900" height="1200" loading="lazy" decoding="async" />
+              <span class="cc-num" aria-hidden="true">02</span>
+            </figure>
+            <figure class="cc-item cc-c" data-cc>
+              <img src="https://images.openai.com/static-rsc-4/xf02KT5A3SlLsc0GbcoOu8LFKSqk2CToc8cCwZLebMWM-TRA0V5Ut6IInIfKbA84IF30nS-jPmKAiTRlnBIBGfWbbDeFwypyOMtXOsWxY_LozvrHr9uzfH-GospdikR9b1DvFBi7uR4kU_dg9b-n1Ge0TdKf3EjXU5LL3zEf5FYKIKocWeluO2W-Hbbe6jwN?purpose=fullsize" alt="Hands holding forest produce" width="1200" height="900" loading="lazy" decoding="async" />
+              <span class="cc-num" aria-hidden="true">03</span>
+            </figure>
+            <p class="community-credit">Photographs: credits to be added</p>
           </div>
         </div>
       </section>
@@ -1043,136 +1310,53 @@
         </div>
       </section>
 
-      <!-- ============ FINAL CTA ============ -->
-      <section class="final-cta" id="finalCta">
-        <div class="cta-inner">
-          <div class="cta-head">
-            <h2>Start with a plant.<br />Discover the story behind it.</h2>
-            <p>
-              Explore traditionally valued herbs, discover their origins and
-              connect with the knowledge behind them.
-            </p>
+      <!-- ============ FINAL CTA — closing editorial page ============ -->
+      <section class="final-cta fin" id="finalCta" aria-labelledby="fin-title">
+        <div class="fin-inner">
+          <div class="fin-meta fin-meta-top">
+            <p class="eyebrow fin-eyebrow">Tribal Doctor — A note on knowledge</p>
+            <p class="fin-meta-r">Closing note</p>
+            <span class="fin-rule" aria-hidden="true"></span>
           </div>
 
-          <div class="cta-paths">
-            <article class="cta-path cta-shop">
-              <div class="cta-art">
-                <svg
-                  class="cta-decor cta-decor-branch"
-                  viewBox="270 30 360 440"
-                  fill="none"
-                  aria-hidden="true"
-                  preserveAspectRatio="xMaxYMid meet"
-                >
-                  <g stroke="currentColor" stroke-width="1.2">
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M450 40C450 40 470 160 450 250C430 340 450 460 450 460"
-                    />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M450 120C450 120 380 90 340 130C300 170 320 220 320 220"
-                    />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M450 120C450 120 520 90 560 130C600 170 580 220 580 220"
-                    />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M450 220C450 220 370 200 320 240C270 280 290 330 290 330"
-                    />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M450 220C450 220 530 200 580 240C630 280 610 330 610 330"
-                    />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M450 320C450 320 390 310 360 345C330 380 345 415 345 415"
-                    />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M450 320C450 320 510 310 540 345C570 380 555 415 555 415"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <h3>Browse the herbs.</h3>
-              <p>
-                Traditionally valued roots, stems and flowers, each with its
-                origin, plant part and sourcing on record.
-              </p>
-              <a href="shop.html" class="btn btn-primary-light" data-magnetic
-                ><span>Explore Products</span></a
-              >
-            </article>
+          <div class="fin-body">
+            <h2 class="fin-title" id="fin-title">
+              <span class="fin-line fin-l1"><span class="fin-line-in">Nature holds <em>stories</em></span></span>
+              <span class="fin-line fin-l2"><span class="fin-line-in">we haven’t finished</span></span>
+              <span class="fin-line fin-l3"><span class="fin-line-in"><em class="fin-accent">discovering.</em></span></span>
+            </h2>
 
-            <article class="cta-path cta-identify">
-              <div class="cta-art">
-                <svg
-                  class="cta-decor cta-decor-scan"
-                  viewBox="0 0 320 320"
-                  fill="none"
-                  aria-hidden="true"
-                  preserveAspectRatio="xMaxYMid meet"
-                >
-                  <g
-                    stroke="currentColor"
-                    stroke-width="1.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M20 70V20H70M250 20H300V70M300 250V300H250M70 300H20V250"
-                    />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M160 250C160 250 100 205 100 150C100 105 130 75 160 55C190 75 220 105 220 150C220 205 160 250 160 250Z"
-                    />
-                    <path class="draw" pathLength="1" d="M160 250V120" />
-                    <path
-                      class="draw"
-                      pathLength="1"
-                      d="M160 195L192 163M160 165L130 137"
-                    />
-                  </g>
-                  <circle
-                    class="scan-dot"
-                    cx="192"
-                    cy="163"
-                    r="4"
-                    fill="currentColor"
-                  />
-                  <circle
-                    class="scan-dot"
-                    cx="130"
-                    cy="137"
-                    r="4"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <h3>Or start with a photo.</h3>
-              <p>
-                Snap a plant to see what it is, how it is traditionally known
-                and where its story begins.
-              </p>
-              <a
-                href="plants.html#identify"
-                class="btn btn-primary"
-                data-magnetic
-                ><span>Identify a Plant</span></a
-              >
-            </article>
+            <figure class="fin-plate" aria-hidden="true">
+              <svg class="fin-plant" viewBox="0 0 100 200" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <!-- stem -->
+                <path pathLength="1" d="M52 198C50 160 57 126 51 90C47 62 54 38 52 12" />
+                <!-- leaves, alternating, smaller toward the tip -->
+                <g transform="translate(51 176) rotate(-32)"><path pathLength="1" d="M0 0C8-9 26-11 40 0C26 11 8 9 0 0Z" /><path pathLength="1" d="M3 0H34" /></g>
+                <g transform="translate(51 152) scale(-1 1) rotate(-34)"><path pathLength="1" d="M0 0C8-9 26-11 40 0C26 11 8 9 0 0Z" /><path pathLength="1" d="M3 0H34" /></g>
+                <g transform="translate(54 126) rotate(-36) scale(.9)"><path pathLength="1" d="M0 0C8-9 26-11 40 0C26 11 8 9 0 0Z" /><path pathLength="1" d="M3 0H34" /></g>
+                <g transform="translate(53 100) scale(-1 1) rotate(-38) scale(.82)"><path pathLength="1" d="M0 0C8-9 26-11 40 0C26 11 8 9 0 0Z" /><path pathLength="1" d="M3 0H34" /></g>
+                <g transform="translate(50 74) rotate(-40) scale(.7)"><path pathLength="1" d="M0 0C8-9 26-11 40 0C26 11 8 9 0 0Z" /><path pathLength="1" d="M3 0H34" /></g>
+                <g transform="translate(52 50) scale(-1 1) rotate(-42) scale(.55)"><path pathLength="1" d="M0 0C8-9 26-11 40 0C26 11 8 9 0 0Z" /><path pathLength="1" d="M3 0H34" /></g>
+                <g transform="translate(52 12) rotate(-90) scale(.45)"><path pathLength="1" d="M0 0C8-9 26-11 40 0C26 11 8 9 0 0Z" /></g>
+                <!-- fruit in its papery calyx -->
+                <path pathLength="1" d="M55 130C64 130 70 136 71 144" />
+                <circle pathLength="1" cx="71" cy="150" r="6" />
+                <path pathLength="1" d="M52 94C44 94 39 99 38 106" />
+                <circle pathLength="1" cx="38" cy="111" r="5" />
+              </svg>
+              <figcaption class="fin-cap"><span>Fig. 1</span><i>Withania somnifera</i></figcaption>
+            </figure>
+
+            <div class="fin-copy">
+              <p>Traditional knowledge, botanical research and modern technology — bringing the stories of medicinal plants into a more connected future.</p>
+              <a href="knowledge.html" class="btn btn-primary fin-cta"><span>Explore the knowledge ↗</span></a>
+            </div>
+          </div>
+
+          <div class="fin-meta fin-meta-bottom">
+            <span class="fin-rule" aria-hidden="true"></span>
+            <p class="fin-sign">Rooted in knowledge. Connected by technology.</p>
+            <p class="fin-meta-r">Jharkhand, India</p>
           </div>
         </div>
       </section>
@@ -1203,6 +1387,7 @@
           <a href="shop.html">Shop</a>
           <a href="plants.html">Plants</a>
           <a href="knowledge.html">Knowledge</a>
+          <a href="scan-medicine.html">Scan Medicine</a>
           <a href="communities.html">Communities</a>
         </div>
 

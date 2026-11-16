@@ -147,8 +147,7 @@
     const sub = $(".hero-sub");
     const ctas = $(".hero-ctas");
     const stats = $(".hero-stats");
-    const mainVisual = $("#heroVisualMain");
-    const secondaryVisual = $("#heroVisualSecondary");
+    const tunnelEl = $("#heroTunnel");
     const tag = $("#heroVisualTag");
 
     // Each heading line's text sits below its clipping mask, then slides up into it.
@@ -156,18 +155,14 @@
     gsap.set(eyebrow, { opacity: 0, y: 10 });
     gsap.set([sub, stats], { opacity: 0, y: 16 });
     gsap.set(ctas, { opacity: 0, y: 12 });
-    gsap.set(secondaryVisual, { opacity: 0, scale: 0.85 });
+    gsap.set(tunnelEl, { opacity: 0 });
     gsap.set(tag, { opacity: 0, y: 10 });
 
     const tl = gsap.timeline({
       paused: true,
       defaults: { ease: "power3.out" },
     });
-    tl.to(
-      mainVisual,
-      { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "power3.inOut" },
-      0,
-    )
+    tl.to(tunnelEl, { opacity: 1, duration: 1.4, ease: "power2.out" }, 0.1)
       .to(eyebrow, { opacity: 1, y: 0, duration: 0.7 }, 0.1)
       .to(
         inners,
@@ -176,25 +171,8 @@
       )
       .to(sub, { opacity: 1, y: 0, duration: 0.8 }, 0.75)
       .to(ctas, { opacity: 1, y: 0, duration: 0.7 }, 0.9)
-      .to(
-        secondaryVisual,
-        { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.4)" },
-        0.6,
-      )
       .to(tag, { opacity: 1, y: 0, duration: 0.6 }, 1.0)
       .to(stats, { opacity: 1, y: 0, duration: 0.7 }, 1.1);
-
-    // subtle continuous drift on the visual column while in view
-    gsap.to(".hero-visual", {
-      yPercent: -4,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
 
     return () => tl.play();
   }
@@ -213,133 +191,212 @@
       ease: "power2.out",
       scrollTrigger: { trigger: ".trust-strip", start: "top 85%" },
     });
+  }
 
-    // WHY section
-    gsap.to(".why-media", {
-      clipPath: "inset(0% 0% 0% 0%)",
-      duration: 1.1,
-      ease: "power3.inOut",
-      scrollTrigger: { trigger: ".why", start: "top 70%" },
-    });
-    gsap.fromTo(
-      ".why-statement",
-      { opacity: 0, y: 26 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.9,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".why", start: "top 65%" },
-      },
-    );
-    gsap.to(".why-line path", {
-      strokeDashoffset: 0,
-      duration: 1.1,
-      ease: "power2.inOut",
-      scrollTrigger: { trigger: ".why", start: "top 55%" },
-    });
-    gsap.to(".why-text", {
-      opacity: 1,
-      y: 0,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: { trigger: ".why", start: "top 45%" },
-    });
+  /* ---------------- MEDICINE × HERB CHECK ----------------
+     The whole section is one pinned scene. Scrolling plays a four-step story on the phone
+     (snap -> recognise -> herbs -> why) while the matching step opens on the left.
+     Desktop pins the full scene; mobile pins just the steps + phone. Start states are set from
+     here (never in CSS) and `is-live` is only added when this runs, so without GSAP, with
+     reduced motion, or on short screens the section simply flows and every step stays readable.
+     matchMedia reverts everything on breakpoint change. */
+  function initScanxAnimation() {
+    const root = $(".scx");
+    if (!canAnimate || !root) return;
+    try {
+      const q = (s) => gsap.utils.toArray(s, root);
+      const steps = q(".scx-step");
+      const floats = q(".scx-float");
+      const [s1, s2, s3, s4] = q(".scx-screen");
+      const mm = gsap.matchMedia();
 
-    // product cards
-    gsap.utils.toArray(".product-card").forEach((card, i) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          delay: (i % 4) * 0.08,
-          ease: "power2.out",
-          scrollTrigger: { trigger: card, start: "top 88%" },
-        },
+      const setStep = (k) => {
+        steps.forEach((s, i) => {
+          s.classList.toggle("is-active", i === k);
+          s.classList.toggle("is-done", i < k);
+        });
+        floats.forEach((f) =>
+          f.classList.toggle("is-on", Number(f.dataset.step) === k),
+        );
+      };
+      const stepAt = (p) => (p < 0.27 ? 0 : p < 0.54 ? 1 : p < 0.8 ? 2 : 3);
+
+      const build = (pinTarget, screens) => {
+        root.classList.add("is-live");
+        let last = -1;
+
+        // ---- start states ----
+        gsap.set([s2, s3], { autoAlpha: 0 });
+        gsap.set(s4, { autoAlpha: 0, yPercent: 100 });
+        gsap.set(".scx-corner", { scale: 1.3, autoAlpha: 0.4 });
+        gsap.set(".scx-sweep", { autoAlpha: 0, top: "6%" });
+        gsap.set(".scx-detect", { strokeDasharray: 1, strokeDashoffset: 1 });
+        gsap.set(".scx-tag", { autoAlpha: 0, y: 6 });
+        const s2items = q(
+          ".scx-appbar, .scx-med, .scx-medsub, .scx-facts > div, .scx-checking-label, .scx-bar",
+        ).filter((el) => s2.contains(el));
+        gsap.set(s2items, { autoAlpha: 0, y: 14 });
+        gsap.set(".scx-bar i", { scaleX: 0 });
+        gsap.set(".scx-found", { autoAlpha: 0, y: 10 });
+        gsap.set(".scx-s3 .scx-appbar, .scx-herb", { autoAlpha: 0, y: 18 });
+        gsap.set(".scx-herb .scx-chip", {
+          scale: 0.6,
+          transformOrigin: "left center",
+        });
+        gsap.set(".scx-hero img", { scale: 1.22 });
+        gsap.set(".scx-detail > *", { autoAlpha: 0, y: 12 });
+        gsap.set(".scx-cta", { autoAlpha: 0, y: 12 });
+        gsap.set(".scx-glow", { opacity: 0.6 });
+        setStep(0);
+
+        const tl = gsap.timeline({
+          defaults: { ease: "none" },
+          scrollTrigger: {
+            trigger: pinTarget,
+            start: "top top",
+            end: () => "+=" + Math.round(window.innerHeight * screens),
+            pin: true,
+            scrub: 0.6,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            refreshPriority: -1, // refresh after the pins above it on the page
+            onUpdate: (self) => {
+              const k = stepAt(self.progress);
+              if (k !== last) {
+                last = k;
+                setStep(k);
+              }
+            },
+          },
+        });
+        tl.to({}, { duration: 1 }, 0) // spans the whole pin
+          .fromTo(
+            ".scx-rail-fill",
+            { scaleY: 0 },
+            { scaleY: 1, duration: 1, immediateRender: true },
+            0,
+          )
+          .to(".scx-glow", { opacity: 1, duration: 1 }, 0)
+          .fromTo(
+            ".scx-phone",
+            { rotation: -1.4 },
+            { rotation: 1.4, duration: 1 },
+            0,
+          )
+          .to(".scx-hint", { autoAlpha: 0, duration: 0.04 }, 0.03)
+          // 1. camera: frame locks on, one scan pass, the label is detected
+          .to(
+            ".scx-corner",
+            {
+              scale: 1,
+              autoAlpha: 1,
+              duration: 0.08,
+              stagger: 0.01,
+              ease: "power2.out",
+            },
+            0.01,
+          )
+          .to(".scx-sweep", { autoAlpha: 1, duration: 0.02 }, 0.05)
+          .to(".scx-sweep", { top: "92%", duration: 0.12 }, 0.05)
+          .to(".scx-sweep", { autoAlpha: 0, duration: 0.02 }, 0.17)
+          .to(
+            ".scx-detect",
+            { strokeDashoffset: 0, duration: 0.06, ease: "power1.inOut" },
+            0.15,
+          )
+          .to(
+            ".scx-tag",
+            { autoAlpha: 1, y: 0, duration: 0.04, ease: "power2.out" },
+            0.2,
+          )
+          .to(".scx-shutter i", { scale: 0.8, duration: 0.015 }, 0.235)
+          .to(".scx-shutter i", { scale: 1, duration: 0.015 }, 0.25)
+          // 2. photo -> recognised medicine
+          .to(s1, { autoAlpha: 0, scale: 1.06, duration: 0.04 }, 0.26)
+          .to(s2, { autoAlpha: 1, duration: 0.04 }, 0.26)
+          .to(
+            s2items,
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.05,
+              stagger: 0.012,
+              ease: "power2.out",
+            },
+            0.3,
+          )
+          .to(
+            ".scx-bar i",
+            { scaleX: 1, duration: 0.1, ease: "power1.inOut" },
+            0.4,
+          )
+          .to(
+            ".scx-found",
+            { autoAlpha: 1, y: 0, duration: 0.04, ease: "power2.out" },
+            0.49,
+          )
+          // 3. the herb shortlist
+          .to(s2, { autoAlpha: 0, y: -12, duration: 0.04 }, 0.53)
+          .to(s3, { autoAlpha: 1, duration: 0.04 }, 0.53)
+          .to(
+            ".scx-s3 .scx-appbar, .scx-herb",
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.05,
+              stagger: 0.03,
+              ease: "power2.out",
+            },
+            0.57,
+          )
+          .to(
+            ".scx-herb .scx-chip",
+            { scale: 1, duration: 0.04, stagger: 0.03, ease: "back.out(2)" },
+            0.63,
+          )
+          // 4. the "why": a detail sheet slides up over the list
+          .to(s3, { scale: 0.94, duration: 0.06 }, 0.78)
+          .to(s4, { autoAlpha: 1, duration: 0.01 }, 0.78)
+          .to(s4, { yPercent: 0, duration: 0.06, ease: "power3.out" }, 0.78)
+          .to(
+            ".scx-hero img",
+            { scale: 1, duration: 0.12, ease: "power2.out" },
+            0.8,
+          )
+          .to(
+            ".scx-detail > *",
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.04,
+              stagger: 0.03,
+              ease: "power2.out",
+            },
+            0.84,
+          )
+          // call to action
+          .to(
+            ".scx-cta",
+            { autoAlpha: 1, y: 0, duration: 0.05, ease: "power2.out" },
+            0.88,
+          );
+
+        return () => root.classList.remove("is-live", "is-reset");
+      };
+
+      mm.add("(min-width: 901px) and (min-height: 620px)", () =>
+        build(".scx-pin", 3.2),
       );
-    });
-
-    // community panels
-    gsap.utils.toArray(".community-panel").forEach((panel) => {
-      gsap.to(panel, {
-        clipPath: "inset(0% 0% 0% 0%)",
-        duration: 1,
-        ease: "power3.inOut",
-        scrollTrigger: { trigger: panel, start: "top 85%" },
-      });
-    });
-  }
-
-  /* ---------------- JHARKHAND MAP ----------------
-     Region list and map pins highlight each other (hover, focus, or tap). */
-  function initForestIllustration() {
-    if (!canAnimate) return;
-    const layers = $$(".jk-layer");
-    const roots = $$(".jk-root");
-    const labels = $$(".jk-flabel");
-    if (!layers.length) return;
-
-    gsap.set(labels, { opacity: 0, x: 12 });
-
-    const tl = gsap.timeline({
-      defaults: { ease: "power2.out" },
-      scrollTrigger: { trigger: ".jharkhand", start: "top 60%", once: true },
-    });
-
-    tl.to(layers, { opacity: 1, duration: 0.9, stagger: 0.25 }, 0)
-      .to(
-        roots,
-        {
-          strokeDashoffset: 0,
-          duration: 0.9,
-          stagger: 0.12,
-          ease: "power2.inOut",
-        },
-        0.5,
-      )
-      .to(labels, { opacity: 1, x: 0, duration: 0.6, stagger: 0.15 }, 0.8);
-  }
-
-  /* ---------------- BUSINESS ---------------- */
-  function initBusinessAnimation() {
-    if (!canAnimate || !$(".business")) return;
-
-    gsap.fromTo(
-      ".biz-list li",
-      { opacity: 0, y: 12 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.08,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: { trigger: ".biz-list", start: "top 85%", once: true },
-      },
-    );
-
-    const tl = gsap.timeline({
-      defaults: { ease: "power2.out" },
-      scrollTrigger: { trigger: ".biz-stack", start: "top 78%", once: true },
-    });
-    tl.fromTo(
-      ".biz-sheet",
-      { opacity: 0, y: 34 },
-      { opacity: 1, y: 0, duration: 0.9 },
-      0,
-    ).fromTo(
-      ".biz-sheet-rows > div",
-      { opacity: 0, x: 8 },
-      { opacity: 1, x: 0, duration: 0.5, stagger: 0.09 },
-      0.35,
-    );
+      mm.add("(max-width: 900px)", () => build(".scx-stage", 2.8));
+    } catch (err) {
+      console.warn("Medicine check animation skipped:", err);
+      root.classList.remove("is-live");
+    }
   }
 
   /* ---------------- SUSTAINABILITY ---------------- */
   function initSustainabilityAnimation() {
+    return; // handled by premium.js
     if (!canAnimate || !$(".sustainability")) return;
 
     const trigger = {
@@ -376,104 +433,127 @@
     );
   }
 
-  /* ---------------- FINAL CTA ---------------- */
+  /* ---------------- FINAL CTA (closing editorial page) ----------------
+     Rules draw in, the headline rises line by line, the plate is drawn, then the copy and button
+     arrive. Start states are set here (never in CSS) so the section is fully visible if GSAP fails;
+     reduced-motion visitors never reach this code. */
   function initFinalCtaAnimation() {
-    if (!canAnimate || !$(".final-cta")) return;
+    const root = $(".final-cta");
+    if (!canAnimate || !root) return;
+    try {
+      const q = (s) => gsap.utils.toArray(s, root);
+      const lines = q(".fin-line-in");
+      const rules = q(".fin-rule");
+      const meta = q(".fin-eyebrow, .fin-meta-r");
+      const strokes = q(".fin-plant path, .fin-plant circle");
+      const cap = q(".fin-cap");
+      const copy = q(".fin-copy p, .fin-copy .btn");
+      const closing = q(".fin-sign");
 
-    gsap.fromTo(
-      ".cta-head",
-      { opacity: 0, y: 24 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.9,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".final-cta", start: "top 60%", once: true },
-      },
-    );
-    gsap.fromTo(
-      ".cta-path",
-      { opacity: 0, y: 34 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.9,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".cta-paths", start: "top 85%", once: true },
-      },
-    );
-    // line drawings trace themselves in once the panels have arrived
-    gsap.to(".cta-path .draw", {
-      strokeDashoffset: 0,
-      duration: 1.8,
-      stagger: 0.12,
-      delay: 0.4,
-      ease: "power2.inOut",
-      scrollTrigger: { trigger: ".cta-paths", start: "top 80%", once: true },
-    });
-    gsap.to(".cta-path .scan-dot", {
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.2,
-      delay: 1.8,
-      scrollTrigger: { trigger: ".cta-paths", start: "top 80%", once: true },
-    });
+      gsap.set(lines, { yPercent: 115 });
+      gsap.set(rules, { scaleX: 0 });
+      gsap.set(meta, { autoAlpha: 0, y: 8 });
+      gsap.set(strokes, { strokeDasharray: 1, strokeDashoffset: 1 });
+      gsap.set(cap, { autoAlpha: 0 });
+      gsap.set(copy, { autoAlpha: 0, y: 16 });
+      gsap.set(closing, { autoAlpha: 0 });
+
+      gsap
+        .timeline({
+          defaults: { ease: "power3.out" },
+          scrollTrigger: { trigger: root, start: "top 62%", once: true },
+        })
+        .to(
+          rules,
+          { scaleX: 1, duration: 1.4, ease: "power2.inOut", stagger: 0.25 },
+          0,
+        )
+        .to(
+          meta,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            clearProps: "transform",
+          },
+          0.1,
+        )
+        .to(
+          lines,
+          { yPercent: 0, duration: 1.2, stagger: 0.17, ease: "power4.out" },
+          0.25,
+        )
+        .to(
+          strokes,
+          {
+            strokeDashoffset: 0,
+            duration: 2,
+            stagger: 0.04,
+            ease: "power2.inOut",
+          },
+          0.7,
+        )
+        .to(cap, { autoAlpha: 1, duration: 0.8 }, 2.1)
+        .to(
+          copy,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.9,
+            stagger: 0.14,
+            clearProps: "transform",
+          },
+          1.2,
+        )
+        .to(closing, { autoAlpha: 1, duration: 0.9 }, 1.7);
+    } catch (err) {
+      console.warn("Final CTA animation skipped:", err);
+      gsap.set(root.querySelectorAll("*"), { clearProps: "all" });
+    }
   }
 
-  /* ---------------- PINNED STORY ---------------- */
-  function initPinnedStory() {
-    if (!canAnimate) return;
-    const pin = $(".story-pin");
-    const stages = gsap.utils.toArray(".story-stage");
-    const progressBar = $("#storyProgressBar");
-    if (!pin || !stages.length) return;
-
-    gsap.set(stages.slice(1), { opacity: 0 });
-    gsap.set(".story-visual img", { scale: 1.15 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: pin,
-        start: "top top",
-        end: `+=${stages.length * 100}%`,
-        pin: true,
-        scrub: 0.6,
-        onUpdate: (self) => {
-          if (progressBar) progressBar.style.width = `${self.progress * 100}%`;
-        },
-      },
-    });
-
-    stages.forEach((stage, i) => {
-      const img = $(".story-visual img", stage);
-      if (i > 0) {
-        tl.to(stages[i - 1], { opacity: 0, duration: 0.3 }, i);
-        tl.to(stage, { opacity: 1, duration: 0.3 }, i);
-      }
-      tl.to(img, { scale: 1, duration: 0.6 }, i);
-      tl.to({}, { duration: 0.4 }); // hold
-    });
-  }
-
-  /* ---------------- KNOWLEDGE PASSPORT TIMELINE ---------------- */
+  /* ---------------- KNOWLEDGE PASSPORT ---------------- */
   function initPassportTimeline() {
     if (!canAnimate) return;
-    const steps = gsap.utils.toArray(".passport-step");
-    const lineFill = $("#passportLineFill");
-    if (!steps.length) return;
+    const list = $("#ppSteps");
+    if (!list) return;
+    const steps = gsap.utils.toArray(".pp-step", list);
+    const ticks = gsap.utils.toArray(".pp-tick");
+    const count = $("#ppCount");
+    const name = $("#ppName");
+    const lineFill = $("#ppLineFill");
 
-    gsap.to(steps, {
-      opacity: 1,
-      x: 0,
-      stagger: 0.12,
-      duration: 0.6,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".passport-timeline",
-        start: "top 75%",
-        end: "bottom 60%",
-      },
+    function setActive(i) {
+      steps.forEach((s, n) => {
+        s.classList.toggle("is-active", n === i);
+        s.classList.toggle("is-done", n < i);
+      });
+      ticks.forEach((t, n) => t.classList.toggle("is-on", n <= i));
+      if (count) count.textContent = String(i + 1).padStart(2, "0");
+      if (name) name.textContent = steps[i].dataset.label || "";
+    }
+
+    steps.forEach((s, i) => {
+      gsap.fromTo(
+        s,
+        { y: 24 },
+        {
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          clearProps: "transform",
+          scrollTrigger: { trigger: s, start: "top 90%", once: true },
+        },
+      );
+      ScrollTrigger.create({
+        trigger: s,
+        start: "top 58%",
+        end: "bottom 58%",
+        onToggle: (self) => {
+          if (self.isActive) setActive(i);
+        },
+      });
     });
 
     if (lineFill) {
@@ -481,13 +561,26 @@
         height: "100%",
         ease: "none",
         scrollTrigger: {
-          trigger: ".passport-timeline",
-          start: "top 60%",
-          end: "bottom 70%",
+          trigger: list,
+          start: "top 58%",
+          end: "bottom 58%",
           scrub: true,
         },
       });
     }
+
+    gsap.fromTo(
+      "#ppDoc",
+      { autoAlpha: 0, y: 30 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        clearProps: "transform",
+        scrollTrigger: { trigger: "#ppDoc", start: "top 85%", once: true },
+      },
+    );
   }
 
   /* ---------------- PRODUCT CARD INTERACTIONS ---------------- */
@@ -505,6 +598,7 @@
 
   /* ---------------- MAGNETIC BUTTONS ---------------- */
   function initMagneticButtons() {
+    return; // magnetic buttons disabled
     if (!canAnimate || window.matchMedia("(pointer: coarse)").matches) return;
 
     $$("[data-magnetic]").forEach((el) => {
@@ -566,12 +660,10 @@
 
     const playHero = initHeroAnimations();
     initScrollAnimations();
-    initPinnedStory();
     initPassportTimeline();
     initProductInteractions();
-    initForestIllustration();
-    initBusinessAnimation();
     initSustainabilityAnimation();
+    initScanxAnimation();
     initFinalCtaAnimation();
     initCounters();
     initMagneticButtons();
@@ -604,222 +696,932 @@
     });
   });
 })();
-/* ============================================================
-   AI PLANT IDENTIFICATION
-   Connects Tribal Doctor's landing-page identify section directly to
-   the Van Vaidya AI backend.
+/* ==========================================================================
+   TRIBAL DOCTOR — PREMIUM MOTION (v3)
+   Loaded after script.js.
+   - Slow, readable pacing: sections hold on screen while their content reveals
+   - Sticky story with chapter-by-chapter photo wipes
+   - Layered hero parallax, fireflies, scroll progress
+   Skipped entirely for reduced-motion visitors.
+   ========================================================================== */
+(function () {
+  "use strict";
 
-   BACKEND CONTRACT — unchanged from before:
-     POST <API_URL>   multipart/form-data, one field named "file"
-     OK    { success: true, matches: [{ english_name, scientific_name,
-                                        hindi_name, confidence }, ...] }
-     Error { detail: "message" }   (non-2xx)
-   matches[0] is the best match and is read exactly as before. Only the
-   surrounding UI (drop zone, states, confidence ring, reset) is new.
-   ============================================================ */
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-(function initPlantIdentification() {
-  const stage = document.getElementById("identifyStage");
-  const frame = document.getElementById("identifyFrame");
-  const dropZone = document.getElementById("identifyButton");
-  const fileInput = document.getElementById("plantImageInput");
-  const preview = document.getElementById("identifyPreview");
-  const resetButton = document.getElementById("identifyReset");
-
-  const identifyStatus = document.getElementById("identifyStatus");
-  const plantName = document.getElementById("plantName");
-  const plantScientific = document.getElementById("plantScientific");
-  const plantHindi = document.getElementById("plantHindi");
-  const confidenceNum = document.getElementById("confidenceNum");
-  const confidenceArc = document.getElementById("confidenceArc");
-  const plantExplore = document.getElementById("plantExplore");
-
-  if (!stage || !dropZone || !fileInput) return;
-
-  // Backend endpoint (unchanged)
-  const API_URL = "http://localhost:8000/identify";
-  const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
-  const MIN_SCAN_MS = 700; // keep the scan visible even when the backend answers instantly
-
-  const ORIGINAL_PREVIEW_SRC = preview ? preview.getAttribute("src") : "";
-  const RING_R = confidenceArc ? Number(confidenceArc.getAttribute("r")) || 30 : 30;
-  const RING_LEN = 2 * Math.PI * RING_R;
-  if (confidenceArc) {
-    confidenceArc.style.strokeDasharray = String(RING_LEN);
-    confidenceArc.style.strokeDashoffset = String(RING_LEN);
-  }
-
-  let busy = false;
-  let previewUrl = null;
-
-  const setState = (state) => {
-    stage.dataset.state = state;
+  /* ---- reading progress hairline ---- */
+  const bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  bar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(bar);
+  const updateBar = () => {
+    const el = document.documentElement;
+    const max = el.scrollHeight - window.innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? el.scrollTop / max : 0})`;
   };
+  window.addEventListener("scroll", updateBar, { passive: true });
+  window.addEventListener("resize", updateBar);
+  updateBar();
 
-  const setConfidence = (percent) => {
-    const clamped = Math.max(0, Math.min(100, Math.round(percent || 0)));
-    if (confidenceArc) {
-      confidenceArc.style.strokeDashoffset = String(RING_LEN * (1 - clamped / 100));
-    }
-  };
-
-  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-  async function handleFile(file) {
-    if (!file || busy) return;
-
-    if (!ACCEPTED_TYPES.includes(file.type)) {
-      alert("Please choose a JPG, PNG or WebP photo.");
-      return;
-    }
-
-    busy = true;
-    setState("loading");
-
-    if (previewUrl) URL.revokeObjectURL(previewUrl);
-    previewUrl = URL.createObjectURL(file);
-    if (preview) preview.src = previewUrl;
-
-    if (identifyStatus) identifyStatus.textContent = "Identifying plant...";
-    if (plantName) plantName.textContent = "Reading the plant";
-    if (plantScientific) plantScientific.textContent = "Please wait...";
-    if (plantHindi) plantHindi.textContent = "Processing image";
-    if (confidenceNum) confidenceNum.textContent = "—";
-    setConfidence(0);
-    if (plantExplore) {
-      plantExplore.style.pointerEvents = "none";
-      plantExplore.style.opacity = "0.5";
-    }
-
-    try {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const [response] = await Promise.all([
-        fetch(API_URL, { method: "POST", body: formData }),
-        wait(MIN_SCAN_MS),
-      ]);
-
-      let data = null;
-      try {
-        data = await response.json();
-      } catch (e) {
-        data = null; // a non-JSON body shouldn't hide the real HTTP error
-      }
-
-      if (!response.ok) {
-        throw new Error((data && data.detail) || "Plant identification failed.");
-      }
-      if (!data || !data.success || !Array.isArray(data.matches) || data.matches.length === 0) {
-        throw new Error("No plant could be identified.");
-      }
-
-      // Get best match
-      const plant = data.matches[0];
-
-      if (plantName) plantName.textContent = plant.english_name || "Unknown plant";
-      if (plantScientific) {
-        plantScientific.textContent = plant.scientific_name || "Scientific name unavailable";
-      }
-      if (plantHindi) plantHindi.textContent = plant.hindi_name || "Hindi name unavailable";
-      if (confidenceNum) confidenceNum.textContent = String(Math.round(plant.confidence || 0));
-      setConfidence(plant.confidence);
-      if (identifyStatus) identifyStatus.textContent = "Identification complete";
-
-      // Enable Explore link
-      if (plantExplore && plant.scientific_name) {
-        plantExplore.href = `plants.html?plant=${encodeURIComponent(plant.scientific_name)}`;
-        plantExplore.style.pointerEvents = "auto";
-        plantExplore.style.opacity = "1";
-      }
-
-      setState("success");
-    } catch (error) {
-      console.error("Plant identification error:", error);
-
-      if (identifyStatus) identifyStatus.textContent = "Identification failed";
-      if (plantName) plantName.textContent = "Unable to identify";
-      if (plantScientific) plantScientific.textContent = error.message || "Please try another image.";
-      if (plantHindi) plantHindi.textContent = "Try a clearer plant photo";
-      if (confidenceNum) confidenceNum.textContent = "—";
-      setConfidence(0);
-
-      setState("error");
-    } finally {
-      busy = false;
-      fileInput.value = ""; // allow selecting the same image again
-    }
-  }
-
-  // Clicking/choosing via the drop zone's own file input
-  fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
-
-  // Drag and drop, on both the drop zone and the photo frame
-  const dropTargets = [dropZone, frame].filter(Boolean);
-  dropTargets.forEach((target) => {
-    ["dragenter", "dragover"].forEach((type) =>
-      target.addEventListener(type, (event) => {
-        event.preventDefault();
-        target.classList.add("is-dragover");
-      }),
+  /* ---- eyebrow rules draw in ---- */
+  const eyebrows = $$(".eyebrow");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (es) =>
+        es.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.6 },
     );
-    ["dragleave", "drop"].forEach((type) =>
-      target.addEventListener(type, (event) => {
-        event.preventDefault();
-        target.classList.remove("is-dragover");
-      }),
-    );
-    target.addEventListener("drop", (event) => {
-      const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
-      if (file) handleFile(file);
+    eyebrows.forEach((el) => io.observe(el));
+  } else eyebrows.forEach((el) => el.classList.add("is-in"));
+
+  /* ---- hero photos: if one fails to load, hide the broken-image icon and alt text ---- */
+  const heroImgs = $$("#heroVisualMain img, #heroVisualSecondary img");
+  const checkImgs = () =>
+    heroImgs.forEach((im) => {
+      if (im.complete && im.naturalWidth === 0) im.style.visibility = "hidden";
     });
-  });
+  heroImgs.forEach((im) => im.addEventListener("error", checkImgs));
+  checkImgs();
+  window.addEventListener("load", () => setTimeout(checkImgs, 50));
 
-  // Stop the browser opening a file dropped outside the drop zone/frame
-  ["dragover", "drop"].forEach((type) =>
-    window.addEventListener(type, (event) => event.preventDefault()),
-  );
+  /* ---- hero: perspective tunnel (cards fly toward the camera as you scroll) ---- */
+  function initTunnel() {
+    const root = $("#heroTunnel");
+    const plane = $("#tunnelPlane");
+    const cue = $("#tunnelCue");
+    const head = $(".hero-heading");
+    const supports = $$(".hero-pre, .hero-extras");
+    if (!root || !plane) return null;
 
-  // "Try another photo" resets the card back to its idle state
-  if (resetButton) {
-    resetButton.addEventListener("click", () => {
-      if (busy) return;
-
-      setState("idle");
-      if (preview) preview.src = ORIGINAL_PREVIEW_SRC;
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl);
-        previewUrl = null;
+    // piecewise-linear lookup, like framer-motion's useTransform(value, xs, ys)
+    const keys = (v, xs, ys) => {
+      if (v <= xs[0]) return ys[0];
+      for (let k = 1; k < xs.length; k++) {
+        if (v <= xs[k])
+          return (
+            ys[k - 1] +
+            ((v - xs[k - 1]) / (xs[k] - xs[k - 1])) * (ys[k] - ys[k - 1])
+          );
       }
-      if (identifyStatus) identifyStatus.textContent = "Ready to identify";
-      if (plantName) plantName.textContent = "No plant selected";
-      if (plantScientific) plantScientific.textContent = "Upload a photo to begin";
-      if (plantHindi) plantHindi.textContent = "—";
-      if (confidenceNum) confidenceNum.textContent = "—";
-      setConfidence(0);
-      if (plantExplore) {
-        plantExplore.href = "#";
-        plantExplore.style.pointerEvents = "none";
-        plantExplore.style.opacity = "0.5";
-      }
-      fileInput.value = "";
+      return ys[ys.length - 1];
+    };
+
+    const DATA = [
+      [
+        "https://images.openai.com/static-rsc-4/n2G28nW2dmiFcuFpgfVZN46vqvwg97mHPOJ2BqOThsJof8e78pYsux510ribE_MzNY2E7Cq7riDWUfzM3y-TjQ3kIjTYa5CmDH0rWfnMED0QC5K1ML5rsVyVAwhX9PhbPrHo12ZOhsGcM9Ff6AOz0Yf1-pvw-G0Qo71cnTjmYpw?purpose=inline",
+        "Lemongrass",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/YYHd5J7ip4TPUAOnpX5bk14QdcSu6U9nDzqmOK5Dp67moT8UjZBq0epOzR3u65jUHnnYTsPE__Ghve-2d7ODY9yKob9PikZgiVJC1gE2Wc2VNH95B55cgHSrwp902KfrzHHDD5N8o1bkxE7w5ITIRPSefUVPUPCUIWx7l1EGzySDqGDH7J3wHs9MFfjn9ClI?purpose=fullsize",
+        "Ashwagandha",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/8rq6l8Uz-LQbVsq3HJRCfoc750z6VZctD7H3gIpa6u0cfPms4QDlQr3_vszBRuslceDeOW1kSLytx47opUzNJdMUy-JLUGCkL1isrJcCsfO8PZEY1Kgpf_aDYfpGYYMZJ-Cxp4c6RJX5jCHU6drbPmDdIF0WwSajSpYQM68Gl_BvDYl8j88P26B1xXPId5G3?purpose=fullsize",
+        "Shatavari",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/7Njmer-qgbehj-JHpKmtb3AcaRGF4rfUJEbt9btNYGPyvlbqeWx8FfK14gLJmMbdrWSn1094C8aizLxUCt40w-r0JSIMCtC4HQF8EEJOVmPPBjgqJaSiCNGvVhwSz5HHHkJKsNIXS63jQKg5EgwLOmX5jN4VsKLJh78I61WCUP8?purpose=inline",
+        "Sarpagandha",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/j5UHknmKJPkD_NV4AwLfn1IfU6P6TmNONum2q277H42taCjnvZxugJBgE1_fxqobXvMLXSkKvS8nmtRahWlLquoVAN7OMiA5ZLtrqSdgK7GWm1SLwon6DzQegCdcBVsQvJck_kTB1Pz6rcEN7IYH03gh05A817OrDv1ycL0Eyro?purpose=inline",
+        "Bhringraj",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/xGIgIKU8SZSJiFpRvbR-bHyozKYQSjIm3gdvMP2a6jwY6j-74SBvbe7risoO3W-pKh0zvE4vW35GMRogAN7J0GwbXamO1Rl_2HRDnjujjv1dT44hc1jHc9-peGQDSnR5zJRx_VUl3mSrcXpqyDZJjpRvu11jtCbE4ZxKOe6nggs?purpose=inline",
+        "Arjun",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/LkRFCatm7pGn8FwtlsJYZCG0kI0Tx0-ndLxm6EMTtk-AWbjKlAETwTZJh063x9mA7pJblHm8OHb05R4xOJ6Risdfp4Q2h7pDWGX-mZofZxITovL5Ex9s-2QYeoqk6Wz74YE9VsnMaCubMv3ILR_nvJZfb2TKTXItDD4Ue6jMUYM?purpose=inline",
+        "Aloevera",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/DX39gjFsR6zB-IfqRdWWNR_dgGQv6dY5WdS4RG84RiEI6wtkry5ZkUFZ9qDUfy-F0yzfuj02a_qangIT1OqM_V3dx8wCjE6A8a4wVsDraZoqCJlGV1lo88A9Knt75tHg6E8QQ7bpmAN0YRV3OHFvFSDukxcKdJmMKOto3rKO_QuIYkQvQuILIoyvb4o-mVDp?purpose=inline",
+        "Palash",
+      ],
+      [
+        "https://images.openai.com/static-rsc-4/xlrWx7dTICCHcDMDPmdoexYVdhG2wIgRMNVSP1utIx-5vDLqqf0thp1Z1cEKe8pJrcYT_Fwm6JxkBumZJXQ3qM9Fp0G_4rqfjy9ieFG-L1o5csCcQkquO1E7hHAxTSfUE_HZ8GTNEmY_QWE_3480KbgUYyRcIqXT5wZLW6Mch6dUZl5kGt5Fxl-gcPQeru5Q?purpose=fullsize",
+        "Betel leaf",
+      ],
+    ];
+    const N = DATA.length,
+      SPAN = 0.55;
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+    const cards = DATA.map(([src, title], i) => {
+      const ang = i * 137.5 * (Math.PI / 180);
+      const el = document.createElement("figure");
+      el.className = "tunnel-card";
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = title;
+      img.draggable = false;
+      img.loading = "lazy";
+      img.addEventListener("error", () => el.classList.add("no-img"));
+      const cap = document.createElement("figcaption");
+      cap.textContent = title;
+      el.append(img, cap);
+      el.style.zIndex = i + 1;
+      plane.appendChild(el);
+      return {
+        el,
+        cos: Math.cos(ang),
+        sin: Math.sin(ang),
+        rx: 0.28 + (i % 3) * 0.08,
+        ry: 0.26 + (i % 2) * 0.09,
+        rot: (i % 2 === 0 ? 1 : -1) * (3 + (i % 5) * 2),
+        start: (i / N) * (1 - SPAN),
+      };
     });
-  }
 
-  // Every "Identify a Plant" link elsewhere on the page now points at
-  // #identify instead of navigating away. Give the drop zone a brief
-  // highlight once the smooth scroll lands, so it's obvious where to drop
-  // a photo.
-  document.querySelectorAll('a[href="#identify"]').forEach((link) => {
-    link.addEventListener("click", () => {
-      setTimeout(() => {
-        dropZone.classList.add("pulse");
-        dropZone.addEventListener(
-          "animationend",
-          () => dropZone.classList.remove("pulse"),
-          { once: true },
+    const S = { w: 1, h: 1, mobile: false };
+    const target = { p: 0, x: 0, y: 0 };
+    const cur = { p: -1, x: 0, y: 0 };
+    let active = false,
+      raf = 0;
+
+    function measure() {
+      S.w = root.clientWidth || 1;
+      S.h = root.clientHeight || 1;
+      S.mobile = window.innerWidth < 768;
+      const cw = S.mobile
+        ? clamp(S.w * 0.38, 130, 180)
+        : clamp(S.w * 0.2, 180, 270);
+      root.style.setProperty("--cw", cw + "px");
+      root.style.setProperty("--persp", (S.mobile ? 900 : 1200) + "px");
+      cur.p = -1;
+      render();
+    }
+
+    function render() {
+      // headline: bold and compact at rest, then grows and fades as the photos come forward.
+      // Supporting copy + buttons fade away sooner so they never sit under the photos.
+      const sp = clamp(cur.p, 0, 1);
+      if (head && !reduce) {
+        head.style.transform = `scale(${keys(sp, [0, 0.65, 1], [1, 1.9, 2.4]).toFixed(3)})`;
+        head.style.opacity = keys(sp, [0, 0.08, 0.6, 1], [1, 1, 0, 0]).toFixed(
+          3,
         );
-      }, 350);
+      }
+      const so = reduce ? 1 : keys(sp, [0, 0.04, 0.2], [1, 1, 0]);
+      supports.forEach((el) => {
+        el.style.opacity = so.toFixed(3);
+        el.style.pointerEvents = so > 0.5 ? "auto" : "none";
+      });
+      const farZ = S.mobile ? -1200 : -1700,
+        nearZ = S.mobile ? 350 : 500;
+      const pan = S.mobile ? 20 : 45;
+      for (const c of cards) {
+        const loc = clamp((cur.p - c.start) / SPAN, 0, 1);
+        const z = farZ + (nearZ - farZ) * loc;
+        let o;
+        if (loc <= 0) o = 0;
+        else if (loc < 0.18) o = loc / 0.18;
+        else if (loc <= 0.82) o = 1;
+        else if (loc < 0.98) o = (0.98 - loc) / 0.16;
+        else o = 0;
+        const x = c.cos * S.w * c.rx - cur.x * pan;
+        const y = c.sin * S.h * c.ry - cur.y * pan;
+        c.el.style.transform = `translate3d(calc(-50% + ${x.toFixed(1)}px), calc(-50% + ${y.toFixed(1)}px), ${z.toFixed(1)}px) rotateZ(${c.rot}deg)`;
+        c.el.style.opacity = o.toFixed(3);
+      }
+    }
+
+    function tick() {
+      raf = 0;
+      const dp = target.p - cur.p,
+        dx = target.x - cur.x,
+        dy = target.y - cur.y;
+      if (Math.abs(dp) > 1e-4 || Math.abs(dx) > 1e-3 || Math.abs(dy) > 1e-3) {
+        cur.p += dp * 0.12;
+        cur.x += dx * 0.06;
+        cur.y += dy * 0.06;
+        render();
+      }
+      if (active) raf = requestAnimationFrame(tick);
+    }
+    function setActive(v) {
+      active = v;
+      if (v && !raf) raf = requestAnimationFrame(tick);
+    }
+
+    // scroll progress 0..1 -> tunnel progress (starts partway in so cards are visible immediately)
+    function setProgress(sp) {
+      target.p = sp;
+      if (cue) cue.style.opacity = clamp(1 - sp * 6, 0, 1);
+      if (!raf && active) raf = requestAnimationFrame(tick);
+    }
+
+    if (!reduce) {
+      window.addEventListener(
+        "pointermove",
+        (e) => {
+          target.x = (e.clientX / window.innerWidth - 0.5) * 2;
+          target.y = (e.clientY / window.innerHeight - 0.5) * 2;
+        },
+        { passive: true },
+      );
+    }
+    new IntersectionObserver((es) => setActive(es[0].isIntersecting)).observe(
+      root,
+    );
+    window.addEventListener("resize", measure);
+    measure();
+    if (reduce) {
+      target.p = cur.p = 0.5;
+      render();
+    }
+    return { setProgress };
+  }
+  const tunnel = initTunnel();
+
+  if (reduce || !window.gsap || !window.ScrollTrigger) return;
+
+  const splitWords = (el) => {
+    const text = el.textContent.trim().replace(/\s+/g, " ");
+    el.setAttribute("aria-label", text);
+    el.textContent = "";
+    return text.split(" ").map((w, i, a) => {
+      const s = document.createElement("span");
+      s.className = "w";
+      s.setAttribute("aria-hidden", "true");
+      s.textContent = w;
+      el.appendChild(s);
+      if (i < a.length - 1) el.appendChild(document.createTextNode(" "));
+      return s;
     });
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const wide = window.innerWidth >= 1025 && window.innerHeight >= 700;
+    const scrub = 1.1;
+
+    /* =========================== HERO =========================== */
+    const hero = $(".hero");
+    if (hero && tunnel) {
+      // The hero pins for a while; scrolling flies the camera through the tunnel.
+      // (No wheel hijacking, so normal page scrolling keeps working.)
+      const pinLen = wide ? "+=150%" : "+=110%";
+      ScrollTrigger.create({
+        trigger: hero,
+        start: "top top",
+        end: pinLen,
+        pin: true,
+        anticipatePin: 1,
+        refreshPriority: 1,
+        onUpdate: (self) => {
+          tunnel.setProgress(self.progress);
+        },
+      });
+      gsap.to("#heroVisualTag", {
+        yPercent: -60,
+        ease: "none",
+        scrollTrigger: { trigger: hero, start: "top top", end: pinLen, scrub },
+      });
+    }
+
+    /* =========================== STORY (horizontal editorial canvas) =========================== */
+    (() => {
+      const root = $("#story");
+      const pin = root && $(".story-pin", root);
+      const track = pin && $(".story-track", pin);
+      if (!track) return;
+      const chapters = $$(".story-chapter", track),
+        fill = $(".story-progress-fill", root),
+        labels = $$(".story-progress b", root);
+      $$(".story-title", root).forEach((el) => {
+        // masked word spans for the heading reveals
+        if (el.dataset.split) return;
+        el.dataset.split = "1";
+        el.innerHTML = el.textContent
+          .trim()
+          .split(/\s+/)
+          .map((w) => `<span class="story-word"><span>${w}</span></span>`)
+          .join(" ");
+      });
+
+      if (window.__storyMM) window.__storyMM.revert(); // re-init safe
+      const mm = (window.__storyMM = gsap.matchMedia());
+
+      mm.add(
+        "(min-width: 769px) and (prefers-reduced-motion: no-preference)",
+        () => {
+          root.classList.add("is-pinned");
+          const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
+          const run = () => dist() * 1.1; // scroll distance of the horizontal travel
+          const hold = () => window.innerHeight * 0.9; // extra pinned scroll so the last chapter can be appreciated
+
+          ScrollTrigger.create({
+            trigger: pin,
+            start: "top top",
+            end: () => "+=" + (run() + hold()),
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          });
+
+          let cur = -1;
+          const h = gsap.to(track, {
+            x: () => -dist(),
+            ease: "none",
+            scrollTrigger: {
+              trigger: pin,
+              start: "top top",
+              end: () => "+=" + run(),
+              scrub: 0.8,
+              invalidateOnRefresh: true,
+              onUpdate: (self) => {
+                fill.style.transform = `scaleX(${self.progress})`;
+                const center =
+                  -gsap.getProperty(track, "x") + window.innerWidth * 0.5;
+                let k = 0;
+                chapters.forEach((ch, i) => {
+                  if (ch.offsetLeft <= center) k = i;
+                });
+                if (k !== cur) {
+                  cur = k;
+                  labels.forEach((l, i) =>
+                    l.classList.toggle("on", i <= k - 1),
+                  );
+                } // c0 is the intro panel
+              },
+            },
+          });
+
+          chapters.forEach((ch, i) => {
+            const win = {
+              trigger: ch,
+              containerAnimation: h,
+              start: "left right",
+              end: "right left",
+              scrub: true,
+              invalidateOnRefresh: true,
+            };
+            // different parallax speeds: photos drift slower than the canvas, type and annotations faster
+            $$("[data-depth]", ch).forEach((el) => {
+              const d = parseFloat(el.dataset.depth);
+              gsap.fromTo(
+                el,
+                { x: () => d * window.innerWidth },
+                {
+                  x: () => -d * window.innerWidth,
+                  ease: "none",
+                  scrollTrigger: win,
+                },
+              );
+            });
+            // entrance: mask wipe, settle, labels, headline words, notes, leader lines
+            const st =
+              i === 0
+                ? {
+                    trigger: pin,
+                    start: "top 60%",
+                    toggleActions: "play none none reverse",
+                  }
+                : {
+                    trigger: ch,
+                    containerAnimation: h,
+                    start: "left 72%",
+                    toggleActions: "play none none reverse",
+                  };
+            gsap
+              .timeline({ scrollTrigger: st })
+              .fromTo(
+                $$(".story-mask", ch),
+                { clipPath: "inset(0% 0% 100% 0%)" },
+                {
+                  clipPath: "inset(0% 0% 0% 0%)",
+                  duration: 1.3,
+                  ease: "power3.inOut",
+                  stagger: 0.3,
+                },
+                0,
+              )
+              .fromTo(
+                $$(".story-mask img", ch),
+                { scale: 1.08 },
+                { scale: 1, duration: 1.6, ease: "power2.out", stagger: 0.3 },
+                0,
+              )
+              .fromTo(
+                $$(".story-tag, .eyebrow", ch),
+                { autoAlpha: 0, x: -16 },
+                { autoAlpha: 1, x: 0, duration: 0.7, stagger: 0.1 },
+                0.2,
+              )
+              .fromTo(
+                $$(".story-word > span", ch),
+                { yPercent: 115 },
+                {
+                  yPercent: 0,
+                  duration: 0.9,
+                  stagger: 0.06,
+                  ease: "power3.out",
+                },
+                0.35,
+              )
+              .fromTo(
+                $$(".story-desc, .story-intro, .story-closing, .btn", ch),
+                { autoAlpha: 0, y: 14 },
+                { autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.14 },
+                0.75,
+              )
+              .fromTo(
+                $$(".story-note", ch),
+                { autoAlpha: 0, y: 10 },
+                { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.14 },
+                0.95,
+              )
+              .fromTo(
+                $$(".story-line path", ch),
+                { strokeDashoffset: 1 },
+                {
+                  strokeDashoffset: 0,
+                  duration: 1.1,
+                  ease: "power2.inOut",
+                  stagger: 0.25,
+                },
+                1.1,
+              )
+              .fromTo(
+                $$(".story-line circle", ch),
+                { autoAlpha: 0 },
+                { autoAlpha: 1, duration: 0.4, stagger: 0.25 },
+                1.5,
+              );
+          });
+          return () => root.classList.remove("is-pinned");
+        },
+      );
+    })();
+
+    /* ================== SLOW-PACED SECTIONS ================== */
+    // Wrap a section's content in a sticky 100vh stage and lengthen the section,
+    // then reveal the content in order while the visitor scrolls through it.
+    const dwell = (sel, extraVh, build, onUpdate) => {
+      const sec = $(sel);
+      if (!sec) return;
+      const wrap = document.createElement("div");
+      wrap.className = "dwell";
+      while (sec.firstChild) wrap.appendChild(sec.firstChild);
+      sec.appendChild(wrap);
+      sec.classList.add("is-dwell");
+      sec.style.height = `calc(var(--vh) + ${extraVh}vh)`;
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.out" },
+        scrollTrigger: {
+          trigger: sec,
+          start: "top 65%",
+          end: "bottom bottom",
+          scrub: 0.7,
+          onUpdate: onUpdate ? (self) => onUpdate(self.progress) : undefined,
+        },
+      });
+      tl.to({}, { duration: 1 }, 0); // timeline always spans the full scroll
+      build(tl);
+    };
+    const drift = (tl, sel) =>
+      tl.fromTo(
+        sel,
+        { yPercent: -8 },
+        { yPercent: 8, ease: "none", duration: 1 },
+        0,
+      );
+
+    if (wide) {
+      dwell(".why", 150, (tl) => {
+        const words = splitWords($(".why-statement"));
+        gsap.set(words, { opacity: 0.14 });
+        tl.fromTo(
+          ".why-media",
+          { clipPath: "inset(100% 0% 0% 0%)" },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 0.2,
+            ease: "power3.inOut",
+          },
+          0,
+        );
+        tl.fromTo(
+          ".why-media img",
+          { yPercent: -3 },
+          { yPercent: 3, ease: "none", duration: 1 },
+          0,
+        );
+        tl.fromTo(
+          words,
+          { opacity: 0.14 },
+          { opacity: 1, stagger: 0.025, duration: 0.06, ease: "none" },
+          0.12,
+        );
+        tl.to(
+          ".why-line path",
+          { strokeDashoffset: 0, duration: 0.1, ease: "none" },
+          0.56,
+        );
+        tl.fromTo(
+          ".why-text",
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, stagger: 0.16, duration: 0.14 },
+          0.66,
+        );
+      });
+
+      dwell(".sustainability", 90, (tl) => {
+        tl.fromTo(
+          ".sus-media",
+          { clipPath: "inset(100% 0% 0% 0%)" },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 0.3,
+            ease: "power3.inOut",
+          },
+          0,
+        );
+        drift(tl, ".sus-media img");
+        tl.fromTo(
+          ".sus-copy > h2, .sus-copy > .sus-lead",
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, stagger: 0.08, duration: 0.14 },
+          0.08,
+        );
+        tl.fromTo(
+          ".sus-item",
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.1,
+            duration: 0.14,
+            clearProps: "transform",
+          },
+          0.3,
+        );
+      });
+    } else {
+      // small screens: plain flow, everything simply visible
+      gsap.set(".why-text", { opacity: 1, y: 0 });
+      gsap.set(".why-line path", { strokeDashoffset: 0 });
+      gsap.set(".why-media", { clipPath: "none" });
+    }
+
+    /* ================== COMMUNITY (editorial collage reveal, no pinning) ==================
+       Start states are set here, not in CSS, so the section stays visible if GSAP fails.
+       Reduced-motion visitors never reach this code. */
+    const community = $(".community");
+    if (community) {
+      try {
+        const st = { trigger: community, start: "top 70%", once: true };
+        // each frame wipes in from a different edge, staggered
+        const wipes = [
+          [".cc-a", "inset(0% 0% 100% 0%)", 0],
+          [".cc-b", "inset(100% 0% 0% 0%)", 0.25],
+          [".cc-c", "inset(0% 100% 0% 0%)", 0.45],
+        ];
+        wipes.forEach(([sel, from, delay]) => {
+          gsap.fromTo(
+            sel,
+            { clipPath: from },
+            {
+              clipPath: "inset(0% 0% 0% 0%)",
+              duration: 1.2,
+              delay,
+              ease: "power3.inOut",
+              clearProps: "clipPath",
+              scrollTrigger: st,
+            },
+          );
+          gsap.fromTo(
+            sel + " img",
+            { scale: 1.12 },
+            {
+              scale: 1,
+              duration: 1.8,
+              delay,
+              ease: "power2.out",
+              scrollTrigger: st,
+            },
+          );
+        });
+        gsap.fromTo(
+          ".community-line-in",
+          { yPercent: 110 },
+          {
+            yPercent: 0,
+            duration: 1,
+            stagger: 0.12,
+            delay: 0.15,
+            ease: "power3.out",
+            clearProps: "transform",
+            scrollTrigger: st,
+          },
+        );
+        gsap.fromTo(
+          ".community-eyebrow, .community-text, .community-link, .community-credit",
+          { y: 16, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.12,
+            delay: 0.45,
+            ease: "power3.out",
+            clearProps: "transform,opacity",
+            scrollTrigger: st,
+          },
+        );
+        // images drift inside their frames (frames stay put, so gaps never change); desktop only
+        if (wide) {
+          const drift = {
+            trigger: community,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          };
+          gsap.fromTo(
+            ".cc-a img",
+            { yPercent: -4 },
+            { yPercent: 4, ease: "none", scrollTrigger: drift },
+          );
+          gsap.fromTo(
+            ".cc-b img",
+            { yPercent: 4 },
+            { yPercent: -4, ease: "none", scrollTrigger: drift },
+          );
+          gsap.fromTo(
+            ".cc-c img",
+            { yPercent: -3 },
+            { yPercent: 3, ease: "none", scrollTrigger: drift },
+          );
+        }
+      } catch (err) {
+        console.warn("Community reveal skipped:", err);
+      }
+    }
+
+    /* ================== MARKETPLACE PREVIEW ("Forest to community") ==================
+       Plain scroll reveals, no pinning. Hidden start states are set from here (not in CSS), so the
+       section stays fully visible if GSAP fails; reduced-motion visitors never reach this code. */
+    const mp = $(".mp");
+    if (mp) {
+      try {
+        const once = (trigger, start) => ({ trigger, start, once: true });
+        const rise = (targets, vars, st) =>
+          gsap.fromTo(
+            targets,
+            { y: 28, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              ease: "power3.out",
+              clearProps: "transform,opacity",
+              ...vars,
+              scrollTrigger: st,
+            },
+          );
+
+        rise(".mp-eyebrow, .mp-title", { stagger: 0.12 }, once(mp, "top 72%"));
+        rise(".mp-lead", { delay: 0.3 }, once(mp, "top 72%"));
+
+        // cards + photos: set the start state now, then reveal in batches as they scroll into view
+        const cards = $$(".mp-card", mp);
+        const photos = cards.map((c) => $("img", c));
+        gsap.set(cards, { y: 70, opacity: 0 });
+        gsap.set(photos, { scale: 1.18 });
+        ScrollTrigger.batch(cards, {
+          start: "top 88%",
+          once: true,
+          onEnter: (batch) => {
+            gsap.to(batch, {
+              y: 0,
+              opacity: 1,
+              duration: 1.1,
+              ease: "power3.out",
+              stagger: 0.14,
+              clearProps: "transform,opacity",
+            });
+            gsap.to(
+              batch.map((c) => $("img", c)),
+              {
+                scale: 1,
+                duration: 1.8,
+                ease: "power2.out",
+                stagger: 0.14,
+                clearProps: "transform",
+              },
+            );
+          },
+        });
+
+        rise(".mp-cta", {}, once(".mp-cta", "top 90%"));
+
+        // the botanical motif drifts slowly against the scroll
+        gsap.to(".mp-deco", {
+          yPercent: 14,
+          ease: "none",
+          scrollTrigger: {
+            trigger: mp,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      } catch (err) {
+        console.warn("Marketplace preview animation skipped:", err);
+        gsap.set(
+          [
+            ".mp-card",
+            ".mp-card img",
+            ".mp-eyebrow",
+            ".mp-title",
+            ".mp-lead",
+            ".mp-cta",
+          ],
+          { clearProps: "all" },
+        );
+      }
+    }
+
+    /* ================== AI IDENTIFICATION PREVIEW (static, illustrative) ================== */
+    (() => {
+      const sec = $(".identify");
+      if (!sec) return;
+      const frame = $("#idvFrame"),
+        photo = $(".idv-photo", sec),
+        scan = $(".idv-scan", sec);
+      const corners = $$(".idv-corner", sec),
+        label = $(".idv-label", sec);
+      const card = $("#idvCard"),
+        fill = $("#idvBarFill"),
+        num = $("#idvScoreNum");
+      if (!frame || !card) return;
+
+      try {
+        // 1) photograph: clip-path reveal, then corners + label settle in
+        gsap
+          .timeline({
+            defaults: { ease: "power3.out" },
+            scrollTrigger: { trigger: frame, start: "top 80%", once: true },
+          })
+          .fromTo(
+            frame,
+            { clipPath: "inset(100% 0% 0% 0% round 28px)" },
+            {
+              clipPath: "inset(0% 0% 0% 0% round 28px)",
+              duration: 1.4,
+              ease: "power3.inOut",
+              clearProps: "clipPath",
+            },
+            0,
+          )
+          .fromTo(
+            corners,
+            { autoAlpha: 0, scale: 0.7 },
+            { autoAlpha: 1, scale: 1, duration: 0.6, stagger: 0.08 },
+            0.9,
+          )
+          .fromTo(
+            label,
+            { autoAlpha: 0, y: 14 },
+            { autoAlpha: 1, y: 0, duration: 0.7 },
+            1.1,
+          );
+
+        // 2) subtle parallax + scale while scrolling past
+        if (photo) {
+          gsap.fromTo(
+            photo,
+            { scale: 1.14, yPercent: -2.5 },
+            {
+              scale: 1.06,
+              yPercent: 2.5,
+              ease: "none",
+              scrollTrigger: {
+                trigger: frame,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 0.8,
+              },
+            },
+          );
+        }
+
+        // 3) scanning line: continuous, paused while off-screen
+        if (scan) {
+          scan.style.animation = "none"; // hand over from the CSS fallback
+          const sweep = gsap.fromTo(
+            scan,
+            { yPercent: -100 },
+            {
+              yPercent: 300,
+              duration: 4.6,
+              ease: "sine.inOut",
+              repeat: -1,
+              repeatDelay: 0.5,
+            },
+          );
+          sweep.pause();
+          ScrollTrigger.create({
+            trigger: frame,
+            start: "top bottom",
+            end: "bottom top",
+            onToggle: (self) => (self.isActive ? sweep.play() : sweep.pause()),
+          });
+        }
+
+        // 4) copy: staggered upward reveal
+        gsap
+          .timeline({
+            defaults: { ease: "power3.out" },
+            scrollTrigger: {
+              trigger: ".idv-copy",
+              start: "top 78%",
+              once: true,
+            },
+          })
+          .fromTo(
+            ".idv-eyebrow",
+            { autoAlpha: 0, y: 12 },
+            { autoAlpha: 1, y: 0, duration: 0.7 },
+            0,
+          )
+          .fromTo(
+            ".idv-line > span",
+            { yPercent: 115 },
+            { yPercent: 0, duration: 1, stagger: 0.12, ease: "power4.out" },
+            0.1,
+          )
+          .fromTo(
+            ".idv-desc",
+            { autoAlpha: 0, y: 18 },
+            { autoAlpha: 1, y: 0, duration: 0.8 },
+            0.55,
+          );
+
+        // 5) sample card + confidence bar 0 -> 98%
+        const bar = { v: 0 };
+        gsap
+          .timeline({
+            defaults: { ease: "power3.out" },
+            scrollTrigger: { trigger: card, start: "top 85%", once: true },
+          })
+          .fromTo(
+            card,
+            { autoAlpha: 0, y: 44 },
+            { autoAlpha: 1, y: 0, duration: 1, clearProps: "transform" },
+            0,
+          )
+          .fromTo(
+            ".idv-card-main > *",
+            { autoAlpha: 0, y: 10 },
+            { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.08 },
+            0.35,
+          )
+          .fromTo(
+            fill,
+            { scaleX: 0 },
+            { scaleX: 0.98, duration: 1.6, ease: "power2.inOut" },
+            0.6,
+          )
+          .to(
+            bar,
+            {
+              v: 98,
+              duration: 1.6,
+              ease: "power2.inOut",
+              onUpdate: () => {
+                if (num) num.textContent = Math.round(bar.v);
+              },
+            },
+            0.6,
+          )
+          .fromTo(
+            ".idv-info-block",
+            { autoAlpha: 0, y: 12 },
+            { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 },
+            0.9,
+          )
+          .fromTo(
+            ".idv-actions",
+            { autoAlpha: 0, y: 14 },
+            { autoAlpha: 1, y: 0, duration: 0.7 },
+            1.2,
+          );
+      } catch (err) {
+        console.warn("Identify preview animation skipped:", err);
+        gsap.set(sec.querySelectorAll("*"), { clearProps: "all" });
+      }
+    })();
+
+    ScrollTrigger.refresh();
+    window.addEventListener("load", () => ScrollTrigger.refresh());
   });
 })();

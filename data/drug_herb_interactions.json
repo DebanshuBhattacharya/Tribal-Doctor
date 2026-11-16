@@ -1,0 +1,1913 @@
+{
+  "schema_version": 1,
+  "note": "Curated drug-herb interaction dataset. Every record must cite a source listed under `sources`. Normalised so each top-level list maps to one PostgreSQL table (herbs, sources, interactions). Do not add a record without a verifiable reference. `review_status` stays 'pending_clinical_review' until a pharmacist or clinician signs off. Many records apply a class-level warning (for example 'blood pressure medicines') to individual drugs; the evidence_quality field says when this is the case. Ratings reflect both severity and strength of evidence.",
+  "herbs": [
+    {
+      "id": "tinospora-cordifolia",
+      "scientific_name": "Tinospora cordifolia",
+      "common_names": [
+        "Giloy",
+        "Guduchi",
+        "Amrita"
+      ],
+      "image": "images/Giloy.jpeg",
+      "page_url": "product.html?id=giloy"
+    },
+    {
+      "id": "withania-somnifera",
+      "scientific_name": "Withania somnifera",
+      "common_names": [
+        "Ashwagandha",
+        "Indian ginseng",
+        "Winter cherry"
+      ],
+      "image": "images/Ashwagandha.jpeg",
+      "page_url": "product.html?id=ashwagandha"
+    },
+    {
+      "id": "hypericum-perforatum",
+      "scientific_name": "Hypericum perforatum",
+      "common_names": [
+        "St. John's wort",
+        "Hypericum"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "curcuma-longa",
+      "scientific_name": "Curcuma longa",
+      "common_names": [
+        "Turmeric",
+        "Haldi"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "allium-sativum",
+      "scientific_name": "Allium sativum",
+      "common_names": [
+        "Garlic",
+        "Lahsun"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "zingiber-officinale",
+      "scientific_name": "Zingiber officinale",
+      "common_names": [
+        "Ginger",
+        "Adrak"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "ginkgo-biloba",
+      "scientific_name": "Ginkgo biloba",
+      "common_names": [
+        "Ginkgo",
+        "Maidenhair tree"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "glycyrrhiza-glabra",
+      "scientific_name": "Glycyrrhiza glabra",
+      "common_names": [
+        "Licorice",
+        "Mulethi",
+        "Yashtimadhu"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "momordica-charantia",
+      "scientific_name": "Momordica charantia",
+      "common_names": [
+        "Bitter melon",
+        "Karela",
+        "Bitter gourd"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "trigonella-foenum-graecum",
+      "scientific_name": "Trigonella foenum-graecum",
+      "common_names": [
+        "Fenugreek",
+        "Methi"
+      ],
+      "image": null,
+      "page_url": null
+    },
+    {
+      "id": "panax-ginseng",
+      "scientific_name": "Panax ginseng",
+      "common_names": [
+        "Ginseng",
+        "Asian ginseng"
+      ],
+      "image": null,
+      "page_url": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "sahu-2025-ijnpr",
+      "title": "Sahu RK et al. Enhancement of metformin bioavailability by Tinospora cordifolia extracts: insights into pharmacokinetic interactions. Indian J Nat Prod Resour 2025;16(2):258-270",
+      "url": "https://doi.org/10.56042/ijnpr.v16i2.13564",
+      "publisher": "Indian Journal of Natural Products and Resources",
+      "type": "peer_reviewed_animal_study"
+    },
+    {
+      "id": "vora-2020-phcogmag",
+      "title": "Vora A et al. Pharmacokinetic and pharmacodynamic interactions of Tinospora cordifolia aqueous extract and hypoglycemic drugs in streptozotocin-induced diabetes in rats. Pharmacognosy Magazine 2020;16(Suppl 1):S47-S56",
+      "url": "https://phcog.com/article/view/2020/16/68/47-56",
+      "publisher": "Pharmacognosy Magazine",
+      "type": "peer_reviewed_animal_study"
+    },
+    {
+      "id": "ods-ashwagandha",
+      "title": "Ashwagandha: Consumer fact sheet. NIH Office of Dietary Supplements",
+      "url": "https://ods.od.nih.gov/factsheets/Ashwagandha-Consumer/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "type": "government_fact_sheet"
+    },
+    {
+      "id": "nccih-ashwagandha",
+      "title": "Ashwagandha. NCCIH, National Institutes of Health",
+      "url": "https://www.nccih.nih.gov/health/ashwagandha",
+      "publisher": "NIH / NCCIH",
+      "type": "government_fact_sheet"
+    },
+    {
+      "id": "nccih-sjw-depth",
+      "title": "St. John's Wort and Depression: In Depth. NCCIH, National Institutes of Health",
+      "url": "https://www.nccih.nih.gov/health/st-johns-wort-and-depression-in-depth",
+      "publisher": "NIH / NCCIH",
+      "type": "government_fact_sheet"
+    },
+    {
+      "id": "mayo-herbal-heart",
+      "title": "Herbal supplements and heart medicines may not mix. Mayo Clinic",
+      "url": "https://www.mayoclinic.org/drugs-supplements/herbal-supplements/art-20046488",
+      "publisher": "Mayo Clinic",
+      "type": "clinical_reference"
+    },
+    {
+      "id": "mayo-ginkgo",
+      "title": "Ginkgo. Mayo Clinic",
+      "url": "https://www.mayoclinic.org/drugs-supplements/ginkgo/art-20362032",
+      "publisher": "Mayo Clinic",
+      "type": "clinical_reference"
+    },
+    {
+      "id": "ginkgo-2008-review",
+      "title": "Potential interaction of Ginkgo biloba leaf with antiplatelet or anticoagulant drugs: what is the evidence? Mol Nutr Food Res 2008;52(7):764-771",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18214851/",
+      "publisher": "Molecular Nutrition & Food Research",
+      "type": "peer_reviewed_review"
+    },
+    {
+      "id": "ginkgo-2025-observational",
+      "title": "Impact of Ginkgo biloba drug interactions on bleeding risk and coagulation profiles: A comprehensive analysis (retrospective observational study, 2025)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40198642/",
+      "publisher": "PubMed",
+      "type": "peer_reviewed_observational_study"
+    },
+    {
+      "id": "ascopost-turmeric",
+      "title": "Deng G, Gubili J. Turmeric (About Herbs series, Memorial Sloan Kettering). The ASCO Post, 25 Aug 2017",
+      "url": "https://ascopost.com/issues/august-25-2017/turmeric",
+      "publisher": "The ASCO Post / Memorial Sloan Kettering Cancer Center",
+      "type": "clinical_reference"
+    },
+    {
+      "id": "ons-herbs-cancer",
+      "title": "Gubili J, Yeung KS, Schwartz S. Are your patients taking herbs that may interact with their cancer drugs? ONS Voice",
+      "url": "https://www.ons.org/news-and-views/are-your-patients-taking-herbs-that-may-interact-with-their-cancer-drugs",
+      "publisher": "Oncology Nursing Society",
+      "type": "clinical_reference"
+    },
+    {
+      "id": "nih-licorice-factsheet",
+      "title": "Licorice Root. Fact sheet, NIH (archived NCCAM copy)",
+      "url": "https://webarchive.library.unt.edu/web/20121026231542/http://nccam.nih.gov/taxonomy/term/214",
+      "publisher": "NIH / NCCAM (archived)",
+      "type": "government_fact_sheet"
+    },
+    {
+      "id": "merck-licorice",
+      "title": "Licorice. Merck Manual, Consumer Version",
+      "url": "https://www.msdmanuals.com/home/special-subjects/dietary-supplements-and-vitamins/licorice",
+      "publisher": "Merck Manuals",
+      "type": "clinical_reference"
+    },
+    {
+      "id": "herbmed-sulfonylurea-2018",
+      "title": "Pakkir Maideen NM, Balasubramaniam R. Pharmacologically relevant drug interactions of sulfonylurea antidiabetics with common herbs. J Herbmed Pharmacol 2018;7 (starts p. 200). [Verify exact title and pages before citing in a paper]",
+      "url": "https://www.herbmedpharmacol.com/PDF/jhp-7-200.pdf",
+      "publisher": "Journal of Herbmed Pharmacology",
+      "type": "peer_reviewed_review"
+    },
+    {
+      "id": "tc-glibenclamide-2018",
+      "title": "Effect of Tinospora cordifolia aqua-alcoholic extract on pharmacokinetic of glibenclamide in rat: an herb-drug interaction study. J Pharm Biomed Anal 2018",
+      "url": "https://read.qxmd.com/read/29413979/effect-of-tinospora-cordifolia-aqua-alcoholic-extract-on-pharmacokinetic-of-glibenclamide-in-rat-an-herb-drug-interaction-study",
+      "publisher": "Journal of Pharmaceutical and Biomedical Analysis",
+      "type": "peer_reviewed_animal_study"
+    },
+    {
+      "id": "pharmacist-bitter-melon-insulin",
+      "title": "Bitter melon and insulin interaction (content from Therapeutic Research Center). HelloPharmacist",
+      "url": "https://hellopharmacist.com/drug-supplement-interactions/drug-herbal/bitter-melon-with-insulin",
+      "publisher": "HelloPharmacist",
+      "type": "pharmacist_reference_database"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "metformin-tinospora-cordifolia",
+      "drug_id": "metformin",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Possible additive blood-sugar lowering, and a possible rise in metformin levels (reduced kidney clearance). Both findings come from rat studies; the two studies reported different results for drug levels.",
+      "plain_explanation": "Giloy has lowered blood sugar in animal studies. Taken with metformin it may add to that effect. This has not been tested in people, so the real effect is unknown. If you have diabetes, tell your doctor or pharmacist before adding Giloy and keep checking your blood sugar.",
+      "evidence_quality": "Limited: animal studies only, results not fully consistent. No human interaction study found.",
+      "source_ids": [
+        "sahu-2025-ijnpr",
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "levothyroxine-withania-somnifera",
+      "drug_id": "levothyroxine",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may change thyroid hormone levels, which could add to or work against thyroid medicine.",
+      "plain_explanation": "NIH notes that a few studies show ashwagandha may affect how the thyroid works, so it might interact with thyroid medicines such as levothyroxine. Talk to your doctor before combining them, because your thyroid tests may need closer monitoring.",
+      "evidence_quality": "Limited: a small number of studies, described by NIH as 'might interact'. Not an established clinical interaction.",
+      "source_ids": [
+        "ods-ashwagandha",
+        "nccih-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "warfarin-hypericum-perforatum",
+      "drug_id": "warfarin",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort changes how the body breaks down many drugs, which can weaken warfarin's blood-thinning effect.",
+      "plain_explanation": "NCCIH states that St. John's wort can weaken the effect of warfarin. A weaker effect can raise the risk of blood clots. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Established: listed by NCCIH as an interaction that can weaken prescription medicines.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "cyclosporine-hypericum-perforatum",
+      "drug_id": "cyclosporine",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort changes how the body breaks down many drugs, which can weaken cyclosporine's effect.",
+      "plain_explanation": "NCCIH states that St. John's wort can weaken cyclosporine, which is used to prevent rejection of transplanted organs. Do not combine them without your transplant team's advice.",
+      "evidence_quality": "Established: listed by NCCIH as an interaction that can weaken prescription medicines.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "digoxin-hypericum-perforatum",
+      "drug_id": "digoxin",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort changes how the body breaks down many drugs, which can weaken digoxin's effect.",
+      "plain_explanation": "NCCIH states that St. John's wort can weaken digoxin, a heart medicine. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Established: listed by NCCIH as an interaction that can weaken prescription medicines.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "sertraline-hypericum-perforatum",
+      "drug_id": "sertraline",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort raises serotonin. With an SSRI the combined effect can become dangerously high (serotonin syndrome).",
+      "plain_explanation": "NCCIH warns that St. John's wort taken with certain antidepressants can cause a dangerous rise in serotonin. Symptoms can start within minutes to hours and include agitation, fast heartbeat, and high body temperature. Do not combine Sertraline with St. John's wort without your doctor's advice.",
+      "evidence_quality": "Established: NCCIH warns of a potentially life-threatening serotonin increase with certain antidepressants.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "escitalopram-hypericum-perforatum",
+      "drug_id": "escitalopram",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort raises serotonin. With an SSRI the combined effect can become dangerously high (serotonin syndrome).",
+      "plain_explanation": "NCCIH warns that St. John's wort taken with certain antidepressants can cause a dangerous rise in serotonin. Symptoms can start within minutes to hours and include agitation, fast heartbeat, and high body temperature. Do not combine Escitalopram with St. John's wort without your doctor's advice.",
+      "evidence_quality": "Established: NCCIH warns of a potentially life-threatening serotonin increase with certain antidepressants.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "fluoxetine-hypericum-perforatum",
+      "drug_id": "fluoxetine",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort raises serotonin. With an SSRI the combined effect can become dangerously high (serotonin syndrome).",
+      "plain_explanation": "NCCIH warns that St. John's wort taken with certain antidepressants can cause a dangerous rise in serotonin. Symptoms can start within minutes to hours and include agitation, fast heartbeat, and high body temperature. Do not combine Fluoxetine with St. John's wort without your doctor's advice.",
+      "evidence_quality": "Established: NCCIH warns of a potentially life-threatening serotonin increase with certain antidepressants.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "amlodipine-hypericum-perforatum",
+      "drug_id": "amlodipine",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "moderate",
+      "mechanism": "St. John's wort can speed up how the body clears some medicines, which may weaken calcium channel blockers.",
+      "plain_explanation": "Mayo Clinic notes that St. John's wort may stop calcium channel blockers, the group that includes Amlodipine, from working as well as they should. That could affect blood pressure control. Check with your doctor before using it.",
+      "evidence_quality": "Established general advice from Mayo Clinic for calcium channel blockers. Data for this exact pair were not reviewed here.",
+      "source_ids": [
+        "mayo-herbal-heart"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "apixaban-hypericum-perforatum",
+      "drug_id": "apixaban",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort changes how the body processes many medicines, and Mayo Clinic advises against taking it with blood thinners.",
+      "plain_explanation": "Mayo Clinic suggests not taking St. John's wort if you take blood thinners, and Apixaban is a blood thinner. It could change how well your medicine works. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Established advice for blood thinners as a group (Mayo Clinic). Apixaban-specific data were not reviewed here.",
+      "source_ids": [
+        "mayo-herbal-heart"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-hypericum-perforatum",
+      "drug_id": "glimepiride",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "moderate",
+      "mechanism": "St. John's wort may speed up the enzymes that break down sulfonylureas, which could weaken blood sugar control.",
+      "plain_explanation": "A pharmacology review reports that St. John's wort may speed up how the body breaks down sulfonylurea diabetes medicines such as Glimepiride. Your blood sugar control could slip. Talk to your doctor or pharmacist before using it and keep checking your blood sugar.",
+      "evidence_quality": "Limited: described in a review as an enzyme effect. Clinical data for this exact pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gliclazide-hypericum-perforatum",
+      "drug_id": "gliclazide",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "moderate",
+      "mechanism": "St. John's wort may speed up the enzymes that break down sulfonylureas, which could weaken blood sugar control.",
+      "plain_explanation": "A pharmacology review reports that St. John's wort may speed up how the body breaks down sulfonylurea diabetes medicines such as Gliclazide. Your blood sugar control could slip. Talk to your doctor or pharmacist before using it and keep checking your blood sugar.",
+      "evidence_quality": "Limited: described in a review as an enzyme effect. Clinical data for this exact pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "carbimazole-withania-somnifera",
+      "drug_id": "carbimazole",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may change how the thyroid works, which could add to or work against thyroid medicine.",
+      "plain_explanation": "NIH says a few studies show ashwagandha may affect the thyroid, so it might interact with thyroid medicines such as Carbimazole. Talk to your doctor before combining them, because your thyroid tests may need closer monitoring.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' based on a few studies. Not an established clinical interaction.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "metformin-withania-somnifera",
+      "drug_id": "metformin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha might lower blood sugar, which could add to the effect of diabetes medicine.",
+      "plain_explanation": "NIH says ashwagandha might interact with diabetes medicines such as Metformin. If you use both, watch your blood sugar and tell your doctor.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact'. The rating is low because metformin rarely causes low blood sugar on its own.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-withania-somnifera",
+      "drug_id": "glimepiride",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha might lower blood sugar, which could add to the effect of diabetes medicine and raise the chance of low blood sugar.",
+      "plain_explanation": "NIH says ashwagandha might interact with diabetes medicines such as Glimepiride. Together they could push blood sugar too low. Tell your doctor before using ashwagandha and keep checking your blood sugar.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact'. The rating is higher because this medicine can cause low blood sugar.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "insulin-glargine-withania-somnifera",
+      "drug_id": "insulin-glargine",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha might lower blood sugar, which could add to the effect of diabetes medicine and raise the chance of low blood sugar.",
+      "plain_explanation": "NIH says ashwagandha might interact with diabetes medicines such as Insulin Glargine. Together they could push blood sugar too low. Tell your doctor before using ashwagandha and keep checking your blood sugar.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact'. The rating is higher because this medicine can cause low blood sugar.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "amlodipine-withania-somnifera",
+      "drug_id": "amlodipine",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha might lower blood pressure, which could add to the effect of blood pressure medicine.",
+      "plain_explanation": "NIH says ashwagandha might interact with blood pressure medicines such as Amlodipine. Your blood pressure could drop more than intended. Check with your doctor and keep monitoring your blood pressure.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' without more detail.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "telmisartan-withania-somnifera",
+      "drug_id": "telmisartan",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha might lower blood pressure, which could add to the effect of blood pressure medicine.",
+      "plain_explanation": "NIH says ashwagandha might interact with blood pressure medicines such as Telmisartan. Your blood pressure could drop more than intended. Check with your doctor and keep monitoring your blood pressure.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' without more detail.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "clonazepam-withania-somnifera",
+      "drug_id": "clonazepam",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha can cause drowsiness, which could add to the effect of sedatives.",
+      "plain_explanation": "NIH says ashwagandha might interact with sedatives, and drowsiness is a known side effect. Clonazepam is a sedative, so together they could make you more sleepy. Talk to your doctor before combining them, and take care when driving.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact'. Drowsiness is a listed side effect.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "cyclosporine-withania-somnifera",
+      "drug_id": "cyclosporine",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha might affect the immune system, which could work against medicines that suppress it.",
+      "plain_explanation": "NIH says ashwagandha might interact with medicines that suppress your immune system. Cyclosporine is one of these medicines. Do not add ashwagandha without checking with your doctor or transplant or specialist team.",
+      "evidence_quality": "Limited: NIH names the medicine group, not each drug. The warning is applied here to this drug because it suppresses the immune system.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "tacrolimus-withania-somnifera",
+      "drug_id": "tacrolimus",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha might affect the immune system, which could work against medicines that suppress it.",
+      "plain_explanation": "NIH says ashwagandha might interact with medicines that suppress your immune system. Tacrolimus is one of these medicines. Do not add ashwagandha without checking with your doctor or transplant or specialist team.",
+      "evidence_quality": "Limited: NIH names the medicine group, not each drug. The warning is applied here to this drug because it suppresses the immune system.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "methotrexate-withania-somnifera",
+      "drug_id": "methotrexate",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha might affect the immune system, which could work against medicines that suppress it.",
+      "plain_explanation": "NIH says ashwagandha might interact with medicines that suppress your immune system. Methotrexate is one of these medicines. Do not add ashwagandha without checking with your doctor or transplant or specialist team.",
+      "evidence_quality": "Limited: NIH names the medicine group, not each drug. The warning is applied here to this drug because it suppresses the immune system.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "warfarin-ginkgo-biloba",
+      "drug_id": "warfarin",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Ginkgo may affect blood clotting, which could add to blood-thinning medicines and raise bleeding risk.",
+      "plain_explanation": "Mayo Clinic lists ginkgo as an herb that may raise bleeding risk when taken with blood thinners such as Warfarin. Studies disagree on how large the risk is. Ask your doctor before using ginkgo and stop it before surgery as advised.",
+      "evidence_quality": "Mixed: Mayo Clinic lists a possible bleeding risk. A 2008 review of controlled studies found no clear effect on clotting, while a 2025 observational study linked ginkgo drug interactions to higher bleeding risk.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "mayo-ginkgo",
+        "ginkgo-2008-review",
+        "ginkgo-2025-observational"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "aspirin-ginkgo-biloba",
+      "drug_id": "aspirin",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Ginkgo may affect blood clotting, which could add to blood-thinning medicines and raise bleeding risk.",
+      "plain_explanation": "Mayo Clinic lists ginkgo as an herb that may raise bleeding risk when taken with blood thinners such as Aspirin. Studies disagree on how large the risk is. Ask your doctor before using ginkgo and stop it before surgery as advised.",
+      "evidence_quality": "Mixed: Mayo Clinic lists a possible bleeding risk. A 2008 review of controlled studies found no clear effect on clotting, while a 2025 observational study linked ginkgo drug interactions to higher bleeding risk.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "mayo-ginkgo",
+        "ginkgo-2008-review",
+        "ginkgo-2025-observational"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "clopidogrel-ginkgo-biloba",
+      "drug_id": "clopidogrel",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Ginkgo may affect blood clotting, which could add to blood-thinning medicines and raise bleeding risk.",
+      "plain_explanation": "Mayo Clinic lists ginkgo as an herb that may raise bleeding risk when taken with blood thinners such as Clopidogrel. Studies disagree on how large the risk is. Ask your doctor before using ginkgo and stop it before surgery as advised.",
+      "evidence_quality": "Mixed: Mayo Clinic lists a possible bleeding risk. A 2008 review of controlled studies found no clear effect on clotting, while a 2025 observational study linked ginkgo drug interactions to higher bleeding risk.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "mayo-ginkgo",
+        "ginkgo-2008-review",
+        "ginkgo-2025-observational"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "ibuprofen-ginkgo-biloba",
+      "drug_id": "ibuprofen",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo may affect blood clotting, which could add to the bleeding risk of anti-inflammatory pain medicines.",
+      "plain_explanation": "Mayo Clinic says using ginkgo with Ibuprofen may increase bleeding risk. If you use both, watch for unusual bruising or bleeding and tell your doctor.",
+      "evidence_quality": "Limited: Mayo Clinic notes a possible effect. Controlled studies on clotting have not been consistent.",
+      "source_ids": [
+        "mayo-ginkgo",
+        "ginkgo-2008-review"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "atorvastatin-ginkgo-biloba",
+      "drug_id": "atorvastatin",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo may lower the effect of some statins.",
+      "plain_explanation": "Mayo Clinic notes that ginkgo appears to lower the effects of Atorvastatin. Your cholesterol control could be weaker. Tell your doctor if you use ginkgo.",
+      "evidence_quality": "Limited: Mayo Clinic describes the effect as 'appears to'. Large human studies were not reviewed here.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "carbamazepine-ginkgo-biloba",
+      "drug_id": "carbamazepine",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Large amounts of ginkgo can cause seizures, and it may keep seizure medicines from working as well.",
+      "plain_explanation": "Mayo Clinic warns that ginkgo may stop anticonvulsant medicines from working as well, and large amounts can cause seizures. Carbamazepine is a seizure medicine. Do not use ginkgo without your neurologist's advice.",
+      "evidence_quality": "Established general advice for anticonvulsants as a group (Mayo Clinic). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "sodium-valproate-ginkgo-biloba",
+      "drug_id": "sodium-valproate",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Large amounts of ginkgo can cause seizures, and it may keep seizure medicines from working as well.",
+      "plain_explanation": "Mayo Clinic warns that ginkgo may stop anticonvulsant medicines from working as well, and large amounts can cause seizures. Sodium Valproate is a seizure medicine. Do not use ginkgo without your neurologist's advice.",
+      "evidence_quality": "Established general advice for anticonvulsants as a group (Mayo Clinic). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "levetiracetam-ginkgo-biloba",
+      "drug_id": "levetiracetam",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Large amounts of ginkgo can cause seizures, and it may keep seizure medicines from working as well.",
+      "plain_explanation": "Mayo Clinic warns that ginkgo may stop anticonvulsant medicines from working as well, and large amounts can cause seizures. Levetiracetam is a seizure medicine. Do not use ginkgo without your neurologist's advice.",
+      "evidence_quality": "Established general advice for anticonvulsants as a group (Mayo Clinic). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "fluoxetine-ginkgo-biloba",
+      "drug_id": "fluoxetine",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo may keep some antidepressants from working as well.",
+      "plain_explanation": "Mayo Clinic says ginkgo taken with certain antidepressants, such as Fluoxetine, might keep them from working as well. Tell your doctor before combining them.",
+      "evidence_quality": "Limited: Mayo Clinic says 'might'. Clinical details were not reviewed here.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "metformin-ginkgo-biloba",
+      "drug_id": "metformin",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo might change how people with diabetes respond to their medicines.",
+      "plain_explanation": "Mayo Clinic says ginkgo might change how people with diabetes respond to diabetes medicines such as Metformin. If you use both, check your blood sugar more often and tell your doctor.",
+      "evidence_quality": "Limited: Mayo Clinic describes a possible effect without detail.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "warfarin-allium-sativum",
+      "drug_id": "warfarin",
+      "herb_id": "allium-sativum",
+      "risk_level": "moderate",
+      "mechanism": "Garlic has antiplatelet properties that may add to blood-thinning medicines.",
+      "plain_explanation": "Mayo Clinic lists garlic as an herb that may raise bleeding risk when taken with blood thinners such as Warfarin. Talk to your doctor before taking garlic supplements, and before surgery.",
+      "evidence_quality": "Moderate: listed by Mayo Clinic, and oncology pharmacists describe garlic's antiplatelet effect. Large controlled trials were not reviewed here.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "aspirin-allium-sativum",
+      "drug_id": "aspirin",
+      "herb_id": "allium-sativum",
+      "risk_level": "moderate",
+      "mechanism": "Garlic has antiplatelet properties that may add to blood-thinning medicines.",
+      "plain_explanation": "Mayo Clinic lists garlic as an herb that may raise bleeding risk when taken with blood thinners such as Aspirin. Talk to your doctor before taking garlic supplements, and before surgery.",
+      "evidence_quality": "Moderate: listed by Mayo Clinic, and oncology pharmacists describe garlic's antiplatelet effect. Large controlled trials were not reviewed here.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "clopidogrel-allium-sativum",
+      "drug_id": "clopidogrel",
+      "herb_id": "allium-sativum",
+      "risk_level": "moderate",
+      "mechanism": "Garlic has antiplatelet properties that may add to blood-thinning medicines.",
+      "plain_explanation": "Mayo Clinic lists garlic as an herb that may raise bleeding risk when taken with blood thinners such as Clopidogrel. Talk to your doctor before taking garlic supplements, and before surgery.",
+      "evidence_quality": "Moderate: listed by Mayo Clinic, and oncology pharmacists describe garlic's antiplatelet effect. Large controlled trials were not reviewed here.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-allium-sativum",
+      "drug_id": "glimepiride",
+      "herb_id": "allium-sativum",
+      "risk_level": "low",
+      "mechanism": "Garlic may add to the blood sugar lowering of sulfonylureas.",
+      "plain_explanation": "A pharmacology review lists garlic among herbs that may add to the blood sugar lowering of sulfonylureas such as Glimepiride. If you use both, watch your blood sugar for low readings.",
+      "evidence_quality": "Limited: described in a review. Clinical studies for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gliclazide-allium-sativum",
+      "drug_id": "gliclazide",
+      "herb_id": "allium-sativum",
+      "risk_level": "low",
+      "mechanism": "Garlic may add to the blood sugar lowering of sulfonylureas.",
+      "plain_explanation": "A pharmacology review lists garlic among herbs that may add to the blood sugar lowering of sulfonylureas such as Gliclazide. If you use both, watch your blood sugar for low readings.",
+      "evidence_quality": "Limited: described in a review. Clinical studies for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "warfarin-curcuma-longa",
+      "drug_id": "warfarin",
+      "herb_id": "curcuma-longa",
+      "risk_level": "moderate",
+      "mechanism": "Turmeric has antiplatelet properties that may add to blood-thinning medicines.",
+      "plain_explanation": "Memorial Sloan Kettering's About Herbs information says turmeric may increase bleeding risk with anticoagulants and antiplatelets because of its antiplatelet properties. Warfarin is in this group. Turmeric supplements deserve more caution than food amounts, so ask your doctor before taking them.",
+      "evidence_quality": "Limited: the interaction is described as possible, based on antiplatelet properties. Clinical trial data were not reviewed here.",
+      "source_ids": [
+        "ascopost-turmeric"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "aspirin-curcuma-longa",
+      "drug_id": "aspirin",
+      "herb_id": "curcuma-longa",
+      "risk_level": "moderate",
+      "mechanism": "Turmeric has antiplatelet properties that may add to blood-thinning medicines.",
+      "plain_explanation": "Memorial Sloan Kettering's About Herbs information says turmeric may increase bleeding risk with anticoagulants and antiplatelets because of its antiplatelet properties. Aspirin is in this group. Turmeric supplements deserve more caution than food amounts, so ask your doctor before taking them.",
+      "evidence_quality": "Limited: the interaction is described as possible, based on antiplatelet properties. Clinical trial data were not reviewed here.",
+      "source_ids": [
+        "ascopost-turmeric"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "clopidogrel-curcuma-longa",
+      "drug_id": "clopidogrel",
+      "herb_id": "curcuma-longa",
+      "risk_level": "moderate",
+      "mechanism": "Turmeric has antiplatelet properties that may add to blood-thinning medicines.",
+      "plain_explanation": "Memorial Sloan Kettering's About Herbs information says turmeric may increase bleeding risk with anticoagulants and antiplatelets because of its antiplatelet properties. Clopidogrel is in this group. Turmeric supplements deserve more caution than food amounts, so ask your doctor before taking them.",
+      "evidence_quality": "Limited: the interaction is described as possible, based on antiplatelet properties. Clinical trial data were not reviewed here.",
+      "source_ids": [
+        "ascopost-turmeric"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "apixaban-curcuma-longa",
+      "drug_id": "apixaban",
+      "herb_id": "curcuma-longa",
+      "risk_level": "moderate",
+      "mechanism": "Turmeric has antiplatelet properties that may add to blood-thinning medicines.",
+      "plain_explanation": "Memorial Sloan Kettering's About Herbs information says turmeric may increase bleeding risk with anticoagulants and antiplatelets because of its antiplatelet properties. Apixaban is in this group. Turmeric supplements deserve more caution than food amounts, so ask your doctor before taking them.",
+      "evidence_quality": "Limited: the interaction is described as possible, based on antiplatelet properties. Clinical trial data were not reviewed here.",
+      "source_ids": [
+        "ascopost-turmeric"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "warfarin-zingiber-officinale",
+      "drug_id": "warfarin",
+      "herb_id": "zingiber-officinale",
+      "risk_level": "low",
+      "mechanism": "Ginger is thought to have an antiplatelet effect that could add to blood-thinning medicines.",
+      "plain_explanation": "Oncology pharmacists note that ginger is thought to affect clotting like garlic and ginkgo, which could add to the effect of blood thinners such as Warfarin. The evidence is mostly theoretical. Tell your doctor if you take ginger supplements regularly.",
+      "evidence_quality": "Theoretical: described as 'thought to' act this way. No interaction studies reviewed here.",
+      "source_ids": [
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "aspirin-zingiber-officinale",
+      "drug_id": "aspirin",
+      "herb_id": "zingiber-officinale",
+      "risk_level": "low",
+      "mechanism": "Ginger is thought to have an antiplatelet effect that could add to blood-thinning medicines.",
+      "plain_explanation": "Oncology pharmacists note that ginger is thought to affect clotting like garlic and ginkgo, which could add to the effect of blood thinners such as Aspirin. The evidence is mostly theoretical. Tell your doctor if you take ginger supplements regularly.",
+      "evidence_quality": "Theoretical: described as 'thought to' act this way. No interaction studies reviewed here.",
+      "source_ids": [
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-zingiber-officinale",
+      "drug_id": "glimepiride",
+      "herb_id": "zingiber-officinale",
+      "risk_level": "low",
+      "mechanism": "Ginger may add to the blood sugar lowering of sulfonylureas.",
+      "plain_explanation": "A pharmacology review lists ginger among herbs that may add to the blood sugar lowering of sulfonylureas such as Glimepiride. Watch for low blood sugar if you use both.",
+      "evidence_quality": "Limited: described in a review. Clinical studies for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "digoxin-glycyrrhiza-glabra",
+      "drug_id": "digoxin",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "high",
+      "mechanism": "Licorice lowers potassium. Low potassium makes digoxin act more strongly, which can cause heart rhythm problems.",
+      "plain_explanation": "Mayo Clinic and the Merck Manual warn that licorice can lower potassium and raise the risk of serious side effects with Digoxin. Do not use licorice products without your doctor's advice.",
+      "evidence_quality": "Established: described by Mayo Clinic, the Merck Manual and NIH.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "furosemide-glycyrrhiza-glabra",
+      "drug_id": "furosemide",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice makes the body lose potassium, and so do these water pills, so the effect can stack.",
+      "plain_explanation": "NIH warns that taking licorice with diuretics (water pills) can cause dangerously low potassium. Furosemide is a diuretic. Check with your doctor before using licorice, and report muscle weakness or an irregular heartbeat.",
+      "evidence_quality": "Established: NIH lists diuretics as a risk for dangerously low potassium.",
+      "source_ids": [
+        "nih-licorice-factsheet",
+        "merck-licorice"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "hydrochlorothiazide-glycyrrhiza-glabra",
+      "drug_id": "hydrochlorothiazide",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice makes the body lose potassium, and so do these water pills, so the effect can stack.",
+      "plain_explanation": "NIH warns that taking licorice with diuretics (water pills) can cause dangerously low potassium. Hydrochlorothiazide is a diuretic. Check with your doctor before using licorice, and report muscle weakness or an irregular heartbeat.",
+      "evidence_quality": "Established: NIH lists diuretics as a risk for dangerously low potassium.",
+      "source_ids": [
+        "nih-licorice-factsheet",
+        "merck-licorice"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "prednisolone-glycyrrhiza-glabra",
+      "drug_id": "prednisolone",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can lower potassium and can affect cortisol and steroid medicines.",
+      "plain_explanation": "NIH warns that licorice with corticosteroids can lead to dangerously low potassium, and that large amounts can affect cortisol-related steroid medicines. Prednisolone is a corticosteroid. Ask your doctor before using licorice.",
+      "evidence_quality": "Established: NIH lists corticosteroids as a risk.",
+      "source_ids": [
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "methylprednisolone-glycyrrhiza-glabra",
+      "drug_id": "methylprednisolone",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can lower potassium and can affect cortisol and steroid medicines.",
+      "plain_explanation": "NIH warns that licorice with corticosteroids can lead to dangerously low potassium, and that large amounts can affect cortisol-related steroid medicines. Methylprednisolone is a corticosteroid. Ask your doctor before using licorice.",
+      "evidence_quality": "Established: NIH lists corticosteroids as a risk.",
+      "source_ids": [
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "warfarin-glycyrrhiza-glabra",
+      "drug_id": "warfarin",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice may change how warfarin works. Sources disagree on whether it raises or lowers the effect.",
+      "plain_explanation": "Mayo Clinic says licorice may change how warfarin works and raise bleeding risk, while the Merck Manual says it may weaken warfarin and raise clot risk. Either way, your INR may shift. Do not use licorice without telling your doctor.",
+      "evidence_quality": "Mixed: major references disagree on the direction of the effect.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "merck-licorice"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "amlodipine-glycyrrhiza-glabra",
+      "drug_id": "amlodipine",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice makes the body hold salt and water, which can raise blood pressure and work against blood pressure medicines.",
+      "plain_explanation": "The Merck Manual says licorice may reduce the effectiveness of blood pressure medicines because it causes salt and water retention. Amlodipine is a blood pressure medicine. Avoid regular licorice use and check with your doctor.",
+      "evidence_quality": "Established general advice for blood pressure medicines as a group (Merck Manual). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "telmisartan-glycyrrhiza-glabra",
+      "drug_id": "telmisartan",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice makes the body hold salt and water, which can raise blood pressure and work against blood pressure medicines.",
+      "plain_explanation": "The Merck Manual says licorice may reduce the effectiveness of blood pressure medicines because it causes salt and water retention. Telmisartan is a blood pressure medicine. Avoid regular licorice use and check with your doctor.",
+      "evidence_quality": "Established general advice for blood pressure medicines as a group (Merck Manual). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "losartan-glycyrrhiza-glabra",
+      "drug_id": "losartan",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice makes the body hold salt and water, which can raise blood pressure and work against blood pressure medicines.",
+      "plain_explanation": "The Merck Manual says licorice may reduce the effectiveness of blood pressure medicines because it causes salt and water retention. Losartan is a blood pressure medicine. Avoid regular licorice use and check with your doctor.",
+      "evidence_quality": "Established general advice for blood pressure medicines as a group (Merck Manual). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "ramipril-glycyrrhiza-glabra",
+      "drug_id": "ramipril",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice makes the body hold salt and water, which can raise blood pressure and work against blood pressure medicines.",
+      "plain_explanation": "The Merck Manual says licorice may reduce the effectiveness of blood pressure medicines because it causes salt and water retention. Ramipril is a blood pressure medicine. Avoid regular licorice use and check with your doctor.",
+      "evidence_quality": "Established general advice for blood pressure medicines as a group (Merck Manual). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "atenolol-glycyrrhiza-glabra",
+      "drug_id": "atenolol",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice makes the body hold salt and water, which can raise blood pressure and work against blood pressure medicines.",
+      "plain_explanation": "The Merck Manual says licorice may reduce the effectiveness of blood pressure medicines because it causes salt and water retention. Atenolol is a blood pressure medicine. Avoid regular licorice use and check with your doctor.",
+      "evidence_quality": "Established general advice for blood pressure medicines as a group (Merck Manual). Data for each drug were not reviewed here.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "warfarin-panax-ginseng",
+      "drug_id": "warfarin",
+      "herb_id": "panax-ginseng",
+      "risk_level": "moderate",
+      "mechanism": "Ginseng may lessen the effect of warfarin.",
+      "plain_explanation": "Mayo Clinic says ginseng taken with warfarin may lessen how well warfarin works. That could raise clot risk. Do not combine them without your doctor's advice, and expect more frequent INR checks if you do.",
+      "evidence_quality": "Established: listed by Mayo Clinic.",
+      "source_ids": [
+        "mayo-herbal-heart"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-panax-ginseng",
+      "drug_id": "glimepiride",
+      "herb_id": "panax-ginseng",
+      "risk_level": "low",
+      "mechanism": "Ginseng may add to the blood sugar lowering of sulfonylureas.",
+      "plain_explanation": "A pharmacology review lists ginseng among herbs that may add to the blood sugar lowering of sulfonylureas such as Glimepiride. Watch for low blood sugar if you use both.",
+      "evidence_quality": "Limited: described in a review. Clinical studies for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gliclazide-panax-ginseng",
+      "drug_id": "gliclazide",
+      "herb_id": "panax-ginseng",
+      "risk_level": "low",
+      "mechanism": "Ginseng may add to the blood sugar lowering of sulfonylureas.",
+      "plain_explanation": "A pharmacology review lists ginseng among herbs that may add to the blood sugar lowering of sulfonylureas such as Gliclazide. Watch for low blood sugar if you use both.",
+      "evidence_quality": "Limited: described in a review. Clinical studies for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-momordica-charantia",
+      "drug_id": "glimepiride",
+      "herb_id": "momordica-charantia",
+      "risk_level": "moderate",
+      "mechanism": "Bitter melon can lower blood sugar, which adds to the effect of sulfonylureas and raises the chance of low blood sugar.",
+      "plain_explanation": "A pharmacology review lists bitter melon among herbs that add to the blood sugar lowering of sulfonylureas such as Glimepiride. Together they could push blood sugar too low. Check your blood sugar often and tell your doctor.",
+      "evidence_quality": "Moderate: described in a review of sulfonylurea-herb interactions. Large human trials for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gliclazide-momordica-charantia",
+      "drug_id": "gliclazide",
+      "herb_id": "momordica-charantia",
+      "risk_level": "moderate",
+      "mechanism": "Bitter melon can lower blood sugar, which adds to the effect of sulfonylureas and raises the chance of low blood sugar.",
+      "plain_explanation": "A pharmacology review lists bitter melon among herbs that add to the blood sugar lowering of sulfonylureas such as Gliclazide. Together they could push blood sugar too low. Check your blood sugar often and tell your doctor.",
+      "evidence_quality": "Moderate: described in a review of sulfonylurea-herb interactions. Large human trials for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "insulin-glargine-momordica-charantia",
+      "drug_id": "insulin-glargine",
+      "herb_id": "momordica-charantia",
+      "risk_level": "moderate",
+      "mechanism": "Bitter melon can lower blood sugar, which may add to the effect of insulin.",
+      "plain_explanation": "A pharmacist reference rates bitter melon with insulin as a moderate interaction because both lower blood sugar. Monitor your glucose closely and tell your doctor if you use both.",
+      "evidence_quality": "Moderate: rated by a pharmacist reference database drawing on small studies. Not a primary study.",
+      "source_ids": [
+        "pharmacist-bitter-melon-insulin"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "metformin-momordica-charantia",
+      "drug_id": "metformin",
+      "herb_id": "momordica-charantia",
+      "risk_level": "low",
+      "mechanism": "Bitter melon can lower blood sugar, which may add to the effect of diabetes medicine.",
+      "plain_explanation": "A pharmacist reference notes that bitter melon with diabetes medicines such as Metformin might increase the risk of low blood sugar. The risk is lower with metformin than with insulin or sulfonylureas. Check your blood sugar and tell your doctor.",
+      "evidence_quality": "Limited: a class-level statement from a pharmacist reference database. Not a primary study.",
+      "source_ids": [
+        "pharmacist-bitter-melon-insulin"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-trigonella-foenum-graecum",
+      "drug_id": "glimepiride",
+      "herb_id": "trigonella-foenum-graecum",
+      "risk_level": "low",
+      "mechanism": "Fenugreek may lower blood sugar and add to the effect of sulfonylureas.",
+      "plain_explanation": "A pharmacology review lists fenugreek among herbs that may add to the blood sugar lowering of sulfonylureas such as Glimepiride. Watch for low blood sugar if you use both.",
+      "evidence_quality": "Limited: described in a review. Clinical studies for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gliclazide-trigonella-foenum-graecum",
+      "drug_id": "gliclazide",
+      "herb_id": "trigonella-foenum-graecum",
+      "risk_level": "low",
+      "mechanism": "Fenugreek may lower blood sugar and add to the effect of sulfonylureas.",
+      "plain_explanation": "A pharmacology review lists fenugreek among herbs that may add to the blood sugar lowering of sulfonylureas such as Gliclazide. Watch for low blood sugar if you use both.",
+      "evidence_quality": "Limited: described in a review. Clinical studies for this pair were not reviewed here.",
+      "source_ids": [
+        "herbmed-sulfonylurea-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "sitagliptin-tinospora-cordifolia",
+      "drug_id": "sitagliptin",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy lowered blood sugar in rat studies and may add to the effect of diabetes medicine.",
+      "plain_explanation": "Giloy lowered blood sugar in a rat study where it was given with sitagliptin. This has not been tested in people. If you use both, check your blood sugar and tell your doctor.",
+      "evidence_quality": "Limited: one rat study. No human data found.",
+      "source_ids": [
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "glimepiride-tinospora-cordifolia",
+      "drug_id": "glimepiride",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy may add to the effect of sulfonylureas and, in rats, raised levels of the sulfonylurea glibenclamide.",
+      "plain_explanation": "In rat studies giloy raised blood levels of the sulfonylurea glibenclamide and added to blood sugar lowering. Glimepiride is in the same medicine group, so a similar effect is possible but has not been tested. Talk to your doctor before combining them and watch for low blood sugar.",
+      "evidence_quality": "Limited: rat studies on glibenclamide only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag",
+        "tc-glibenclamide-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gliclazide-tinospora-cordifolia",
+      "drug_id": "gliclazide",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy may add to the effect of sulfonylureas and, in rats, raised levels of the sulfonylurea glibenclamide.",
+      "plain_explanation": "In rat studies giloy raised blood levels of the sulfonylurea glibenclamide and added to blood sugar lowering. Gliclazide is in the same medicine group, so a similar effect is possible but has not been tested. Talk to your doctor before combining them and watch for low blood sugar.",
+      "evidence_quality": "Limited: rat studies on glibenclamide only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag",
+        "tc-glibenclamide-2018"
+      ],
+      "last_reviewed": "2026-11-12",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gliclazide-withania-somnifera",
+      "drug_id": "gliclazide",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may lower blood sugar, which could add to the effect of diabetes medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with diabetes medicines such as Gliclazide. Blood sugar could drop lower than expected. Check your sugar regularly and talk to your doctor or pharmacist before using it.",
+      "evidence_quality": "Limited: NIH names diabetes medicines as a group. The warning is applied here to this drug as a class-level inference; no study of this exact pair was reviewed.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "sitagliptin-withania-somnifera",
+      "drug_id": "sitagliptin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may lower blood sugar, which could add to the effect of diabetes medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with diabetes medicines such as Sitagliptin. Blood sugar could drop lower than expected. Check your sugar regularly and talk to your doctor or pharmacist before using it.",
+      "evidence_quality": "Limited: NIH names diabetes medicines as a group. The warning is applied here to this drug as a class-level inference; no study of this exact pair was reviewed.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "vildagliptin-withania-somnifera",
+      "drug_id": "vildagliptin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may lower blood sugar, which could add to the effect of diabetes medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with diabetes medicines such as Vildagliptin. Blood sugar could drop lower than expected. Check your sugar regularly and talk to your doctor or pharmacist before using it.",
+      "evidence_quality": "Limited: NIH names diabetes medicines as a group. The warning is applied here to this drug as a class-level inference; no study of this exact pair was reviewed.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "vildagliptin-tinospora-cordifolia",
+      "drug_id": "vildagliptin",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy lowered blood sugar in animal studies, so it may add to the effect of diabetes medicines.",
+      "plain_explanation": "Giloy has lowered blood sugar in animal studies. Taken with Vildagliptin it may add to that effect. This has not been tested in people. Tell your doctor or pharmacist before adding Giloy and keep checking your blood sugar.",
+      "evidence_quality": "Limited: animal studies on other diabetes drugs only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "linagliptin-withania-somnifera",
+      "drug_id": "linagliptin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may lower blood sugar, which could add to the effect of diabetes medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with diabetes medicines such as Linagliptin. Blood sugar could drop lower than expected. Check your sugar regularly and talk to your doctor or pharmacist before using it.",
+      "evidence_quality": "Limited: NIH names diabetes medicines as a group. The warning is applied here to this drug as a class-level inference; no study of this exact pair was reviewed.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "linagliptin-tinospora-cordifolia",
+      "drug_id": "linagliptin",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy lowered blood sugar in animal studies, so it may add to the effect of diabetes medicines.",
+      "plain_explanation": "Giloy has lowered blood sugar in animal studies. Taken with Linagliptin it may add to that effect. This has not been tested in people. Tell your doctor or pharmacist before adding Giloy and keep checking your blood sugar.",
+      "evidence_quality": "Limited: animal studies on other diabetes drugs only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "empagliflozin-withania-somnifera",
+      "drug_id": "empagliflozin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may lower blood sugar, which could add to the effect of diabetes medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with diabetes medicines such as Empagliflozin. Blood sugar could drop lower than expected. Check your sugar regularly and talk to your doctor or pharmacist before using it.",
+      "evidence_quality": "Limited: NIH names diabetes medicines as a group. The warning is applied here to this drug as a class-level inference; no study of this exact pair was reviewed.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "empagliflozin-tinospora-cordifolia",
+      "drug_id": "empagliflozin",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy lowered blood sugar in animal studies, so it may add to the effect of diabetes medicines.",
+      "plain_explanation": "Giloy has lowered blood sugar in animal studies. Taken with Empagliflozin it may add to that effect. This has not been tested in people. Tell your doctor or pharmacist before adding Giloy and keep checking your blood sugar.",
+      "evidence_quality": "Limited: animal studies on other diabetes drugs only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "dapagliflozin-withania-somnifera",
+      "drug_id": "dapagliflozin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may lower blood sugar, which could add to the effect of diabetes medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with diabetes medicines such as Dapagliflozin. Blood sugar could drop lower than expected. Check your sugar regularly and talk to your doctor or pharmacist before using it.",
+      "evidence_quality": "Limited: NIH names diabetes medicines as a group. The warning is applied here to this drug as a class-level inference; no study of this exact pair was reviewed.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "dapagliflozin-tinospora-cordifolia",
+      "drug_id": "dapagliflozin",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy lowered blood sugar in animal studies, so it may add to the effect of diabetes medicines.",
+      "plain_explanation": "Giloy has lowered blood sugar in animal studies. Taken with Dapagliflozin it may add to that effect. This has not been tested in people. Tell your doctor or pharmacist before adding Giloy and keep checking your blood sugar.",
+      "evidence_quality": "Limited: animal studies on other diabetes drugs only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "pioglitazone-withania-somnifera",
+      "drug_id": "pioglitazone",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may lower blood sugar, which could add to the effect of diabetes medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with diabetes medicines such as Pioglitazone. Blood sugar could drop lower than expected. Check your sugar regularly and talk to your doctor or pharmacist before using it.",
+      "evidence_quality": "Limited: NIH names diabetes medicines as a group. The warning is applied here to this drug as a class-level inference; no study of this exact pair was reviewed.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "pioglitazone-tinospora-cordifolia",
+      "drug_id": "pioglitazone",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy lowered blood sugar in animal studies, so it may add to the effect of diabetes medicines.",
+      "plain_explanation": "Giloy has lowered blood sugar in animal studies. Taken with Pioglitazone it may add to that effect. This has not been tested in people. Tell your doctor or pharmacist before adding Giloy and keep checking your blood sugar.",
+      "evidence_quality": "Limited: animal studies on other diabetes drugs only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "insulin-glargine-tinospora-cordifolia",
+      "drug_id": "insulin-glargine",
+      "herb_id": "tinospora-cordifolia",
+      "risk_level": "low",
+      "mechanism": "Giloy lowered blood sugar in animal studies, so it may add to the effect of diabetes medicines.",
+      "plain_explanation": "Giloy has lowered blood sugar in animal studies. Taken with Insulin Glargine it may add to that effect. This has not been tested in people. Tell your doctor or pharmacist before adding Giloy and keep checking your blood sugar.",
+      "evidence_quality": "Limited: animal studies on other diabetes drugs only. The warning is extended to this drug as a class-level inference and has not been tested in people.",
+      "source_ids": [
+        "vora-2020-phcogmag"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "losartan-withania-somnifera",
+      "drug_id": "losartan",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Losartan. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "olmesartan-withania-somnifera",
+      "drug_id": "olmesartan",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Olmesartan. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "ramipril-withania-somnifera",
+      "drug_id": "ramipril",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Ramipril. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "enalapril-withania-somnifera",
+      "drug_id": "enalapril",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Enalapril. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "atenolol-withania-somnifera",
+      "drug_id": "atenolol",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Atenolol. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "metoprolol-withania-somnifera",
+      "drug_id": "metoprolol",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Metoprolol. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "bisoprolol-withania-somnifera",
+      "drug_id": "bisoprolol",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Bisoprolol. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "carvedilol-withania-somnifera",
+      "drug_id": "carvedilol",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Carvedilol. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "hydrochlorothiazide-withania-somnifera",
+      "drug_id": "hydrochlorothiazide",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Hydrochlorothiazide. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "furosemide-withania-somnifera",
+      "drug_id": "furosemide",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Furosemide. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "spironolactone-withania-somnifera",
+      "drug_id": "spironolactone",
+      "herb_id": "withania-somnifera",
+      "risk_level": "low",
+      "mechanism": "Ashwagandha may lower blood pressure, which could add to the effect of blood pressure medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with blood pressure medicines such as Spironolactone. Your pressure could fall too low. Monitor it and talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH describes this as 'might interact' for blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "olmesartan-glycyrrhiza-glabra",
+      "drug_id": "olmesartan",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can raise blood pressure and lower potassium, which works against blood pressure and fluid medicines.",
+      "plain_explanation": "Licorice can push blood pressure up and drain potassium. That can cancel out the benefit of Olmesartan and may strain the heart. Avoid regular licorice root products unless your doctor agrees.",
+      "evidence_quality": "Limited: NIH and Merck describe the effect on blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "enalapril-glycyrrhiza-glabra",
+      "drug_id": "enalapril",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can raise blood pressure and lower potassium, which works against blood pressure and fluid medicines.",
+      "plain_explanation": "Licorice can push blood pressure up and drain potassium. That can cancel out the benefit of Enalapril and may strain the heart. Avoid regular licorice root products unless your doctor agrees.",
+      "evidence_quality": "Limited: NIH and Merck describe the effect on blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "metoprolol-glycyrrhiza-glabra",
+      "drug_id": "metoprolol",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can raise blood pressure and lower potassium, which works against blood pressure and fluid medicines.",
+      "plain_explanation": "Licorice can push blood pressure up and drain potassium. That can cancel out the benefit of Metoprolol and may strain the heart. Avoid regular licorice root products unless your doctor agrees.",
+      "evidence_quality": "Limited: NIH and Merck describe the effect on blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "bisoprolol-glycyrrhiza-glabra",
+      "drug_id": "bisoprolol",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can raise blood pressure and lower potassium, which works against blood pressure and fluid medicines.",
+      "plain_explanation": "Licorice can push blood pressure up and drain potassium. That can cancel out the benefit of Bisoprolol and may strain the heart. Avoid regular licorice root products unless your doctor agrees.",
+      "evidence_quality": "Limited: NIH and Merck describe the effect on blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "carvedilol-glycyrrhiza-glabra",
+      "drug_id": "carvedilol",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can raise blood pressure and lower potassium, which works against blood pressure and fluid medicines.",
+      "plain_explanation": "Licorice can push blood pressure up and drain potassium. That can cancel out the benefit of Carvedilol and may strain the heart. Avoid regular licorice root products unless your doctor agrees.",
+      "evidence_quality": "Limited: NIH and Merck describe the effect on blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "spironolactone-glycyrrhiza-glabra",
+      "drug_id": "spironolactone",
+      "herb_id": "glycyrrhiza-glabra",
+      "risk_level": "moderate",
+      "mechanism": "Licorice can raise blood pressure and lower potassium, which works against blood pressure and fluid medicines.",
+      "plain_explanation": "Licorice can push blood pressure up and drain potassium. That can cancel out the benefit of Spironolactone and may strain the heart. Avoid regular licorice root products unless your doctor agrees.",
+      "evidence_quality": "Limited: NIH and Merck describe the effect on blood pressure medicines as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "merck-licorice",
+        "nih-licorice-factsheet"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "pregabalin-withania-somnifera",
+      "drug_id": "pregabalin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha can cause drowsiness, which may add to the sedating effect of this medicine.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with sedating medicines, and drowsiness is a listed side effect. Pregabalin can also make you drowsy, so the two together may be too sedating. Take care driving and talk to your doctor first.",
+      "evidence_quality": "Limited: NIH names sedatives as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gabapentin-withania-somnifera",
+      "drug_id": "gabapentin",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha can cause drowsiness, which may add to the sedating effect of this medicine.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with sedating medicines, and drowsiness is a listed side effect. Gabapentin can also make you drowsy, so the two together may be too sedating. Take care driving and talk to your doctor first.",
+      "evidence_quality": "Limited: NIH names sedatives as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "amitriptyline-withania-somnifera",
+      "drug_id": "amitriptyline",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha can cause drowsiness, which may add to the sedating effect of this medicine.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with sedating medicines, and drowsiness is a listed side effect. Amitriptyline can also make you drowsy, so the two together may be too sedating. Take care driving and talk to your doctor first.",
+      "evidence_quality": "Limited: NIH names sedatives as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "methylprednisolone-withania-somnifera",
+      "drug_id": "methylprednisolone",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may stimulate immune activity, which could work against immune-suppressing medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with medicines that suppress the immune system. Methylprednisolone is one of these, so ashwagandha could reduce its intended effect. Talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH names immunosuppressants as a group. Applied here to this drug because it suppresses the immune system.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "prednisolone-withania-somnifera",
+      "drug_id": "prednisolone",
+      "herb_id": "withania-somnifera",
+      "risk_level": "moderate",
+      "mechanism": "Ashwagandha may stimulate immune activity, which could work against immune-suppressing medicines.",
+      "plain_explanation": "NIH notes that ashwagandha might interact with medicines that suppress the immune system. Prednisolone is one of these, so ashwagandha could reduce its intended effect. Talk to your doctor before combining them.",
+      "evidence_quality": "Limited: NIH names immunosuppressants as a group. Applied here to this drug because it suppresses the immune system.",
+      "source_ids": [
+        "ods-ashwagandha"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "pregabalin-ginkgo-biloba",
+      "drug_id": "pregabalin",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Ginkgo may lower the seizure threshold or reduce the effect of seizure medicines.",
+      "plain_explanation": "Mayo Clinic warns that ginkgo may interact with seizure medicines. Pregabalin is used for seizures and nerve pain, so ginkgo could make it less effective. Ask your doctor before using ginkgo.",
+      "evidence_quality": "Limited: Mayo Clinic gives advice for anticonvulsants as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "gabapentin-ginkgo-biloba",
+      "drug_id": "gabapentin",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Ginkgo may lower the seizure threshold or reduce the effect of seizure medicines.",
+      "plain_explanation": "Mayo Clinic warns that ginkgo may interact with seizure medicines. Gabapentin is used for seizures and nerve pain, so ginkgo could make it less effective. Ask your doctor before using ginkgo.",
+      "evidence_quality": "Limited: Mayo Clinic gives advice for anticonvulsants as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "diclofenac-ginkgo-biloba",
+      "drug_id": "diclofenac",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo may slightly raise bleeding risk, and NSAIDs also affect bleeding and the stomach lining.",
+      "plain_explanation": "Ginkgo has been linked to a possible bleeding risk. Diclofenac is an anti-inflammatory that can also irritate the stomach and affect bleeding, so using both may add to the risk. Ask your pharmacist first.",
+      "evidence_quality": "Limited: a possible effect described for ibuprofen and blood thinners. Applied here to this NSAID as a class-level inference.",
+      "source_ids": [
+        "mayo-ginkgo",
+        "ginkgo-2008-review"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "naproxen-ginkgo-biloba",
+      "drug_id": "naproxen",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo may slightly raise bleeding risk, and NSAIDs also affect bleeding and the stomach lining.",
+      "plain_explanation": "Ginkgo has been linked to a possible bleeding risk. Naproxen is an anti-inflammatory that can also irritate the stomach and affect bleeding, so using both may add to the risk. Ask your pharmacist first.",
+      "evidence_quality": "Limited: a possible effect described for ibuprofen and blood thinners. Applied here to this NSAID as a class-level inference.",
+      "source_ids": [
+        "mayo-ginkgo",
+        "ginkgo-2008-review"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "aceclofenac-ginkgo-biloba",
+      "drug_id": "aceclofenac",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo may slightly raise bleeding risk, and NSAIDs also affect bleeding and the stomach lining.",
+      "plain_explanation": "Ginkgo has been linked to a possible bleeding risk. Aceclofenac is an anti-inflammatory that can also irritate the stomach and affect bleeding, so using both may add to the risk. Ask your pharmacist first.",
+      "evidence_quality": "Limited: a possible effect described for ibuprofen and blood thinners. Applied here to this NSAID as a class-level inference.",
+      "source_ids": [
+        "mayo-ginkgo",
+        "ginkgo-2008-review"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "etoricoxib-ginkgo-biloba",
+      "drug_id": "etoricoxib",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "low",
+      "mechanism": "Ginkgo may slightly raise bleeding risk, and NSAIDs also affect bleeding and the stomach lining.",
+      "plain_explanation": "Ginkgo has been linked to a possible bleeding risk. Etoricoxib is an anti-inflammatory that can also irritate the stomach and affect bleeding, so using both may add to the risk. Ask your pharmacist first.",
+      "evidence_quality": "Limited: a possible effect described for ibuprofen and blood thinners. Applied here to this NSAID as a class-level inference.",
+      "source_ids": [
+        "mayo-ginkgo",
+        "ginkgo-2008-review"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "apixaban-allium-sativum",
+      "drug_id": "apixaban",
+      "herb_id": "allium-sativum",
+      "risk_level": "moderate",
+      "mechanism": "Garlic may reduce blood clotting, which could add to a blood thinner's effect.",
+      "plain_explanation": "Garlic may slow clotting a little. Taken with apixaban this could raise the chance of bleeding or bruising. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Limited: sources describe an antiplatelet effect and advise caution with blood thinners as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "apixaban-zingiber-officinale",
+      "drug_id": "apixaban",
+      "herb_id": "zingiber-officinale",
+      "risk_level": "low",
+      "mechanism": "Ginger may reduce blood clotting, which could add to a blood thinner's effect.",
+      "plain_explanation": "Ginger may slow clotting a little. Taken with apixaban this could raise the chance of bleeding or bruising. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Theoretical: described as a possible antiplatelet effect. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "apixaban-ginkgo-biloba",
+      "drug_id": "apixaban",
+      "herb_id": "ginkgo-biloba",
+      "risk_level": "moderate",
+      "mechanism": "Ginkgo may reduce blood clotting, which could add to a blood thinner's effect.",
+      "plain_explanation": "Ginkgo may slow clotting a little. Taken with apixaban this could raise the chance of bleeding or bruising. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Limited: Mayo Clinic advises caution with blood thinners as a group. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "mayo-herbal-heart",
+        "mayo-ginkgo"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "clopidogrel-zingiber-officinale",
+      "drug_id": "clopidogrel",
+      "herb_id": "zingiber-officinale",
+      "risk_level": "low",
+      "mechanism": "Ginger may slightly slow clotting, which could add to an antiplatelet's effect.",
+      "plain_explanation": "Ginger may slow clotting a little. Taken with clopidogrel this could raise the chance of bleeding or bruising. Ask your doctor or pharmacist before taking ginger supplements.",
+      "evidence_quality": "Theoretical: described as a possible antiplatelet effect. Applied here to this drug as a class-level inference.",
+      "source_ids": [
+        "ons-herbs-cancer"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "amitriptyline-hypericum-perforatum",
+      "drug_id": "amitriptyline",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort acts on serotonin like many antidepressants and can also change how the body breaks down drugs.",
+      "plain_explanation": "NCCIH warns that combining St. John's wort with certain antidepressants can cause a potentially life-threatening rise in serotonin. Amitriptyline is an antidepressant. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Established: NCCIH warns of a potentially life-threatening serotonin increase with certain antidepressants. Amitriptyline-specific data were not reviewed here.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "tacrolimus-hypericum-perforatum",
+      "drug_id": "tacrolimus",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "high",
+      "mechanism": "St. John's wort speeds up the liver enzymes and transporters that clear many medicines, which can lower their levels.",
+      "plain_explanation": "NCCIH states that St. John's wort limits the effectiveness of many prescription medicines. It can lower the level of Tacrolimus in the body. Lower tacrolimus levels can raise the risk of transplant rejection. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Limited: NCCIH says St. John's wort weakens many prescription medicines but does not name this drug. Drug-specific data were not reviewed here.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "atorvastatin-hypericum-perforatum",
+      "drug_id": "atorvastatin",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "moderate",
+      "mechanism": "St. John's wort speeds up the liver enzymes and transporters that clear many medicines, which can lower their levels.",
+      "plain_explanation": "NCCIH states that St. John's wort limits the effectiveness of many prescription medicines. It can lower the level of Atorvastatin in the body. This can make the cholesterol medicine work less well. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Limited: NCCIH says St. John's wort weakens many prescription medicines but does not name this drug. Drug-specific data were not reviewed here.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "sildenafil-hypericum-perforatum",
+      "drug_id": "sildenafil",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "moderate",
+      "mechanism": "St. John's wort speeds up the liver enzymes and transporters that clear many medicines, which can lower their levels.",
+      "plain_explanation": "NCCIH states that St. John's wort limits the effectiveness of many prescription medicines. It can lower the level of Sildenafil in the body. This can make it work less well. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Limited: NCCIH says St. John's wort weakens many prescription medicines but does not name this drug. Drug-specific data were not reviewed here.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    },
+    {
+      "id": "omeprazole-hypericum-perforatum",
+      "drug_id": "omeprazole",
+      "herb_id": "hypericum-perforatum",
+      "risk_level": "moderate",
+      "mechanism": "St. John's wort speeds up the liver enzymes and transporters that clear many medicines, which can lower their levels.",
+      "plain_explanation": "NCCIH states that St. John's wort limits the effectiveness of many prescription medicines. It can lower the level of Omeprazole in the body. This can make the acid-reducing medicine work less well. Do not combine them without your doctor's advice.",
+      "evidence_quality": "Limited: NCCIH says St. John's wort weakens many prescription medicines but does not name this drug. Drug-specific data were not reviewed here.",
+      "source_ids": [
+        "nccih-sjw-depth"
+      ],
+      "last_reviewed": "2026-11-13",
+      "review_status": "pending_clinical_review"
+    }
+  ]
+}
