@@ -384,9 +384,8 @@
         return () => root.classList.remove("is-live", "is-reset");
       };
 
-      mm.add("(min-width: 901px) and (min-height: 620px)", () =>
-        build(".scx-pin", 3.2),
-      );
+      mm.add("(min-width: 901px)", () => build(".scx-pin", 3.2));
+
       mm.add("(max-width: 900px)", () => build(".scx-stage", 2.8));
     } catch (err) {
       console.warn("Medicine check animation skipped:", err);
@@ -1621,7 +1620,10 @@
       }
     })();
 
-    ScrollTrigger.refresh();
-    window.addEventListener("load", () => ScrollTrigger.refresh());
+    window.addEventListener("load", () => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh(true);
+      });
+    });
   });
 })();
