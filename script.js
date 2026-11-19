@@ -148,7 +148,6 @@
     const ctas = $(".hero-ctas");
     const stats = $(".hero-stats");
     const tunnelEl = $("#heroTunnel");
-    const tag = $("#heroVisualTag");
 
     // Each heading line's text sits below its clipping mask, then slides up into it.
     gsap.set(inners, { yPercent: 118 });
@@ -156,7 +155,6 @@
     gsap.set([sub, stats], { opacity: 0, y: 16 });
     gsap.set(ctas, { opacity: 0, y: 12 });
     gsap.set(tunnelEl, { opacity: 0 });
-    gsap.set(tag, { opacity: 0, y: 10 });
 
     const tl = gsap.timeline({
       paused: true,
@@ -171,7 +169,6 @@
       )
       .to(sub, { opacity: 1, y: 0, duration: 0.8 }, 0.75)
       .to(ctas, { opacity: 1, y: 0, duration: 0.7 }, 0.9)
-      .to(tag, { opacity: 1, y: 0, duration: 0.6 }, 1.0)
       .to(stats, { opacity: 1, y: 0, duration: 0.7 }, 1.1);
 
     return () => tl.play();
@@ -979,11 +976,6 @@
           tunnel.setProgress(self.progress);
         },
       });
-      gsap.to("#heroVisualTag", {
-        yPercent: -60,
-        ease: "none",
-        scrollTrigger: { trigger: hero, start: "top top", end: pinLen, scrub },
-      });
     }
 
     /* =========================== STORY (horizontal editorial canvas) =========================== */
@@ -1206,12 +1198,6 @@
             duration: 0.2,
             ease: "power3.inOut",
           },
-          0,
-        );
-        tl.fromTo(
-          ".why-media img",
-          { yPercent: -3 },
-          { yPercent: 3, ease: "none", duration: 1 },
           0,
         );
         tl.fromTo(
